@@ -1,168 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Mi Web</title>
-    <style type="text/css" href="style.css"></style>
-</head>
-<body>
-        <div class="pause">=</div>
-        <canvas id="canvas" width="100vw" height="100vh">
-        </canvas>
-        <div class="btnd"></div>
-        <div class="btni"></div>
-        <ul>
-            <h1 style="text-decoration:underline;"> Score 
-            </h1>
-            <h2 class="score"></h2>
-        </ul>
-    <script>
-window.onload = function inicio(){
-var canvas = document.querySelector("#canvas")
-var ctx =canvas.getContext("2d");
-
-var ancho = canvas.width
-var alto = canvas.height
-
-var puntaje = 0
-
-var bucle;
-var play = true
-
-var ball = {
-    x: (ancho-10)/2,
-    y: 150,
-    vx: Math.random() * (2 - (-2)) + (-2),
-    vy: 2.8,
-    tam:10
-}
-var player = {
-    x: (ancho-80)/2,
-    y: (alto-10),
-    vx: 8,
-    der: false,
-    izq: false
-}
-
-
-function dibujar(){
-ctx.clearRect(0,0,ancho,alto)
-
-//aqui van todos lo dibujos
-//pelota
-ctx.fillStyle="#efefef"
-ctx.fillRect(ball.x,ball.y,ball.tam,ball.tam)
-//paleta
-ctx.fillStyle="#efefef"
-ctx.fillRect(player.x,player.y,80,8)
-//record
-ctx.fillStyle="#efefef"
-ctx.font="bold 40px Tahoma";
-ctx.textAlign="center"
-ctx.fillText(puntaje,ancho/2,alto/5);
-
-}
-
-function gravedad(){
-    ball.x += ball.vx
-    ball.y += ball.vy
-}
-
-function paredes(){
-    //pelota
-    if(ball.x < 0 || ball.x > ancho-ball.tam)        
-    {   
-        ball.vx = -ball.vx
-    }
-    if(ball.y < 0){
-        ball.vy = -ball.vy
-    }
-    if(ball.y > alto-ball.tam){
+    <head>
+        <title>Mi Web</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         
-        player.x =(ancho-80)/2;
-        ball.x =(ancho-10)/2;
-        ball.y = 150;
-        ball.vx= Math.random() * (2 - (-2)) + (-2);
-        ball.vy= 3;
-document.querySelector(".score").innerHTML += puntaje + "</br>"
-        puntaje = 0;
-    }
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    </head>
+    <body>
+    <div id="menu">
+      <div id="item">Dropdown</div>
+      <div id="submenu">
+        <a href="#">Link 1</a>
+        <a href="#img">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    <header>
+    <section>
+        <h1
+        class="lax"
+        data-lax-preset="fadeInOut"
+        >Enjoi!</h1>
+    </section>
+    </header>
     
-    //paleta
-    if(player.x < 2){
-        player.x = 2
-    }
-    if(player.x > ancho-82){
-        player.x = ancho-82
-    }
-}
-
-function colision(){
-    if(
-    ball.x<player.x+82 &&
-    ball.y<player.y+10  &&
-    ball.x+ball.tam>player.x &&
-    ball.y+ball.tam>player.y
-    ){
-        ball.vy = -ball.vy
-        ball.vy -=0.5
-        ball.vx -=0.5
-        puntaje++
+    <div class='txt'>
+        <h1 
+        class="lax"
+        data-lax-preset="fadeInOut"
+        >Web Design</h1>
+        <p 
+        class="lax"
+        data-lax-preset="fadeInOut"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna. Nam eget eros non orci consectetur congue at ac augue. Proin eget arcu in enim feugiat ultricies. Curabitur maximus metus nec metus pretium viverra at et orci. Integer hendrerit ante ut placerat cursus.
+        </p>
         
-    }
-}
+    </div>
+    
+    <div id="img">
+    </div>
+    
+    <div class="txt">
+        <h1 
+        class="lax"
+        data-lax-preset="fadeInOut"
+        >Web Design</h1>
+        <p 
+        class="lax"
+        data-lax-preset="fadeInOut"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna. Nam eget eros non orci consectetur congue at ac augue. Proin eget arcu in enim feugiat ultricies. Curabitur maximus metus nec metus pretium viverra at et orci. Integer hendrerit ante ut placerat cursus.
+        </p>
 
-//movimiento
-function mover_d (){
-if(player.der)
-    player.x+= player.vx
-}
-function mover_i (){
-if(player.izq )
-    player.x-= player.vx
-}
-//controles
-document.querySelector(".btnd").addEventListener('touchstart', ()=>{
-player.der=true
-})
-document.querySelector(".btnd").addEventListener('touchend', ()=>{
-player.der=false
-})
-document.querySelector(".btni").addEventListener('touchstart', ()=>{
-player.izq=true
-})
-document.querySelector(".btni").addEventListener('touchend', ()=>{
-player.izq=false
-})
-
-function frame(){
-//aqui van todas la cosas q van a ser ejecutadas
-dibujar()
-gravedad()
-paredes()
-mover_d()
-mover_i()
-colision()
-
-
-bucle = requestAnimationFrame(frame)
-}
-requestAnimationFrame(frame)
-
-//menu pausa
-document.querySelector(".pause").onclick =
-function abrir_tabla(){
-document.querySelector('ul').classList.toggle('abrir');
-if(play){
-    cancelAnimationFrame(bucle)
-    play = false
-}else{
-    requestAnimationFrame(frame)
-    play = true
-}
-}
-
-}
+    </div>
+    
+    
+    <script>   
+    window.onload = function() { 
+    lax.setup()
+    
+    const updateLax =()=>{ 
+    lax.update(window.scrollY)    
+    window.requestAnimationFrame(updateLax) } 
+    window.requestAnimationFrame(updateLax) }
     </script>
-</body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
+    </body>
 </html>
