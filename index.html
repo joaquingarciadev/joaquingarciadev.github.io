@@ -6,8 +6,163 @@
     <style type="text/css" href="style.css"></style>
 </head>
 <body>
-    <h1>
-        Mi Web
-    </h1>
+        <div class="pause">=</div>
+        <canvas id="canvas" width="300" height="420">
+        </canvas>
+        <div class="btnd"></div>
+        <div class="btni"></div>
+        <ul>
+            <h1 style="text-decoration:underline;"> Score 
+            </h1>
+            <h2 class="score"></h2>
+        </ul>
+    <script>
+window.onload = function inicio(){
+var canvas = document.querySelector("#canvas")
+var ctx =canvas.getContext("2d");
+
+var ancho = canvas.width
+var alto = canvas.height
+
+var puntaje = 0
+
+var bucle;
+var play = true
+
+var ball = {
+    x: (ancho-10)/2,
+    y: 150,
+    vx: Math.random() * (2 - (-2)) + (-2),
+    vy: 2.8,
+    tam:10
+}
+var player = {
+    x: (ancho-80)/2,
+    y: (alto-10),
+    vx: 8,
+    der: false,
+    izq: false
+}
+
+
+function dibujar(){
+ctx.clearRect(0,0,ancho,alto)
+
+//aqui van todos lo dibujos
+//pelota
+ctx.fillStyle="#efefef"
+ctx.fillRect(ball.x,ball.y,ball.tam,ball.tam)
+//paleta
+ctx.fillStyle="#efefef"
+ctx.fillRect(player.x,player.y,80,8)
+//record
+ctx.fillStyle="#efefef"
+ctx.font="bold 40px Tahoma";
+ctx.textAlign="center"
+ctx.fillText(puntaje,ancho/2,alto/5);
+
+}
+
+function gravedad(){
+    ball.x += ball.vx
+    ball.y += ball.vy
+}
+
+function paredes(){
+    //pelota
+    if(ball.x < 0 || ball.x > ancho-ball.tam)        
+    {   
+        ball.vx = -ball.vx
+    }
+    if(ball.y < 0){
+        ball.vy = -ball.vy
+    }
+    if(ball.y > alto-ball.tam){
+        
+        player.x =(ancho-80)/2;
+        ball.x =(ancho-10)/2;
+        ball.y = 150;
+        ball.vx= Math.random() * (2 - (-2)) + (-2);
+        ball.vy= 3;
+document.querySelector(".score").innerHTML += puntaje + "</br>"
+        puntaje = 0;
+    }
+    
+    //paleta
+    if(player.x < 2){
+        player.x = 2
+    }
+    if(player.x > ancho-82){
+        player.x = ancho-82
+    }
+}
+
+function colision(){
+    if(
+    ball.x<player.x+82 &&
+    ball.y<player.y+10  &&
+    ball.x+ball.tam>player.x &&
+    ball.y+ball.tam>player.y
+    ){
+        ball.vy = -ball.vy
+        ball.vy -=0.5
+        ball.vx -=0.5
+        puntaje++
+        
+    }
+}
+
+//movimiento
+function mover_d (){
+if(player.der)
+    player.x+= player.vx
+}
+function mover_i (){
+if(player.izq )
+    player.x-= player.vx
+}
+//controles
+document.querySelector(".btnd").addEventListener('touchstart', ()=>{
+player.der=true
+})
+document.querySelector(".btnd").addEventListener('touchend', ()=>{
+player.der=false
+})
+document.querySelector(".btni").addEventListener('touchstart', ()=>{
+player.izq=true
+})
+document.querySelector(".btni").addEventListener('touchend', ()=>{
+player.izq=false
+})
+
+function frame(){
+//aqui van todas la cosas q van a ser ejecutadas
+dibujar()
+gravedad()
+paredes()
+mover_d()
+mover_i()
+colision()
+
+
+bucle = requestAnimationFrame(frame)
+}
+requestAnimationFrame(frame)
+
+//menu pausa
+document.querySelector(".pause").onclick =
+function abrir_tabla(){
+document.querySelector('ul').classList.toggle('abrir');
+if(play){
+    cancelAnimationFrame(bucle)
+    play = false
+}else{
+    requestAnimationFrame(frame)
+    play = true
+}
+}
+
+}
+    </script>
 </body>
 </html>
