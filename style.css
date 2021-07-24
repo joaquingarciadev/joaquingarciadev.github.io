@@ -1,9 +1,45 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+margin:0;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+*{
+  padding:0;
+  margin:0;
+}
+nav{
+  position:relative;
+  width:410px;
+  height:50px;
+  background:#fff;
+  box-shadow:0 6px 10px rgba(179,179,179,.5);
 }
 
-h1 {
-    font-size: 30px;
+ul{
+  display:flex;
+}
+li{
+  list-style:none;
+}
+a{
+  display:block;
+  width:calc(410px / 4);
+  height:50px;
+  text-align:center;
+  line-height:50px;
+  text-decoration:none;
+  color:#121212;
+  font-family:'Poppins', sans-serif;
+}
+
+.slide{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:calc(410px / 4);
+  height:4px;
+  background:#3641b7;
+  transition:.4s;
 }
