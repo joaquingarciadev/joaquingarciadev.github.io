@@ -44,7 +44,7 @@ a{
 header{
   background: #18fa9d;
   height: 100vh;
-  padding: 0 0 0 50px;
+  padding: 0 50px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -55,9 +55,17 @@ header>h1{
 }
 article{
   background: #fff;
-  padding: 100px;
+  padding: 50px;
   box-shadow:0 6px 10px #11111150;
 }
 article>h1{
   font-size: 3em;
 }
+
+@media (max-width: 768px){
+header{
+    text-align: center;
+}
+header>h1{
+  font-size: 4.5em;
+}}
