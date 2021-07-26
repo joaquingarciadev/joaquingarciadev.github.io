@@ -15,6 +15,7 @@ nav{
   background:#fff;
   margin-bottom: -50px;
   /*box-shadow:0 6px 10px #11111150;*/
+  z-index: 1000;
 }
 ul{
   display:flex;

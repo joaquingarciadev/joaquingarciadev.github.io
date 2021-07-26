@@ -5,3 +5,5 @@ options.forEach((ele,index)=>{
     slide.style.left = 100/options.length*index + "%";
   });
 });
+
+gsap.from("h1", {duration: 3, x: 300, opacity: 0});
