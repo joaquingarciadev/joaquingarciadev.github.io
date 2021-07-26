@@ -42,9 +42,10 @@ a{
 }
 header{
   background: #18fa9d;
-  width: 100%;
   height: 100vh;
+  padding: 0 0 0 50px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 }
@@ -53,6 +54,9 @@ header>h1{
 }
 article{
   background: #fff;
-  padding: 20px;
+  padding: 100px;
   box-shadow:0 6px 10px #11111150;
+}
+article>h1{
+  font-size: 3em;
 }
