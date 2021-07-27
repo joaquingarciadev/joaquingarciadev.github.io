@@ -8,15 +8,15 @@ options.forEach((ele,index)=>{
 
 gsap.timeline({
   scrollTrigger: {
-    trigger:"section", 
+    trigger:"section",  
     start: "center center", 
-    end: "bottom top",
+    end: "bottom center",
     // markers: true,
     scrub: true,
-    // pin:true
+    pin:true
   }
 })
-.to("section",{duration: 2,opacity: 0})
+.to("section",{opacity: 0})
 
 gsap.timeline({
   scrollTrigger: {
@@ -28,9 +28,9 @@ gsap.timeline({
     pin:true
   }
 })
-.from(".text1",{x: innerWidth*1, opacity: 0})
-.from(".text2",{x: innerWidth*-1, opacity: 0})
-.from(".text3",{x: innerWidth*1, opacity: 0}) 
+.from(".text1",{x: innerWidth, opacity: 0})
+.from(".text2",{x: -innerWidth, opacity: 0})
+.from(".text3",{x: innerWidth, opacity: 0}) 
 
 gsap.timeline({
   scrollTrigger: {
@@ -43,6 +43,6 @@ gsap.timeline({
   }
 })
 .from(".box2",{opacity: 0})
-.from(".text4",{y: innerHeight*1, opacity: 0})
-.from(".text5",{y: innerHeight*1, opacity: 0})
-.from(".text6",{y: innerHeight*1, opacity: 0}) 
+.from(".text4",{y: innerHeight, opacity: 0})
+.from(".text5",{y: innerHeight, opacity: 0})
+.from(".text6",{y: innerHeight, opacity: 0}) 
