@@ -59,7 +59,7 @@ section h2{
   justify-content: center;
   overflow: hidden;
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 20px;
   font-size: 3em;
 }
@@ -70,7 +70,7 @@ section h2{
   background: #000;
   color: #fff;
   font-size: 3em;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 20px;
   overflow: hidden;
 }
