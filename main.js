@@ -6,6 +6,8 @@ options.forEach((ele,index)=>{
   });
 });
 
+document.querySelector("section").style.height = innerHeight+"px";
+
 gsap.timeline({
   scrollTrigger: {
     trigger:"section",  

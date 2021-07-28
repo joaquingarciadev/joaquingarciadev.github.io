@@ -43,7 +43,7 @@ a{
 }
 section{
   background: #18fa9d;
-  height: 100vh;
+  /* height: 100vh; */
   display: grid;
   place-items: center;
   padding: 20px;
