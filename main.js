@@ -8,7 +8,7 @@ options.forEach((ele,index)=>{
 
 gsap.timeline({
   scrollTrigger: {
-    trigger:"section",  
+    trigger:".n1",  
     start: "center center", 
     end: "bottom center",
     // markers: true,
@@ -16,11 +16,12 @@ gsap.timeline({
     pin:true
   }
 })
-.to("section",{opacity: 0})
+.to(".n1",{opacity: 0})
+
 
 gsap.timeline({
   scrollTrigger: {
-    trigger:".box1", 
+    trigger:".n2", 
     start: "center center", 
     end: "bottom top",
     // markers: true,
@@ -28,13 +29,25 @@ gsap.timeline({
     pin:true
   }
 })
-.from(".text1",{x: innerWidth, opacity: 0})
-.from(".text2",{x: -innerWidth, opacity: 0})
-.from(".text3",{x: innerWidth, opacity: 0}) 
+.from(".n2>.text1",{x: innerWidth, opacity: 0})
+.from(".n2>.text2",{x: innerWidth, opacity: 0})
+.from(".n2>.text3",{x: innerWidth, opacity: 0}) 
 
 gsap.timeline({
   scrollTrigger: {
-    trigger:".box2", 
+    trigger:".n3", 
+    start: "top top", 
+    end: "bottom top",
+    // markers: true,
+    scrub: true,
+    pin:true
+  }
+})
+.from(".n3>h2",{y: innerHeight, opacity: 0})
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger:".n4", 
     start: "center center", 
     end: "bottom top",
     // markers: true,
@@ -42,7 +55,7 @@ gsap.timeline({
     pin:true
   }
 })
-.from(".box2",{opacity: 0})
-.from(".text4",{y: innerHeight, opacity: 0})
-.from(".text5",{y: innerHeight, opacity: 0})
-.from(".text6",{y: innerHeight, opacity: 0}) 
+.from(".n4",{opacity: 0})
+.from(".n4>.text1",{y: innerHeight, opacity: 0})
+.from(".n4>.text2",{y: innerHeight, opacity: 0})
+.from(".n4>.text3",{y: innerHeight, opacity: 0}) 

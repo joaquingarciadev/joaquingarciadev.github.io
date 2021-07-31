@@ -1,85 +1,80 @@
-*{
-  padding:0;
-  margin:0;
+* {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  font-family:'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
-nav{
-  position:sticky;
+nav {
+  position: sticky;
   top: 0;
-  width:100%;
-  height:50px;
-  background:#fff;
+  width: 100%;
+  height: 50px;
+  background: #fff;
   margin-bottom: -50px;
-  /*box-shadow:0 6px 10px #11111150;*/
   z-index: 1000;
 }
-ul{
-  display:flex;
+ul {
+  display: flex;
 }
-li{
-  list-style:none;
-  width:calc(100% / 4);
+li {
+  list-style: none;
+  width: calc(100% / 4);
 }
-a{  
-  display:block;
-  height:50px;
-  text-align:center;
-  line-height:50px;
-  text-decoration:none;
-  color:#121212;
-}
-.slide{
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:calc(100% / 4);
-  height:4px;
-  background:#3641b7;
-  transition:.4s;
-}
-section{
-  background: #18fa9d;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 20px;
+a {
+  display: block;
+  height: 50px;
   text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  color: #121212;
 }
-section h2{
-  font-size: 6em;
-  overflow: hidden; 
+.slide {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% / 4);
+  height: 4px;
+  background: #3641b7;
+  transition: 0.4s;
 }
-.box1{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  min-height: 100vh;
-  padding: 20px;
-  font-size: 3em;
-}
-.box2{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #000;
-  color: #fff;
-  font-size: 3em;
-  min-height: 100vh;
+.section {
+  height: 100vh;
   padding: 20px;
   overflow: hidden;
 }
 
-@media (max-width: 768px){
-section h2{
+.n1 {
+  background: #18fa9d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 4em;
 }
-.box1>h2, .box2>h2{
-  font-size: 1em;
+
+.n2 {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  font-size: 2em;
 }
+
+.n3>h2 {
+  text-align: center;
+  font-size: 3em;
+}
+
+.n4 {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  font-size: 2em;
+  color: #fff;
+}
+@media (max-width: 768px) {
 }
