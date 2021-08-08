@@ -8,47 +8,17 @@ options.forEach((ele,index)=>{
 
 gsap.timeline({
   scrollTrigger: {
-    trigger:".n1",  
-    start: "center center", 
-    end: "bottom center",
-    // markers: true,
-    scrub: true,
+    trigger:".n2",
     pin:true
   }
 })
-.to(".n1",{opacity: 0})
-
-
-gsap.timeline({
-  scrollTrigger: {
-    trigger:".n2", 
-    start: "center center", 
-    end: "bottom top",
-    // markers: true,
-    scrub: true,
-    pin:true
-  }
-})
-.from(".n2>.text1",{x: innerWidth, opacity: 0})
-.from(".n2>.text2",{x: innerWidth, opacity: 0})
-.from(".n2>.text3",{x: innerWidth, opacity: 0}) 
-
-gsap.timeline({
-  scrollTrigger: {
-    trigger:".n3", 
-    start: "top top", 
-    end: "bottom top",
-    // markers: true,
-    scrub: true,
-    pin:true
-  }
-})
-.from(".n3>h2",{y: innerHeight, opacity: 0})
+// .from(".n2>.text1",{x: innerWidth, opacity: 0})
+// .from(".n2>.text2",{x: innerWidth, opacity: 0})
+// .from(".n2>.text3",{x: innerWidth, opacity: 0}) 
 
 gsap.timeline({
   scrollTrigger: {
     trigger:".n4", 
-    start: "center center", 
     end: "bottom top",
     // markers: true,
     scrub: true,
@@ -59,3 +29,13 @@ gsap.timeline({
 .from(".n4>.text1",{y: innerHeight, opacity: 0})
 .from(".n4>.text2",{y: innerHeight, opacity: 0})
 .from(".n4>.text3",{y: innerHeight, opacity: 0}) 
+
+gsap.set(".project", {opacity: 0, y: 100}); /* Establecer propiedades iniciales */
+ScrollTrigger.batch(".project", {
+  // start: "20px bottom",
+  end: "center center",
+  onEnter: t => gsap.to(t, {opacity: 1, y: 0, stagger: 0.1}), /* Al entrar */
+  onLeave: t => gsap.to(t, {opacity: 0, y: -100, stagger: 0.1}), /* Al salir */
+  onEnterBack: t => gsap.to(t, {opacity: 1, y: 0, stagger: 0.1}), /* Al volver por la salida */
+  onLeaveBack: t => gsap.to(t, {opacity: 0, y: 100, stagger: 0.1}), /* Al salir por la entrada*/
+});
