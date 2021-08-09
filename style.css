@@ -117,7 +117,7 @@ a {
 }
 @media (max-width: 768px) {
   .section {
-    padding: 0 20px;
+    padding: 50px 20px;
   }
   .section h2 {
     font-size: 2em;

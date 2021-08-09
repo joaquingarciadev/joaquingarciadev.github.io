@@ -23,9 +23,9 @@ gsap.timeline({
   }
 })
 .from(".n4",{opacity: 0})
-.from(".n4>.text1",{y: innerHeight, opacity: 0})
-.from(".n4>.text2",{y: innerHeight, opacity: 0})
-.from(".n4>.text3",{y: innerHeight, opacity: 0}) 
+.from(".text1",{y: innerHeight, opacity: 0})
+.from(".text2",{y: innerHeight, opacity: 0})
+.from(".text3",{y: innerHeight, opacity: 0}) 
 
 gsap.set(".project", {opacity: 0, y: 100}); /* Establecer propiedades iniciales */
 ScrollTrigger.batch(".project", {
