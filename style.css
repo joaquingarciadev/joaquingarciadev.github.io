@@ -14,7 +14,7 @@ nav {
   height: 50px;
   background: #fff;
   margin-bottom: -50px;
-  z-index: 1001;
+  z-index: 1000;
 }
 ul {
   display: flex;
@@ -45,53 +45,68 @@ a {
 .section {
   width: 100%;
   min-height: 100vh;
-  padding: 20px;
   overflow: hidden;
+  padding: 50px 100px;
 }
 .section h2 {
-  font-size: 4em;
+  font-size: 3.5em;
 }
 
 .n1 {
   position: relative;
-  background: #18fa9d;
-  display: grid;
-  align-items: center;
+  background: #000;
+  color: #fff;
   text-align: center;
   margin-bottom: -100vh;
   z-index: 1000;
 }
 
-.n2, .n4 {
+.n1,
+.n2,
+.n4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.n2 {
+  background-color: #18fa9d;
+}
+.n2 h2 {
+  position: relative;
+  z-index: 1;
+  width: 70%;
+}
+.n2 img {
+  position: absolute;
+  right: 20%;
+  transform: scale(3);
+  filter: grayscale(100%);
 }
 
 .n3 {
   display: inline-block;
 }
-.n3>h2 {
+.n3 > h2 {
   text-align: center;
-  margin: 25px 0;
 }
 .box-projects {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  margin: 10px -10px;
 }
 .project {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   margin: 10px;
 }
 .project a {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  box-shadow: #11111150 2px 2px 10px ;
-  transition: .2s;
+  background-color: #3641b7;
+  box-shadow: #11111150 2px 2px 10px;
+  transition: 0.2s;
 }
 .project a:hover {
   transform: scale(0.95);
@@ -101,7 +116,19 @@ a {
   color: #fff;
 }
 @media (max-width: 768px) {
-.section  h2 {
+  .section {
+    padding: 0 20px;
+  }
+  .section h2 {
     font-size: 2em;
+    width: 100%;
+  }
+  .n2 img {
+    opacity: 0;
+  }
+  .project {
+    width: 100%;
+    height: 200px;
+    margin: 10px;
   }
 }

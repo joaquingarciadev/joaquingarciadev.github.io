@@ -12,9 +12,6 @@ gsap.timeline({
     pin:true
   }
 })
-// .from(".n2>.text1",{x: innerWidth, opacity: 0})
-// .from(".n2>.text2",{x: innerWidth, opacity: 0})
-// .from(".n2>.text3",{x: innerWidth, opacity: 0}) 
 
 gsap.timeline({
   scrollTrigger: {
@@ -33,7 +30,7 @@ gsap.timeline({
 gsap.set(".project", {opacity: 0, y: 100}); /* Establecer propiedades iniciales */
 ScrollTrigger.batch(".project", {
   // start: "20px bottom",
-  end: "center center",
+  end: `center 200`,
   onEnter: t => gsap.to(t, {opacity: 1, y: 0, stagger: 0.1}), /* Al entrar */
   onLeave: t => gsap.to(t, {opacity: 0, y: -100, stagger: 0.1}), /* Al salir */
   onEnterBack: t => gsap.to(t, {opacity: 1, y: 0, stagger: 0.1}), /* Al volver por la salida */
