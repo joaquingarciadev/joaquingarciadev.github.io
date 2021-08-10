@@ -4,9 +4,11 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 nav {
   position: sticky;
   top: 0;
@@ -16,13 +18,16 @@ nav {
   margin-bottom: -50px;
   z-index: 1000;
 }
+
 ul {
   display: flex;
 }
+
 li {
   list-style: none;
   width: calc(100% / 4);
 }
+
 a {
   display: block;
   height: 50px;
@@ -31,6 +36,7 @@ a {
   text-decoration: none;
   color: #121212;
 }
+
 .slide {
   position: absolute;
   bottom: 0;
@@ -48,6 +54,7 @@ a {
   overflow: hidden;
   padding: 50px 100px;
 }
+
 .section h2 {
   font-size: 3.5em;
 }
@@ -68,14 +75,17 @@ a {
   flex-direction: column;
   justify-content: center;
 }
+
 .n2 {
   background-color: #18fa9d;
 }
+
 .n2 h2 {
   position: relative;
   z-index: 1;
   width: 70%;
 }
+
 .n2 img {
   position: absolute;
   right: 20%;
@@ -86,49 +96,59 @@ a {
 .n3 {
   display: inline-block;
 }
+
 .n3 > h2 {
   text-align: center;
 }
-.box-projects {
+
+.gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin: 10px -10px;
 }
-.project {
-  width: 200px;
+
+.gallery a {
   height: 200px;
   margin: 10px;
 }
-.project a {
+
+.gallery a img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background-color: #3641b7;
   box-shadow: #11111150 2px 2px 10px;
   transition: 0.2s;
 }
-.project a:hover {
-  transform: scale(0.95);
+
+.gallery a img:hover {
+  transform: scale(1.1);
 }
+
 .n4 {
   background: #000;
   color: #fff;
 }
+
 @media (max-width: 768px) {
   .section {
-    padding: 50px 20px;
+    padding: 50px 35px;
   }
+
   .section h2 {
     font-size: 2em;
-    width: 100%;
   }
+
+  .n2 h2 {
+    width: 60%;
+  }
+
   .n2 img {
-    opacity: 0;
+    transform: scale(2);
   }
-  .project {
-    width: 100%;
-    height: 200px;
+
+  .gallery a {
+    height: 300px;
     margin: 10px;
   }
 }
