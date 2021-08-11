@@ -140,11 +140,11 @@ a {
   }
 
   .n2 h2 {
-    width: 60%;
+    width: 100%;
   }
 
   .n2 img {
-    transform: scale(1);
+    opacity: 0;
   }
 
   .gallery a {
