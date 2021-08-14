@@ -15,14 +15,14 @@ gsap.timeline({
 
 gsap.timeline({
   scrollTrigger: {
-    trigger:".n4", 
+    trigger:".n5", 
     end: "bottom top",
     // markers: true,
     scrub: true,
     pin:true
   }
 })
-.from(".n4",{opacity: 0})
+// .from(".n5",{opacity: 0})
 .from(".text1",{y: innerHeight, opacity: 0})
 .from(".text2",{y: innerHeight, opacity: 0})
 .from(".text3",{y: innerHeight, opacity: 0}) 
@@ -35,9 +35,4 @@ ScrollTrigger.batch(".gallery a", {
   onLeave: t => gsap.to(t, {opacity: 0, y: -100, stagger: 0.1}), /* Al salir */
   onEnterBack: t => gsap.to(t, {opacity: 1, y: 0, stagger: 0.1}), /* Al volver por la salida */
   onLeaveBack: t => gsap.to(t, {opacity: 0, y: 100, stagger: 0.1}), /* Al salir por la entrada*/
-});
-
-  baguetteBox.run('.gallery', {
-    animation: 'fadeIn',
-    noScrollbars: true
 });
