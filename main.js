@@ -22,7 +22,6 @@ gsap.timeline({
     pin:true
   }
 })
-// .from(".n5",{opacity: 0})
 .from(".text1",{y: innerHeight, opacity: 0})
 .from(".text2",{y: innerHeight, opacity: 0})
 .from(".text3",{y: innerHeight, opacity: 0}) 
