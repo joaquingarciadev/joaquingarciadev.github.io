@@ -199,6 +199,10 @@ textarea {
   margin: 20px 0;
 }
 
+.n5 a:hover {
+  animation: flotar 1s linear infinite;
+}
+
 @media (max-width: 768px) {
   .section {
     padding: 50px 35px;
@@ -229,5 +233,17 @@ textarea {
 
   .n5 a {
     margin: 10px 0;
+  }
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
