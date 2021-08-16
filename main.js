@@ -13,19 +13,6 @@ gsap.timeline({
   }
 })
 
-gsap.timeline({
-  scrollTrigger: {
-    trigger:".n5", 
-    end: "bottom top",
-    // markers: true,
-    scrub: true,
-    pin:true
-  }
-})
-.from(".text1",{y: innerHeight, opacity: 0})
-.from(".text2",{y: innerHeight, opacity: 0})
-.from(".text3",{y: innerHeight, opacity: 0}) 
-
 gsap.set(".gallery a", {opacity: 0, y: 100}); /* Establecer propiedades iniciales */
 ScrollTrigger.batch(".gallery a", {
   // start: "20px bottom",
@@ -34,4 +21,10 @@ ScrollTrigger.batch(".gallery a", {
   onLeave: t => gsap.to(t, {opacity: 0, y: -100, stagger: 0.1}), /* Al salir */
   onEnterBack: t => gsap.to(t, {opacity: 1, y: 0, stagger: 0.1}), /* Al volver por la salida */
   onLeaveBack: t => gsap.to(t, {opacity: 0, y: 100, stagger: 0.1}), /* Al salir por la entrada*/
+});
+
+gsap.set(".n5 a", {opacity: 0, y: 100}); /* Establecer propiedades iniciales */
+ScrollTrigger.batch(".n5 a", {
+  onEnter: t => gsap.to(t, {opacity: 1, y: 0, stagger: 2, overwrite: true}), /* Al entrar */
+  onLeaveBack: t => gsap.to(t, {opacity: 0, y: 100, stagger: 2, overwrite: true}), /* Al salir por la entrada*/
 });
