@@ -25,6 +25,6 @@ ScrollTrigger.batch(".gallery a", {
 
 gsap.set(".n5 a", {opacity: 0, y: 100}); /* Establecer propiedades iniciales */
 ScrollTrigger.batch(".n5 a", {
-  onEnter: t => gsap.to(t, {opacity: 1, y: 0, stagger: 2, overwrite: true}), /* Al entrar */
-  onLeaveBack: t => gsap.to(t, {opacity: 0, y: 100, stagger: 2, overwrite: true}), /* Al salir por la entrada*/
+  onEnter: t => gsap.to(t, {opacity: 1, y: 0}), /* Al entrar */
+  onLeaveBack: t => gsap.to(t, {opacity: 0, y: 100}), /* Al salir por la entrada*/
 });

@@ -104,7 +104,7 @@ a {
 }
 
 .gallery a {
-  width: 300px;
+  width: 350px;
   height: 200px;
   margin: 10px;
 }
@@ -200,7 +200,7 @@ textarea {
 }
 
 .n5 a:hover {
-  animation: flotar 1.5s linear infinite;
+  transform: translateY(100px);
 }
 
 @media (max-width: 768px) {
@@ -221,7 +221,6 @@ textarea {
   }
 
   .gallery a {
-    height: 300px;
     margin: 10px;
   }
 
@@ -233,17 +232,5 @@ textarea {
 
   .n5 a {
     margin: 10px 0;
-  }
-}
-
-@keyframes flotar {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
   }
 }
