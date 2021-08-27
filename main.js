@@ -6,12 +6,11 @@ options.forEach((ele,index)=>{
   });
 });
 
-gsap.timeline({
-  scrollTrigger: {
-    trigger:".n2",
-    pin:true
-  }
-})
+TweenMax.to(".n1", 2, {
+  y: "-100%",
+  ease: Expo.easeInOut,
+  delay: 0
+});
 
 gsap.set(".gallery a", {opacity: 0, y: 100}); /* Establecer propiedades iniciales */
 ScrollTrigger.batch(".gallery a", {
