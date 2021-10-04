@@ -64,7 +64,7 @@
         transform: translate(-50%, -50%);
         overflow: visible;
       }
-      
+
       .img {
         width: 320px;
         height: 400px;
@@ -86,6 +86,12 @@
         overflow: visible;
         font-weight: lighter;
       }
+
+      @media (max-width: 768px){
+        .name {
+          font-size: 1.5em;
+        }
+      }
     </style>
   </head>
   <body>
@@ -96,8 +102,13 @@
       <div class="redes">💖 😎 💵</div>
 
       <div class="center">
-        <div class="img" data-tilt data-tilt-full-page-listening data-tilt-reverse="true">
-          <img src="src/perfil.jpg" alt=""/>
+        <div
+          class="img"
+          data-tilt
+          data-tilt-full-page-listening
+          data-tilt-reverse="true"
+        >
+          <img src="src/perfil.jpg" alt="" />
         </div>
       </div>
       <h1 class="name">JOAQUIN GARCIA</h1>
