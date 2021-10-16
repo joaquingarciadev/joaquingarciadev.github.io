@@ -175,7 +175,8 @@ body {
 }
 
 .about-section h1 {
-  font-size: 84px;
+  /* font-size: 84px; */
+  font-size: 8vw;
   font-family: "Times New Roman";
   text-transform: uppercase;
 }
@@ -250,7 +251,8 @@ body {
 }
 
 .social-media h1 {
-  font-size: 84px;
+  /* font-size: 84px; */
+  font-size: 8vw;
   font-family: "Times New Roman";
   text-transform: uppercase;
 }
