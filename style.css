@@ -24,13 +24,13 @@ firma {
 .main {
     position: relative;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    overflow: auto;
+    /* scroll-snap-type: y proximity;
+    overflow: auto; */
     max-height: 100vh;
 }
 
 .main > div {
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,8 +115,7 @@ firma {
 
 nav {
     position: absolute;
-    /* Restamos el tamaño del scrollbar */
-    width: calc(100vw - 16px);
+    width: 100%;
     z-index: 1;
 }
 
@@ -142,11 +141,6 @@ nav a {
     font-weight: 600;
     color: #111;
     padding: 10px 0;
-    /* transition: background-color 0.2s;
-    -webkit-transition: background-color 0.2s;
-    -moz-transition: background-color 0.2s;
-    -ms-transition: background-color 0.2s;
-    -o-transition: background-color 0.2s; */
 }
 
 nav a:hover {
@@ -184,7 +178,7 @@ nav a:hover {
 
 @media (max-width: 768px) {
     nav > ul {
-        margin: 20px 1vw;
+        margin: 20px 5vw;
     }
     nav a {
         font-size: 2.5vw;
@@ -194,7 +188,7 @@ nav a:hover {
     }
     .main > div {
         font-size: 4vw;
-        padding: 1vw;
+        padding: 5vw;
     }
     .proyectos {
         display: grid;
