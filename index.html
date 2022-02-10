@@ -1,263 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>PORTAFOLIO</title>
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- ANIMEJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-
-    <!-- BOOTSTRAP -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-    <!-- FONTS -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Cormorant:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Cinzel&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- IONICONS -->
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-
-    <!-- SCROLL REVEAL ANIMATIONS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css"
-    />
-    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
-
-    <!-- SIMPLE PARALLAX -->
-    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.0.2/dist/simpleParallax.min.js"></script>
-  </head>
-  <body>
-    <!-- HERO SECTION -->
-    <a name="home"></a>
-    <div class="wrapper">
-      <section class="hero-section">
-        <!-- LOGO -->
-        <div class="hero-logo">JG</div>
-
-        <!-- TOGGLE BUTTON -->
-        <div class="menu-toggle">
-          <ion-icon name="menu"></ion-icon>
-        </div>
-
-        <!-- SOCIAL MEDIA ICONS -->
-        <div class="media">
-          <ul>
-            <li>
-              <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
-            </li>
-            <li>
-              <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-            </li>
-            <li>
-              <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- VIEW PHOTOS LINK -->
-        <div class="view-photos">
-          <a href="#projects">ver projectos</a>
-        </div>
-
-        <!-- HERO-IMAGE -->
-        <div class="hero-img">
-          <img src="src/perfil.png" class="hero-img-parallax" />
-        </div>
-
-        <!-- HERO-TITLE -->
-        <div class="hero-title">
-          <h1>Joaquin Garcia</h1>
-        </div>
-        <div class="overlay">
-          <div class="close-btn">
-            <ion-icon name="close"></ion-icon>
-          </div>
-          <div class="menu">
-            <ul>
-              <li>
-                <a href="#home">Inicio</a>
-              </li>
-              <li>
-                <a href="#about">Sobre mi</a>
-              </li>
-              <li>
-                <a href="#projects">Proyectos</a>
-              </li>
-              <li>
-                <a href="#contact">Contacto</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <a name="about"></a>
-      <section class="about-section">
-        <div class="container">
-          <div class="row">
-            <div class="about-heading col-lg-6">
-              <h1 class="wow fadeInUp" data-wow-delay="0.2s">Sobre mi</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PORTAFOLIO | Joaquin Garcia</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="main">
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobremi">Sobre mi</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                </ul>
+            </nav>
+            <div id="inicio">
+                <h1>
+                    HOLA <br />
+                    SOY <firma>Joaquin Garcia</firma> <br />
+                    <h5>DESARROLLADOR WEB</h5>
+                </h1>
             </div>
-            <div class="about-content col-lg-6">
-              <h3 class="wow fadeInUp" data-wow-delay="0.3s">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Nesciunt esse autem hic!
-              </h3>
-              <p class="wow fadeInUp" data-wow-delay="0.4s">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore
-                asperiores voluptates, tenetur incidunt libero at aut culpa
-                atque ab repellat deserunt ullam eaque eum.
-              </p>
-              <p class="wow fadeInUp" data-wow-delay="0.5s">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae quod magnam sequi enim quo laudantium soluta
-                blanditiis quia consectetur, expedita temporibus, cum officiis
-                totam doloremque unde harum dolor, veritatis quae sunt!
-                Repellendus, qui. Corporis voluptas optio doloribus, at quidem
-                cumque?
-              </p>
-              <div class="about-link wow fadeInUp" data-wow-delay="0.6s">
-                <a href="#contact">Mas Info</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <a name="projects"></a>
-      <section class="project-section">
-        <div class="container-fluid">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="arrow-down">
-                  <ion-icon
-                    name="arrow-down"
-                    class="wow fadeInUp"
-                    data-wow-delay="0.2s"
-                  ></ion-icon>
-                </div>
-              </div>
-              <div class="project-heading col-lg-6">
-                <h1 class="wow fadeInUp" data-wow-delay="0.3s">Proyectos</h1>
-                <p class="wow fadeInUp" data-wow-delay="0.4s">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aliquam quaerat sunt architecto veritatis suscipit nostrum
-                  amet dicta ut, nobis modi.
+            <div id="sobremi">
+                <h1>Sobre mi</h1>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Ipsa quas iste ex, expedita qui exercitationem voluptate
+                    enim officiis rerum culpa earum voluptas minus consectetur
+                    cumque. Doloribus, obcaecati quia! Amet, natus!
                 </p>
-              </div>
             </div>
-          </div>
-          <div class="projects">
-            <div class="row project-row">
-              <div class="project project-1 col-lg-6">
-                <img
-                  src="src/img1.jpeg"
-                  class="project-1-img project-img img-responsive fit-image"
-                />
-              </div>
-              <div class="project project-2 col-lg-6">
-                <img
-                  src="src/img2.jpeg"
-                  class="project-2-img project-img img-responsive fit-image"
-                />
-              </div>
+            <div id="proyectos">
+                <h1>Proyectos</h1>
+                <div class="proyectos"></div>
             </div>
-            <div class="row project-row">
-              <div class="project project-3 col-lg-6">
-                <img
-                  src="src/img3.jpeg"
-                  class="project-3-img project-img img-responsive fit-image"
-                />
-              </div>
-              <div class="project project-4 col-lg-6">
-                <img
-                  src="src/img4.jpeg"
-                  class="project-4-img project-img img-responsive fit-image"
-                />
-              </div>
+            <div id="habilidades">
+                <h1>Habilidades</h1>
             </div>
-            <div class="row project-row">
-              <div class="project project-5 col-lg-6">
-                <img
-                  src="src/img1.jpeg"
-                  class="project-5-img project-img img-responsive fit-image"
-                />
-              </div>
-              <div class="project project-6 col-lg-6">
-                <img
-                  src="src/img2.jpeg"
-                  class="project-6-img project-img img-responsive fit-image"
-                />
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
 
-      <a name="contact"></a>
-      <section class="social-media">
-        <div class="container">
-          <div class="row">
-            <div class="sm-heading col-lg-6">
-              <h1 class="wow fadeInUp" data-wow-delay="0.2s">Contacto</h1>
-            </div>
-            <div class="sm-content col-lg-6">
-              <h3 class="wow fadeInUp" data-wow-delay="0.4s">
-                djoako22@gmail.com
-              </h3>
-              <p class="wow fadeInUp" data-wow-delay="0.5s">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Incidunt quo similique eaque ducimus quibusdam, dolorum
-                reprehenderit cumque. Dolorem, placeat. Similique!
-              </p>
-              <p class="wow fadeInUp" data-wow-delay="0.6s">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio ducimus natus hic dolorem voluptate dolore officiis
-                neque aperiam similique! Obcaecati vel et atque nesciunt quia
-                quis expedita nulla, cum autem eius itaque incidunt, ut delectus
-                vitae. Cupiditate minima debitis aliquam!
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-12 text-left">
-            <div class="social-icons">
-              <ul>
-                <li class="wow fadeInUp" data-wow-delay="0.7s">
-                  <a href="#">whatsapp</a>
-                </li>
-                <li class="wow fadeInUp" data-wow-delay="0.8s">
-                  <a href="#">instagram</a>
-                </li>
-                <li class="wow fadeInUp" data-wow-delay="0.9s">
-                  <a href="#">facebook</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <script src="main.js"></script>
-  </body>
+        <script src="index.js"></script>
+    </body>
 </html>

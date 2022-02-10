@@ -1,288 +1,203 @@
+@font-face {
+    font-family: 'Amalfi Coast';
+    src: url(src/Amalfi\ Coast.ttf);
+}
+@font-face {
+    font-family: 'Galderglynn';
+    src: url(src/galderglynn\ titling\ rg.ttf);
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Galderglynn';
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+firma {
+    font-family: 'Amalfi Coast';
+    text-decoration: underline;
+    font-size: 2.5ch;
+    font-weight: 800;
 }
 
-.hero-section {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100vh;
-  background: #0f0f0f;
+.main {
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    max-height: 100vh;
 }
 
-.hero-logo {
-  position: fixed;
-  margin: 2em;
-  color: white;
-  font-family: "Cosi Azure";
-  font-style: 16px;
-  mix-blend-mode: difference;
-  z-index: 2;
+.main > div {
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2vw;
+    height: 100vh;
+    padding: 0 10vw;
 }
 
-.menu-toggle {
-  position: fixed;
-  right: 0;
-  margin: 2em;
-  color: white;
-  z-index: 1;
+#inicio {
+    background-color: #38f88b;
 }
 
-.menu-toggle ion-icon {
-  font-style: 16px;
+#sobremi {
+    background-color: #fff;
+    color: #111;
 }
 
-.overlay {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: #0f0f0f;
-  z-index: 1;
-  opacity: 0;
+#habilidades {
+    background-color: #4f23e2;
 }
 
-.overlay ion-icon {
-  position: fixed;
-  right: 0;
-  margin: 2em;
-  color: white;
+#proyectos {
+    background-color: #111;
+    color: #fff;
 }
 
-.overlay ul {
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  list-style: none;
+.proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin: 10px 0;
+    font-size: 50%;
 }
 
-.overlay ul li {
-  font-size: 84px;
+.proyecto {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
 }
 
-@media (max-width: 900px) {
-  .overlay ul li {
-    font-size: 30px;
+.proyecto img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.contenido {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    z-index: -1;
+}
+
+.proyecto:hover .contenido {
+    background-color: #11111190;
+    color: #fff;
+    z-index: 1;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.proyecto:hover img {
+    transform: scale(120%);
+    -webkit-transform: scale(120%);
+    -moz-transform: scale(120%);
+    -ms-transform: scale(120%);
+    -o-transform: scale(120%);
+    transition: transform .8s cubic-bezier(0.61, 1, 0.88, 1);
+    -webkit-transition: transform .8s cubic-bezier(0.61, 1, 0.88, 1);
+    -moz-transition: transform .8s cubic-bezier(0.61, 1, 0.88, 1);
+    -ms-transition: transform .8s cubic-bezier(0.61, 1, 0.88, 1);
+    -o-transition: transform .8s cubic-bezier(0.61, 1, 0.88, 1);
+}
+
+nav {
+    position: absolute;
+    /* Restamos el tamaño del scrollbar */
+    width: calc(100vw - 16px);
+    z-index: 1;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    margin: 20px 10vw;
+    border: #111 solid 2px;
+}
+
+nav li {
+    width: 100%;
+}
+
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #111;
     padding: 10px 0;
-  }
+    /* transition: background-color 0.2s;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    -ms-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s; */
 }
 
-.overlay ul li a {
-  color: transparent;
-  -webkit-text-stroke: 1px white;
-  font-family: "Times New Roman";
-  text-transform: uppercase !important;
+nav a:hover {
+    background-color: #111;
+    color: #38f88b;
 }
 
-.overlay ul li a:hover {
-  text-decoration: none;
-  color: white;
+.progressbar {
+    height: 10px;
+    border: #111 solid 2px;
+    color: #4f23e2;
+    text-align: center;
 }
 
-.media {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 2em;
-  z-index: 2;
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 16px;
 }
 
-.media ul {
-  list-style: none;
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }
 
-.media ul li {
-  padding: 10px 0;
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    background-clip: content-box;
 }
 
-.media ul li a {
-  color: white;
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    background-clip: content-box;
 }
 
-.view-photos {
-  position: absolute;
-  left: 0;
-  bottom: 1em;
-  margin: 2em;
-  z-index: 2;
-}
-
-.view-photos a {
-  color: white;
-  text-decoration: underline;
-  font-style: italic;
-}
-
-.view-photos a:hover {
-  color: white;
-}
-
-.hero-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  height: 400px;
-}
-
-.hero-img img {
-  width: 100%;
-  filter: grayscale(1) brightness(0.5);
-}
-
-.hero-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.hero-title h1 {
-  font-size: 80px;
-  font-weight: lighter;
-  text-transform: uppercase !important;
-  color: white;
-}
-
-@media (max-width: 900px) {
-  .hero-title .letter {
-    font-size: 24px !important;
-  }
-}
-
-.hero-title .letter {
-  display: inline-block;
-  opacity: 0;
-  font-size: 80px;
-  color: white;
-  font-family: "Times New Roman";
-  text-transform: uppercase !important;
-}
-
-.about-section {
-  padding: 120px 0;
-}
-
-.about-section h1 {
-  /* font-size: 84px; */
-  font-size: 8vw;
-  font-family: "Times New Roman";
-  text-transform: uppercase;
-}
-
-.about-section h3 {
-  font-family: Helvetica;
-  padding: 8px 0;
-  margin-bottom: 20px;
-  font-style: italic;
-}
-
-.about-link {
-  margin: 50px 0;
-}
-
-.about-link a {
-  color: black;
-  padding: 18px 36px;
-  border: 1px solid black;
-  font-size: 12px;
-  letter-spacing: 4px;
-}
-
-.about-link a:hover {
-  text-decoration: none;
-  color: white;
-  background: black;
-}
-
-.project-section {
-  background: #0f0f0f;
-  padding-top: 120px;
-  overflow: hidden;
-}
-
-.project-section h1 {
-  /* font-size: 84px; */
-  font-size: 8vw;
-  font-family: "Times New Roman";
-  text-transform: uppercase;
-  color: white;
-}
-
-.project-section p {
-  color: grey;
-  width: 100%;
-}
-
-.project-heading {
-  margin-bottom: 120px;
-}
-
-.project-section ion-icon {
-  color: white;
-  font-size: 148px;
-}
-
-.project-img {
-  width: 100%;
-  object-fit: cover;
-  height: 80vh;
-}
-
-.project {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.social-media {
-  padding: 0 0;
-  margin-top: 120px;
-}
-
-.social-media h1 {
-  /* font-size: 84px; */
-  font-size: 8vw;
-  font-family: "Times New Roman";
-  text-transform: uppercase;
-}
-
-.social-media h3 {
-  font-family: Helvetica;
-  padding: 8px 0;
-  margin-bottom: 20px;
-  font-style: italic;
-  text-decoration: underline;
-}
-
-.social-icons {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.social-icons ul {
-  margin: 80px 0 !important;
-  padding: 0 !important;
-}
-
-.social-icons ul li {
-  display: inline-block;
-  list-style: none;
-  padding-right: 40px;
-}
-
-.social-icons ul li a {
-  color: black;
-  font-style: italic;
-  font-family: "Cormorant";
+@media (max-width: 768px) {
+    nav > ul {
+        margin: 20px 1vw;
+    }
+    nav a {
+        font-size: 2.5vw;
+    }
+    firma {
+        font-size: 6vw;
+    }
+    .main > div {
+        font-size: 4vw;
+        padding: 1vw;
+    }
+    .proyectos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
