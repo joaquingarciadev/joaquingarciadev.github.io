@@ -21,9 +21,12 @@ firma {
     font-weight: 800;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .main {
     position: relative;
-    scroll-behavior: smooth;
     /* scroll-snap-type: y proximity;
     overflow: auto; */
     max-height: 100vh;
