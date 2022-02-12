@@ -13,19 +13,19 @@ let habilidades = [
 let proyectos = [
     {
         nombre: "Juego Cajero",
-        descripcion: "",
+        descripcion: "Juego para practicar y divertirte en el manejo de la caja.",
         img: "src/Juego Cajero.png",
         url: "https://djoako22.github.io/juego_cajero/",
     },
     {
-        nombre: "App Pedidos de comida",
-        descripcion: "",
+        nombre: "App para Pedidos",
+        descripcion: "App para hacer pedidos, manda los pedidoas atraves de mensaje de whatsapp.",
         img: "src/App Menus.png",
         url: "https://djoako22.github.io/juego_cajero/",
     },
     {
-        nombre: "App Alarma de cryptomonedas",
-        descripcion: "",
+        nombre: "Crypto Alarma",
+        descripcion: "Alarma de precio de criptomonedas.",
         img: "https://cdn.pixabay.com/photo/2021/03/11/12/58/laptop-6087062_1280.png",
         url: "https://djoako22.github.io/juego_cajero/",
     },
@@ -47,11 +47,10 @@ function render() {
     proyectos.forEach((proyecto) => {
         div_proyectos.innerHTML += `
         <a class="proyecto" href="${proyecto.url}">
-            <img src="${proyecto.img}" alt="" height="200">
+            <img src="${proyecto.img}" alt="">
             <div class="contenido">
                 <h1>${proyecto.nombre}</h1>
-                <p>${proyecto.descripcion}
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <p>${proyecto.descripcion}</p>
             </div>
         </a>
         `;
