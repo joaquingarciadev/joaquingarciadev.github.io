@@ -21,13 +21,19 @@ let proyectos = [
         nombre: "App para Pedidos",
         descripcion: "App para hacer pedidos, manda los pedidoas atraves de mensaje de whatsapp.",
         img: "src/App Menus.png",
-        url: "https://djoako22.github.io/juego_cajero/",
+        url: "",
     },
     {
         nombre: "Crypto Alarma",
         descripcion: "Alarma de precio de criptomonedas.",
         img: "https://cdn.pixabay.com/photo/2021/03/11/12/58/laptop-6087062_1280.png",
-        url: "https://djoako22.github.io/juego_cajero/",
+        url: "",
+    },
+    {
+        nombre: "Que comeremos hoy?",
+        descripcion: "App que te elije un plato de comida aleatoria.",
+        img: "https://cdn.pixabay.com/photo/2021/03/11/12/58/laptop-6087062_1280.png",
+        url: "",
     },
 ];
 
