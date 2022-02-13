@@ -1,26 +1,47 @@
 let habilidades = [
-    { nombre: "HTML", porcentaje: 90 },
-    { nombre: "CSS", porcentaje: 90 },
-    { nombre: "Javascript", porcentaje: 90 },
-    { nombre: "Bootstrap", porcentaje: 80 },
-    { nombre: "Git", porcentaje: 80 },
-    { nombre: "Node js", porcentaje: 80 },
-    { nombre: "React hook", porcentaje: 50 },
-    { nombre: "Web scraping, Automatización", porcentaje: 80 },
-    { nombre: "Convertir web a app movil", porcentaje: 80 },
-    { nombre: "Sintaxis de los lenguajes mas conocidos", porcentaje: 80 },
+    {
+        nombre: "<img src='src/habilidades/html-5.svg' width='30'>HTML",
+        porcentaje: 90,
+    },
+    {
+        nombre: "<img src='src/habilidades/css-3.svg' width='30'>CSS",
+        porcentaje: 90,
+    },
+    {
+        nombre: "<img src='src/habilidades/js.svg' width='30'>Javascript",
+        porcentaje: 90,
+    },
+    { nombre: "<img src='src/habilidades/react.svg' width='30'>React hook", porcentaje: 50 },
+    {
+        nombre: "<img src='src/habilidades/bootstrap.svg' width='25'>Bootstrap",
+        porcentaje: 80,
+    },
+    {
+        nombre: "<img src='src/habilidades/git.svg' width='30'>Git",
+        porcentaje: 80,
+    },
+    {
+        nombre: "<img src='src/habilidades/node-js.svg' width='30'>Node js",
+        porcentaje: 80,
+    },
+    { nombre: "<img src='src/habilidades/MongoDB.png' width='30'>Mongo DB", porcentaje: 80 },
+    { nombre: "<img src='src/habilidades/php.png' width='30'>PHP", porcentaje: 80 },
+    { nombre: "<img src='src/habilidades/sql.png' width='30'>SQL", porcentaje: 80 },
+    { nombre: "<img src='src/habilidades/data.jpg' width='30'>Web scraping, Automatización", porcentaje: 80 },
 ];
 let proyectos = [
     {
         nombre: "Juego Cajero",
-        descripcion: "Juego para practicar y divertirte en el manejo de la caja.",
-        img: "src/Juego Cajero.png",
+        descripcion:
+            "Juego para practicar y divertirte en el manejo de la caja.",
+        img: "src/proyectos/Juego Cajero.png",
         url: "https://djoako22.github.io/juego_cajero/",
     },
     {
         nombre: "App para Pedidos",
-        descripcion: "App para hacer pedidos, manda los pedidoas atraves de mensaje de whatsapp.",
-        img: "src/App Menus.png",
+        descripcion:
+            "App para hacer pedidos, manda los pedidoas atraves de mensaje de whatsapp.",
+        img: "src/proyectos/App Menus.png",
         url: "",
     },
     {
