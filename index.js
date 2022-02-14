@@ -56,6 +56,12 @@ let proyectos = [
         img: "https://cdn.pixabay.com/photo/2021/03/11/12/58/laptop-6087062_1280.png",
         url: "",
     },
+    {
+        nombre: "Scraper",
+        descripcion: "Obtiene un elemento de una url.",
+        img: "https://cdn.pixabay.com/photo/2021/03/11/12/58/laptop-6087062_1280.png",
+        url: "",
+    },
 ];
 
 const div_habilidades = document.querySelector("#habilidades");
