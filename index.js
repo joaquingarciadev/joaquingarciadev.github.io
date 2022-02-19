@@ -45,9 +45,9 @@ let proyectos = [
         url: "",
     },
     {
-        nombre: "Crypto Alarma",
+        nombre: "Cripto Alarma",
         descripcion: "Alarma de precio de criptomonedas.",
-        img: "src/proyectos/Crypto Alarma.png",
+        img: "src/proyectos/Cripto Alarma.png",
         url: "",
     },
     {
