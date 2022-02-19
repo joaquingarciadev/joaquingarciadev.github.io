@@ -47,7 +47,7 @@ let proyectos = [
     {
         nombre: "Crypto Alarma",
         descripcion: "Alarma de precio de criptomonedas.",
-        img: "https://cdn.pixabay.com/photo/2021/03/11/12/58/laptop-6087062_1280.png",
+        img: "src/proyectos/Crypto Alarma.png",
         url: "",
     },
     {
