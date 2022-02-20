@@ -11,7 +11,10 @@ let habilidades = [
         nombre: "<img src='src/habilidades/js.svg' width='30'>Javascript",
         porcentaje: 90,
     },
-    { nombre: "<img src='src/habilidades/react.svg' width='30'>React hook", porcentaje: 50 },
+    {
+        nombre: "<img src='src/habilidades/react.svg' width='30'>React hook",
+        porcentaje: 50,
+    },
     {
         nombre: "<img src='src/habilidades/bootstrap.svg' width='25'>Bootstrap",
         porcentaje: 80,
@@ -24,10 +27,22 @@ let habilidades = [
         nombre: "<img src='src/habilidades/node-js.svg' width='30'>Node js",
         porcentaje: 80,
     },
-    { nombre: "<img src='src/habilidades/MongoDB.png' width='30'>Mongo DB", porcentaje: 80 },
-    { nombre: "<img src='src/habilidades/php.png' width='30'>PHP", porcentaje: 80 },
-    { nombre: "<img src='src/habilidades/sql.png' width='30'>SQL", porcentaje: 80 },
-    { nombre: "<img src='src/habilidades/data.jpg' width='30'>Web scraping, Automatización", porcentaje: 80 },
+    {
+        nombre: "<img src='src/habilidades/MongoDB.png' width='30'>Mongo DB",
+        porcentaje: 80,
+    },
+    {
+        nombre: "<img src='src/habilidades/php.png' width='30'>PHP",
+        porcentaje: 80,
+    },
+    {
+        nombre: "<img src='src/habilidades/sql.png' width='30'>SQL",
+        porcentaje: 80,
+    },
+    {
+        nombre: "<img src='src/habilidades/data.jpg' width='30'>Web scraping, Automatización",
+        porcentaje: 80,
+    },
 ];
 let proyectos = [
     {
@@ -55,12 +70,6 @@ let proyectos = [
         descripcion: "App que te elije un plato de comida aleatoria.",
         img: "src/proyectos/Que Comemos.png",
         url: "https://djoako22.github.io/que_comemos/",
-    },
-    {
-        nombre: "Scraper",
-        descripcion: "Obtiene un elemento de una url.",
-        img: "https://cdn.pixabay.com/photo/2021/03/11/12/58/laptop-6087062_1280.png",
-        url: "",
     },
 ];
 
