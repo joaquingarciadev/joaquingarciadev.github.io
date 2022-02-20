@@ -48,13 +48,13 @@ let proyectos = [
         nombre: "Cripto Alarma",
         descripcion: "Alarma de precio de criptomonedas.",
         img: "src/proyectos/Cripto Alarma.png",
-        url: "",
+        url: "https://djoako22.github.io/cripto_alarma/",
     },
     {
-        nombre: "Que comeremos hoy?",
+        nombre: "Que comemos?",
         descripcion: "App que te elije un plato de comida aleatoria.",
-        img: "https://cdn.pixabay.com/photo/2021/03/11/12/58/laptop-6087062_1280.png",
-        url: "",
+        img: "src/proyectos/Que Comemos.png",
+        url: "https://djoako22.github.io/que_comemos/",
     },
     {
         nombre: "Scraper",
