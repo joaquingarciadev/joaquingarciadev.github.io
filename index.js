@@ -1,47 +1,47 @@
 let habilidades = [
     {
-        nombre: "<img src='src/habilidades/html-5.svg' width='30'>HTML",
-        porcentaje: 90,
+        nombre: "HTML",
+        img: "src/habilidades/html-5.svg",
     },
     {
-        nombre: "<img src='src/habilidades/css-3.svg' width='30'>CSS",
-        porcentaje: 90,
+        nombre: "CSS",
+        img: "src/habilidades/css-3.svg",
     },
     {
-        nombre: "<img src='src/habilidades/js.svg' width='30'>Javascript",
-        porcentaje: 90,
+        nombre: "Javascript",
+        img: "src/habilidades/js.svg",
     },
     {
-        nombre: "<img src='src/habilidades/react.svg' width='30'>React hook",
-        porcentaje: 50,
+        nombre: "Node JS",
+        img: "src/habilidades/node-js.svg",
     },
     {
-        nombre: "<img src='src/habilidades/bootstrap.svg' width='25'>Bootstrap",
-        porcentaje: 80,
+        nombre: "React",
+        img: "src/habilidades/react.svg",
     },
     {
-        nombre: "<img src='src/habilidades/git.svg' width='30'>Git",
-        porcentaje: 80,
+        nombre: "MongoDB",
+        img: "src/habilidades/MongoDB.png",
     },
     {
-        nombre: "<img src='src/habilidades/node-js.svg' width='30'>Node js",
-        porcentaje: 80,
+        nombre: "Git",
+        img: "src/habilidades/git.svg",
     },
     {
-        nombre: "<img src='src/habilidades/MongoDB.png' width='30'>Mongo DB",
-        porcentaje: 80,
+        nombre: "PHP",
+        img: "src/habilidades/php.png",
     },
     {
-        nombre: "<img src='src/habilidades/php.png' width='30'>PHP",
-        porcentaje: 80,
+        nombre: "MySQL",
+        img: "src/habilidades/sql.png",
     },
     {
-        nombre: "<img src='src/habilidades/sql.png' width='30'>SQL",
-        porcentaje: 80,
+        nombre: "Bootstrap",
+        img: "src/habilidades/bootstrap.svg",
     },
     {
-        nombre: "<img src='src/habilidades/data.jpg' width='30'>Web scraping, Automatización",
-        porcentaje: 80,
+        nombre: "Web Sraping",
+        img: "src/habilidades/data.jpg",
     },
 ];
 let proyectos = [
@@ -73,15 +73,16 @@ let proyectos = [
     },
 ];
 
-const div_habilidades = document.querySelector("#habilidades");
+const div_habilidades = document.querySelector(".habilidades");
 const div_proyectos = document.querySelector(".proyectos");
 
 function render() {
     // Habilidades
     habilidades.forEach((habilidad) => {
         div_habilidades.innerHTML += `
-        <span>${habilidad.nombre}</span>
-        <div class="progressbar" style="background: linear-gradient(90deg, black ${habilidad.porcentaje}%, transparent ${habilidad.porcentaje}%);">
+        <div class="habilidad" >
+            <img src=${habilidad.img} width='50'>
+            ${habilidad.nombre}
         </div>
         `;
     });

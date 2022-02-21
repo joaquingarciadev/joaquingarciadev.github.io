@@ -14,6 +14,10 @@
     font-family: "Galderglynn", sans-serif;
 }
 
+h1 {
+    margin: 10px 0;
+}
+
 firma {
     font-family: "Amalfi Coast", sans-serif;
     text-decoration: underline;
@@ -31,6 +35,7 @@ firma {
     overflow: auto;
     position: relative;
     height: 100vh;
+    text-align: center;
 }
 
 .main > div {
@@ -47,13 +52,28 @@ firma {
     background-color: #38f88b;
 }
 
-#sobremi {
-    background-color: #fff;
-    color: #111;
+/* #inicio h1 {
+    margin: 0;
+} */
+
+#sobremi p {
+    text-align: justify;
 }
 
 #habilidades {
     background-color: #4f23e2;
+}
+
+.habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.habilidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #proyectos {
@@ -69,7 +89,6 @@ firma {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
-    margin: 10px 0;
     font-size: 50%;
 }
 
@@ -143,7 +162,6 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     height: 100%;
     text-decoration: none;
     text-transform: uppercase;
@@ -157,32 +175,28 @@ nav a:hover {
     color: #38f88b;
 }
 
-.progressbar {
-    height: 10px;
-    border: #111 solid 2px;
-    color: #4f23e2;
-    text-align: center;
-}
+@media (min-width: 768px) {
+    /* SCROLLBAR */
 
-/* SCROLLBAR */
-::-webkit-scrollbar {
-    width: 16px;
-}
+    ::-webkit-scrollbar {
+        width: 16px;
+    }
 
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
+    ::-webkit-scrollbar-track {
+        background: #111;
+    }
 
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 8px;
-    border: 4px solid transparent;
-    background-clip: content-box;
-}
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 8px;
+        border: 4px solid transparent;
+        background-clip: content-box;
+    }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    background-clip: content-box;
+    ::-webkit-scrollbar-thumb:hover {
+        background: #eee;
+        background-clip: content-box;
+    }
 }
 
 @media (max-width: 768px) {
@@ -193,7 +207,7 @@ nav a:hover {
         font-size: 2.8vw;
     }
     firma {
-        font-size: 6vw;
+        font-size: 8vw;
     }
     .main > div {
         font-size: 4vw;
@@ -203,10 +217,7 @@ nav a:hover {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    ::-webkit-scrollbar {
-        display: none;
-    }
     .proyecto img {
-        height: 100px;
+        height: 25vh;
     }
 }
