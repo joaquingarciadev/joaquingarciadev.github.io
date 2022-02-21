@@ -1,8 +1,4 @@
 @font-face {
-    font-family: "Amalfi Coast";
-    src: url(src/Amalfi\ Coast.ttf);
-}
-@font-face {
     font-family: "Galderglynn";
     src: url(src/galderglynn\ titling\ rg.ttf);
 }
@@ -18,24 +14,17 @@ h1 {
     margin: 10px 0;
 }
 
-firma {
-    font-family: "Amalfi Coast", sans-serif;
-    text-decoration: underline;
-    font-size: 2.5ch;
-    font-weight: 800;
-}
-
-/* html {
+html {
     scroll-behavior: smooth;
-} */
+    text-align: center;
+}
 
 .main {
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
     overflow: auto;
     position: relative;
     height: 100vh;
-    text-align: center;
 }
 
 .main > div {
