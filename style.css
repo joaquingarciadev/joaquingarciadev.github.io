@@ -171,6 +171,34 @@ nav a:hover {
     color: #38f88b;
 }
 
+path {
+    stroke: #000;
+    fill: #000;
+    stroke-dasharray: 1580;
+    opacity: 10;
+    animation: animate 1s cubic-bezier(0, 0.23, 1, 0.1);
+    -webkit-animation: animate 1s cubic-bezier(0, 0.23, 1, 0.1);
+}
+@keyframes animate {
+    0% {
+        opacity: 0;
+        fill: none;
+        stroke-dashoffset: 1580;
+    }
+    30% {
+        opacity: 10;
+        fill: none;
+        stroke-dashoffset: 1580;
+    }
+    90% {
+        fill: rgba(255, 255, 255, 0);
+    }
+    100% {
+        opacity: 10;
+        fill: #000;
+        stroke-dashoffset: 0;
+    }
+}
 @media (min-width: 768px) {
     /* SCROLLBAR */
 
