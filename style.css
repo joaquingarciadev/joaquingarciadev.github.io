@@ -261,7 +261,7 @@ path {
         padding: 5vw;
     }
     .proyecto {
-        width: calc(100% / 2);
+        width: calc((100% / 2) - 10px);
         height: 25vh;
     }
 
