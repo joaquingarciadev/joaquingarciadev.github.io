@@ -50,26 +50,30 @@ let proyectos = [
         descripcion:
             "Juego para practicar y divertirte en el manejo de la caja.",
         img: "src/proyectos/Juego Cajero.png",
-        url: "https://djoako22.github.io/juego_cajero/",
+        demo: "https://djoako22.github.io/juego_cajero/",
+        repo: "https://github.com/Djoako22/juego_cajero",
     },
     {
         nombre: "App para Pedidos",
         descripcion:
             "App para hacer pedidos, manda los pedidoas atraves de mensaje de whatsapp.",
         img: "src/proyectos/App Menus.png",
-        url: "",
+        demo: "https://github.com/Djoako22/app_pedidos",
+        repo: "https://github.com/Djoako22/app_pedidos",
     },
     {
         nombre: "Cripto Alarma",
         descripcion: "Alarma de precio de criptomonedas.",
         img: "src/proyectos/Cripto Alarma.png",
-        url: "https://djoako22.github.io/cripto_alarma/",
+        demo: "https://djoako22.github.io/cripto_alarma/",
+        repo: "https://github.com/Djoako22/cripto_alarma",
     },
     {
         nombre: "Que comemos?",
         descripcion: "App que te elije un plato de comida aleatoria.",
         img: "src/proyectos/Que Comemos.png",
-        url: "https://djoako22.github.io/que_comemos/",
+        demo: "https://djoako22.github.io/que_comemos/",
+        repo: "https://github.com/Djoako22/que_comemos",
     },
 ];
 
@@ -89,13 +93,17 @@ function render() {
     // Proyectos
     proyectos.forEach((proyecto) => {
         div_proyectos.innerHTML += `
-        <a class="proyecto" href="${proyecto.url}">
+        <div class="proyecto">
             <img src="${proyecto.img}" alt="">
             <div class="contenido">
                 <h1>${proyecto.nombre}</h1>
                 <p>${proyecto.descripcion}</p>
+                <div>
+                    <a class="btn_proyecto" href="${proyecto.demo}">DEMO</a>
+                    <a class="btn_proyecto" href="${proyecto.repo}">REPO</a>
+                </div>
             </div>
-        </a>
+        </div>
         `;
     });
 }

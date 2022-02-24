@@ -3,7 +3,7 @@
     src: url(src/galderglynn\ titling\ rg.ttf);
 }
 
-* {
+*, ::before, ::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,6 +17,45 @@ h1 {
 html {
     scroll-behavior: smooth;
     text-align: center;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    margin: 20px 10vw;
+    border: #111 solid 2px;
+}
+
+nav li {
+    width: calc(100% / 4);
+}
+
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #111;
+    padding: 10px 0;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+}
+
+nav a:hover {
+    background-color: #111;
+    color: #38f88b;
 }
 
 .main {
@@ -50,12 +89,14 @@ html {
 }
 
 .habilidades {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .habilidad {
+    width: calc(100% / 3);
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,46 +112,52 @@ html {
 }
 
 .proyectos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     font-size: 50%;
 }
 
-.proyecto {
+.proyecto{
+    width: calc((100% / 3) - 10px);
+    height: 200px;
+    margin: 5px;
     position: relative;
-    cursor: pointer;
     overflow: hidden;
 }
 
 .proyecto img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
 }
 
 .contenido {
     position: absolute;
     top: 0;
-    padding: 10px;
     width: 100%;
     height: 100%;
+    padding: 5px;
     color: transparent;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     z-index: -1;
 }
 
+.contenido h1 {
+    margin: 0;
+}
+
 .proyecto:hover .contenido {
-    background-color: #11111190;
+    background-color: #111111ca;
     color: #fff;
     z-index: 1;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
 }
 
 .proyecto:hover img {
@@ -126,38 +173,23 @@ html {
     -o-transition: transform 0.5s;
 }
 
-nav {
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-}
-
-nav > ul {
-    display: flex;
-    list-style: none;
-    margin: 20px 10vw;
-    border: #111 solid 2px;
-}
-
-nav li {
-    width: 100%;
-}
-
-nav a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.btn_proyecto {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 10px;
+    color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #111;
-    padding: 10px 0;
+    border: solid 2px #fff;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
 }
 
-nav a:hover {
-    background-color: #111;
-    color: #38f88b;
+.btn_proyecto:hover {
+    background-color: #fff;
+    color: #111;
 }
 
 path {
@@ -167,7 +199,8 @@ path {
     opacity: 10;
     animation: animate 1s cubic-bezier(0, 0.23, 1, 0.1);
     -webkit-animation: animate 1s cubic-bezier(0, 0.23, 1, 0.1);
-}
+}  
+
 @keyframes animate {
     0% {
         opacity: 0;
@@ -188,6 +221,7 @@ path {
         stroke-dashoffset: 0;
     }
 }
+
 @media (min-width: 768px) {
     /* SCROLLBAR */
 
@@ -226,11 +260,9 @@ path {
         font-size: 4vw;
         padding: 5vw;
     }
-    .proyectos {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .proyecto img {
+    .proyecto {
+        width: calc(100% / 2);
         height: 25vh;
     }
+
 }
