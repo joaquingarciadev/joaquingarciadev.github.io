@@ -1,3 +1,24 @@
+document.addEventListener(
+    "scroll",
+    (e) => {
+        if (
+            document.querySelector(".main").scrollTop ==
+            document.querySelector("#proyectos").offsetTop
+        ) {
+            document.querySelector("nav > ul").style.border = "#fff solid 2px";
+            document.querySelectorAll("nav a").forEach((e) => {
+                e.classList.add("navdark");
+            });
+        } else {
+            document.querySelector("nav > ul").style.border = "#111 solid 2px";
+            document.querySelectorAll("nav a").forEach((e) => {
+                e.classList.remove("navdark");
+            });
+        }
+    },
+    true
+);
+
 let habilidades = [
     {
         nombre: "HTML",
