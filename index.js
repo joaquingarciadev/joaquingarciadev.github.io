@@ -3,7 +3,7 @@ document.addEventListener(
     (e) => {
         if (
             document.querySelector(".main").scrollTop >=
-            document.querySelector("#proyectos").offsetTop - 50
+            document.querySelector("#proyectos").offsetTop - 0
         ) {
             document.querySelector("nav > ul").style.border = "#fff solid 2px";
             document.querySelectorAll("nav a").forEach((e) => {
