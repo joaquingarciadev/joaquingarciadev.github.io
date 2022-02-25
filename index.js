@@ -61,8 +61,12 @@ let habilidades = [
         img: "src/habilidades/bootstrap.svg",
     },
     {
+        nombre: "Wordpress",
+        img: "src/habilidades/wordpress.png",
+    },
+    {
         nombre: "Web Sraping",
-        img: "src/habilidades/data.jpg",
+        img: "src/habilidades/data.png",
     },
 ];
 let proyectos = [
@@ -106,7 +110,7 @@ function render() {
     habilidades.forEach((habilidad) => {
         div_habilidades.innerHTML += `
         <div class="habilidad" >
-            <img src=${habilidad.img} width='50'>
+            <img src=${habilidad.img} width='50' style="border-radius: 50%;">
             ${habilidad.nombre}
         </div>
         `;
