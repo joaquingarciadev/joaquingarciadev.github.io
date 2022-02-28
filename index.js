@@ -79,11 +79,11 @@ let proyectos = [
         repo: "https://github.com/Djoako22/juego_cajero",
     },
     {
-        nombre: "App para Pedidos",
+        nombre: "Pedidos",
         descripcion:
             "App para hacer pedidos, manda los pedidoas atraves de mensaje de whatsapp.",
         img: "src/proyectos/App Menus.png",
-        demo: "https://github.com/Djoako22/app_pedidos",
+        demo: "https://djoako22.github.io/app_pedidos",
         repo: "https://github.com/Djoako22/app_pedidos",
     },
     {
