@@ -14,6 +14,10 @@ h1 {
     margin: 10px 0;
 }
 
+p {
+    font-family: sans-serif;
+}
+
 html {
     scroll-behavior: smooth;
     text-align: center;
@@ -92,10 +96,6 @@ nav a:hover {
     text-align: justify;
 }
 
-.info {
-    text-align: end;
-}
-
 .info a {
     color: #111;
     text-decoration: none;
@@ -171,7 +171,7 @@ nav a:hover {
     z-index: -1;
 }
 
-.contenido h1 {
+.contenido * {
     margin: 0;
 }
 
