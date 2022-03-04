@@ -79,6 +79,7 @@ nav a:hover {
 }
 
 .main > div {
+    position: relative;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
@@ -90,6 +91,18 @@ nav a:hover {
 
 #inicio {
     background-color: #38f88b;
+}
+
+#arrow {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    filter: invert();
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 #sobremi p {
