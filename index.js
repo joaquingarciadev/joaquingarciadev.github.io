@@ -100,6 +100,13 @@ let proyectos = [
         demo: "https://djoako22.github.io/que_comemos/",
         repo: "https://github.com/Djoako22/que_comemos",
     },
+    {
+        nombre: "Login Stack MERN",
+        descripcion: "App login realizada con en el stack MERN.",
+        img: "src/proyectos/loginmern.png",
+        demo: "https://loginmern.netlify.app/",
+        repo: "https://loginmern.netlify.app/",
+    },
 ];
 
 const div_habilidades = document.querySelector(".habilidades");
