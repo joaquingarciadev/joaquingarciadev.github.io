@@ -3,7 +3,7 @@ document.addEventListener(
     (e) => {
         if (
             document.querySelector(".main").scrollTop >=
-            document.querySelector("#proyectos").offsetTop - 10
+            document.querySelector("#contacto").offsetTop - 10
         ) {
             document.querySelector("nav > ul").style.border = "#fff solid 2px";
             document.querySelectorAll("nav a").forEach((e) => {
@@ -18,6 +18,21 @@ document.addEventListener(
     },
     true
 );
+
+document.querySelector(".btn_nav").addEventListener("click", (e) => {
+    document.querySelector(".btn_nav").classList.toggle("active");
+    document.querySelectorAll('li > a').forEach((e) => {
+        e.addEventListener('click', (e) => {
+            document.querySelector(".btn_nav").classList.remove("active");
+            document.querySelector("ul").style.visibility = "hidden";
+        })
+    });
+    if (document.querySelector(".btn_nav").classList.contains("active")) {
+        document.querySelector("ul").style.visibility = "visible";
+    } else {
+        document.querySelector("ul").style.visibility = "hidden";
+    }
+});
 
 let habilidades = [
     {
@@ -99,6 +114,13 @@ let proyectos = [
         img: "src/proyectos/Que Comemos.png",
         demo: "https://djoako22.github.io/que_comemos/",
         repo: "https://github.com/Djoako22/que_comemos",
+    },
+    {
+        nombre: "Login Stack MERN",
+        descripcion: "App login realizada con en el stack MERN.",
+        img: "src/proyectos/loginmern.png",
+        demo: "https://loginmern.netlify.app/",
+        repo: "https://loginmern.netlify.app/",
     },
 ];
 

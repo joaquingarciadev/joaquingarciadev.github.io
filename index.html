@@ -9,15 +9,18 @@
         <link rel="shortcut icon" href="src/perfil.jpg" />
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobremi">Sobre mi</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-            </ul>
-        </nav>
         <div class="main">
+            
+            <nav>
+                <button class="btn_nav">=</button>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobremi">Sobre mi</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
             <div id="inicio">
                 <h1>
                     HOLA, SOY <br />
@@ -177,23 +180,29 @@
                 <img id="arrow" src="src/arrow.gif" alt="" width="100" />
             </div>
             <div id="sobremi">
-                <h1>Sobre mi</h1>
-                <p>
-                    Me especializo en crear sitios web y aplicaciones utilizando
-                    las tecnologías web más recientes. Durante el proceso de
-                    desarrollo, me adhiero a las soluciones que proporcionen la
-                    máxima experiencia de usuario con un diseño minimalista.
-                </p>
-                <br />
-                <div class="info">
-                    <hr />
-                    <a
-                        href="https://drive.google.com/file/d/1WZGm2og2cYLhSz2fDTbObDclRtaFWQDK/preview"
-                        >CV</a
-                    >
-                    <a href="mailto:djoako22@gmail.com">EMAIL</a>
-                    <a href="https://github.com/Djoako22">GITHUB</a>
-                </div>
+                <section>
+                    <img src="src/perfil_lk.jpg" alt="" />
+                </section>
+                <section>
+                    <h1>Sobre mi</h1>
+                    <p>
+                        Me especializo en crear sitios web y aplicaciones
+                        utilizando las tecnologías web más recientes. Durante el
+                        proceso de desarrollo, me adhiero a las soluciones que
+                        proporcionen la máxima experiencia de usuario con un
+                        diseño minimalista.
+                    </p>
+                    <br />
+                    <!-- <hr /> -->
+                    <div class="info">
+                        <a
+                            href="https://drive.google.com/file/d/1WZGm2og2cYLhSz2fDTbObDclRtaFWQDK/preview"
+                            >CV</a
+                        >
+                        <a href="mailto:djoako22@gmail.com">EMAIL</a>
+                        <a href="https://github.com/Djoako22">GITHUB</a>
+                    </div>
+                </section>
             </div>
             <div id="habilidades">
                 <h1>Habilidades</h1>
@@ -202,6 +211,16 @@
             <div id="proyectos">
                 <h1>Proyectos</h1>
                 <div class="proyectos"></div>
+            </div>
+            <div id="contacto">
+                <h1>Contacto</h1>
+                <div class="Contacto">
+                    <form action="">
+                        <input type="email" placeholder="Email"/>
+                        <textarea rows="10" cols="60" placeholder="Mensaje"></textarea>
+                        <button>Enviar</button>
+                    </form>
+                </div>
             </div>
         </div>
 

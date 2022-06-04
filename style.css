@@ -15,7 +15,8 @@ h1 {
 }
 
 p {
-    font-family: sans-serif;
+    font-family: "Segoe UI", "Roboto", sans-serif;
+    text-align: justify;
 }
 
 html {
@@ -24,11 +25,13 @@ html {
 }
 
 nav {
+    width: calc(100% - 16px);
+    /* Restamos el ancho del SCROLLBAR */
     position: fixed;
     z-index: 500;
 }
 
-nav > ul {
+nav ul {
     display: flex;
     list-style: none;
     margin: 20px 10vw;
@@ -36,7 +39,7 @@ nav > ul {
 }
 
 nav li {
-    width: calc(100% / 4);
+    width: calc(100% / 5);
 }
 
 nav a {
@@ -46,9 +49,10 @@ nav a {
     height: 100%;
     text-decoration: none;
     text-transform: uppercase;
+    font-size: 16px;
     font-weight: 600;
     color: #111;
-    padding: 10px 0;
+    padding: 16px 30px;
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -59,6 +63,16 @@ nav a {
 nav a:hover {
     background-color: #111;
     color: #fff;
+}
+
+.btn_nav {
+    position: absolute;
+    top: 20px;
+    right: 5vw;
+    padding: 0;
+    font-size: 4rem;
+    background-color: transparent;
+    border: none;
 }
 
 .navdark {
@@ -105,14 +119,25 @@ nav a:hover {
     -o-transform: translateX(-50%);
 }
 
-#sobremi p {
-    text-align: justify;
+#sobremi {
+    display: grid;
+    grid-template-columns: 1fr 60%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+#sobremi img {
+    width: 90%;
+    object-fit: cover;
+    aspect-ratio: 1;
 }
 
 .info a {
     color: #111;
+    font-size: 16px;
     text-decoration: none;
-    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .info a:hover {
@@ -128,7 +153,7 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #6a5acd;
-    box-shadow: #111 10px 10px;
+    box-shadow: #111 5px 5px;
     padding: 10px;
 }
 
@@ -138,15 +163,6 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#proyectos {
-    /* display: inline-block;
-    padding: 150px 10vw;
-    height: auto;
-    */
-    background-color: #111;
-    color: #fff;
 }
 
 .proyectos {
@@ -163,6 +179,8 @@ nav a:hover {
     margin: 5px;
     position: relative;
     overflow: hidden;
+    border: #000 solid 2px;
+    box-shadow: #111 5px 5px;
 }
 
 .proyecto img {
@@ -177,45 +195,65 @@ nav a:hover {
     width: 100%;
     height: 100%;
     padding: 5px;
-    color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 5px;
     z-index: -1;
 }
 
 .contenido * {
+    text-align: center;
     margin: 0;
+}
+
+.proyecto:hover {
+    box-shadow: 0px 0px;
+    transform: translate(5px, 5px);
+    transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .proyecto:hover .contenido {
     background-color: #111111ca;
     color: #fff;
     z-index: 1;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
+    transition: all 0.2s;
 }
 
-.proyecto:hover img {
-    transform: scale(120%);
-    -webkit-transform: scale(120%);
-    -moz-transform: scale(120%);
-    -ms-transform: scale(120%);
-    -o-transform: scale(120%);
-    transition: transform 0.5s;
-    -webkit-transition: transform 0.5s;
-    -moz-transition: transform 0.5s;
-    -ms-transition: transform 0.5s;
-    -o-transition: transform 0.5s;
+#contacto {
+    background-color: #000;
+    color: #fff;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+button,
+input,
+textarea {
+    padding: 16px 30px;
+    font-size: 16px;
+    border-radius: 0;
+    border: #fff solid 1px;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+textarea {
+    background-color: transparent;
+    color: #fff;
 }
 
 .btn_proyecto {
     display: inline-block;
     margin-top: 5px;
-    padding: 10px;
+    padding: 16px 30px;
     color: #fff;
     text-decoration: none;
     border: solid 2px #fff;
@@ -262,11 +300,12 @@ path {
 }
 
 @media (min-width: 768px) {
-    nav {
-        width: calc(100% - 16px);
+    .btn_nav {
+        display: none;
     }
-    /* SCROLLBAR */
-
+    nav ul {
+        visibility: visible;
+    }
     ::-webkit-scrollbar {
         width: 16px;
     }
@@ -289,24 +328,41 @@ path {
 }
 
 @media (max-width: 768px) {
+    .btn_nav {
+        display: inline-block;
+    }
     nav {
         width: 100%;
     }
-    nav > ul {
-        margin: 20px 5vw;
+    nav ul {
+        visibility: hidden;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
     }
-    nav a {
-        font-size: 2.8vw;
+    nav li {
+        width: 100%;
+    }
+    li > a {
+        color: #fff;
+        transition: none;
     }
     firma {
         font-size: 8vw;
     }
     .main > div {
-        font-size: 4vw;
         padding: 5vw;
     }
     .proyecto {
         width: calc((100% / 2) - 10px);
+        /* Divido por la cantidad de columnas que quiero que se muestren */
+        /* Los 10px son del padding para que las columnas no se rompan */
+        /* Las columnas se rompen cuando llegan a un ancho maximo */
         height: 25vh;
     }
 }
