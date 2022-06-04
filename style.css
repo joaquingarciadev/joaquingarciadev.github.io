@@ -68,7 +68,7 @@ nav a:hover {
 .btn_nav {
     position: absolute;
     top: 20px;
-    right: 5vw;
+    right: 4.5vw;
     padding: 0;
     font-size: 4rem;
     background-color: transparent;
@@ -98,7 +98,6 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 2vw;
     min-height: 100vh;
     padding: 0 10vw;
 }
@@ -357,6 +356,19 @@ path {
     }
     .main > div {
         padding: 5vw;
+    }
+    #sobremi {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding-top: 100px;
+    }
+    #sobremi img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 1;
+    }
+    .section_2 {
+        align-self: baseline;
     }
     .proyecto {
         width: calc((100% / 2) - 10px);
