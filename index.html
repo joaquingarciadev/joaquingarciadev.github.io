@@ -10,7 +10,6 @@
     </head>
     <body>
         <div class="main">
-            
             <nav>
                 <button class="btn_nav">&equals;</button>
                 <ul>
@@ -215,10 +214,26 @@
             <div id="contacto">
                 <h1>Contacto</h1>
                 <div class="Contacto">
-                    <form action="">
-                        <input type="email" placeholder="Email"/>
-                        <input type="text" rows="50" cols="60" placeholder="Mensaje">
-                        <button>Enviar</button>
+                    <form
+                        action="https://formsubmit.co/djoako22@gmail.com"
+                        method="post"
+                    >
+                        <input type="text" name="name" placeholder="Nombre" />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                            title="Ingrese un email válido"
+                        />
+                        <textarea
+                            name="message"
+                            id=""
+                            cols="30"
+                            rows="10"
+                            placeholder="Mensaje"
+                        ></textarea>
+                        <button type="submit">Enviar</button>
                     </form>
                 </div>
             </div>

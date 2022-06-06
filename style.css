@@ -165,18 +165,18 @@ nav a:hover {
 }
 
 .proyectos {
-    /* display: flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center; */
-    display: grid;
+    justify-content: center;
+    /* display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     font-size: 50%;
     margin: 0 -5px;
 }
 
 .proyecto {
-    /* width: calc((100% / 3) - 10px); */
+    width: calc((100% / 3) - 10px);
     height: 200px;
     margin: 5px;
     position: relative;
@@ -239,7 +239,8 @@ textarea {
     padding: 16px 30px;
     font-size: 16px;
     border-radius: 0;
-    border: #f5f5f5 solid 1px;
+    outline: #f5f5f5 solid 1px;
+    border: none;
 }
 
 button {
@@ -250,6 +251,11 @@ input,
 textarea {
     background-color: transparent;
     color: #f5f5f5;
+}
+
+input:focus,
+textarea:focus {
+    outline: #f5f5f5 solid 2px;
 }
 
 .btn_proyecto {
@@ -374,11 +380,11 @@ path {
     .section_2 {
         align-self: baseline;
     }
-    /* .proyecto { */
-        /* width: calc((100% / 2) - 10px); */
+    .proyecto {
+        width: calc((100% / 2) - 10px);
         /* Divido por la cantidad de columnas que quiero que se muestren */
         /* Los 10px son del padding para que las columnas no se rompan */
         /* Las columnas se rompen cuando llegan a un ancho maximo */
-        /* height: 25vh; */
-    /* } */
+        height: 25vh;
+    }
 }
