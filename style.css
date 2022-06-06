@@ -22,6 +22,11 @@ p, .btn_nav {
 html {
     scroll-behavior: smooth;
     text-align: center;
+    height: -webkit-fill-available;
+}
+
+body, .main {
+    height: -webkit-fill-available;
 }
 
 nav {
@@ -100,6 +105,7 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
+    height: -webkit-fill-available;
     padding: 0 10vw;
 }
 
