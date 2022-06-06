@@ -25,7 +25,7 @@ html {
     height: -webkit-fill-available;
 }
 
-body, .main {
+body {
     height: -webkit-fill-available;
 }
 
@@ -97,6 +97,7 @@ nav a:hover {
     overflow: auto;
     position: relative;
     height: 100vh;
+    height: -webkit-fill-available;
 }
 
 .main > div {
@@ -377,7 +378,7 @@ path {
     #sobremi {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        padding-top: 100px;
+        padding-top: 50px;
         text-align: center;
     }
     #sobremi img {
