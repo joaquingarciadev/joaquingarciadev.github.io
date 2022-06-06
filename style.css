@@ -106,7 +106,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 100%;
     height: -webkit-fill-available;
     padding: 0 10vw;
 }
