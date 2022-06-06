@@ -14,7 +14,7 @@ h1 {
     margin: 10px 0;
 }
 
-p {
+p, .btn_nav {
     font-family: "Segoe UI", "Roboto", sans-serif;
     text-align: justify;
 }
@@ -35,7 +35,7 @@ nav ul {
     display: flex;
     list-style: none;
     margin: 20px 10vw;
-    border: #111 solid 2px;
+    border: #1f1f1f solid 2px;
 }
 
 nav li {
@@ -51,7 +51,7 @@ nav a {
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
-    color: #111;
+    color: #1f1f1f;
     padding: 16px 30px;
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
@@ -61,14 +61,14 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #111;
-    color: #fff;
+    background-color: #1f1f1f;
+    color: #f5f5f5;
 }
 
 .btn_nav {
     position: absolute;
     top: 20px;
-    right: 4.5vw;
+    right: calc(5vw + 16px);
     padding: 0;
     font-size: 4rem;
     background-color: transparent;
@@ -76,12 +76,12 @@ nav a:hover {
 }
 
 .navdark {
-    color: #fff;
+    color: #f5f5f5;
 }
 
 .navdark:hover {
-    background-color: #fff;
-    color: #111;
+    background-color: #f5f5f5;
+    color: #1f1f1f;
 }
 
 .main {
@@ -133,7 +133,7 @@ nav a:hover {
 }
 
 .info a {
-    color: #111;
+    color: #1f1f1f;
     font-size: 16px;
     text-decoration: none;
     margin-right: 20px;
@@ -152,7 +152,7 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #6a5acd;
-    box-shadow: #111 5px 5px;
+    box-shadow: #1f1f1f 5px 5px;
     padding: 10px;
 }
 
@@ -165,21 +165,24 @@ nav a:hover {
 }
 
 .proyectos {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; */
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     font-size: 50%;
     margin: 0 -5px;
 }
 
 .proyecto {
-    width: calc((100% / 3) - 10px);
+    /* width: calc((100% / 3) - 10px); */
     height: 200px;
     margin: 5px;
     position: relative;
     overflow: hidden;
-    border: #000 solid 2px;
-    box-shadow: #111 5px 5px;
+    border: #1f1f1f solid 2px;
+    box-shadow: #1f1f1f 5px 5px;
 }
 
 .proyecto img {
@@ -213,15 +216,15 @@ nav a:hover {
 }
 
 .proyecto:hover .contenido {
-    background-color: #111111ca;
-    color: #fff;
+    background-color: #1f1f1fca;
+    color: #f5f5f5;
     z-index: 1;
     transition: all 0.2s;
 }
 
 #contacto {
-    background-color: #000;
-    color: #fff;
+    background-color: #1f1f1f;
+    color: #f5f5f5;
 }
 
 #contacto form {
@@ -236,7 +239,7 @@ textarea {
     padding: 16px 30px;
     font-size: 16px;
     border-radius: 0;
-    border: #fff solid 1px;
+    border: #f5f5f5 solid 1px;
 }
 
 button {
@@ -246,16 +249,16 @@ button {
 input,
 textarea {
     background-color: transparent;
-    color: #fff;
+    color: #f5f5f5;
 }
 
 .btn_proyecto {
     display: inline-block;
     margin-top: 5px;
     padding: 16px 30px;
-    color: #fff;
+    color: #f5f5f5;
     text-decoration: none;
-    border: solid 2px #fff;
+    border: solid 2px #f5f5f5;
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -264,13 +267,13 @@ textarea {
 }
 
 .btn_proyecto:hover {
-    background-color: #fff;
-    color: #111;
+    background-color: #f5f5f5;
+    color: #1f1f1f;
 }
 
 path {
-    stroke: #000;
-    fill: #000;
+    stroke: #1f1f1f;
+    fill: #1f1f1f;
     stroke-dasharray: 1580;
     opacity: 10;
     animation: animate 1s cubic-bezier(0, 0.23, 1, 0.1);
@@ -293,7 +296,7 @@ path {
     }
     100% {
         opacity: 10;
-        fill: #000;
+        fill: #1f1f1f;
         stroke-dashoffset: 0;
     }
 }
@@ -310,7 +313,7 @@ path {
     }
 
     ::-webkit-scrollbar-track {
-        background: #111;
+        background: #1f1f1f;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -342,13 +345,13 @@ path {
         position: absolute;
         margin: 0;
         padding: 0;
-        background-color: #000;
+        background-color: #1f1f1f;
     }
     nav li {
         width: 100%;
     }
     li > a {
-        color: #fff;
+        color: #f5f5f5;
         transition: none;
     }
     firma {
@@ -361,6 +364,7 @@ path {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         padding-top: 100px;
+        text-align: center;
     }
     #sobremi img {
         width: 100%;
@@ -370,11 +374,11 @@ path {
     .section_2 {
         align-self: baseline;
     }
-    .proyecto {
-        width: calc((100% / 2) - 10px);
+    /* .proyecto { */
+        /* width: calc((100% / 2) - 10px); */
         /* Divido por la cantidad de columnas que quiero que se muestren */
         /* Los 10px son del padding para que las columnas no se rompan */
         /* Las columnas se rompen cuando llegan a un ancho maximo */
-        height: 25vh;
-    }
+        /* height: 25vh; */
+    /* } */
 }
