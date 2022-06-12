@@ -5,7 +5,7 @@ document.addEventListener(
             document.querySelector(".main").scrollTop >=
             document.querySelector("#contacto").offsetTop - 10
         ) {
-            if (document.querySelector(".btn_nav").style.display == "none") {
+            if (window.getComputedStyle(document.querySelector(".btn_nav")).display == "none") {
                 document.querySelector("nav > ul").style.border = "#f5f5f5 solid 2px";
                 document.querySelectorAll("nav a").forEach((e) => {
                     e.classList.add("navdark");
