@@ -40,7 +40,7 @@ nav ul {
     display: flex;
     list-style: none;
     margin: 20px 10vw;
-    border: #1f1f1f solid 2px;
+    border: #111111 solid 2px;
 }
 
 nav li {
@@ -56,7 +56,7 @@ nav a {
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
-    color: #1f1f1f;
+    color: #111111;
     padding: 16px 30px;
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
@@ -66,7 +66,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #1f1f1f;
+    background-color: #111111;
     color: #f5f5f5;
 }
 
@@ -88,7 +88,7 @@ nav a:hover {
 
 .navdark:hover {
     background-color: #f5f5f5;
-    color: #1f1f1f;
+    color: #111111;
 }
 
 .main {
@@ -142,7 +142,7 @@ nav a:hover {
 }
 
 .info a {
-    color: #1f1f1f;
+    color: #111111;
     font-size: 16px;
     text-decoration: none;
     margin-right: 20px;
@@ -161,7 +161,7 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #6a5acd;
-    box-shadow: #1f1f1f 5px 5px;
+    box-shadow: #111111 5px 5px;
     padding: 10px;
 }
 
@@ -190,8 +190,8 @@ nav a:hover {
     margin: 5px;
     position: relative;
     overflow: hidden;
-    border: #1f1f1f solid 2px;
-    box-shadow: #1f1f1f 5px 5px;
+    border: #111111 solid 2px;
+    box-shadow: #111111 5px 5px;
 }
 
 .proyecto img {
@@ -225,14 +225,14 @@ nav a:hover {
 }
 
 .proyecto:hover .contenido {
-    background-color: #1f1f1fca;
+    background-color: #111111ca;
     color: #f5f5f5;
     z-index: 1;
     transition: all 0.2s;
 }
 
 #contacto {
-    background-color: #1f1f1f;
+    background-color: #111111;
     color: #f5f5f5;
 }
 
@@ -283,12 +283,12 @@ textarea:focus {
 
 .btn_proyecto:hover {
     background-color: #f5f5f5;
-    color: #1f1f1f;
+    color: #111111;
 }
 
 path {
-    stroke: #1f1f1f;
-    fill: #1f1f1f;
+    stroke: #111111;
+    fill: #111111;
     stroke-dasharray: 1580;
     opacity: 10;
     animation: animate 1s cubic-bezier(0, 0.23, 1, 0.1);
@@ -311,7 +311,7 @@ path {
     }
     100% {
         opacity: 10;
-        fill: #1f1f1f;
+        fill: #111111;
         stroke-dashoffset: 0;
     }
 }
@@ -328,7 +328,7 @@ path {
     }
 
     ::-webkit-scrollbar-track {
-        background: #1f1f1f;
+        background: #111111;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -360,7 +360,7 @@ path {
         position: absolute;
         margin: 0;
         padding: 0;
-        background-color: #1f1f1f;
+        background-color: #111111;
     }
     nav li {
         width: 100%;
