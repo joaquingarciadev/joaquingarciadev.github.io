@@ -3,13 +3,14 @@ document.addEventListener(
     (e) => {
         if (
             document.querySelector(".main").scrollTop >=
-            document.querySelector("#contacto").offsetTop - 10 &&
-            document.querySelector(".main").style.display != "none"
+            document.querySelector("#contacto").offsetTop - 10
         ) {
-            document.querySelector("nav > ul").style.border = "#f5f5f5 solid 2px";
-            document.querySelectorAll("nav a").forEach((e) => {
-                e.classList.add("navdark");
-            });
+            if (document.querySelector(".btn_nav").style.display == "none") {
+                document.querySelector("nav > ul").style.border = "#f5f5f5 solid 2px";
+                document.querySelectorAll("nav a").forEach((e) => {
+                    e.classList.add("navdark");
+                });
+            }
             document.querySelector(".btn_nav").style.color = "#f5f5f5";
         } else {
             document.querySelector("nav > ul").style.border = "#111111 solid 2px";
