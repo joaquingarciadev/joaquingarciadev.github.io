@@ -11,11 +11,11 @@ document.addEventListener(
             });
             document.querySelector(".btn_nav").style.color = "#f5f5f5";
         } else {
-            document.querySelector("nav > ul").style.border = "#1f1f1f solid 2px";
+            document.querySelector("nav > ul").style.border = "#111111 solid 2px";
             document.querySelectorAll("nav a").forEach((e) => {
                 e.classList.remove("navdark");
             });
-            document.querySelector(".btn_nav").style.color = "#1f1f1f";
+            document.querySelector(".btn_nav").style.color = "#111111";
         }
     },
     true
