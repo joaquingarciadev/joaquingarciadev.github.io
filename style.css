@@ -16,17 +16,11 @@ h1 {
 
 p, .btn_nav {
     font-family: "Segoe UI", "Roboto", sans-serif;
-    text-align: justify;
 }
 
 html {
     scroll-behavior: smooth;
     text-align: center;
-    height: -webkit-fill-available;
-}
-
-body {
-    height: -webkit-fill-available;
 }
 
 nav {
@@ -73,7 +67,7 @@ nav a:hover {
 .btn_nav {
     position: absolute;
     top: 20px;
-    right: calc(5vw + 16px);
+    right: 5vw;
     padding: 0;
     font-size: 4rem;
     background-color: transparent;
@@ -97,7 +91,6 @@ nav a:hover {
     overflow: auto;
     position: relative;
     height: 100vh;
-    height: -webkit-fill-available;
 }
 
 .main > div {
@@ -106,8 +99,8 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: auto;
     min-height: 100%;
-    height: -webkit-fill-available;
     padding: 0 10vw;
 }
 
@@ -171,6 +164,10 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#proyectos {
+    background-color: #f5f5f5;
 }
 
 .proyectos {
