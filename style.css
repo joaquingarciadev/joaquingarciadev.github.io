@@ -204,6 +204,7 @@ nav a:hover {
 .contenido {
     position: absolute;
     top: 0;
+    width: 100%;
     height: 100%;
     padding: 5px;
     display: flex;
