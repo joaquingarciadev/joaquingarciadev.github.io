@@ -147,11 +147,11 @@ function render() {
         <div class="proyecto">
             <img src="${proyecto.img}" alt="">
             <div class="contenido">
-                <h1>${proyecto.nombre}</h1>
+                <h3>${proyecto.nombre}</h3>
                 <p>${proyecto.descripcion}</p>
                 <div>
-                    <a class="btn_proyecto" href="${proyecto.demo}">DEMO</a>
-                    <a class="btn_proyecto" href="${proyecto.repo}">REPO</a>
+                    <a href="${proyecto.repo}">REPO</a>
+                    <a href="${proyecto.demo}">DEMO</a>
                 </div>
             </div>
         </div>
