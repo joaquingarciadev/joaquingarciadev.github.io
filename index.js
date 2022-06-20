@@ -150,8 +150,8 @@ function render() {
                 <h3>${proyecto.nombre}</h3>
                 <p>${proyecto.descripcion}</p>
                 <div>
-                    <a href="${proyecto.repo}">REPO</a>
-                    <a href="${proyecto.demo}">DEMO</a>
+                    <a href="${proyecto.repo}" aria-label="REPO"><i class="uil uil-github"></i></a>
+                    <a href="${proyecto.demo}" aria-label="DEMO"><i class="uil uil-play-circle"></i></a>
                 </div>
             </div>
         </div>
