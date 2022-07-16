@@ -123,8 +123,8 @@ let proyectos = [
         nombre: "Login Stack MERN",
         descripcion: "App login realizada con en el stack MERN.",
         img: "src/proyectos/loginmern.png",
-        demo: "https://loginmern.netlify.app/",
-        repo: "https://loginmern.netlify.app/",
+        demo: "https://login-djoako22.vercel.app/",
+        repo: "https://login-djoako22.vercel.app/",
     },
 ];
 
