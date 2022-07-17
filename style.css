@@ -221,8 +221,13 @@ nav a:hover {
     margin: 0;
 }
 
-.contenido a {
-    margin: 10px;
+.enlaces {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 10px);
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .uil {

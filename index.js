@@ -25,11 +25,11 @@ document.addEventListener(
 
 document.querySelector(".btn_nav").addEventListener("click", (e) => {
     document.querySelector(".btn_nav").classList.toggle("active");
-    document.querySelectorAll('li > a').forEach((e) => {
-        e.addEventListener('click', (e) => {
+    document.querySelectorAll("li > a").forEach((e) => {
+        e.addEventListener("click", (e) => {
             document.querySelector(".btn_nav").classList.remove("active");
             document.querySelector("ul").style.visibility = "hidden";
-        })
+        });
     });
     if (document.querySelector(".btn_nav").classList.contains("active")) {
         document.querySelector("ul").style.visibility = "visible";
@@ -90,41 +90,43 @@ let habilidades = [
 ];
 let proyectos = [
     {
-        nombre: "Juego Cajero",
-        descripcion:
-            "Juego para practicar y divertirte en el manejo de la caja.",
-        img: "src/proyectos/Juego Cajero.png",
-        demo: "https://djoako22.github.io/juego_cajero/",
-        repo: "https://github.com/Djoako22/juego_cajero",
+        nombre: "Login Starter",
+        descripcion: "Tecnologias </br> NodeJS, Express, React, Bootstrap y MongoDB",
+        img: "src/proyectos/loginmern.png",
+        demo: "https://login-djoako22.vercel.app/",
+        repo: "https://login-djoako22.vercel.app/",
     },
     {
         nombre: "Pedidos",
         descripcion:
-            "App para hacer pedidos, manda los pedidoas atraves de mensaje de whatsapp.",
+            "App para hacer pedidos a un numero de telefono espcifico </br></br> Tecnologias </br> NodeJS, Express",
         img: "src/proyectos/App Menus.png",
         demo: "https://djoako22.github.io/app_pedidos",
         repo: "https://github.com/Djoako22/app_pedidos",
     },
     {
         nombre: "Cripto Alarma",
-        descripcion: "Alarma de precio de criptomonedas.",
+        descripcion:
+            "Alarma de precio de criptomonedas </br></br> Tecnologias </br> NodeJS, Express",
         img: "src/proyectos/Cripto Alarma.png",
         demo: "https://djoako22.github.io/cripto_alarma/",
         repo: "https://github.com/Djoako22/cripto_alarma",
     },
     {
+        nombre: "Juego Cajero",
+        descripcion:
+            "Juego para practicar y divertirte en el manejo de la caja </br></br> Tecnologias </br> NodeJS, Express",
+        img: "src/proyectos/Juego Cajero.png",
+        demo: "https://djoako22.github.io/juego_cajero/",
+        repo: "https://github.com/Djoako22/juego_cajero",
+    },
+    {
         nombre: "Que comemos?",
-        descripcion: "App que te elije un plato de comida aleatoria.",
+        descripcion:
+            "App que te elije un plato de comida aleatoria </br></br> Tecnologias </br> NodeJS, Express",
         img: "src/proyectos/Que Comemos.png",
         demo: "https://djoako22.github.io/que_comemos/",
         repo: "https://github.com/Djoako22/que_comemos",
-    },
-    {
-        nombre: "Login Stack MERN",
-        descripcion: "App login realizada con en el stack MERN.",
-        img: "src/proyectos/loginmern.png",
-        demo: "https://login-djoako22.vercel.app/",
-        repo: "https://login-djoako22.vercel.app/",
     },
 ];
 
@@ -149,7 +151,7 @@ function render() {
             <div class="contenido">
                 <h3>${proyecto.nombre}</h3>
                 <p>${proyecto.descripcion}</p>
-                <div>
+                <div class="enlaces">
                     <a href="${proyecto.repo}" aria-label="REPO"><i class="uil uil-github"></i></a>
                     <a href="${proyecto.demo}" aria-label="DEMO"><i class="uil uil-play-circle"></i></a>
                 </div>
