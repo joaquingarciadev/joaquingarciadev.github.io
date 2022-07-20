@@ -40,24 +40,24 @@ const skills = [
         img: "src/habilidades/js.svg",
     },
     {
-        name: "Node JS",
-        img: "src/habilidades/node-js.svg",
-    },
-    {
         name: "React",
         img: "src/habilidades/react.svg",
     },
     {
+        name: "Next JS",
+        img: "src/habilidades/next-js.png",
+    },
+    {
+        name: "Node JS",
+        img: "src/habilidades/node-js.svg",
+    },
+    {
+        name: "Express JS",
+        img: "src/habilidades/express-js.png",
+    },
+    {
         name: "MongoDB",
         img: "src/habilidades/MongoDB.png",
-    },
-    {
-        name: "Git",
-        img: "src/habilidades/git.svg",
-    },
-    {
-        name: "PHP",
-        img: "src/habilidades/php.png",
     },
     {
         name: "MySQL",
@@ -68,12 +68,8 @@ const skills = [
         img: "src/habilidades/bootstrap.svg",
     },
     {
-        name: "Wordpress",
-        img: "src/habilidades/wordpress.png",
-    },
-    {
-        name: "Web Sraping",
-        img: "src/habilidades/data.png",
+        name: "Git",
+        img: "src/habilidades/git.svg",
     },
 ];
 
@@ -81,7 +77,7 @@ const projects = [
     {
         name: "Login Starter",
         description: "Login para una aplicación web",
-        skills: ["HTML", "CSS", "Javascript", "React", "Node JS", "MongoDB"],
+        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
         img: "src/proyectos/loginmern.png",
         demo: "https://login-djoako22.vercel.app/",
         repo: "https://login-djoako22.vercel.app/",
@@ -89,7 +85,7 @@ const projects = [
     {
         name: "Pedidos",
         description: "App para que tus clientes puedan hacer pedidos a tu local",
-        skills: ["HTML", "CSS", "Javascript", "Node JS"],
+        skills: ["HTML", "CSS", "Javascript", "Node JS", "Express JS"],
         img: "src/proyectos/App Menus.png",
         demo: "https://djoako22.github.io/app_pedidos",
         repo: "https://github.com/Djoako22/app_pedidos",
@@ -97,7 +93,7 @@ const projects = [
     {
         name: "Cripto Alarma",
         description: "Alarma de precio de criptomonedas",
-        skills: ["HTML", "CSS", "Javascript", "Node JS"],
+        skills: ["HTML", "CSS", "Javascript", "Node JS", "Express JS"],
         img: "src/proyectos/Cripto Alarma.png",
         demo: "https://djoako22.github.io/cripto_alarma/",
         repo: "https://github.com/Djoako22/cripto_alarma",
@@ -105,7 +101,7 @@ const projects = [
     {
         name: "Juego Cajero",
         description: "Juego para practicar y divertirte en el manejo de la caja",
-        skills: ["HTML", "CSS", "Javascript", "Node JS"],
+        skills: ["HTML", "CSS", "Javascript", "Node JS", "Express JS"],
         img: "src/proyectos/Juego Cajero.png",
         demo: "https://djoako22.github.io/juego_cajero/",
         repo: "https://github.com/Djoako22/juego_cajero",
@@ -113,7 +109,7 @@ const projects = [
     {
         name: "Que comemos?",
         description: "App que te elije un plato de comida aleatoria",
-        skills: ["HTML", "CSS", "Javascript", "Node JS"],
+        skills: ["HTML", "CSS", "Javascript", "Node JS", "Express JS"],
         img: "src/proyectos/Que Comemos.png",
         demo: "https://djoako22.github.io/que_comemos/",
         repo: "https://github.com/Djoako22/que_comemos",

@@ -274,6 +274,11 @@ filter {
     padding: 16px 30px;
 }
 
+.card-content h3 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
 .card-icons {
     color: #fff;
 }
