@@ -205,7 +205,7 @@ nav {
 }
 
 /* SKILLS */
-#skills{
+#skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -240,7 +240,7 @@ nav {
 .skills {
     display: flex;
     width: calc(130px * 11);
-    animation: scroll 20s linear infinite; 
+    animation: scroll 20s linear infinite;
 }
 
 .skill {
@@ -257,8 +257,12 @@ nav {
 }
 
 @keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-130px * 11))}
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-130px * 11));
+    }
 }
 
 /* PROJECTS */
@@ -426,5 +430,29 @@ textarea {
     }
     .home-img {
         order: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    /* SCROLLBAR */
+
+    ::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #111;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 8px;
+        border: 4px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #eee;
+        background-clip: content-box;
     }
 }
