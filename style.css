@@ -266,7 +266,6 @@ nav {
 }
 
 /* PROJECTS */
-
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -435,7 +434,6 @@ textarea {
 
 @media (min-width: 768px) {
     /* SCROLLBAR */
-
     ::-webkit-scrollbar {
         width: 16px;
     }
