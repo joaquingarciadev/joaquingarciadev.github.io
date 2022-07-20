@@ -79,7 +79,7 @@ const projects = [
         description: "Login para una aplicación web",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
         img: "src/proyectos/loginmern.png",
-        repo: "https://github.com/djoako22/login_api_starter",
+        repo: "https://github.com/djoako22/login-starter.git",
         demo: "https://login-djoako22.vercel.app/",
     },
     {
