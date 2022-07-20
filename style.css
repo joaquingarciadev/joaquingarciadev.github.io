@@ -285,6 +285,11 @@ filter {
 }
 
 /* CONTACT */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 form {
     display: flex;
