@@ -211,11 +211,36 @@ nav {
     justify-content: center;
 }
 
-.skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    border-radius: 0.25rem;
+.carousel {
+    position: relative;
     overflow: hidden;
+}
+
+.carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130px;
+    height: 100%;
+    background: linear-gradient(to right, var(--background), transparent);
+}
+
+.carousel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 130px;
+    height: 100%;
+    background: linear-gradient(to left, var(--background), transparent);
+    z-index: 1;
+}
+
+.skills {
+    display: flex;
+    width: calc(130px * 11);
+    animation: scroll 20s linear infinite; 
 }
 
 .skill {
@@ -223,11 +248,17 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 20px 40px;
+    width: 130px;
 }
 
 .skill img {
     border-radius: 50%;
+}
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-130px * 11))}
 }
 
 /* PROJECTS */

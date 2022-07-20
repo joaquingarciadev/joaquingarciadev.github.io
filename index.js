@@ -129,6 +129,14 @@ function render() {
         </div>
         `;
     });
+    skills.forEach((skill) => {
+        skills_label.innerHTML += `
+        <div class="skill" >
+            <img src=${skill.img} width='50' arial-label="${skill.name}">
+            ${skill.name}
+        </div>
+        `;
+    });
     // Projects
     projects.forEach((project) => {
         projects_label.innerHTML += `
