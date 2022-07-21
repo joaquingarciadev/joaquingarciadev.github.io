@@ -25,8 +25,8 @@ a {
 }
 
 h1 {
-    font-size: 60px;
-    font-weight: lighter;
+    font-size: 4vw;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
@@ -35,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: 40px;
+    font-size: 3vw;
     font-weight: lighter;
 }
 
@@ -248,6 +248,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 20px 40px;
     width: 130px;
 }
@@ -381,7 +382,6 @@ textarea {
 @media (max-width: 768px) {
     h1 {
         font-size: 8vw;
-        font-weight: 400;
     }
 
     h2,
@@ -390,7 +390,6 @@ textarea {
     h5,
     h6 {
         font-size: 6vw;
-        font-weight: lighter;
     }
 
     #home,
