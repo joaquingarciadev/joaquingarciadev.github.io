@@ -184,7 +184,7 @@ function render() {
     skills.forEach((skill) => {
         skills_label.innerHTML += `
         <div class="skill" >
-            <img src=${skill.img} width='50' arial-label="${skill.name}">
+            <img src=${skill.img} width='100' arial-label="${skill.name}">
             ${skill.name}
         </div>
         `;
@@ -192,7 +192,7 @@ function render() {
     skills.forEach((skill) => {
         skills_label.innerHTML += `
         <div class="skill" >
-            <img src=${skill.img} width='50' arial-label="${skill.name}">
+            <img src=${skill.img} width='100' arial-label="${skill.name}">
             ${skill.name}
         </div>
         `;
