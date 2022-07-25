@@ -124,8 +124,60 @@ const projects = [
     },
 ];
 
+const courses = [
+    {
+        name: "Curso de programación",
+        description: "Curso de programación para principiantes",
+        img: "https://geekytheory.com/content/images/2014/10/coderesponsive.jpg",
+        url: "https://docs.google.com/document/d/e/2PACX-1vS_XTuqbf-aoqEssa2urPo4XLbjp_PxyN3NqFOtmxM-ZanYQYAZSn-y244crPOBtKm-AqgG3_N46Ia4/pub",
+    },
+    {
+        name: "Curso de frontend",
+        description: "Curso de frontend para principiantes",
+        img: "https://railsware.com/images/team/careers/front-end-developer-role-74120a0c.svg",
+        url: "https://docs.google.com/document/d/e/2PACX-1vRPFIdZYr1M-fdnP4q04G5fewXxpOmIcZngbZ8S70ELkXC3Ue2buEhi0k6VSrUnIstWYruFHrpYKiyP/pub",
+    },
+    {
+        name: "Curso de backend",
+        description: "Curso de backend para principiantes",
+        img: "https://cdn-icons-png.flaticon.com/512/6213/6213731.png",
+        url: "https://docs.google.com/document/d/e/2PACX-1vR6Yst05MsddXjhT0bBB2HoeHOHKUpZ7QwBMLw3zohoytkNyvZNuLCt1aEpsuB4qvnZsCFZd_-0eeG9/pub",
+    },
+    {
+        name: "Curso de react",
+        description: "Curso de react para principiantes",
+        img: "src/habilidades/react.svg",
+        url: "https://docs.google.com/document/d/e/2PACX-1vQCZ4LboVYjLM1ArNOqbsyCVqzX4Tx7rviP9dzf2U-lKIdKAjR_g3ip30PYqp9hpy6gnqKp5cJqRXm6/pub",
+    },
+    {
+        name: "Curso de node js",
+        description: "Curso de node js para principiantes",
+        img: "src/habilidades/node-js.svg",
+        url: "https://docs.google.com/document/d/e/2PACX-1vTkj4yQ__OKy0Yl9NmrbcpJQHRorR0oYTiA9AQhzE_Lr4qEiIsdNIO6D_kakqZAzY_c_Sxqck_AzDBn/pub",
+    },
+    {
+        name: "Curso de base de datos",
+        description: "Curso de base de datos para principiantes",
+        img: "https://cdn-icons-png.flaticon.com/512/2906/2906206.png",
+        url: "https://docs.google.com/document/d/e/2PACX-1vQwz17BI7zZZr-Z5vfJexKToeGNBzioDTQdTewKWuE9pmco1eeakHxJGQToXJkppB1banon-RzAFy-v/pub",
+    },
+    {
+        name: "Curso de git",
+        description: "Curso de git para principiantes",
+        img: "src/habilidades/git.svg",
+        url: "https://docs.google.com/document/d/e/2PACX-1vQEZJzW7zCOV1brpxGdL2R0RWcrAZchqYifse3QUJ4aIk61fh2Rc1daq76wZinx7IP7tqow8-glHUgb/pub",
+    },
+    {
+        name: "Curso de linux",
+        description: "Curso de linux para principiantes",
+        img: "https://codegeek.es/wp-content/uploads/2019/05/Terminalicon2.png",
+        url: "https://docs.google.com/document/d/e/2PACX-1vSE2rqgPIFfK-aGIB7Z0diXDhT5W3GZ47o36t_M-wp2-wNn-GgOo9OqFrrB7c8u3tFM-rtiz-3TWmsZ/pub",
+    },
+];
+
 const skills_label = document.querySelector(".skills");
 const projects_label = document.querySelector(".projects");
+const courses_label = document.querySelector(".courses");
 
 function render() {
     // Skills
@@ -168,6 +220,18 @@ function render() {
                         project.demo
                     }" aria-label="DEMO"><i class="uil uil-play-circle"></i></a>
                 </div>
+            </div>
+        </div>
+        `;
+    });
+    // Courses
+    courses.forEach((course) => {
+        courses_label.innerHTML += `
+        <div class="card card-hover" onclick="window.open('${course.url}')">
+            <div class="card-content">
+                <h3>${course.name}</h3>
+                <img src="${course.img}" alt="" arial-label="${course.name}"/>
+                <p>${course.description}</p>
             </div>
         </div>
         `;

@@ -51,6 +51,7 @@ nav {
 
 #skills,
 #projects,
+#courses,
 #contact {
     padding-top: 50px;
 }
@@ -324,6 +325,26 @@ filter {
     font-size: 25px;
 }
 
+/* COURSES */
+.courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px;
+}
+
+.card-hover img {
+    margin: 5px 0;
+    height: 150px;
+    object-fit: contain;
+}
+
+.card-hover:hover {
+    margin: -1px;
+    border: 2px solid var(--btn);
+    transition: border-color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
 /* CONTACT */
 #contact {
     display: flex;
@@ -375,7 +396,7 @@ textarea {
     margin: 10px;
 }
 
-.social a i:hover {
+i:hover {
     color: var(--btn);
 }
 
@@ -398,6 +419,7 @@ textarea {
     #about,
     #skills,
     #projects,
+    #courses,
     #contact {
         text-align: center;
     }
