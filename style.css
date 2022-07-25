@@ -467,7 +467,7 @@ i:hover {
     }
 
     ::-webkit-scrollbar-track {
-        background: var(--background);
+        background: #111;
     }
 
     ::-webkit-scrollbar-thumb {
