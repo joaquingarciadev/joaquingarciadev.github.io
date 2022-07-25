@@ -307,6 +307,7 @@ filter {
     flex-direction: column;
     justify-content: space-between;
     padding: 16px 30px;
+    text-align: center;
 }
 
 .card-content h3 {
@@ -382,6 +383,7 @@ textarea {
 @media (max-width: 768px) {
     h1 {
         font-size: 8vw;
+        font-weight: 500;
     }
 
     h2,
@@ -390,6 +392,7 @@ textarea {
     h5,
     h6 {
         font-size: 6vw;
+        font-weight: normal;
     }
 
     #home,
