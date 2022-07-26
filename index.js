@@ -239,3 +239,9 @@ function render() {
 }
 
 render();
+
+gsap.set(".card", { opacity: 0, y: 100 });
+ScrollTrigger.batch(".card", {
+    onEnter: (t) => gsap.to(t, { stagger: 0.1, opacity: 1, y: 0 }),
+    onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
+});

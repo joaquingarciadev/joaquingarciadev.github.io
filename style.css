@@ -298,7 +298,8 @@ filter {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #00000010;
+    /* background: #00000010; */
+    /* background: linear-gradient(to right, #9d50bb50, #6e48aa50); */
 }
 
 .card-content {
@@ -334,7 +335,7 @@ filter {
 
 .card-hover img {
     margin: 5px 0;
-    height: 150px;
+    height: 100px;
     object-fit: contain;
 }
 
