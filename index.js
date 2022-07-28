@@ -5,12 +5,12 @@ window.onscroll = function () {
     if (previousScroll > currentScroll) {
         document.querySelector("nav").style.top = "0";
     } else {
-        document.querySelector("nav").style.top = "-50px";
+        document.querySelector("nav").style.top = "-80px";
     }
     previousScroll = currentScroll;
     // Effect shadow navbar
     if (currentScroll > 100) {
-        document.querySelector("nav").style.boxShadow = "0px 0px 10px 0px var(--second)";
+        document.querySelector("nav").style.boxShadow = "0px 0px 10px 0px var(--shadow)";
     } else {
         document.querySelector("nav").style.boxShadow = "none";
     }
@@ -25,6 +25,22 @@ const hideSidebar = () => {
     document.querySelector(".sidebar").classList.remove("show-sidebar");
     document.querySelector(".overlay").classList.remove("show-overlay");
 };
+
+document.querySelector(".switch input").addEventListener("change", (e) => {
+    if (e.target.checked) {
+        document.documentElement.style.setProperty("--background", "#171717");
+        document.documentElement.style.setProperty("--text", "#f2f2f2");
+        document.documentElement.style.setProperty("--second", "#212121");
+        document.documentElement.style.setProperty("--shadow", "#000");
+        document.documentElement.style.setProperty("--card", "#212121");
+    } else {
+        document.documentElement.style.setProperty("--background", "#fff");
+        document.documentElement.style.setProperty("--text", "#171717");
+        document.documentElement.style.setProperty("--second", "#ddd");
+        document.documentElement.style.setProperty("--shadow", "#ddd");
+        document.documentElement.style.setProperty("--card", "#fff");
+    }
+});
 
 const skills = [
     {
@@ -185,7 +201,8 @@ function render() {
         skills_label.innerHTML += `
         <div class="skill" >
             <img src=${skill.img} width='100' arial-label="${skill.name}">
-            ${skill.name}
+            <br>
+            <b>${skill.name}</b>
         </div>
         `;
     });
@@ -193,7 +210,8 @@ function render() {
         skills_label.innerHTML += `
         <div class="skill" >
             <img src=${skill.img} width='100' arial-label="${skill.name}">
-            ${skill.name}
+            <br>
+            <b>${skill.name}</b>
         </div>
         `;
     });
@@ -240,8 +258,30 @@ function render() {
 
 render();
 
+const textReveal = (text, delay = 0, duration = 2000) => {
+    let textWrapper = document.querySelector(text);
+    textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter' style='display: inline-block;'>$&</span>"
+    );
+    anime.timeline().add({
+        targets: text + " .letter",
+        translateY: [200, 0],
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        delay: (el, i) => 1100 + 1000 * (delay - 1) + 50 * i,
+        duration,
+    });
+};
+
 gsap.set(".card", { opacity: 0, y: 100 });
+gsap.set("#about", { opacity: 0, y: 500 });
 ScrollTrigger.batch(".card", {
     onEnter: (t) => gsap.to(t, { stagger: 0.1, opacity: 1, y: 0 }),
     onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
 });
+ScrollTrigger.batch("#about", {
+    onEnter: (t) => gsap.to(t, { opacity: 1, y: 0 }),
+});
+
+textReveal("h3", 0, 500);
