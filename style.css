@@ -19,7 +19,7 @@ html {
     --card: #fff;
     --btn: #4f46e5;
     --btn-hover: #433cc3;
-    --nav-size: 80px;
+    --nav-height: 80px;
 }
 
 a {
@@ -68,7 +68,7 @@ nav {
 #projects,
 #courses,
 #contact {
-    padding-top: var(--nav-size);
+    padding-top: var(--nav-height);
 }
 
 /* NAVBAR */
@@ -76,8 +76,8 @@ nav {
     position: sticky;
     top: 0;
     width: 100%;
-    height: var(--nav-size);
-    margin-bottom: calc(var(--nav-size) * -1);
+    height: var(--nav-height);
+    margin-bottom: calc(var(--nav-height) * -1);
     z-index: 10;
     display: flex;
     justify-content: space-between;
@@ -115,7 +115,7 @@ nav {
     font-size: xx-large;
     color: var(--text);
     width: 50px;
-    height: var(--nav-size);
+    height: var(--nav-height);
     cursor: pointer;
 }
 
@@ -478,7 +478,8 @@ i:hover {
 }
 
 @media (max-width: 768px) {
-    h1, h2 {
+    h1,
+    h2 {
         font-size: 10vw;
     }
 
