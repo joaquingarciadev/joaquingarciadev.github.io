@@ -9,7 +9,7 @@ window.onscroll = function () {
     }
     previousScroll = currentScroll;
     // Effect shadow navbar
-    if (currentScroll > 100) {
+    if (currentScroll > 80) {
         document.querySelector("nav").style.boxShadow = "0px 0px 10px 0px var(--shadow)";
     } else {
         document.querySelector("nav").style.boxShadow = "none";
