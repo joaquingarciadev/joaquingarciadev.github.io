@@ -33,12 +33,14 @@ document.querySelector(".switch input").addEventListener("change", (e) => {
         document.documentElement.style.setProperty("--second", "#212121");
         document.documentElement.style.setProperty("--shadow", "#000");
         document.documentElement.style.setProperty("--card", "#212121");
+        localStorage.setItem("theme", "dark");
     } else {
         document.documentElement.style.setProperty("--background", "#fff");
         document.documentElement.style.setProperty("--text", "#171717");
         document.documentElement.style.setProperty("--second", "#ddd");
         document.documentElement.style.setProperty("--shadow", "#ddd");
         document.documentElement.style.setProperty("--card", "#fff");
+        localStorage.setItem("theme", "light");
     }
 });
 
@@ -196,6 +198,15 @@ const projects_label = document.querySelector(".projects");
 const courses_label = document.querySelector(".courses");
 
 function render() {
+    // Theme
+    if (localStorage.getItem("theme") === "dark") {
+        document.querySelector(".switch input").checked = true;
+        document.documentElement.style.setProperty("--background", "#171717");
+        document.documentElement.style.setProperty("--text", "#f2f2f2");
+        document.documentElement.style.setProperty("--second", "#212121");
+        document.documentElement.style.setProperty("--shadow", "#000");
+        document.documentElement.style.setProperty("--card", "#212121");
+    }
     // Skills
     skills.forEach((skill) => {
         skills_label.innerHTML += `
