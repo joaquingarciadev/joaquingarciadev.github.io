@@ -235,7 +235,7 @@ function render() {
     // Skills
     skills.forEach((skill) => {
         skills_label.innerHTML += `
-        <div class="skill" title="${skill.year}\n${skill.description}">
+        <div class="skill" title="Experiencia: desde ${skill.year}\n${skill.description}">
             <img src=${skill.img} width='50' arial-label="${skill.name}">
             <div class="skill-text">${skill.name}</div>
         </div>
