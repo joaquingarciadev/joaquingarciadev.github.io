@@ -1,6 +1,7 @@
 const fadeOut = () => {
     const loaderWrapper = document.querySelector(".wrapper");
     loaderWrapper.classList.add("fade");
+    textReveal("h3", 0, 500);
 };
 
 window.addEventListener("load", fadeOut);
@@ -336,5 +337,3 @@ Draggable.create(".skill", {
     cursor: "default",
     zIndexBoost: false,
 });
-
-textReveal("h3", 0, 500);
