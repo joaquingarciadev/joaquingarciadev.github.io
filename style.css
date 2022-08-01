@@ -444,9 +444,7 @@ input:checked + .slider:before {
 
 /* SKILLS */
 #skills {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-bottom: var(--nav-height);
 }
 
 .skills {
