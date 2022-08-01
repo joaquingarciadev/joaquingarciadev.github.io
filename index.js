@@ -49,58 +49,69 @@ const skills = [
         name: "HTML",
         img: "src/habilidades/html-5.svg",
         description: "Lenguaje de marcado para la creación de páginas web.",
+        year: "2017",
     },
     {
         name: "CSS",
         img: "src/habilidades/css-3.svg",
         description: "Lenguaje de estilos para la creación de páginas web.",
+        year: "2017",
     },
     {
         name: "Javascript",
         img: "src/habilidades/js.svg",
         description: "Lenguaje de programación para la creación de páginas web.",
+        year: "2017",
     },
     {
         name: "React",
         img: "src/habilidades/react.svg",
         description:
             "Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.",
+        year: "2020",
     },
     {
         name: "Next JS",
         img: "src/habilidades/next-js.png",
         description: "Framework de creación de páginas web.",
+        year: "2022",
     },
     {
         name: "Node JS",
         img: "src/habilidades/node-js.svg",
         description:
             "Entorno en tiempo de ejecución para la capa del servidor basado en el lenguaje de programación JavaScript.",
+        year: "2020",
     },
     {
         name: "Express JS",
         img: "src/habilidades/express-js.png",
         description: "Infraestructura web rápida, minimalista y flexible para Node.js.",
+        year: "2020",
     },
     {
         name: "MongoDB",
         img: "src/habilidades/MongoDB.png",
         description: "Base de datos para la creación de páginas web.",
+        year: "2020",
     },
     {
         name: "MySQL",
         img: "src/habilidades/sql.png",
         description: "Base de datos para la creación de páginas web.",
+        year: "2020",
     },
     {
         name: "Bootstrap",
         img: "src/habilidades/bootstrap.svg",
         description: "Framework de creación de páginas web.",
+        year: "2020",
     },
     {
         name: "Git",
         img: "src/habilidades/git.svg",
         description: "Software de control de versiones.",
+        year: "2020",
     },
 ];
 
@@ -224,7 +235,7 @@ function render() {
     // Skills
     skills.forEach((skill) => {
         skills_label.innerHTML += `
-        <div class="skill" title="${skill.description}">
+        <div class="skill" title="(${skill.year}) ${skill.description}">
             <img src=${skill.img} width='50' arial-label="${skill.name}">
             <div class="skill-text">${skill.name}</div>
         </div>
