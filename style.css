@@ -92,7 +92,7 @@ nav {
 .chaotic-orbit {
     --uib-size: 25px;
     --uib-speed: 1.5s;
-    --uib-color: var(--text);
+    --uib-color: var(--btn);
     position: relative;
     display: flex;
     align-items: center;
