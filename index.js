@@ -63,7 +63,8 @@ const skills = [
     {
         name: "React",
         img: "src/habilidades/react.svg",
-        description: "Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.",
+        description:
+            "Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.",
     },
     {
         name: "Next JS",
@@ -73,7 +74,8 @@ const skills = [
     {
         name: "Node JS",
         img: "src/habilidades/node-js.svg",
-        description: "Entorno en tiempo de ejecución para la capa del servidor basado en el lenguaje de programación JavaScript.",
+        description:
+            "Entorno en tiempo de ejecución para la capa del servidor basado en el lenguaje de programación JavaScript.",
     },
     {
         name: "Express JS",
@@ -271,7 +273,10 @@ function render() {
     setInterval(() => {
         currentTime = new Date();
         hours = currentTime.getHours();
-        minutes = currentTime.getMinutes() < 10 ? "0" + currentTime.getMinutes() : currentTime.getMinutes();
+        minutes =
+            currentTime.getMinutes() < 10
+                ? "0" + currentTime.getMinutes()
+                : currentTime.getMinutes();
         timeString = `${hours}:${minutes}`;
         time.innerHTML = timeString;
     }, 1000);
@@ -307,6 +312,9 @@ ScrollTrigger.batch("#about", {
 
 Draggable.create(".skill", {
     type: "x,y",
+    edgeResistance: 0.65,
+    bounds: ".desktop",
+    inertia: true,
     cursor: "default",
     zIndexBoost: false,
 });
