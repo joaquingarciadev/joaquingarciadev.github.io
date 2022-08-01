@@ -48,46 +48,57 @@ const skills = [
     {
         name: "HTML",
         img: "src/habilidades/html-5.svg",
+        description: "Lenguaje de marcado para la creación de páginas web.",
     },
     {
         name: "CSS",
         img: "src/habilidades/css-3.svg",
+        description: "Lenguaje de estilos para la creación de páginas web.",
     },
     {
         name: "Javascript",
         img: "src/habilidades/js.svg",
+        description: "Lenguaje de programación para la creación de páginas web.",
     },
     {
         name: "React",
         img: "src/habilidades/react.svg",
+        description: "Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.",
     },
     {
         name: "Next JS",
         img: "src/habilidades/next-js.png",
+        description: "Framework de creación de páginas web.",
     },
     {
         name: "Node JS",
         img: "src/habilidades/node-js.svg",
+        description: "Entorno en tiempo de ejecución para la capa del servidor basado en el lenguaje de programación JavaScript.",
     },
     {
         name: "Express JS",
         img: "src/habilidades/express-js.png",
+        description: "Infraestructura web rápida, minimalista y flexible para Node.js.",
     },
     {
         name: "MongoDB",
         img: "src/habilidades/MongoDB.png",
+        description: "Base de datos para la creación de páginas web.",
     },
     {
         name: "MySQL",
         img: "src/habilidades/sql.png",
+        description: "Base de datos para la creación de páginas web.",
     },
     {
         name: "Bootstrap",
         img: "src/habilidades/bootstrap.svg",
+        description: "Framework de creación de páginas web.",
     },
     {
         name: "Git",
         img: "src/habilidades/git.svg",
+        description: "Software de control de versiones.",
     },
 ];
 
@@ -196,6 +207,7 @@ const courses = [
 const skills_label = document.querySelector(".skills");
 const projects_label = document.querySelector(".projects");
 const courses_label = document.querySelector(".courses");
+const time = document.querySelector(".time");
 
 function render() {
     // Theme
@@ -210,19 +222,9 @@ function render() {
     // Skills
     skills.forEach((skill) => {
         skills_label.innerHTML += `
-        <div class="skill" >
-            <img src=${skill.img} width='100' arial-label="${skill.name}">
-            <br>
-            <b>${skill.name}</b>
-        </div>
-        `;
-    });
-    skills.forEach((skill) => {
-        skills_label.innerHTML += `
-        <div class="skill" >
-            <img src=${skill.img} width='100' arial-label="${skill.name}">
-            <br>
-            <b>${skill.name}</b>
+        <div class="skill" title="${skill.description}">
+            <img src=${skill.img} width='50' arial-label="${skill.name}">
+            <div class="skill-text">${skill.name}</div>
         </div>
         `;
     });
@@ -265,6 +267,14 @@ function render() {
         </div>
         `;
     });
+    // Time
+    setInterval(() => {
+        currentTime = new Date();
+        hours = currentTime.getHours();
+        minutes = currentTime.getMinutes() < 10 ? "0" + currentTime.getMinutes() : currentTime.getMinutes();
+        timeString = `${hours}:${minutes}`;
+        time.innerHTML = timeString;
+    }, 1000);
 }
 
 render();
@@ -293,6 +303,12 @@ ScrollTrigger.batch(".card", {
 });
 ScrollTrigger.batch("#about", {
     onEnter: (t) => gsap.to(t, { opacity: 1, y: 0 }),
+});
+
+Draggable.create(".skill", {
+    type: "x,y",
+    cursor: "default",
+    zIndexBoost: false,
 });
 
 textReveal("h3", 0, 500);
