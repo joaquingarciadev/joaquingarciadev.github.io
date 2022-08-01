@@ -77,7 +77,7 @@ nav {
     width: 100%;
     height: var(--nav-height);
     margin-bottom: calc(var(--nav-height) * -1);
-    z-index: 1000;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
