@@ -137,7 +137,7 @@ const projects = [
         description: "App para que tus clientes puedan hacer pedidos a tu local",
         skills: ["HTML", "CSS", "Javascript", "Node JS", "Express JS"],
         img: "src/proyectos/App Menus.png",
-        repo: "https://github.com/Djoako22/app_pedidos",
+        repo: "https://github.com/Djoako22/app-pedidos.git",
         demo: "https://app-pedidos-djoako22.vercel.app/local",
     },
     {
