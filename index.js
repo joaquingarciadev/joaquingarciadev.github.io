@@ -138,7 +138,7 @@ const projects = [
         skills: ["HTML", "CSS", "Javascript", "Node JS", "Express JS"],
         img: "src/proyectos/App Menus.png",
         repo: "https://github.com/Djoako22/app_pedidos",
-        demo: "https://djoako22.github.io/app_pedidos",
+        demo: "https://app-pedidos-djoako22.vercel.app/local",
     },
     {
         name: "Cripto Alarma",
