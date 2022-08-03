@@ -45,8 +45,8 @@ document.querySelector(".switch input").addEventListener("change", (e) => {
     } else {
         document.documentElement.style.setProperty("--background", "#fff");
         document.documentElement.style.setProperty("--text", "#171717");
-        document.documentElement.style.setProperty("--second", "#ddd");
-        document.documentElement.style.setProperty("--shadow", "#ddd");
+        document.documentElement.style.setProperty("--second", "#ccc");
+        document.documentElement.style.setProperty("--shadow", "#ccc");
         document.documentElement.style.setProperty("--card", "#fff");
         localStorage.setItem("theme", "light");
     }

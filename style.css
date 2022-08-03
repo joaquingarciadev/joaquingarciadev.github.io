@@ -14,8 +14,8 @@ html {
 :root {
     --background: #fff;
     --text: #171717;
-    --second: #ddd;
-    --shadow: #ddd;
+    --second: #ccc;
+    --shadow: #ccc;
     --card: #fff;
     --btn: #4f46e5;
     --btn-hover: #433cc3;
@@ -250,7 +250,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: top 0.5s;
+    transition: top 0.5s, box-shadow 0.5s;
 }
 
 .menu {
@@ -358,7 +358,7 @@ nav {
 /* From uiverse.io by @alexruix */
 /* The switch - the box around the slider */
 .switch {
-    font-size: 16px;
+    font-size: 14px;
     position: relative;
     display: inline-block;
     width: 3.5em;
@@ -374,7 +374,7 @@ nav {
 
 /* The slider */
 .slider {
-    --background: #28096b;
+    --background: #333;
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -394,18 +394,18 @@ nav {
     border-radius: 50%;
     left: 10%;
     bottom: 15%;
-    box-shadow: inset 8px -4px 0px 0px #fff000;
-    background: var(--background);
+    box-shadow: inset 8px -4px 0px 0px #fff;
+    background: #333;
     transition: 0.5s;
 }
 
 input:checked + .slider {
-    background-color: #522ba7;
+    background-color: #333;
 }
 
 input:checked + .slider:before {
     transform: translateX(100%);
-    box-shadow: inset 15px -4px 0px 15px #fff000;
+    box-shadow: inset 15px -4px 0px 15px #fff;
 }
 
 /* HOME */
