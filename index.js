@@ -320,13 +320,9 @@ const textReveal = (text, delay = 0, duration = 2000) => {
 };
 
 gsap.set(".card", { opacity: 0, y: 100 });
-gsap.set("#about", { opacity: 0, y: 500 });
 ScrollTrigger.batch(".card", {
     onEnter: (t) => gsap.to(t, { stagger: 0.1, opacity: 1, y: 0 }),
     onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
-});
-ScrollTrigger.batch("#about", {
-    onEnter: (t) => gsap.to(t, { opacity: 1, y: 0 }),
 });
 
 Draggable.create(".skill", {
