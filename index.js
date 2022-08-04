@@ -135,7 +135,7 @@ const projects = [
     {
         name: "Pedidos",
         description: "App para que tus clientes puedan hacer pedidos a tu local",
-        skills: ["HTML", "CSS", "Javascript", "Node JS", "Express JS"],
+        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
         img: "src/proyectos/App Menus.png",
         repo: "https://github.com/Djoako22/app-pedidos.git",
         demo: "https://app-pedidos-djoako22.vercel.app/local",
@@ -143,7 +143,7 @@ const projects = [
     {
         name: "Cripto Alarma",
         description: "Alarma de precio de criptomonedas",
-        skills: ["HTML", "CSS", "Javascript", "Node JS", "Express JS"],
+        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
         img: "src/proyectos/Cripto Alarma.png",
         repo: "https://github.com/Djoako22/cripto_alarma",
         demo: "https://djoako22.github.io/cripto_alarma/",
