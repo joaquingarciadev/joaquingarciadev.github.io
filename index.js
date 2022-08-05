@@ -267,10 +267,12 @@ function render() {
                     })}
                 </div>
                 <div class="card-links">
-                    <a href="${project.repo}" aria-label="REPO"><i class="uil uil-github"></i></a>
+                    <a href="${
+                        project.repo
+                    }" aria-label="REPO" target="_blank"><i class="uil uil-github"></i></a>
                     <a href="${
                         project.demo
-                    }" aria-label="DEMO"><i class="uil uil-play-circle"></i></a>
+                    }" aria-label="DEMO" target="_blank"><i class="uil uil-play-circle"></i></a>
                 </div>
             </div>
         </div>
