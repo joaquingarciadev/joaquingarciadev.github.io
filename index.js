@@ -121,6 +121,12 @@ const skills = [
         description: "Software de control de versiones.",
         year: "2020",
     },
+    {
+        name: "Docker",
+        img: "src/habilidades/docker.png",
+        description: "Software de despliegue de aplicaciones.",
+        year: "2022",
+    }
 ];
 
 const projects = [
