@@ -131,7 +131,7 @@ const skills = [
         name: "Linux",
         img: "src/habilidades/linux.png",
         description: "Sistema operativo open source.",
-        year: "2021",
+        year: "2020",
     },
     {
         name: "Photoshop",
