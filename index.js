@@ -126,6 +126,18 @@ const skills = [
         img: "src/habilidades/docker.png",
         description: "Software de despliegue de aplicaciones.",
         year: "2022",
+    },
+    {
+        name: "Linux",
+        img: "src/habilidades/linux.png",
+        description: "Sistema operativo open source.",
+        year: "2021",
+    },
+    {
+        name: "Photoshop",
+        img: "src/habilidades/photoshop.png",
+        description: "Programa de diseño.",
+        year: "2021",
     }
 ];
 
@@ -226,7 +238,7 @@ const courses = [
     {
         name: "Curso de linux",
         description: "Curso de linux para principiantes",
-        img: "src/cursos/linux.png",
+        img: "src/habilidades/linux.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vSE2rqgPIFfK-aGIB7Z0diXDhT5W3GZ47o36t_M-wp2-wNn-GgOo9OqFrrB7c8u3tFM-rtiz-3TWmsZ/pub",
     },
 ];
