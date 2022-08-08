@@ -99,7 +99,7 @@ const skills = [
     },
     {
         name: "MongoDB",
-        img: "src/habilidades/MongoDB.png",
+        img: "src/habilidades/mongodb.png",
         description: "Base de datos para la creación de páginas web.",
         year: "2020",
     },
@@ -178,19 +178,19 @@ const courses = [
     {
         name: "Curso de programación",
         description: "Curso de programación para principiantes",
-        img: "https://geekytheory.com/content/images/2014/10/coderesponsive.jpg",
+        img: "src/cursos/programacion.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vS_XTuqbf-aoqEssa2urPo4XLbjp_PxyN3NqFOtmxM-ZanYQYAZSn-y244crPOBtKm-AqgG3_N46Ia4/pub",
     },
     {
         name: "Curso de frontend",
         description: "Curso de frontend para principiantes",
-        img: "https://railsware.com/images/team/careers/front-end-developer-role-74120a0c.svg",
+        img: "src/cursos/frontend.svg",
         url: "https://docs.google.com/document/d/e/2PACX-1vRPFIdZYr1M-fdnP4q04G5fewXxpOmIcZngbZ8S70ELkXC3Ue2buEhi0k6VSrUnIstWYruFHrpYKiyP/pub",
     },
     {
         name: "Curso de backend",
         description: "Curso de backend para principiantes",
-        img: "https://cdn-icons-png.flaticon.com/512/6213/6213731.png",
+        img: "src/cursos/backend.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vR6Yst05MsddXjhT0bBB2HoeHOHKUpZ7QwBMLw3zohoytkNyvZNuLCt1aEpsuB4qvnZsCFZd_-0eeG9/pub",
     },
     {
@@ -208,7 +208,7 @@ const courses = [
     {
         name: "Curso de base de datos",
         description: "Curso de base de datos para principiantes",
-        img: "https://cdn-icons-png.flaticon.com/512/2906/2906206.png",
+        img: "src/cursos/base-de-datos.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vQwz17BI7zZZr-Z5vfJexKToeGNBzioDTQdTewKWuE9pmco1eeakHxJGQToXJkppB1banon-RzAFy-v/pub",
     },
     {
@@ -220,7 +220,7 @@ const courses = [
     {
         name: "Curso de linux",
         description: "Curso de linux para principiantes",
-        img: "https://codegeek.es/wp-content/uploads/2019/05/Terminalicon2.png",
+        img: "src/cursos/linux.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vSE2rqgPIFfK-aGIB7Z0diXDhT5W3GZ47o36t_M-wp2-wNn-GgOo9OqFrrB7c8u3tFM-rtiz-3TWmsZ/pub",
     },
 ];
