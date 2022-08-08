@@ -138,7 +138,7 @@ const skills = [
         img: "src/habilidades/photoshop.png",
         description: "Programa de diseño.",
         year: "2021",
-    }
+    },
 ];
 
 const projects = [
