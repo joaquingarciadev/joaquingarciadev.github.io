@@ -344,11 +344,13 @@ ScrollTrigger.batch(".card", {
     onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
 });
 
-Draggable.create(".skill", {
-    type: "x,y",
-    edgeResistance: 0.65,
-    bounds: ".desktop",
-    inertia: true,
-    cursor: "default",
-    zIndexBoost: false,
-});
+if (screen.width > 768) {
+    Draggable.create(".skill", {
+        type: "x,y",
+        edgeResistance: 0.65,
+        bounds: ".desktop",
+        inertia: true,
+        cursor: "default",
+        zIndexBoost: false,
+    });
+}
