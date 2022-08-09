@@ -41,6 +41,7 @@ document.querySelector(".switch input").addEventListener("change", (e) => {
         document.documentElement.style.setProperty("--second", "#212121");
         document.documentElement.style.setProperty("--shadow", "#000");
         document.documentElement.style.setProperty("--card", "#212121");
+        document.querySelector("meta[name=theme-color]").setAttribute("content", "#171717");
         localStorage.setItem("theme", "dark");
     } else {
         document.documentElement.style.setProperty("--background", "#fff");
@@ -48,6 +49,7 @@ document.querySelector(".switch input").addEventListener("change", (e) => {
         document.documentElement.style.setProperty("--second", "#ccc");
         document.documentElement.style.setProperty("--shadow", "#ccc");
         document.documentElement.style.setProperty("--card", "#fff");
+        document.querySelector("meta[name=theme-color]").setAttribute("content", "#fff");
         localStorage.setItem("theme", "light");
     }
 });
@@ -250,7 +252,11 @@ function render() {
         document.documentElement.style.setProperty("--second", "#212121");
         document.documentElement.style.setProperty("--shadow", "#000");
         document.documentElement.style.setProperty("--card", "#212121");
+        document.querySelector("meta[name=theme-color]").setAttribute("content", "#171717");
+    } else {
+        document.querySelector("meta[name=theme-color]").setAttribute("content", "#fff");
     }
+
     // Skills
     skills.forEach((skill) => {
         skills_label.innerHTML += `
