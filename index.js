@@ -202,7 +202,7 @@ const courses = [
     },
     {
         name: "Curso de backend",
-        description: "Curso de backend básico",
+        description: "Curso que contine conceptos básico de backend",
         img: "src/cursos/backend.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vR6Yst05MsddXjhT0bBB2HoeHOHKUpZ7QwBMLw3zohoytkNyvZNuLCt1aEpsuB4qvnZsCFZd_-0eeG9/pub",
     },
