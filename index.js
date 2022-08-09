@@ -182,32 +182,24 @@ const projects = [
         repo: "https://github.com/Djoako22/tragamonedas",
         demo: "https://djoako22.github.io/tragamonedas/",
     },
-    {
-        name: "Que comemos?",
-        description: "App que te elije un plato de comida aleatoria",
-        skills: ["HTML", "CSS", "Javascript"],
-        img: "src/proyectos/Que Comemos.png",
-        repo: "https://github.com/Djoako22/que_comemos",
-        demo: "https://djoako22.github.io/que_comemos/",
-    },
 ];
 
 const courses = [
     {
         name: "Curso de programación",
-        description: "Curso de programación para principiantes",
+        description: "Contiene los conocimientos básicos de algunos lenguajes de programación",
         img: "src/cursos/programacion.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vS_XTuqbf-aoqEssa2urPo4XLbjp_PxyN3NqFOtmxM-ZanYQYAZSn-y244crPOBtKm-AqgG3_N46Ia4/pub",
     },
     {
         name: "Curso de frontend",
-        description: "Curso de frontend para principiantes",
+        description: "Curso de frontend para el armado y diseño de una web con HTML, CSS y Javascript",
         img: "src/cursos/frontend.svg",
         url: "https://docs.google.com/document/d/e/2PACX-1vRPFIdZYr1M-fdnP4q04G5fewXxpOmIcZngbZ8S70ELkXC3Ue2buEhi0k6VSrUnIstWYruFHrpYKiyP/pub",
     },
     {
         name: "Curso de backend",
-        description: "Curso de backend para principiantes",
+        description: "Curso de backend básico",
         img: "src/cursos/backend.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vR6Yst05MsddXjhT0bBB2HoeHOHKUpZ7QwBMLw3zohoytkNyvZNuLCt1aEpsuB4qvnZsCFZd_-0eeG9/pub",
     },

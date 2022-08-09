@@ -611,6 +611,10 @@ filter {
     gap: 5px;
 }
 
+.card-hover .card-content {
+    height: 100%;
+}
+
 .card-hover img {
     margin: 5px 0;
     height: 100px;
