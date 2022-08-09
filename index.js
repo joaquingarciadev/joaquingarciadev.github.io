@@ -41,6 +41,7 @@ document.querySelector(".switch input").addEventListener("change", (e) => {
         document.documentElement.style.setProperty("--second", "#212121");
         document.documentElement.style.setProperty("--shadow", "#000");
         document.documentElement.style.setProperty("--card", "#212121");
+        document.querySelector("meta[name=theme-color]").setAttribute("content", "#171717");
         localStorage.setItem("theme", "dark");
     } else {
         document.documentElement.style.setProperty("--background", "#fff");
@@ -48,6 +49,7 @@ document.querySelector(".switch input").addEventListener("change", (e) => {
         document.documentElement.style.setProperty("--second", "#ccc");
         document.documentElement.style.setProperty("--shadow", "#ccc");
         document.documentElement.style.setProperty("--card", "#fff");
+        document.querySelector("meta[name=theme-color]").setAttribute("content", "#fff");
         localStorage.setItem("theme", "light");
     }
 });
@@ -193,7 +195,8 @@ const courses = [
     },
     {
         name: "Curso de frontend",
-        description: "Curso de frontend para el armado y diseño de una web con HTML, CSS y Javascript",
+        description:
+            "Curso de frontend para el armado y diseño de una web con HTML, CSS y Javascript",
         img: "src/cursos/frontend.svg",
         url: "https://docs.google.com/document/d/e/2PACX-1vRPFIdZYr1M-fdnP4q04G5fewXxpOmIcZngbZ8S70ELkXC3Ue2buEhi0k6VSrUnIstWYruFHrpYKiyP/pub",
     },
@@ -249,6 +252,9 @@ function render() {
         document.documentElement.style.setProperty("--second", "#212121");
         document.documentElement.style.setProperty("--shadow", "#000");
         document.documentElement.style.setProperty("--card", "#212121");
+        document.querySelector("meta[name=theme-color]").setAttribute("content", "#171717");
+    } else {
+        document.querySelector("meta[name=theme-color]").setAttribute("content", "#fff");
     }
     // Skills
     skills.forEach((skill) => {
