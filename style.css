@@ -770,7 +770,7 @@ footer {
     footer {
         display: flex;
         flex-direction: column-reverse;
-        gap: 10px;
+        gap: 50px;
         text-align: center;
     }
 }
