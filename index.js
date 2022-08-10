@@ -145,7 +145,7 @@ const skills = [
 
 const projects = [
     {
-        name: "Login Starter",
+        name: "Login starter",
         description: "Login para una aplicación web",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
         img: "src/proyectos/login-starter.png",
@@ -153,7 +153,7 @@ const projects = [
         demo: "https://login-djoako22.vercel.app/",
     },
     {
-        name: "App Pedidos",
+        name: "App pedidos",
         description: "App para que tus clientes puedan hacer pedidos a tu local",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
         img: "src/proyectos/app-pedidos.png",
@@ -161,7 +161,7 @@ const projects = [
         demo: "https://app-pedidos-djoako22.vercel.app/local",
     },
     {
-        name: "App Cripto alarma",
+        name: "App cripto alarma",
         description: "Alarma de precio de criptomonedas",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
         img: "src/proyectos/app-cripto-alarma.png",
@@ -169,7 +169,7 @@ const projects = [
         demo: "https://app-cripto-alarma-djoako22.vercel.app/",
     },
     {
-        name: "Juego Cajero",
+        name: "Juego cajero",
         description: "Juego para practicar y divertirte en el manejo de la caja",
         skills: ["HTML", "CSS", "Javascript"],
         img: "src/proyectos/Juego Cajero.png",
@@ -177,7 +177,7 @@ const projects = [
         demo: "https://djoako22.github.io/juego_cajero/",
     },
     {
-        name: "Juego Máquina tragamonedas",
+        name: "Máquina tragamonedas",
         description: "Juego máquina tragamonedas clásica de 3 rodillos",
         skills: ["HTML", "CSS", "Javascript"],
         img: "src/proyectos/tragamonedas.png",
