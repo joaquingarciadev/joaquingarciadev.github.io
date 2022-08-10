@@ -177,8 +177,8 @@ const projects = [
         demo: "https://djoako22.github.io/juego_cajero/",
     },
     {
-        name: "Máquina tragamonedas",
-        description: "Juego Máquina tragamonedas",
+        name: "Juego Máquina tragamonedas",
+        description: "Juego máquina tragamonedas clásica de 3 rodillos",
         skills: ["HTML", "CSS", "Javascript"],
         img: "src/proyectos/tragamonedas.png",
         repo: "https://github.com/Djoako22/tragamonedas",
