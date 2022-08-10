@@ -236,6 +236,12 @@ const courses = [
         img: "src/habilidades/linux.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vSE2rqgPIFfK-aGIB7Z0diXDhT5W3GZ47o36t_M-wp2-wNn-GgOo9OqFrrB7c8u3tFM-rtiz-3TWmsZ/pub",
     },
+    {
+        name: "Curso de linux 2",
+        description: "Curso de linux para principiantes",
+        img: "src/habilidades/linux.png",
+        url: "https://docs.google.com/document/d/e/2PACX-1vSE2rqgPIFfK-aGIB7Z0diXDhT5W3GZ47o36t_M-wp2-wNn-GgOo9OqFrrB7c8u3tFM-rtiz-3TWmsZ/pub",
+    },
 ];
 
 const skills_label = document.querySelector(".skills");
