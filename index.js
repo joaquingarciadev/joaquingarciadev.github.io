@@ -189,7 +189,8 @@ const projects = [
 const courses = [
     {
         name: "Curso de programación",
-        description: "Contiene las sintaxis y conceptos básicos de algunos lenguajes de programación",
+        description:
+            "Contiene las sintaxis y conceptos básicos de algunos lenguajes de programación",
         img: "src/cursos/programacion.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vS_XTuqbf-aoqEssa2urPo4XLbjp_PxyN3NqFOtmxM-ZanYQYAZSn-y244crPOBtKm-AqgG3_N46Ia4/pub",
     },
@@ -232,12 +233,6 @@ const courses = [
     },
     {
         name: "Curso de linux",
-        description: "Curso de linux para principiantes",
-        img: "src/habilidades/linux.png",
-        url: "https://docs.google.com/document/d/e/2PACX-1vSE2rqgPIFfK-aGIB7Z0diXDhT5W3GZ47o36t_M-wp2-wNn-GgOo9OqFrrB7c8u3tFM-rtiz-3TWmsZ/pub",
-    },
-    {
-        name: "Curso de linux 2",
         description: "Curso de linux para principiantes",
         img: "src/habilidades/linux.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vSE2rqgPIFfK-aGIB7Z0diXDhT5W3GZ47o36t_M-wp2-wNn-GgOo9OqFrrB7c8u3tFM-rtiz-3TWmsZ/pub",
