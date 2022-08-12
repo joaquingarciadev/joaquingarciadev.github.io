@@ -145,12 +145,12 @@ const skills = [
 
 const projects = [
     {
-        name: "Login starter",
-        description: "Login para una aplicación web",
+        name: "Sistema de usuarios",
+        description: "Sistema de usuarios para una aplicación web",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
-        img: "src/proyectos/login-starter.png",
-        repo: "https://github.com/djoako22/login-starter.git",
-        demo: "https://login-djoako22.vercel.app/",
+        img: "src/proyectos/sistema-de-usuarios.png",
+        repo: "https://github.com/djoako22/sistema-de-usuarios.git",
+        demo: "https://sistema-de-usuarios.vercel.app",
     },
     {
         name: "App pedidos",
