@@ -146,7 +146,7 @@ const skills = [
 const projects = [
     {
         name: "Sistema de usuarios",
-        description: "Sistema de usuarios para una aplicación web",
+        description: "App que contiene autenticación, registro, sesiones y gestión de usuarios.",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
         img: "src/proyectos/sistema-de-usuarios.png",
         repo: "https://github.com/djoako22/sistema-de-usuarios.git",
@@ -154,7 +154,7 @@ const projects = [
     },
     {
         name: "App pedidos",
-        description: "App para que tus clientes puedan hacer pedidos a tu local",
+        description: "App para que tus clientes puedan hacer pedidos en tu local de comida.",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
         img: "src/proyectos/app-pedidos.png",
         repo: "https://github.com/Djoako22/app-pedidos.git",
@@ -162,7 +162,7 @@ const projects = [
     },
     {
         name: "App cripto alarma",
-        description: "Alarma de precio de criptomonedas",
+        description: "App para establecer alarmas a un precio para criptomonedas.",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
         img: "src/proyectos/app-cripto-alarma.png",
         repo: "https://app-cripto-alarma-djoako22.vercel.app/",
