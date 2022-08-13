@@ -165,8 +165,8 @@ const projects = [
         description: "App para establecer alarmas a un precio para criptomonedas.",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
         img: "src/proyectos/app-cripto-alarma.png",
-        repo: "https://app-cripto-alarma-djoako22.vercel.app/",
-        demo: "https://app-cripto-alarma-djoako22.vercel.app/",
+        repo: "https://github.com/djoako22/app-cripto-alarma.git",
+        demo: "https://app-cripto-alarma.vercel.app/",
     },
     {
         name: "Juego cajero",
