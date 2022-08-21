@@ -698,6 +698,7 @@ i:hover {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    transform: translateX(5px);
 }
 
 .coffe-link {
@@ -708,10 +709,6 @@ i:hover {
 
 .coffe-link:hover {
     border-bottom: 2px solid var(--text);
-}
-
-.coffe-link img {
-    transform: translateX(5px);
 }
 
 @media (max-width: 768px) {
