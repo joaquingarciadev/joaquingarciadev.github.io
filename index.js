@@ -190,7 +190,7 @@ const courses = [
     {
         name: "Curso de programación",
         description:
-            "Contiene las sintaxis y conceptos básicos de algunos lenguajes de programación",
+            "Contiene conceptos básicos de algunos lenguajes de programación",
         img: "src/cursos/programacion.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vS_XTuqbf-aoqEssa2urPo4XLbjp_PxyN3NqFOtmxM-ZanYQYAZSn-y244crPOBtKm-AqgG3_N46Ia4/pub",
     },
