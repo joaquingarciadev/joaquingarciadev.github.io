@@ -698,16 +698,17 @@ i:hover {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+.coffee span {
     transform: translateX(5px);
 }
-
-.coffe-link {
+.coffee-link {
     font-weight: bolder;
     cursor: pointer;
     transition: border-color 0.2s ease-in-out;
 }
 
-.coffe-link:hover {
+.coffee-link:hover {
     border-bottom: 2px solid var(--text);
 }
 
