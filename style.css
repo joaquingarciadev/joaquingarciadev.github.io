@@ -536,6 +536,7 @@ input:checked + .slider:before {
     width: 80%;
     height: 20px;
     background-color: #aaa;
+    border-radius: 25px;
 }
 
 /* PROJECTS */
