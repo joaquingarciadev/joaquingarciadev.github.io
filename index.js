@@ -163,7 +163,7 @@ const projects = [
     },
     {
         name: "App cripto alarma",
-        description: "App para establecer alarmas a un precio para criptomonedas.",
+        description: "App para establecer alarmas a precios de criptomonedas.",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
         img: "src/proyectos/app-cripto-alarma.png",
         repo: "https://github.com/djoako22/app-cripto-alarma.git",
