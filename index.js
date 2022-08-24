@@ -171,7 +171,7 @@ const projects = [
     },
     {
         name: "Juego cajero",
-        description: "Juego para practicar y divertirte en el manejo de la caja",
+        description: "Juego para practicar y divertirte en el manejo de la caja.",
         skills: ["HTML", "CSS", "Javascript"],
         img: "src/proyectos/Juego Cajero.png",
         repo: "https://github.com/Djoako22/juego_cajero",
@@ -179,7 +179,7 @@ const projects = [
     },
     {
         name: "Máquina tragamonedas",
-        description: "Juego máquina tragamonedas clásica de 3 rodillos",
+        description: "Juego máquina tragamonedas clásica de 3 rodillos.",
         skills: ["HTML", "CSS", "Javascript"],
         img: "src/proyectos/tragamonedas.png",
         repo: "https://github.com/Djoako22/tragamonedas",
