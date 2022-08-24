@@ -154,7 +154,8 @@ const projects = [
     },
     {
         name: "App pedidos",
-        description: "App para que tus clientes puedan hacer pedidos en tu local de comida.",
+        description:
+            "Sistema para locales de comidas para administrar ordenes, enviar notificaciones y administrar las ventas.",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
         img: "src/proyectos/app-pedidos.png",
         repo: "https://github.com/Djoako22/app-pedidos.git",
@@ -189,8 +190,7 @@ const projects = [
 const courses = [
     {
         name: "Curso de programación",
-        description:
-            "Contiene conceptos básicos de algunos lenguajes de programación",
+        description: "Contiene conceptos básicos de algunos lenguajes de programación",
         img: "src/cursos/programacion.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vS_XTuqbf-aoqEssa2urPo4XLbjp_PxyN3NqFOtmxM-ZanYQYAZSn-y244crPOBtKm-AqgG3_N46Ia4/pub",
     },
