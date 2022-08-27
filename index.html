@@ -26,7 +26,7 @@
             </div>
         </div>
         <nav>
-            <div class="open-btn" onclick="showSidebar()">
+            <div class="btn" onclick="showSidebar()">
                 <i class="uil uil-bars"></i>
             </div>
             <ul class="menu">
@@ -43,8 +43,11 @@
             </label>
         </nav>
         <div class="sidebar">
-            <div class="close-btn" onclick="hideSidebar()">
-                <i class="uil uil-multiply"></i>
+            <div class="sidebar-header">
+                <h3></h3>
+                <div class="btn" onclick="hideSidebar()">
+                    <i class="uil uil-multiply"></i>
+                </div>
             </div>
             <ul onclick="hideSidebar()">
                 <li><a href="#home">Inicio</a></li>
@@ -56,7 +59,7 @@
             </ul>
         </div>
         <div class="main">
-            <div class="overlay" onclick="hideSidebar()"></div>
+            <div class="offcanvas" onclick="hideSidebar()"></div>
             <div id="home">
                 <section class="home-title">
                     <h1>

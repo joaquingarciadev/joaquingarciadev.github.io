@@ -25,13 +25,13 @@ window.onscroll = function () {
 };
 
 const showSidebar = () => {
-    document.querySelector(".sidebar").classList.add("show-sidebar");
-    document.querySelector(".overlay").classList.add("show-overlay");
+    document.querySelector(".sidebar").classList.add("show");
+    document.querySelector(".offcanvas").classList.add("show");
 };
 
 const hideSidebar = () => {
-    document.querySelector(".sidebar").classList.remove("show-sidebar");
-    document.querySelector(".overlay").classList.remove("show-overlay");
+    document.querySelector(".sidebar").classList.remove("show");
+    document.querySelector(".offcanvas").classList.remove("show");
 };
 
 document.querySelector(".switch input").addEventListener("change", (e) => {
