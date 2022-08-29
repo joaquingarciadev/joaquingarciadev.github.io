@@ -272,7 +272,7 @@ function render() {
         projects_label.innerHTML += `
         <div class="card">
             <div class="card-img">
-                <img src="${project.img}" alt="" width="50"/>
+                <img src="${project.img}" alt="${project.name}"/>
                 <filter/>
             </div>
             <div class="card-content">
