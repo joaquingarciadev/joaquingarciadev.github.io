@@ -13,13 +13,13 @@ html {
 
 :root {
     --background: #fff;
-    --text: #171717;
+    --text: #030303;
     --second: #ccc;
     --shadow: #ccc;
     --card: #fff;
     --btn: #4f46e5;
     --btn-hover: #433cc3;
-    --nav-height: 80px;
+    --nav-height: 60px;
 }
 
 a {
@@ -28,14 +28,14 @@ a {
 }
 
 h1 {
-    font-size: 4vw;
+    font-size: clamp(2em, 4.5vw, 6em);
     font-weight: 800;
     letter-spacing: 100%;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 4vw;
+    font-size: clamp(2em, 4.5vw, 6em);
     font-weight: 500;
     margin-bottom: 1rem;
 }
@@ -44,12 +44,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: 3vw;
+    font-size: calc(2vw + 1em); 
     font-weight: 400;
 }
 
 p {
-    font-size: 30px;
+    font-size: calc(1.5vw + 1em); 
     font-weight: 300;
     opacity: 0.8;
 }
@@ -283,6 +283,7 @@ nav {
     font-weight: bold;
     color: var(--text);
     cursor: pointer;
+    line-height: 0;
 }
 
 .btn i:hover {
@@ -329,7 +330,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: var(--nav-height);
     padding: 0 20px;
 }
 
@@ -408,7 +409,7 @@ input:checked + .slider:before {
 /* HOME */
 #home {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 60% 1fr;
 }
 
 .home-title {
@@ -429,7 +430,6 @@ input:checked + .slider:before {
 }
 
 .home-img img {
-    aspect-ratio: 1;
     object-fit: contain;
 }
 
@@ -710,23 +710,6 @@ i:hover {
 }
 
 @media (max-width: 768px) {
-    h1,
-    h2 {
-        font-size: 10vw;
-    }
-
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-size: 8vw;
-        font-weight: normal;
-    }
-
-    p {
-        font-size: 6vw;
-    }
-
     #home,
     #about,
     #skills,

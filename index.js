@@ -1,3 +1,4 @@
+// Animations
 const fadeOut = () => {
     const loaderWrapper = document.querySelector(".wrapper");
     loaderWrapper.classList.add("fade");
@@ -34,8 +35,9 @@ const hideSidebar = () => {
     document.querySelector(".offcanvas").classList.remove("show");
 };
 
-document.querySelector(".switch input").addEventListener("change", (e) => {
-    if (e.target.checked) {
+const setDarkMode = (param) => {
+    if (param) {
+        document.querySelector(".switch input").checked = true;
         document.documentElement.style.setProperty("--background", "#171717");
         document.documentElement.style.setProperty("--text", "#f2f2f2");
         document.documentElement.style.setProperty("--second", "#212121");
@@ -52,8 +54,14 @@ document.querySelector(".switch input").addEventListener("change", (e) => {
         document.querySelector("meta[name=theme-color]").setAttribute("content", "#fff");
         localStorage.setItem("theme", "light");
     }
+};
+
+document.querySelector(".switch input").addEventListener("change", (e) => {
+    if (e.target.checked) return setDarkMode(true);
+    setDarkMode(false);
 });
 
+// Data
 const skills = [
     {
         name: "HTML",
@@ -239,6 +247,7 @@ const courses = [
     },
 ];
 
+// Render
 const skills_label = document.querySelector(".skills");
 const projects_label = document.querySelector(".projects");
 const courses_label = document.querySelector(".courses");
@@ -246,17 +255,7 @@ const time = document.querySelector(".time");
 
 function render() {
     // Theme
-    if (localStorage.getItem("theme") === "dark") {
-        document.querySelector(".switch input").checked = true;
-        document.documentElement.style.setProperty("--background", "#171717");
-        document.documentElement.style.setProperty("--text", "#f2f2f2");
-        document.documentElement.style.setProperty("--second", "#212121");
-        document.documentElement.style.setProperty("--shadow", "#000");
-        document.documentElement.style.setProperty("--card", "#212121");
-        document.querySelector("meta[name=theme-color]").setAttribute("content", "#171717");
-    } else {
-        document.querySelector("meta[name=theme-color]").setAttribute("content", "#fff");
-    }
+    if (localStorage.getItem("theme") === "dark") setDarkMode(true);
 
     // Skills
     skills.forEach((skill) => {
@@ -323,6 +322,7 @@ function render() {
 
 render();
 
+// Another animation
 const textReveal = (text, delay = 0, duration = 2000) => {
     let textWrapper = document.querySelector(text);
     textWrapper.innerHTML = textWrapper.textContent.replace(
