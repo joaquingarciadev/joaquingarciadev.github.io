@@ -14,12 +14,14 @@ window.onscroll = function () {
     if (previousScroll > currentScroll) {
         document.querySelector("nav").style.top = "0";
     } else {
-        document.querySelector("nav").style.top = "calc(var(--nav-height) * -1)";
+        document.querySelector("nav").style.top =
+            "calc(var(--nav-height) * -1)";
     }
     previousScroll = currentScroll;
     // Effect shadow navbar
     if (currentScroll > 80) {
-        document.querySelector("nav").style.boxShadow = "0px 0px 10px 0px var(--shadow)";
+        document.querySelector("nav").style.boxShadow =
+            "0px 0px 10px 0px var(--shadow)";
     } else {
         document.querySelector("nav").style.boxShadow = "none";
     }
@@ -43,7 +45,9 @@ const setDarkMode = (param) => {
         document.documentElement.style.setProperty("--second", "#212121");
         document.documentElement.style.setProperty("--shadow", "#000");
         document.documentElement.style.setProperty("--card", "#212121");
-        document.querySelector("meta[name=theme-color]").setAttribute("content", "#171717");
+        document
+            .querySelector("meta[name=theme-color]")
+            .setAttribute("content", "#171717");
         localStorage.setItem("theme", "dark");
     } else {
         document.documentElement.style.setProperty("--background", "#fff");
@@ -51,7 +55,9 @@ const setDarkMode = (param) => {
         document.documentElement.style.setProperty("--second", "#ccc");
         document.documentElement.style.setProperty("--shadow", "#ccc");
         document.documentElement.style.setProperty("--card", "#fff");
-        document.querySelector("meta[name=theme-color]").setAttribute("content", "#fff");
+        document
+            .querySelector("meta[name=theme-color]")
+            .setAttribute("content", "#fff");
         localStorage.setItem("theme", "light");
     }
 };
@@ -78,7 +84,8 @@ const skills = [
     {
         name: "Javascript",
         img: "src/habilidades/js.svg",
-        description: "Lenguaje de programación para la creación de páginas web.",
+        description:
+            "Lenguaje de programación para la creación de páginas web.",
         year: "2017",
     },
     {
@@ -104,7 +111,8 @@ const skills = [
     {
         name: "Express JS",
         img: "src/habilidades/express-js.png",
-        description: "Infraestructura web rápida, minimalista y flexible para Node.js.",
+        description:
+            "Infraestructura web rápida, minimalista y flexible para Node.js.",
         year: "2020",
     },
     {
@@ -153,17 +161,55 @@ const skills = [
 
 const projects = [
     {
+        name: "Sistema de turnos",
+        description: "Sistema para la gestión de turnos.",
+        skills: [
+            "React",
+            "Next JS",
+            "Node JS",
+            "Express JS",
+            "MongoDB",
+            "Bootstrap",
+        ],
+        img: "src/proyectos/sistema-de-turnos.png",
+        repo: "#",
+        demo: "https://sistema-de-turnos.vercel.app",
+    },
+    {
+        name: "Sistema para restaurantes",
+        description:
+            "Sistema para restaurantes de comidas para administrar ordenes, enviar notificaciones y administrar ganancias.",
+        skills: [
+            "React",
+            "Next JS",
+            "Node JS",
+            "Express JS",
+            "MongoDB",
+            "Bootstrap",
+        ],
+        img: "src/proyectos/sistema-para-restaurantes.png",
+        repo: "#",
+        demo: "https://sistema-para-restaurantes.vercel.app",
+    },
+    {
         name: "Sistema de usuarios",
-        description: "App que contiene autenticación, registro, sesiones y gestión de usuarios.",
-        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
+        description:
+            "App que contiene autenticación, registro, sesiones y gestión de usuarios.",
+        skills: [
+            "React",
+            "Next JS",
+            "Node JS",
+            "Express JS",
+            "MongoDB",
+            "Bootstrap",
+        ],
         img: "src/proyectos/sistema-de-usuarios.png",
         repo: "https://github.com/djoako22/sistema-de-usuarios.git",
         demo: "https://sistema-de-usuarios.vercel.app",
     },
     {
         name: "App pedidos",
-        description:
-            "Sistema para locales de comidas para administrar ordenes, enviar notificaciones y administrar las ventas.",
+        description: "App de pedidos simple",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
         img: "src/proyectos/app-pedidos.png",
         repo: "https://github.com/Djoako22/app-pedidos.git",
@@ -172,14 +218,22 @@ const projects = [
     {
         name: "App cripto alarma",
         description: "App para establecer alarmas a precios de criptomonedas.",
-        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB", "Bootstrap"],
+        skills: [
+            "React",
+            "Next JS",
+            "Node JS",
+            "Express JS",
+            "MongoDB",
+            "Bootstrap",
+        ],
         img: "src/proyectos/app-cripto-alarma.png",
         repo: "https://github.com/djoako22/app-cripto-alarma.git",
         demo: "https://app-cripto-alarma.vercel.app/",
     },
     {
         name: "Juego cajero",
-        description: "Juego para practicar y divertirte en el manejo de la caja.",
+        description:
+            "Juego para practicar y divertirte en el manejo de la caja.",
         skills: ["HTML", "CSS", "Javascript"],
         img: "src/proyectos/Juego Cajero.png",
         repo: "https://github.com/Djoako22/juego_cajero",
@@ -198,7 +252,8 @@ const projects = [
 const courses = [
     {
         name: "Curso de programación",
-        description: "Contiene conceptos básicos de algunos lenguajes de programación",
+        description:
+            "Contiene conceptos básicos de algunos lenguajes de programación",
         img: "src/cursos/programacion.png",
         url: "https://docs.google.com/document/d/e/2PACX-1vS_XTuqbf-aoqEssa2urPo4XLbjp_PxyN3NqFOtmxM-ZanYQYAZSn-y244crPOBtKm-AqgG3_N46Ia4/pub",
     },
@@ -279,7 +334,9 @@ function render() {
                 <p>${project.description}</p>
                 <div class="card-icons">
                     ${project.skills.map((skill) => {
-                        const skill_ = skills.find((skill_) => skill_.name === skill);
+                        const skill_ = skills.find(
+                            (skill_) => skill_.name === skill
+                        );
                         return `<img src=${skill_.img} width='20' style="border-radius: 50%;" arial-label="${skill_.name}">`;
                     })}
                 </div>
