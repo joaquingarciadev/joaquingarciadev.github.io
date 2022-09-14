@@ -163,14 +163,7 @@ const projects = [
     {
         name: "Sistema de turnos",
         description: "Sistema para la gestión de turnos.",
-        skills: [
-            "React",
-            "Next JS",
-            "Node JS",
-            "Express JS",
-            "MongoDB",
-            "Bootstrap",
-        ],
+        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
         img: "src/proyectos/sistema-de-turnos.png",
         repo: "#",
         demo: "https://sistema-de-turnos.vercel.app",
@@ -179,14 +172,7 @@ const projects = [
         name: "Sistema para restaurantes",
         description:
             "Sistema para restaurantes de comidas para administrar ordenes, enviar notificaciones y administrar ganancias.",
-        skills: [
-            "React",
-            "Next JS",
-            "Node JS",
-            "Express JS",
-            "MongoDB",
-            "Bootstrap",
-        ],
+        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
         img: "src/proyectos/sistema-para-restaurantes.png",
         repo: "#",
         demo: "https://sistema-para-restaurantes.vercel.app",
