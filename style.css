@@ -28,14 +28,14 @@ a {
 }
 
 h1 {
-    font-size: clamp(2em, 4.5vw, 6em);
+    font-size: 4vw;
     font-weight: 800;
     letter-spacing: 100%;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: clamp(2em, 4.5vw, 6em);
+    font-size: 4vw;
     font-weight: 500;
     margin-bottom: 1rem;
 }
@@ -44,12 +44,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: calc(2vw + 1em); 
+    font-size: 3vw;
     font-weight: 400;
 }
 
 p {
-    font-size: calc(1.5vw + 1em); 
+    font-size: 30px;
     font-weight: 300;
     opacity: 0.8;
 }
@@ -709,6 +709,23 @@ i:hover {
 }
 
 @media (max-width: 768px) {
+    h1,
+    h2 {
+        font-size: 10vw;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 8vw;
+        font-weight: normal;
+    }
+
+    p {
+        font-size: 6vw;
+    }
+    
     #home,
     #about,
     #skills,
