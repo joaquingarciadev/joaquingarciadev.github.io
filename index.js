@@ -52,8 +52,8 @@ const setDarkMode = (param) => {
     } else {
         document.documentElement.style.setProperty("--background", "#fff");
         document.documentElement.style.setProperty("--text", "#171717");
-        document.documentElement.style.setProperty("--second", "#ccc");
-        document.documentElement.style.setProperty("--shadow", "#ccc");
+        document.documentElement.style.setProperty("--second", "#ddd");
+        document.documentElement.style.setProperty("--shadow", "#ddd");
         document.documentElement.style.setProperty("--card", "#fff");
         document
             .querySelector("meta[name=theme-color]")
@@ -332,6 +332,7 @@ function render() {
             <div class="card-content">
                 <h3>${project.name}</h3>
                 <p>${project.description}</p>
+                <br />
                 <div class="card-icons">
                     ${project.skills.map((skill) => {
                         const skill_ = skills.find(
