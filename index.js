@@ -195,7 +195,7 @@ const projects = [
     },
     {
         name: "App pedidos",
-        description: "App de pedidos simple",
+        description: "App de pedidos simple.",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
         img: "src/proyectos/app-pedidos.png",
         repo: "https://github.com/Djoako22/app-pedidos.git",
