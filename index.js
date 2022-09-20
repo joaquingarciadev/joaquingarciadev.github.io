@@ -161,6 +161,14 @@ const skills = [
 
 const projects = [
     {
+        name: "Blog simple",
+        description: "Blog realizado en nextjs utilizando markdown.",
+        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
+        img: "src/proyectos/blog-simple.png",
+        repo: "#",
+        demo: "https://blog-simple.vercel.app",
+    },
+    {
         name: "Sistema de turnos",
         description: "Sistema para la gestión de turnos.",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
