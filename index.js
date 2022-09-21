@@ -163,7 +163,7 @@ const projects = [
     {
         name: "Blog simple",
         description: "Blog realizado en nextjs utilizando markdown.",
-        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
+        skills: ["React", "Next JS"],
         img: "src/proyectos/blog-simple.png",
         repo: "#",
         demo: "https://blog-simple.vercel.app",
