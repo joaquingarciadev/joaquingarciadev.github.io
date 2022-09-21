@@ -539,6 +539,7 @@ input:checked + .slider:before {
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    align-items: start;
     gap: 5px;
 }
 
