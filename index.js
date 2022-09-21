@@ -179,7 +179,7 @@ const projects = [
     {
         name: "Sistema para restaurantes",
         description:
-            "Sistema para restaurantes de comidas para administrar ordenes, enviar notificaciones y administrar ganancias.",
+            "Sistema para restaurantes para administrar ordenes, enviar notificaciones y administrar ganancias.",
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
         img: "src/proyectos/sistema-para-restaurantes.png",
         repo: "#",
