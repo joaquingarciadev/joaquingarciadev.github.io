@@ -161,6 +161,14 @@ const skills = [
 
 const projects = [
     {
+        name: "Página web - La Fermina",
+        description: "Página web para Salón de Fiestas y Eventos.",
+        skills: ["HTML", "CSS", "Javascript"],
+        img: "src/proyectos/pagina-la-fermina.png",
+        repo: "#",
+        demo: "https://laferminafiestasyeventos.netlify.app",
+    },
+    {
         name: "Blog simple",
         description: "Blog realizado en nextjs utilizando markdown.",
         skills: ["React", "Next JS"],
@@ -223,6 +231,14 @@ const projects = [
         img: "src/proyectos/app-cripto-alarma.png",
         repo: "https://github.com/djoako22/app-cripto-alarma.git",
         demo: "https://app-cripto-alarma.vercel.app/",
+    },
+    {
+        name: "Portafolio",
+        description: "Portafolio realizado con HTML, CSS y Javascript.",
+        skills: ["HTML", "CSS", "Javascript"],
+        img: "src/proyectos/portafolio.png",
+        repo: "#",
+        demo: "https://djoako22.github.io/"
     },
     {
         name: "Juego cajero",
@@ -329,19 +345,17 @@ function render() {
                 <br />
                 <div class="card-icons">
                     ${project.skills.map((skill) => {
-                        const skill_ = skills.find(
-                            (skill_) => skill_.name === skill
-                        );
-                        return `<img src=${skill_.img} width='20' style="border-radius: 50%;" arial-label="${skill_.name}">`;
-                    })}
+            const skill_ = skills.find(
+                (skill_) => skill_.name === skill
+            );
+            return `<img src=${skill_.img} width='20' style="border-radius: 50%;" arial-label="${skill_.name}">`;
+        })}
                 </div>
                 <div class="card-links">
-                    <a href="${
-                        project.repo
-                    }" aria-label="REPO" target="_blank"><i class="uil uil-github"></i></a>
-                    <a href="${
-                        project.demo
-                    }" aria-label="DEMO" target="_blank"><i class="uil uil-play-circle"></i></a>
+                    <a href="${project.repo
+            }" aria-label="REPO" target="_blank"><i class="uil uil-github"></i></a>
+                    <a href="${project.demo
+            }" aria-label="DEMO" target="_blank"><i class="uil uil-play-circle"></i></a>
                 </div>
             </div>
         </div>
