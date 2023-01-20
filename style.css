@@ -561,6 +561,7 @@ input:checked + .slider:before {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
 }
 
 filter {
@@ -570,7 +571,7 @@ filter {
     width: 100%;
     height: 100%;
     /* background: #00000010; */
-    /* background: linear-gradient(to right, #9d50bb50, #6e48aa50); */
+    /* background: linear-gradient(to right, #9d50bb30, #6e48aa30); */
 }
 
 .card-content {
