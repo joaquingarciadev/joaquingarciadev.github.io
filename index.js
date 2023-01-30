@@ -1,3 +1,7 @@
+/* FOOTER */
+const year = document.querySelector(".year");
+year.textContent = new Date().getFullYear();
+
 // Animations
 const fadeOut = () => {
     const loaderWrapper = document.querySelector(".wrapper");

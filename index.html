@@ -1,207 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#fff" />
-        <meta name="author" content="Joaquin Garcia" />
-        <meta
-            name="description"
-            content="Hola, mi nombre es Joaquin Garcia y este es mi portafolio web, soy desarrollador web full stack, me especializo en crear sitios web y aplicaciones con las tecnologías reactJS, nodeJS, expressJS y mongoDB, también manejo herramientas como git, docker y además me adapto rápido a las tecnologías que se necesiten en el proceso."
-        />
-        <meta
-            name="keywords"
-            content="Joaquin Garcia, desarrollador web, programador, desarrollador full stack, reactJS, nodeJS, expressJS, mongoDB, git, docker, djoako22, Djoako22, portafolio, sitio web personal, Argentina, Córdoba"
-        />
-        <meta
-            name="google-site-verification"
-            content="6XHylW_MZ-kTsw1OquSgtyJAPE__LnV2jR0JoFyPpjM"
-        />
-        <title>PORTAFOLIO | Joaquin Garcia</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="shortcut icon" href="src/perfil.png" />
-        <link
-            rel="stylesheet"
-            href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-        />
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="loader">
-                <div class="chaotic-orbit"></div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="author" content="Joaquin Garcia" />
+    <meta
+      name="description"
+      content="Hola, mi nombre es Joaquin Garcia y este es mi portafolio web, soy desarrollador web full stack, me especializo en crear sitios web y aplicaciones con las tecnologías reactJS, nodeJS, expressJS y mongoDB, también manejo herramientas como git, docker y además me adapto rápido a las tecnologías que se necesiten en el proceso."
+    />
+    <meta
+      name="keywords"
+      content="Joaquin Garcia, desarrollador web, programador, desarrollador full stack, reactJS, nodeJS, expressJS, mongoDB, git, docker, djoako22, Djoako22, portafolio, sitio web personal, Argentina, Córdoba"
+    />
+    <meta
+      name="google-site-verification"
+      content="6XHylW_MZ-kTsw1OquSgtyJAPE__LnV2jR0JoFyPpjM"
+    />
+    <title>PORTAFOLIO | Joaquin Garcia</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="src/perfil.png" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="loader">
+        <div class="chaotic-orbit"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="btn" onclick="showSidebar()">
+        <i class="uil uil-bars"></i>
+      </div>
+      <ul class="menu">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#about">Sobre mi</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#courses">Cursos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </nav>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h3></h3>
+        <div class="btn" onclick="hideSidebar()">
+          <i class="uil uil-multiply"></i>
         </div>
-        <nav>
-            <div class="btn" onclick="showSidebar()">
-                <i class="uil uil-bars"></i>
-            </div>
-            <ul class="menu">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Sobre mi</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#courses">Cursos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-            <label class="switch">
-                <input type="checkbox" />
-                <span class="slider"></span>
-            </label>
-        </nav>
-        <div class="sidebar">
-            <div class="sidebar-header">
-                <h3></h3>
-                <div class="btn" onclick="hideSidebar()">
-                    <i class="uil uil-multiply"></i>
-                </div>
-            </div>
-            <ul onclick="hideSidebar()">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Sobre mi</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#courses">Cursos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
+      </div>
+      <ul onclick="hideSidebar()">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#about">Sobre mi</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#courses">Cursos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="offcanvas" onclick="hideSidebar()"></div>
+      <div id="home">
+        <section class="home-title">
+          <h1>
+            Hola!<br />
+            Soy Joaquin Garcia
+          </h1>
+          <h3>Desarrollador web</h3>
+        </section>
+        <section class="home-img">
+          <img src="src/perfil.png" alt="perfil" width="100%" />
+        </section>
+      </div>
+      <div id="about">
+        <section>
+          <h2>Sobre mi</h2>
+          <p>
+            Me especializo en crear sitios web y aplicaciones utilizando las
+            tecnologías web más recientes. Durante el proceso de desarrollo, me
+            adhiero a las soluciones que proporcionen la máxima experiencia de
+            usuario con un diseño minimalista.
+          </p>
+          <br />
+        </section>
+      </div>
+      <div id="skills">
+        <h2>Habilidades</h2>
+        <div class="screen">
+          <div class="desktop">
+            <div class="skills"></div>
+          </div>
+          <div class="bar">
+            <div class="logo">●</div>
+            <div class="time"></div>
+          </div>
         </div>
-        <div class="main">
-            <div class="offcanvas" onclick="hideSidebar()"></div>
-            <div id="home">
-                <section class="home-title">
-                    <h1>
-                        Hola!<br />
-                        Soy Joaquin Garcia
-                    </h1>
-                    <h3>Desarrollador web</h3>
-                </section>
-                <section class="home-img">
-                    <img src="src/perfil.png" alt="perfil" width="100%" />
-                </section>
-            </div>
-            <div id="about">
-                <section>
-                    <h2>Sobre mi</h2>
-                    <p>
-                        Me especializo en crear sitios web y aplicaciones
-                        utilizando las tecnologías web más recientes. Durante el
-                        proceso de desarrollo, me adhiero a las soluciones que
-                        proporcionen la máxima experiencia de usuario con un
-                        diseño minimalista.
-                    </p>
-                    <br />
-                </section>
-            </div>
-            <div id="skills">
-                <h2>Habilidades</h2>
-                <div class="screen">
-                    <div class="desktop">
-                        <div class="skills"></div>
-                    </div>
-                    <div class="bar">
-                        <div class="logo">●</div>
-                        <div class="time"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="projects">
-                <h2>Proyectos</h2>
-                <div class="projects"></div>
-            </div>
-            <div id="courses">
-                <h2>Cursos</h2>
-                <div class="courses"></div>
-            </div>
-            <div id="contact">
-                <h2>Contacto</h2>
-                <div class="contact">
-                    <form
-                        action="https://formsubmit.co/2f7765eedb8d1263733f1a742ea751d0"
-                        method="post"
-                    >
-                        <input
-                            type="hidden"
-                            name="_next"
-                            value="https://djoako22.github.io/"
-                        />
-                        <input
-                            type="hidden"
-                            name="_subject"
-                            value="MENSAJE DEL PORTAFOLIO"
-                        />
-                        <input type="hidden" name="_captcha" value="false" />
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Nombre"
-                            required
-                        />
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                            title="Ingrese un email válido"
-                            required
-                        />
-                        <textarea
-                            name="message"
-                            id=""
-                            cols="30"
-                            rows="8"
-                            placeholder="Mensaje"
-                            required
-                        ></textarea>
-                        <button type="submit">Enviar consulta</button>
-                    </form>
-                </div>
-            </div>
-            <footer>
-                <div class="copyright">
-                    © &nbsp<a href="https://djoako22.github.io/"
-                        >Joaquin Garcia</a
-                    >. Todos los derechos reservados
-                </div>
-                <div class="social">
-                    <a
-                        href="https://www.linkedin.com/in/joaquin-garcia-93100b163/"
-                        target="_blank"
-                    >
-                        <i class="uil uil-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/Djoako22" target="_blank">
-                        <i class="uil uil-github"></i>
-                    </a>
-                    <a href="mailto:  djoako22@gmail.com" target="_blank">
-                        <i class="uil uil-envelope"></i>
-                    </a>
-                </div>
-                <div class="coffee">
-                    <span>
-                        Buy me a
-                        <a
-                            href="https://cafecito.app/djoako22"
-                            class="coffee-link"
-                            target="_blank"
-                            >coffee<img
-                                src="https://thumbs.gfycat.com/DeliriousRecentFairyfly-max-1mb.gif"
-                                alt="bmc"
-                                height="35"
-                        /></a>
-                    </span>
-                </div>
-            </footer>
+      </div>
+      <div id="projects">
+        <h2>Proyectos</h2>
+        <div class="projects"></div>
+      </div>
+      <div id="courses">
+        <h2>Cursos</h2>
+        <div class="courses"></div>
+      </div>
+      <div id="contact">
+        <h2>Contacto</h2>
+        <div class="contact">
+          <form
+            action="https://formsubmit.co/2f7765eedb8d1263733f1a742ea751d0"
+            method="post"
+          >
+            <input
+              type="hidden"
+              name="_next"
+              value="https://djoako22.github.io/"
+            />
+            <input
+              type="hidden"
+              name="_subject"
+              value="MENSAJE DEL PORTAFOLIO"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="name" placeholder="Nombre" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+              title="Ingrese un email válido"
+              required
+            />
+            <textarea
+              name="message"
+              id=""
+              cols="30"
+              rows="8"
+              placeholder="Mensaje"
+              required
+            ></textarea>
+            <button type="submit">Enviar consulta</button>
+          </form>
         </div>
+      </div>
+      <footer>
+        <div class="copyright">
+          <p>
+            © <span class="year"></span> <a href="https://djoako22.github.io/">Joaquin Garcia</a>. Todos los derechos
+            reservados.
+          </p>
+        </div>
+        <div class="social">
+          <a
+            href="https://www.linkedin.com/in/joaquin-garcia-93100b163/"
+            target="_blank"
+          >
+            <i class="uil uil-linkedin"></i>
+          </a>
+          <a href="https://github.com/Djoako22" target="_blank">
+            <i class="uil uil-github"></i>
+          </a>
+          <a href="mailto:  djoako22@gmail.com" target="_blank">
+            <i class="uil uil-envelope"></i>
+          </a>
+        </div>
+        <div class="coffee">
+          <span>
+            Buy me a
+            <a
+              href="https://cafecito.app/djoako22"
+              class="coffee-link"
+              target="_blank"
+              >coffee<img
+                src="https://thumbs.gfycat.com/DeliriousRecentFairyfly-max-1mb.gif"
+                alt="bmc"
+                height="35"
+            /></a>
+          </span>
+        </div>
+      </footer>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
-            integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>
-        <script src="index.js"></script>
-    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
