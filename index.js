@@ -180,23 +180,23 @@ const projects = [
         repo: "#",
         demo: "https://blog-simple.vercel.app",
     },
-    {
-        name: "Sistema de turnos",
-        description: "Sistema para la gestión de turnos.",
-        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
-        img: "src/proyectos/sistema-de-turnos.png",
-        repo: "#",
-        demo: "https://sistema-de-turnos.vercel.app",
-    },
-    {
-        name: "Sistema para restaurantes",
-        description:
-            "Sistema para restaurantes para administrar ordenes.",
-        skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
-        img: "src/proyectos/sistema-para-restaurantes.png",
-        repo: "#",
-        demo: "https://sistema-para-restaurantes.vercel.app",
-    },
+    // {
+    //     name: "Sistema de turnos",
+    //     description: "Sistema para la gestión de turnos.",
+    //     skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
+    //     img: "src/proyectos/sistema-de-turnos.png",
+    //     repo: "#",
+    //     demo: "https://sistema-de-turnos.vercel.app",
+    // },
+    // {
+    //     name: "Sistema para restaurantes",
+    //     description:
+    //         "Sistema para restaurantes para administrar ordenes.",
+    //     skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
+    //     img: "src/proyectos/sistema-para-restaurantes.png",
+    //     repo: "#",
+    //     demo: "https://sistema-para-restaurantes.vercel.app",
+    // },
     {
         name: "Sistema de usuarios",
         description:
@@ -211,7 +211,7 @@ const projects = [
         ],
         img: "src/proyectos/sistema-de-usuarios.png",
         repo: "https://github.com/djoako22/sistema-de-usuarios.git",
-        demo: "https://sistema-de-usuarios.vercel.app",
+        // demo: "https://sistema-de-usuarios.vercel.app",
     },
     {
         name: "App pedidos",
@@ -219,7 +219,7 @@ const projects = [
         skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
         img: "src/proyectos/app-pedidos.png",
         repo: "https://github.com/Djoako22/app-pedidos.git",
-        demo: "https://app-pedidos-djoako22.vercel.app/local",
+        // demo: "https://app-pedidos-djoako22.vercel.app/local",
     },
     {
         name: "App cripto alarma",
@@ -234,7 +234,7 @@ const projects = [
         ],
         img: "src/proyectos/app-cripto-alarma.png",
         repo: "https://github.com/djoako22/app-cripto-alarma.git",
-        demo: "https://app-cripto-alarma.vercel.app/",
+        // demo: "https://app-cripto-alarma.vercel.app/",
     },
     {
         name: "Portafolio",
@@ -358,8 +358,10 @@ function render() {
                 <div class="card-links">
                     <a href="${project.repo
             }" aria-label="REPO" target="_blank"><i class="uil uil-github"></i></a>
-                    <a href="${project.demo
-            }" aria-label="DEMO" target="_blank"><i class="uil uil-play-circle"></i></a>
+            ${project.demo !== undefined ? `<a href="${project.demo
+                }" aria-label="DEMO" target="_blank"><i class="uil uil-play-circle"></i></a>
+            ` : ""
+            }        
                 </div>
             </div>
         </div>
