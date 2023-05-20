@@ -33,21 +33,23 @@
       </div>
     </div>
     <nav>
-      <div class="btn" onclick="showSidebar()">
-        <i class="uil uil-bars"></i>
+      <div class="container">
+        <div class="btn" onclick="showSidebar()">
+          <i class="uil uil-bars"></i>
+        </div>
+        <ul class="menu">
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about">Sobre mi</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#courses">Cursos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider"></span>
+        </label>
       </div>
-      <ul class="menu">
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#about">Sobre mi</a></li>
-        <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#courses">Cursos</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-      <label class="switch">
-        <input type="checkbox" />
-        <span class="slider"></span>
-      </label>
     </nav>
     <div class="sidebar">
       <div class="sidebar-header">
@@ -66,7 +68,7 @@
       </ul>
     </div>
     <div class="offcanvas" onclick="hideSidebar()"></div>
-    <div class="main">
+    <main class="main container">
       <div id="home">
         <section class="home-title">
           <h1 class="title">
@@ -173,7 +175,7 @@
           </a>
         </div>
       </footer>
-    </div>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
