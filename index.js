@@ -164,7 +164,7 @@ const skills = [
 const projects = [
   {
     name: "Página web - La Fermina",
-    description: "Página web para Salón de Fiestas y Eventos.",
+    description: "Realicé una página web para un Salón de Fiestas y Eventos, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/pagina-la-fermina.png",
     repo: "#",
