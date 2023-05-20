@@ -736,9 +736,9 @@ i:hover {
   }
 
   /* NAV */
-    nav .container {
+  nav .container {
     flex-direction: row-reverse;
-    }
+  }
 
   .menu {
     display: none;
