@@ -198,7 +198,7 @@ const projects = [
   {
     name: "Sistema de usuarios",
     description:
-      "Desarrollé una aplicación completa con autenticación, registro y gestión de usuarios utilizando el stack MERN (MongoDB, Express, React y Node.js). Los usuarios pueden registrarse, iniciar sesión y administrar su información personal. Este proyecto me permitió aplicar y potenciar mis habilidades de desarrollo web con el stack MERN.",
+      "Desarrollé una aplicación completa con autenticación, registro y gestión de usuarios. Los usuarios pueden registrarse, iniciar sesión y administrar su información personal. Este proyecto me permitió aplicar y potenciar mis habilidades de desarrollo web con el stack MERN  (MongoDB, Express, React y Node.js).",
     skills: [
       "React",
       "Next JS",
