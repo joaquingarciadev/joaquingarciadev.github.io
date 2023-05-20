@@ -235,8 +235,8 @@ const projects = [
   //     // demo: "https://app-cripto-alarma.vercel.app/",
   // },
   {
-    name: "Portafolio",
-    description: "Portafolio realizado con HTML, CSS y Javascript.",
+    name: "Mi portafolio web",
+    description: "Desarrollé un portafolio interactivo utilizando HTML, CSS y Javascript, donde muestro mi trabajo y habilidades. Además, incorporé animaciones dinámicas utilizando GSAP para agregar un toque especial a la experiencia de navegación.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/portafolio.png",
     repo: "#",
@@ -244,7 +244,7 @@ const projects = [
   },
   {
     name: "Juego cajero",
-    description: "Juego para practicar y divertirte en el manejo de la caja.",
+    description: "Juego de simulación de caja registradora. Aprende y diviértete mientras practicas tus habilidades en la gestión de efectivo.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/Juego Cajero.png",
     repo: "https://github.com/Djoako22/juego_cajero",
@@ -252,7 +252,7 @@ const projects = [
   },
   {
     name: "Máquina tragamonedas",
-    description: "Juego máquina tragamonedas clásica de 3 rodillos.",
+    description: "Juego de máquina tragamonedas, donde aprendí a crear animaciones lógicas utilizando Javascript.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/tragamonedas.png",
     repo: "https://github.com/Djoako22/tragamonedas",
