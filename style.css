@@ -40,8 +40,7 @@ a {
 
 h1 {
   font-size: clamp(3rem, 4vw, 4.5rem);
-  font-weight: 800;
-  line-height: 1;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
@@ -54,6 +53,7 @@ h2 {
 h3 {
   font-size: clamp(2rem, 2.5vw, 2.5rem);
   font-weight: 400;
+  margin-bottom: 5px;
 }
 
 p {
@@ -62,7 +62,7 @@ p {
 }
 
 body.dark .bg-dark {
-  clip-path: circle(500vh at 100% 0);
+  clip-path: circle(200% at 100% 0);
 }
 
 .bg-dark {
@@ -74,8 +74,8 @@ body.dark .bg-dark {
   object-fit: cover;
   z-index: -1;
   background: #171717;
-  clip-path: circle(0% at 100% 0);
-  transition: clip-path 0.7s ease-in;
+  clip-path: circle(0 at 100% 0);
+  transition: clip-path 1s ease-in-out;
 }
 
 nav .bg-dark {
@@ -485,11 +485,11 @@ input:checked + .slider:before {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: -1;
+  z-index: 1;
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  background-color: #ddd8;
+  background-color: #ddd5;
   transform: translate(-50px, -50px);
 }
 

@@ -1,8 +1,4 @@
-/* FOOTER */
-const year = document.querySelector(".year");
-year.textContent = new Date().getFullYear();
-
-// Animations
+// Load animation
 const fadeOut = () => {
   const loaderWrapper = document.querySelector(".wrapper");
   loaderWrapper.classList.add("fade");
@@ -11,6 +7,7 @@ const fadeOut = () => {
 
 window.addEventListener("load", fadeOut);
 
+// navbar
 let previousScroll = window.pageYOffset;
 window.onscroll = function () {
   // Effect hide and show navbar
@@ -22,7 +19,7 @@ window.onscroll = function () {
   }
   previousScroll = currentScroll;
   // Effect shadow navbar
-  if (currentScroll > 0) {
+  if (previousScroll > 0) {
     document.querySelector("nav").classList.add("scroll");
   } else {
     document.querySelector("nav").classList.remove("scroll");
@@ -328,6 +325,7 @@ function render() {
         </div>
         `;
   });
+
   // Projects
   projects.forEach((project) => {
     projects_label.innerHTML += `
@@ -363,6 +361,7 @@ function render() {
         </div>
         `;
   });
+
   // Courses
   courses.forEach((course) => {
     courses_label.innerHTML += `
@@ -375,6 +374,7 @@ function render() {
         </div>
         `;
   });
+
   // Time
   setInterval(() => {
     currentTime = new Date();
@@ -386,6 +386,10 @@ function render() {
     timeString = `${hours}:${minutes}`;
     time.innerHTML = timeString;
   }, 1000);
+
+  // Year in footer
+  const year = document.querySelector(".year");
+  year.textContent = new Date().getFullYear();
 }
 
 render();
