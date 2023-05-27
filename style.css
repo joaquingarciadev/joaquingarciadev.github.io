@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   color: var(--text);
+  transition: color .3s, background-color .3s;
 }
 
 html {
@@ -58,55 +59,6 @@ h3 {
 p {
   font-size: 14px;
   color: #777;
-}
-
-body.dark .bg-dark {
-  clip-path: circle(200% at 100% 0);
-}
-
-.bg-dark {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  background: #171717;
-  clip-path: circle(0 at 100% 0);
-  transition: clip-path 1s ease-in-out;
-}
-
-nav .bg-dark {
-  position: absolute;
-}
-
-body.dark main {
-  animation: fadeInDark 1.5s ease-in-out;
-}
-
-body:not(.dark) main {
-  animation: fadeInLight 1.5s ease-in-out;
-}
-
-@keyframes fadeInDark {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInLight {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 .container {
@@ -414,6 +366,7 @@ nav .container {
   cursor: pointer;
 }
 
+/* DARK MODE */
 /* From uiverse.io by @alexruix */
 /* The switch - the box around the slider */
 .switch {
@@ -467,6 +420,60 @@ input:checked + .slider:before {
   box-shadow: inset 15px -4px 0px 15px #fff;
 }
 
+/*  DARK MODE BACKGROUND */
+body.dark .bg-dark {
+  clip-path: circle(200% at 100% 0);
+}
+
+.bg-dark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  background: #171717;
+  clip-path: circle(0 at 100% 0);
+  transition: clip-path 1s ease-in-out;
+}
+
+nav .bg-dark {
+  position: absolute;
+}
+
+body.dark main {
+  animation: fadeInDark 0.7s ease-in-out;
+}
+
+body:not(.dark) main {
+  animation: fadeInLight 0.7s ease-in-out;
+}
+
+@keyframes fadeInDark {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLight {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* HOME */
 #home {
   display: flex;
@@ -496,15 +503,27 @@ input:checked + .slider:before {
 .home-img img {
   max-width: 600px;
   object-fit: contain;
+  animation: move 10s ease-in-out infinite alternate;
 }
 
+@keyframes move {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(10px, -10px);
+  }
+}
+
+/* PATTERNS */
 #p-1 {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   width: 160px;
-  height: 150px;
+  height: 160px;
   transform: translate(50px, 50px);
 }
 
@@ -518,6 +537,35 @@ input:checked + .slider:before {
   border-radius: 100%;
   background-color: #ddd5;
   transform: translate(-50px, -50px);
+}
+
+/* ANIMATIONS FOR PATTERNS */
+#p-1 {
+  animation: move1 10s ease-in-out infinite alternate;
+}
+
+#p-2 {
+  animation: move2 10s ease-in-out infinite alternate;
+}
+
+@keyframes move1 {
+  from {
+    transform: translate(50px, 50px);
+  }
+
+  to {
+    transform: translate(20px, 50px);
+  }
+}
+
+@keyframes move2 {
+  from {
+    transform: translate(-50px, -50px);
+  }
+
+  to {
+    transform: translate(0px, 0px);
+  }
 }
 
 /* ABOUT */
