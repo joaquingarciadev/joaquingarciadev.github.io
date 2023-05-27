@@ -62,15 +62,15 @@ p {
 }
 
 body.dark .bg-dark {
-  clip-path: circle(200vw at 100% 0);
+  clip-path: circle(200% at 100% 0);
 }
 
 .bg-dark {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
   background: #171717;
