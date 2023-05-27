@@ -6,7 +6,6 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   color: var(--text);
-  transition: color 0.3s;
 }
 
 html {
@@ -80,6 +79,34 @@ body.dark .bg-dark {
 
 nav .bg-dark {
   position: absolute;
+}
+
+body.dark main {
+  animation: fadeInDark 1.5s ease-in-out;
+}
+
+body:not(.dark) main {
+  animation: fadeInLight 1.5s ease-in-out;
+}
+
+@keyframes fadeInDark {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLight {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .container {
@@ -617,7 +644,6 @@ input:checked + .slider:before {
   border: 1px solid var(--second);
   border-radius: 6px;
   overflow: hidden;
-  transition: background-color 0.3s;
 }
 
 .card-img {
