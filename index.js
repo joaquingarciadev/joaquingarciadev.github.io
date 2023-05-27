@@ -22,11 +22,10 @@ window.onscroll = function () {
   }
   previousScroll = currentScroll;
   // Effect shadow navbar
-  if (currentScroll > 80) {
-    document.querySelector("nav").style.boxShadow =
-      "0px 0px 10px #0005";
+  if (currentScroll > 0) {
+    document.querySelector("nav").classList.add("scroll");
   } else {
-    document.querySelector("nav").style.boxShadow = "none";
+    document.querySelector("nav").classList.remove("scroll");
   }
 };
 

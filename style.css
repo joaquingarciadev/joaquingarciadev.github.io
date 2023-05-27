@@ -17,7 +17,6 @@ html {
 :root {
   --btn: #4f46e5;
   --btn-hover: #433cc3;
-
 }
 
 body {
@@ -76,7 +75,7 @@ body.dark .bg-dark {
   z-index: -1;
   background: #171717;
   clip-path: circle(0% at 100% 0);
-  transition: clip-path .7s ease-in;
+  transition: clip-path 0.7s ease-in;
 }
 
 nav .bg-dark {
@@ -264,9 +263,21 @@ nav {
   right: 0;
   height: 80px;
   z-index: 10;
-  background: #fff;
   transition: top 0.5s, box-shadow 0.5s;
   overflow: hidden;
+}
+
+nav.scroll {
+  background: #fff;
+  box-shadow: 0 0 10px #0005;
+}
+
+nav .bg-dark {
+  background: #0000;
+}
+
+nav.scroll .bg-dark {
+  background: #171717;
 }
 
 nav .container {
@@ -462,28 +473,30 @@ input:checked + .slider:before {
 
 #p-1 {
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 0;
+  left: 0;
   z-index: -1;
-  width: 150px;
+  width: 160px;
   height: 150px;
+  transform: translate(50px, 50px);
 }
 
 #p-2 {
   position: absolute;
-  bottom: 20px;
-  right: 10px;
+  bottom: 0;
+  right: 0;
   z-index: -1;
   width: 150px;
   height: 150px;
-  border-radius: 1000%;
+  border-radius: 100%;
   background-color: #ddd8;
+  transform: translate(-50px, -50px);
 }
 
 /* ABOUT */
 #about {
   position: relative;
-  margin: 80px auto;
+  margin: 80px auto 160px auto;
 }
 
 #about p {
