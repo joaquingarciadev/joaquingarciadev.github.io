@@ -18,13 +18,13 @@ window.onscroll = function () {
   if (previousScroll > currentScroll) {
     document.querySelector("nav").style.top = "0";
   } else {
-    document.querySelector("nav").style.top = "calc(var(--nav-height) * -1)";
+    document.querySelector("nav").style.top = "-100px";
   }
   previousScroll = currentScroll;
   // Effect shadow navbar
   if (currentScroll > 80) {
     document.querySelector("nav").style.boxShadow =
-      "0px 0px 10px 0px var(--shadow)";
+      "0px 0px 10px #0005";
   } else {
     document.querySelector("nav").style.boxShadow = "none";
   }
@@ -40,24 +40,18 @@ const hideSidebar = () => {
   document.querySelector(".offcanvas").classList.remove("show");
 };
 
-const setDarkMode = (param) => {
+// Theme
+const handleChangeTheme = (param) => {
   if (param) {
+    document.querySelector("body").classList.add("dark");
     document.querySelector(".switch input").checked = true;
-    document.documentElement.style.setProperty("--background", "#171717");
-    document.documentElement.style.setProperty("--text", "#f2f2f2");
-    document.documentElement.style.setProperty("--second", "#212121");
-    document.documentElement.style.setProperty("--shadow", "#000");
-    document.documentElement.style.setProperty("--card", "#212121");
     document
       .querySelector("meta[name=theme-color]")
       .setAttribute("content", "#171717");
     localStorage.setItem("theme", "dark");
   } else {
-    document.documentElement.style.setProperty("--background", "#fff");
-    document.documentElement.style.setProperty("--text", "#171717");
-    document.documentElement.style.setProperty("--second", "#ddd");
-    document.documentElement.style.setProperty("--shadow", "#ddd");
-    document.documentElement.style.setProperty("--card", "#fff");
+    document.querySelector("body").classList.remove("dark");
+    document.querySelector(".switch input").checked = false;
     document
       .querySelector("meta[name=theme-color]")
       .setAttribute("content", "#fff");
@@ -66,8 +60,7 @@ const setDarkMode = (param) => {
 };
 
 document.querySelector(".switch input").addEventListener("change", (e) => {
-  if (e.target.checked) return setDarkMode(true);
-  setDarkMode(false);
+  handleChangeTheme(e.target.checked);
 });
 
 // Data
@@ -164,7 +157,8 @@ const skills = [
 const projects = [
   {
     name: "Página web - La Fermina",
-    description: "Realicé una página web para un Salón de Fiestas y Eventos, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios.",
+    description:
+      "Realicé una página web para un Salón de Fiestas y Eventos, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/pagina-la-fermina.png",
     repo: "#",
@@ -198,7 +192,7 @@ const projects = [
   {
     name: "Sistema de usuarios",
     description:
-      "Desarrollé una aplicación completa con autenticación, registro y gestión de usuarios. Los usuarios pueden registrarse, iniciar sesión y administrar su información personal. Este proyecto me permitió aplicar y potenciar mis habilidades de desarrollo web con el stack MERN  (MongoDB, Express, React y Node.js).",
+      "Desarrollé una aplicación completa con autenticación, registro y gestión de usuarios, fortaleciendo mis habilidades en el stack MERN y aprendiendo a implementar la autenticación OAuth.",
     skills: [
       "React",
       "Next JS",
@@ -219,24 +213,25 @@ const projects = [
   //     repo: "https://github.com/Djoako22/app-pedidos.git",
   //     demo: "https://djoako22.github.io/src/proyectos/app-pedidos.png",
   // },
-  // {
-  //     name: "App cripto alarma",
-  //     description: "App para establecer alarmas a precios de criptomonedas.",
-  //     skills: [
-  //         "React",
-  //         "Next JS",
-  //         "Node JS",
-  //         "Express JS",
-  //         "MongoDB",
-  //         "Bootstrap",
-  //     ],
-  //     img: "src/proyectos/app-cripto-alarma.png",
-  //     repo: "https://github.com/djoako22/app-cripto-alarma.git",
-  //     // demo: "https://app-cripto-alarma.vercel.app/",
-  // },
+  {
+    name: "App cripto alarma",
+    description: "App para establecer alarmas a precios de criptomonedas.",
+    skills: [
+      "React",
+      "Next JS",
+      "Node JS",
+      "Express JS",
+      "MongoDB",
+      "Bootstrap",
+    ],
+    img: "src/proyectos/app-cripto-alarma.png",
+    repo: "https://github.com/djoako22/app-cripto-alarma.git",
+    demo: "https://app-cripto-alarma.vercel.app/",
+  },
   {
     name: "Mi portafolio web",
-    description: "Desarrollé un portafolio interactivo utilizando HTML, CSS y Javascript, donde muestro mi trabajo y habilidades. Además, incorporé animaciones dinámicas utilizando GSAP para agregar un toque especial a la experiencia de navegación.",
+    description:
+      "Desarrollé un portafolio interactivo utilizando HTML, CSS y Javascript, donde muestro mi trabajo y habilidades. Además, incorporé animaciones dinámicas utilizando GSAP para agregar un toque especial a la experiencia de navegación.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/portafolio.png",
     repo: "#",
@@ -244,7 +239,8 @@ const projects = [
   },
   {
     name: "Juego cajero",
-    description: "Juego de simulación de caja registradora. Aprende y diviértete mientras practicas tus habilidades en la gestión de efectivo.",
+    description:
+      "Juego de simulación de caja registradora. Aprende y diviértete mientras practicas tus habilidades en la gestión de efectivo.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/Juego Cajero.png",
     repo: "https://github.com/Djoako22/juego_cajero",
@@ -252,7 +248,8 @@ const projects = [
   },
   {
     name: "Máquina tragamonedas",
-    description: "Juego de máquina tragamonedas, donde aprendí a crear animaciones lógicas utilizando Javascript.",
+    description:
+      "Juego de máquina tragamonedas, donde aprendí a crear animaciones lógicas utilizando Javascript.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/tragamonedas.png",
     repo: "https://github.com/Djoako22/tragamonedas",
@@ -321,7 +318,7 @@ const time = document.querySelector(".time");
 
 function render() {
   // Theme
-  if (localStorage.getItem("theme") === "dark") setDarkMode(true);
+  handleChangeTheme(localStorage.getItem("theme") === "dark");
 
   // Skills
   skills.forEach((skill) => {

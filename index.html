@@ -27,12 +27,14 @@
     />
   </head>
   <body>
+    <div class="bg-dark"></div>
     <div class="wrapper">
       <div class="loader">
         <div class="chaotic-orbit"></div>
       </div>
     </div>
     <nav>
+      <div class="bg-dark"></div>
       <div class="container">
         <div class="btn" onclick="showSidebar()">
           <i class="uil uil-bars"></i>
@@ -69,31 +71,41 @@
     </div>
     <div class="offcanvas" onclick="hideSidebar()"></div>
     <main class="main container">
-      <div id="home">
-        <section class="home-title">
+      <section id="home">
+        <div class="home-title">
           <h1 class="title">
             Hola!<br />
             Soy Joaquin Garcia
           </h1>
           <h3 class="description">Desarrollador web</h3>
-        </section>
-        <section class="home-img">
+        </div>
+        <div class="home-img">
           <img src="src/perfil.png" alt="perfil" width="100%" />
-        </section>
-      </div>
-      <div id="about">
-        <section>
+          <svg id="p-1" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="svg-pattern" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="translate(10, 10) rotate(0) skewX(0)"><svg width="12" height="12" viewBox="0 0 100 100"><g fill="#dddddd" opacity="1"><path d="M60 0H40V40H0V60H40V100H60V60H100V40H60V0Z"></path></g></svg></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="rgba(0, 0, 0, 0)"></rect><rect x="0" y="0" width="100%" height="100%" fill="url(#svg-pattern)"></rect></svg>
+          <div id="p-2"></div>
+        </div>
+      </section>
+      <section id="about">
+        <div>
           <h2>Sobre mi</h2>
           <p>
-            Me especializo en crear sitios web y aplicaciones utilizando las
-            tecnologías web más recientes. Durante el proceso de desarrollo, me
-            adhiero a las soluciones que proporcionen la máxima experiencia de
-            usuario con un diseño minimalista.
+            ¡Hola! Soy Joaquín Garcia, un desarrollador web full stack y
+            estudiante de ciencias de la computación en Córdoba, Argentina. Mi
+            pasión radica en explorar el mundo de la tecnología y especializarme
+            en la creación de páginas y aplicaciones web. Siempre busco mejorar
+            mis habilidades y conocimientos, y estoy emocionado de seguir
+            creciendo como desarrollador.
+            <br /><br />
+            Me encanta trabajar en equipo y colaborar con otros desarrolladores
+            en proyectos emocionantes y desafiantes. Si estás buscando un
+            desarrollador web comprometido y apasionado, no dudes en ponerte en
+            contacto conmigo. ¡Estoy listo para enfrentar nuevos desafíos y
+            contribuir al éxito de tu proyecto!
           </p>
-          <br />
-        </section>
-      </div>
-      <div id="skills">
+        </div>
+        <div class="blob"></div>
+      </section>
+      <section id="skills">
         <h2>Mis habilidades</h2>
         <div class="screen">
           <div class="desktop">
@@ -104,16 +116,16 @@
             <div class="time"></div>
           </div>
         </div>
-      </div>
-      <div id="projects">
+      </section>
+      <section id="projects">
         <h2>Mis proyectos</h2>
         <div class="projects"></div>
-      </div>
-      <div id="courses">
+      </section>
+      <section id="courses">
         <h2>Aprendamos juntos</h2>
         <div class="courses"></div>
-      </div>
-      <div id="contact">
+      </section>
+      <section id="contact">
         <h2>Contacto</h2>
         <div class="contact">
           <form
@@ -151,7 +163,7 @@
             <button type="submit">Enviar consulta</button>
           </form>
         </div>
-      </div>
+      </section>
       <footer>
         <div class="copyright">
           <p>
