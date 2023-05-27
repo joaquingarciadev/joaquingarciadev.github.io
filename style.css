@@ -554,7 +554,7 @@ body:not(.dark) main {
   }
 
   to {
-    transform: translate(20px, 50px);
+    transform: translate(40px, 50px);
   }
 }
 
