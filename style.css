@@ -62,7 +62,7 @@ p {
 }
 
 body.dark .bg-dark {
-  clip-path: circle(200% at 100% 0);
+  clip-path: circle(200vw at 100% 0);
 }
 
 .bg-dark {
