@@ -210,7 +210,8 @@ const projects = [
   // },
   {
     name: "App cripto alarma",
-    description: "Esta es una aplicación web desarrollada en Next.js que te permite establecer alarmas para criptomonedas. Aprendí a hacer una API con Next.js y también a realizar scraping dentro de ella.",
+    description:
+      "Esta es una aplicación web desarrollada en Next.js que te permite establecer alarmas para criptomonedas. Aprendí a hacer una API con Next.js y también a realizar scraping dentro de ella.",
     skills: [
       "React",
       "Next JS",
@@ -243,7 +244,7 @@ const projects = [
   {
     name: "Máquina tragamonedas",
     description:
-      "Juego de máquina tragamonedas, donde aprendí a crear animaciones lógicas utilizando Javascript.",
+      "Este es un juego de máquina tragamonedas en el que aprendí a crear animaciones lógicas utilizando JavaScript. El juego simula una máquina tragamonedas clásica y puede ser utilizado como una herramienta de marketing o para entretener a los usuarios.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/tragamonedas.png",
     repo: "https://github.com/joaquingarciadev/tragamonedas",
