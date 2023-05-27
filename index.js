@@ -157,7 +157,6 @@ const projects = [
       "Realicé una página web para un Salón de Fiestas y Eventos, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/pagina-la-fermina.png",
-    repo: "#",
     demo: "https://laferminafiestasyeventos.netlify.app",
   },
   // {
@@ -198,7 +197,7 @@ const projects = [
       "Bootstrap",
     ],
     img: "src/proyectos/sistema-de-usuarios.png",
-    repo: "https://github.com/djoako22/sistema-de-usuarios.git",
+    repo: "https://github.com/joaquingarciadev/sistema-de-usuarios.git",
     demo: "https://camo.githubusercontent.com/2c08040ee2489e7bee08780ddbc6dc8990ca30c006df1af3fa22fc3e9e8f9d1a/68747470733a2f2f646a6f616b6f32322e6769746875622e696f2f7372632f70726f796563746f732f73697374656d612d64652d7573756172696f732e706e67",
   },
   // {
@@ -206,12 +205,12 @@ const projects = [
   //     description: "App de pedidos simple.",
   //     skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
   //     img: "src/proyectos/app-pedidos.png",
-  //     repo: "https://github.com/Djoako22/app-pedidos.git",
-  //     demo: "https://djoako22.github.io/src/proyectos/app-pedidos.png",
+  //     repo: "https://github.com/joaquingarciadev/app-pedidos.git",
+  //     demo: "https://joaquingarciadev.github.io/src/proyectos/app-pedidos.png",
   // },
   {
     name: "App cripto alarma",
-    description: "App para establecer alarmas a precios de criptomonedas.",
+    description: "Esta es una aplicación web desarrollada en Next.js que te permite establecer alarmas para criptomonedas. Aprendí a hacer una API con Next.js y también a realizar scraping dentro de ella.",
     skills: [
       "React",
       "Next JS",
@@ -221,7 +220,7 @@ const projects = [
       "Bootstrap",
     ],
     img: "src/proyectos/app-cripto-alarma.png",
-    repo: "https://github.com/djoako22/app-cripto-alarma.git",
+    repo: "https://github.com/joaquingarciadev/app-cripto-alarma.git",
     demo: "https://app-cripto-alarma.vercel.app/",
   },
   {
@@ -230,8 +229,7 @@ const projects = [
       "Desarrollé un portafolio interactivo utilizando HTML, CSS y Javascript, donde muestro mi trabajo y habilidades. Además, incorporé animaciones dinámicas utilizando GSAP para agregar un toque especial a la experiencia de navegación.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/portafolio.png",
-    repo: "#",
-    demo: "https://djoako22.github.io/",
+    demo: "https://joaquingarciadev.github.io/",
   },
   {
     name: "Juego cajero",
@@ -239,8 +237,8 @@ const projects = [
       "Juego de simulación de caja registradora. Aprende y diviértete mientras practicas tus habilidades en la gestión de efectivo.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/Juego Cajero.png",
-    repo: "https://github.com/Djoako22/juego_cajero",
-    demo: "https://djoako22.github.io/juego_cajero/",
+    repo: "https://github.com/joaquingarciadev/juego_cajero",
+    demo: "https://joaquingarciadev.github.io/juego_cajero/",
   },
   {
     name: "Máquina tragamonedas",
@@ -248,8 +246,8 @@ const projects = [
       "Juego de máquina tragamonedas, donde aprendí a crear animaciones lógicas utilizando Javascript.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/tragamonedas.png",
-    repo: "https://github.com/Djoako22/tragamonedas",
-    demo: "https://djoako22.github.io/tragamonedas/",
+    repo: "https://github.com/joaquingarciadev/tragamonedas",
+    demo: "https://joaquingarciadev.github.io/tragamonedas/",
   },
 ];
 
@@ -347,15 +345,17 @@ function render() {
                     })}
                 </div>
                 <div class="card-links">
-                    <a href="${
-                      project.repo
-                    }" aria-label="REPO" target="_blank"><i class="uil uil-github"></i></a>
-            ${
-              project.demo !== undefined
-                ? `<a href="${project.demo}" aria-label="DEMO" target="_blank"><i class="uil uil-play-circle"></i></a>
-            `
-                : ""
-            }        
+                    ${
+                      project.repo !== undefined
+                        ? `<a href="${project.repo}" aria-label="REPO" target="_blank"><i class="uil uil-github"></i></a>`
+                        : `<div></div>`
+                    }
+                    ${
+                      project.demo !== undefined
+                        ? `<a href="${project.demo}" aria-label="DEMO" target="_blank"><i class="uil uil-play-circle"></i></a>
+                    `
+                        : `<div></div>`
+                    }        
                 </div>
             </div>
         </div>
