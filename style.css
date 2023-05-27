@@ -522,8 +522,8 @@ body:not(.dark) main {
   top: 0;
   left: 0;
   z-index: -1;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   transform: translate(50px, 50px);
 }
 
@@ -535,7 +535,7 @@ body:not(.dark) main {
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  background-color: #ddd5;
+  background-color: #7d78db50;
   transform: translate(-50px, -50px);
 }
 
@@ -564,7 +564,7 @@ body:not(.dark) main {
   }
 
   to {
-    transform: translate(0px, 0px);
+    transform: translate(-20px, -20px);
   }
 }
 
