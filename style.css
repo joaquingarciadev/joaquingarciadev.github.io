@@ -496,7 +496,7 @@ input:checked + .slider:before {
 /* ABOUT */
 #about {
   position: relative;
-  margin: 80px auto 160px auto;
+  margin: 160px auto;
 }
 
 #about p {
