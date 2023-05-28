@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   color: var(--text);
-  transition: color .3s, background-color .3s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 html {
@@ -708,6 +708,8 @@ body:not(.dark) main {
   object-fit: fill;
   object-position: top;
   border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 filter {
