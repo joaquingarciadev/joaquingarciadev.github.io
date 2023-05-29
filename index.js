@@ -184,22 +184,15 @@ const projects = [
   //     repo: "#",
   //     demo: "https://sistema-para-restaurantes.vercel.app",
   // },
-  // {
-  //   name: "App - Sistema de ventas",
-  //   description:
-  //     "Desarrollé una aplicación completa con autenticación, registro y gestión de usuarios, fortaleciendo mis habilidades en el stack MERN y aprendiendo a implementar la autenticación OAuth.",
-  //   skills: [
-  //     "React",
-  //     "Next JS",
-  //     "Node JS",
-  //     "Express JS",
-  //     "MongoDB",
-  //     "Bootstrap",
-  //   ],
-  //   img: "src/proyectos/sistema-de-usuarios.png",
-  //   repo: "https://github.com/joaquingarciadev/sistema-de-usuarios.git",
-  //   demo: "https://camo.githubusercontent.com/2c08040ee2489e7bee08780ddbc6dc8990ca30c006df1af3fa22fc3e9e8f9d1a/68747470733a2f2f646a6f616b6f32322e6769746875622e696f2f7372632f70726f796563746f732f73697374656d612d64652d7573756172696f732e706e67",
-  // },
+  {
+    name: "App - Sistema de ventas",
+    description:
+      "Desarrollé un sistema de ventas que permite a los usuarios gestionar sus ventas de manera efectiva. Empleé el stack MERN y amplié mis habilidades al aprender Firebase para la autenticación de usuarios y Cloudinary para la gestión de imágenes.",
+    skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
+    img: "src/proyectos/app-sistema-de-ventas.png",
+    // repo: "https://github.com/joaquingarciadev/sistema-de-usuarios.git",
+    demo: "https://app-sistema-de-ventas.vercel.app",
+  },
   {
     name: "App - Sistema de usuarios",
     description:
@@ -228,11 +221,7 @@ const projects = [
     name: "App - Cripto alarma",
     description:
       "Esta es una aplicación web desarrollada en Next.js que te permite establecer alarmas para criptomonedas. Aprendí a hacer una API con Next.js y también a realizar scraping dentro de ella.",
-    skills: [
-      "React",
-      "Next JS",
-      "Bootstrap",
-    ],
+    skills: ["React", "Next JS", "Bootstrap"],
     img: "src/proyectos/app-cripto-alarma.png",
     repo: "https://github.com/joaquingarciadev/app-cripto-alarma.git",
     demo: "https://app-cripto-alarma.vercel.app/",
