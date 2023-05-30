@@ -40,14 +40,18 @@ const hideSidebar = () => {
 const handleChangeTheme = (param) => {
   if (param) {
     document.querySelector("body").classList.add("dark");
-    document.querySelector(".switch input").checked = true;
+    document.querySelectorAll(".switch input").forEach((input) => {
+      input.checked = true;
+    });
     document
       .querySelector("meta[name=theme-color]")
       .setAttribute("content", "#171717");
     localStorage.setItem("theme", "dark");
   } else {
     document.querySelector("body").classList.remove("dark");
-    document.querySelector(".switch input").checked = false;
+    document.querySelectorAll(".switch input").forEach((input) => {
+      input.checked = false;
+    });
     document
       .querySelector("meta[name=theme-color]")
       .setAttribute("content", "#fff");
