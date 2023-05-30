@@ -55,8 +55,10 @@ const handleChangeTheme = (param) => {
   }
 };
 
-document.querySelector(".switch input").addEventListener("change", (e) => {
-  handleChangeTheme(e.target.checked);
+document.querySelectorAll(".switch input").forEach((input) => {
+  input.addEventListener("change", (e) => {
+    handleChangeTheme(e.target.checked);
+  });
 });
 
 // Data
@@ -65,18 +67,21 @@ const skills = [
     name: "HTML",
     img: "src/habilidades/html-5.svg",
     description: "Lenguaje de marcado para la creación de páginas web.",
+    descriptionEn: "Markup language for creating web pages.",
     year: "2017",
   },
   {
     name: "CSS",
     img: "src/habilidades/css-3.svg",
     description: "Lenguaje de estilos para la creación de páginas web.",
+    descriptionEn: "Style language for creating web pages.",
     year: "2017",
   },
   {
     name: "Javascript",
     img: "src/habilidades/js.svg",
     description: "Lenguaje de programación para la creación de páginas web.",
+    descriptionEn: "Programming language for creating web pages.",
     year: "2017",
   },
   {
@@ -84,12 +89,14 @@ const skills = [
     img: "src/habilidades/react.svg",
     description:
       "Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.",
+    descriptionEn: "Open source Javascript library designed to create UIs.",
     year: "2020",
   },
   {
     name: "Next JS",
     img: "src/habilidades/next-js.png",
     description: "Framework de creación de páginas web.",
+    descriptionEn: "Web page creation framework.",
     year: "2022",
   },
   {
@@ -97,6 +104,8 @@ const skills = [
     img: "src/habilidades/node-js.svg",
     description:
       "Entorno en tiempo de ejecución para la capa del servidor basado en el lenguaje de programación JavaScript.",
+    descriptionEn:
+      "Runtime environment for the server layer based on the JavaScript programming language.",
     year: "2020",
   },
   {
@@ -104,48 +113,57 @@ const skills = [
     img: "src/habilidades/express-js.png",
     description:
       "Infraestructura web rápida, minimalista y flexible para Node.js.",
+    descriptionEn:
+      "Fast, minimalist and flexible web infrastructure for Node.js.",
     year: "2020",
   },
   {
     name: "MongoDB",
     img: "src/habilidades/mongodb.png",
     description: "Base de datos para la creación de páginas web.",
+    descriptionEn: "Database for creating web pages.",
     year: "2020",
   },
   {
     name: "MySQL",
     img: "src/habilidades/sql.png",
     description: "Base de datos para la creación de páginas web.",
+    descriptionEn: "Database for creating web pages.",
     year: "2020",
   },
   {
     name: "Bootstrap",
     img: "src/habilidades/bootstrap.svg",
     description: "Framework de creación de páginas web.",
+    descriptionEn: "Web page creation framework.",
     year: "2020",
   },
   {
     name: "Git",
     img: "src/habilidades/git.svg",
     description: "Software de control de versiones.",
+    descriptionEn: "Version control software.",
     year: "2020",
   },
   {
     name: "Docker",
     img: "src/habilidades/docker.png",
     description: "Software de despliegue de aplicaciones.",
+    descriptionEn: "Application deployment software.",
     year: "2022",
   },
   {
     name: "Linux",
     img: "src/habilidades/linux.png",
     description: "Sistema operativo open source.",
+    descriptionEn: "Open source operating system.",
     year: "2020",
   },
   {
     name: "Photoshop",
     img: "src/habilidades/photoshop.png",
     description: "Programa de diseño.",
+    descriptionEn: "Design program.",
     year: "2021",
   },
 ];
@@ -153,15 +171,20 @@ const skills = [
 const projects = [
   {
     name: "Página web - La Fermina",
+    nameEn: "Website - La Fermina",
     description:
       "Realicé una página web para un Salón de Fiestas y Eventos, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios.",
+    descriptionEn:
+      "I made a website for a Party and Events Hall, offering customers a digital platform to explore and book their services.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/pagina-la-fermina.png",
     demo: "https://laferminafiestasyeventos.netlify.app",
   },
   // {
   //     name: "Blog simple",
+  //     nameEn: "Simple blog",
   //     description: "Blog realizado en nextjs utilizando markdown.",
+  //     descriptionEn: "Blog made in nextjs using markdown.",
   //     skills: ["React", "Next JS"],
   //     img: "src/proyectos/blog-simple.png",
   //     repo: "#",
@@ -169,7 +192,9 @@ const projects = [
   // },
   // {
   //     name: "Sistema de turnos",
+  //     nameEn: "Shift system",
   //     description: "Sistema para la gestión de turnos.",
+  //     descriptionEn: "System for managing shifts.",
   //     skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
   //     img: "src/proyectos/sistema-de-turnos.png",
   //     repo: "#",
@@ -177,8 +202,11 @@ const projects = [
   // },
   // {
   //     name: "Sistema para restaurantes",
+  //     nameEn: "Restaurant system",
   //     description:
   //         "Sistema para restaurantes para administrar ordenes.",
+  //     descriptionEn:
+  //         "Restaurant system to manage orders.",
   //     skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
   //     img: "src/proyectos/sistema-para-restaurantes.png",
   //     repo: "#",
@@ -186,8 +214,11 @@ const projects = [
   // },
   {
     name: "App - Sistema de ventas",
+    nameEn: "App - Sales system",
     description:
       "Desarrollé un sistema de ventas que permite a los usuarios gestionar sus ventas de manera efectiva. Empleé el stack MERN y amplié mis habilidades al aprender Firebase para la autenticación de usuarios y Cloudinary para la gestión de imágenes.",
+    descriptionEn:
+      "I developed a sales system that allows users to manage their sales effectively. I used the MERN stack and expanded my skills by learning Firebase for user authentication and Cloudinary for image management.",
     skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
     img: "src/proyectos/app-sistema-de-ventas.png",
     // repo: "https://github.com/joaquingarciadev/sistema-de-usuarios.git",
@@ -195,8 +226,11 @@ const projects = [
   },
   {
     name: "App - Sistema de usuarios",
+    nameEn: "App - User system",
     description:
       "Desarrollé una aplicación completa con autenticación, registro y gestión de usuarios, fortaleciendo mis habilidades en el stack MERN y aprendiendo a implementar la autenticación OAuth.",
+    descriptionEn:
+      "I developed a complete application with authentication, registration and user management, strengthening my skills in the MERN stack and learning to implement OAuth authentication.",
     skills: [
       "React",
       "Next JS",
@@ -211,7 +245,9 @@ const projects = [
   },
   // {
   //     name: "App pedidos",
+  //     nameEn: "App orders",
   //     description: "App de pedidos simple.",
+  //     descriptionEn: "Simple order app.",
   //     skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
   //     img: "src/proyectos/app-pedidos.png",
   //     repo: "https://github.com/joaquingarciadev/app-pedidos.git",
@@ -219,8 +255,11 @@ const projects = [
   // },
   {
     name: "App - Cripto alarma",
+    nameEn: "App - Crypto alarm",
     description:
       "Esta es una aplicación web desarrollada en Next.js que te permite establecer alarmas para criptomonedas. Aprendí a hacer una API con Next.js y también a realizar scraping dentro de ella.",
+    descriptionEn:
+      "This is a web application developed in Next.js that allows you to set alarms for cryptocurrencies. I learned to make an API with Next.js and also to perform scraping within it.",
     skills: ["React", "Next JS", "Bootstrap"],
     img: "src/proyectos/app-cripto-alarma.png",
     repo: "https://github.com/joaquingarciadev/app-cripto-alarma.git",
@@ -228,16 +267,22 @@ const projects = [
   },
   {
     name: "Mi portafolio web",
+    nameEn: "My web portfolio",
     description:
       "Desarrollé un portafolio interactivo utilizando HTML, CSS y Javascript, donde muestro mi trabajo y habilidades. Además, incorporé animaciones dinámicas utilizando GSAP para agregar un toque especial a la experiencia de navegación.",
+    descriptionEn:
+      "I developed an interactive portfolio using HTML, CSS and Javascript, where I show my work and skills. In addition, I incorporated dynamic animations using GSAP to add a special touch to the browsing experience.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/portafolio.png",
     demo: "https://joaquingarciadev.github.io/",
   },
   {
     name: "Juego cajero",
+    nameEn: "Cashier game",
     description:
       "Juego de simulación de caja registradora. Aprende y diviértete mientras practicas tus habilidades en la gestión de efectivo.",
+    descriptionEn:
+      "Cash register simulation game. Learn and have fun while practicing your cash management skills.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/Juego Cajero.png",
     repo: "https://github.com/joaquingarciadev/juego_cajero",
@@ -245,8 +290,11 @@ const projects = [
   },
   {
     name: "Máquina tragamonedas",
+    nameEn: "Slot machine",
     description:
       "Este es un juego de máquina tragamonedas en el que aprendí a crear animaciones lógicas utilizando JavaScript. El juego simula una máquina tragamonedas clásica y puede ser utilizado como una herramienta de marketing o para entretener a los usuarios.",
+    descriptionEn:
+      "This is a slot machine game where I learned to create logical animations using JavaScript. The game simulates a classic slot machine and can be used as a marketing tool or to entertain users.",
     skills: ["HTML", "CSS", "Javascript"],
     img: "src/proyectos/tragamonedas.png",
     repo: "https://github.com/joaquingarciadev/tragamonedas",
@@ -257,51 +305,68 @@ const projects = [
 const courses = [
   {
     name: "Curso de programación",
+    nameEn: "Programming Course",
     description:
       "Contiene conceptos básicos de algunos lenguajes de programación",
+    descriptionEn: "Contains basic concepts of some programming languages",
     img: "src/cursos/programacion.png",
     url: "https://docs.google.com/document/d/e/2PACX-1vS_XTuqbf-aoqEssa2urPo4XLbjp_PxyN3NqFOtmxM-ZanYQYAZSn-y244crPOBtKm-AqgG3_N46Ia4/pub",
   },
   {
     name: "Curso de frontend",
+    nameEn: "Frontend Course",
     description:
       "Curso de frontend para el armado y diseño de una web con HTML, CSS y Javascript",
+    descriptionEn:
+      "Frontend course for building and designing a web with HTML, CSS, and Javascript",
     img: "src/cursos/frontend.svg",
     url: "https://docs.google.com/document/d/e/2PACX-1vRPFIdZYr1M-fdnP4q04G5fewXxpOmIcZngbZ8S70ELkXC3Ue2buEhi0k6VSrUnIstWYruFHrpYKiyP/pub",
   },
   {
     name: "Curso de backend",
+    nameEn: "Backend Course",
     description: "Curso que contiene conceptos básico de backend",
+    descriptionEn: "Course that covers basic concepts of backend",
     img: "src/cursos/backend.png",
     url: "https://docs.google.com/document/d/e/2PACX-1vR6Yst05MsddXjhT0bBB2HoeHOHKUpZ7QwBMLw3zohoytkNyvZNuLCt1aEpsuB4qvnZsCFZd_-0eeG9/pub",
   },
   {
     name: "Curso de react",
+    nameEn: "React Course",
     description: "Curso de react para principiantes",
+    descriptionEn: "React course for beginners",
     img: "src/habilidades/react.svg",
     url: "https://docs.google.com/document/d/e/2PACX-1vQCZ4LboVYjLM1ArNOqbsyCVqzX4Tx7rviP9dzf2U-lKIdKAjR_g3ip30PYqp9hpy6gnqKp5cJqRXm6/pub",
   },
   {
     name: "Curso de node js",
+    nameEn: "Node.js Course",
     description: "Curso de node js para principiantes",
+    descriptionEn: "Node.js course for beginners",
     img: "src/habilidades/node-js.svg",
     url: "https://docs.google.com/document/d/e/2PACX-1vTkj4yQ__OKy0Yl9NmrbcpJQHRorR0oYTiA9AQhzE_Lr4qEiIsdNIO6D_kakqZAzY_c_Sxqck_AzDBn/pub",
   },
   {
     name: "Curso de base de datos",
+    nameEn: "Database Course",
     description: "Curso de base de datos para principiantes",
+    descriptionEn: "Database course for beginners",
     img: "src/cursos/base-de-datos.png",
     url: "https://docs.google.com/document/d/e/2PACX-1vQwz17BI7zZZr-Z5vfJexKToeGNBzioDTQdTewKWuE9pmco1eeakHxJGQToXJkppB1banon-RzAFy-v/pub",
   },
   {
     name: "Curso de git",
+    nameEn: "Git Course",
     description: "Curso de git para principiantes",
+    descriptionEn: "Git course for beginners",
     img: "src/habilidades/git.svg",
     url: "https://docs.google.com/document/d/e/2PACX-1vQEZJzW7zCOV1brpxGdL2R0RWcrAZchqYifse3QUJ4aIk61fh2Rc1daq76wZinx7IP7tqow8-glHUgb/pub",
   },
   {
     name: "Curso de linux",
+    nameEn: "Linux Course",
     description: "Curso de linux para principiantes",
+    descriptionEn: "Linux course for beginners",
     img: "src/habilidades/linux.png",
     url: "https://docs.google.com/document/d/e/2PACX-1vSE2rqgPIFfK-aGIB7Z0diXDhT5W3GZ47o36t_M-wp2-wNn-GgOo9OqFrrB7c8u3tFM-rtiz-3TWmsZ/pub",
   },
@@ -313,6 +378,8 @@ const projects_label = document.querySelector(".projects");
 const courses_label = document.querySelector(".courses");
 const time = document.querySelector(".time");
 
+const isEnglishPage = window.location.pathname.includes("/en");
+
 function render() {
   // Theme
   handleChangeTheme(localStorage.getItem("theme") === "dark");
@@ -320,7 +387,9 @@ function render() {
   // Skills
   skills.forEach((skill) => {
     skills_label.innerHTML += `
-        <div class="skill" title="Experiencia: desde ${skill.year}\n${skill.description}">
+        <div class="skill" title="Experiencia: desde ${skill.year}\n${
+      isEnglishPage ? skill.descriptionEn : skill.description
+    }">
             <img src=${skill.img} width='50' arial-label="${skill.name}">
             <div class="skill-text">${skill.name}</div>
         </div>
@@ -329,6 +398,10 @@ function render() {
 
   // Projects
   projects.forEach((project) => {
+    if (isEnglishPage) {
+      project.name = project.nameEn;
+      project.description = project.descriptionEn;
+    }
     projects_label.innerHTML += `
         <div class="card">
             <div class="card-img">
@@ -367,6 +440,10 @@ function render() {
 
   // Courses
   courses.forEach((course) => {
+    if (isEnglishPage) {
+      course.name = course.nameEn;
+      course.description = course.descriptionEn;
+    }
     courses_label.innerHTML += `
         <div class="card card-hover" onclick="window.open('${course.url}')">
             <div class="card-content">

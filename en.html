@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="author" content="Joaquin Garcia" />
+    <meta
+      name="description"
+      content="Hello, my name is Joaquin Garcia and this is my web portfolio, I am a full stack web developer, I specialize in creating websites and applications with reactJS, nodeJS, expressJS and mongoDB technologies, I also use tools such as git, docker and I also adapt quickly to the technologies that are needed in the process."
+    />
+    <meta
+      name="keywords"
+      content="Joaquin Garcia, web developer, programmer, full stack developer, reactJS, nodeJS, expressJS, mongoDB, git, docker, djoako22, Djoako22, portfolio, personal website, Argentina, Córdoba"
+    />
+    <meta
+      name="google-site-verification"
+      content="6XHylW_MZ-kTsw1OquSgtyJAPE__LnV2jR0JoFyPpjM"
+    />
+    <title>PORTFOLIO | Joaquin Garcia</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="src/perfil.png" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <div class="bg-dark"></div>
+    <div class="wrapper">
+      <div class="loader">
+        <div class="chaotic-orbit"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="bg-dark"></div>
+      <div class="container">
+        <div class="btn" onclick="showSidebar()">
+          <i class="uil uil-bars"></i>
+        </div>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="tools">
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+          <div class="lang">
+            <a href="index.html">
+              <img
+                src="https://images.emojiterra.com/twitter/v14.0/512px/1f1ea-1f1f8.png"
+                alt="español"
+                width="20px"
+              />
+            </a>
+            <a href="en.html">
+              <img
+                src="https://images.emojiterra.com/twitter/v14.0/512px/1f1fa-1f1f8.png"
+                alt="ingles"
+                width="20px"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h3></h3>
+        <div class="btn" onclick="hideSidebar()">
+          <i class="uil uil-multiply"></i>
+        </div>
+      </div>
+      <ul onclick="hideSidebar()">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="tools">
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <div class="lang">
+          <a href="index.html">
+            <img
+              src="https://images.emojiterra.com/twitter/v14.0/512px/1f1ea-1f1f8.png"
+              alt="español"
+              width="20px"
+            />
+          </a>
+          <a href="en.html">
+            <img
+              src="https://images.emojiterra.com/twitter/v14.0/512px/1f1fa-1f1f8.png"
+              alt="ingles"
+              width="20px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas" onclick="hideSidebar()"></div>
+    <main class="main container">
+      <section id="home">
+        <div class="home-title">
+          <h1>
+            Hello!
+            <br />
+            I'm Joaquin Garcia
+          </h1>
+          <h3>Web Developer</h3>
+        </div>
+        <div class="home-img">
+          <img src="src/perfil.png" alt="profile" width="100%" />
+          <svg
+            id="p-1"
+            width="100%"
+            height="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <pattern
+                id="a"
+                patternUnits="userSpaceOnUse"
+                width="20"
+                height="20"
+                patternTransform="scale(1) rotate(0)"
+              >
+                <rect
+                  x="0"
+                  y="0"
+                  width="100%"
+                  height="100%"
+                  fill="hsla(0, 0%, 100%, 0)"
+                />
+                <path
+                  d="M3.25 10h13.5M10 3.25v13.5"
+                  stroke-linecap="square"
+                  stroke-width="1"
+                  stroke="hsla(0, 0%, 87%, 1)"
+                  fill="none"
+                />
+              </pattern>
+            </defs>
+            <rect
+              width="800%"
+              height="800%"
+              transform="translate(0,0)"
+              fill="url(#a)"
+            />
+          </svg>
+          <div id="p-2"></div>
+        </div>
+      </section>
+      <section id="about">
+        <div>
+          <h2>About me</h2>
+          <p>
+            Hello! I'm Joaquin Garcia, a full stack web developer and computer
+            science student in Córdoba, Argentina. I love exploring the world of
+            technology and specializing in creating websites and web
+            applications. I'm always seeking to improve my skills and knowledge,
+            and I'm excited to continue growing as a developer.
+            <br /><br />
+            I enjoy working in teams and collaborating with other developers on
+            exciting and challenging projects. If you're looking for a committed
+            and passionate web developer, feel free to get in touch with me. I'm
+            ready to take on new challenges and contribute to the success of
+            your project!
+          </p>
+        </div>
+        <div class="blob"></div>
+      </section>
+      <section id="skills">
+        <h2>My skills</h2>
+        <div class="screen">
+          <div class="desktop">
+            <div class="skills"></div>
+          </div>
+          <div class="bar">
+            <div class="logo">●</div>
+            <div class="time"></div>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h2>My projects</h2>
+        <div class="projects"></div>
+      </section>
+      <section id="courses">
+        <h2>Let's learn together</h2>
+        <div class="courses"></div>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact">
+          <form
+            action="https://formsubmit.co/2f7765eedb8d1263733f1a742ea751d0"
+            method="post"
+          >
+            <input
+              type="hidden"
+              name="_next"
+              value="https://joaquingarciadev.github.io/"
+            />
+            <input type="hidden" name="_subject" value="PORTFOLIO MESSAGE" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="name" placeholder="Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+              title="Please enter a valid email"
+              required
+            />
+            <textarea
+              name="message"
+              id=""
+              cols="30"
+              rows="8"
+              placeholder="Message"
+              required
+            ></textarea>
+            <button type="submit">Send message</button>
+          </form>
+        </div>
+      </section>
+      <footer>
+        <div class="copyright">
+          <p>
+            © <span class="year"></span>
+            <a href="https://joaquingarciadev.github.io/">Joaquin Garcia</a>.
+            All rights reserved.
+          </p>
+        </div>
+        <div class="social">
+          <a
+            href="https://www.linkedin.com/in/joaquingarciadev/"
+            target="_blank"
+          >
+            <i class="uil uil-linkedin"></i>
+          </a>
+          <a href="https://github.com/joaquingarciadev" target="_blank">
+            <i class="uil uil-github"></i>
+          </a>
+          <a href="mailto:  djoako22@gmail.com" target="_blank">
+            <i class="uil uil-envelope"></i>
+          </a>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
