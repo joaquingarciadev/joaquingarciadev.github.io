@@ -539,11 +539,11 @@ body:not(.dark) main {
 
 @keyframes move {
   from {
-    transform: translate(0);
+    transform: translateY(0);
   }
 
   to {
-    transform: translate(10px, -10px);
+    transform: translateY(-20px);
   }
 }
 
@@ -556,6 +556,14 @@ body:not(.dark) main {
   width: 140px;
   height: 140px;
   transform: translate(50px, 50px);
+  background-image: radial-gradient(#dddddd 3px, transparent 3px);
+  background-size: 20px 20px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-image 0.3s;
+}
+
+.dark #p-1 {
+  background-image: radial-gradient(#777777 3px, transparent 3px);
 }
 
 #p-2 {
@@ -885,7 +893,8 @@ i:hover {
     flex-direction: row-reverse;
   }
 
-  .menu, nav .tools {
+  .menu,
+  nav .tools {
     display: none;
   }
 
