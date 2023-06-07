@@ -5,8 +5,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  color: var(--text);
-  transition: color 0.3s, background-color 0.3s;
 }
 
 html {
@@ -24,6 +22,9 @@ body {
   --text: #171717;
   --second: #ddd;
   --background-card: #fff;
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.5s, color 0.5s;
 }
 
 body.dark {
@@ -67,6 +68,13 @@ p {
   padding: 0 30px;
 }
 
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 20px;
+}
+
 .lang {
   display: flex;
   align-items: center;
@@ -80,18 +88,69 @@ p {
   border-left: none;
 }
 
-.tools {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  padding: 30px 20px;
-}
-
 .sidebar .tools {
   position: absolute;
   bottom: 0;
   width: 100%;
   justify-content: space-between;
+}
+
+/* DARK MODE */
+#toggle {
+  position: relative;
+  cursor: pointer;
+}
+
+#toggle > * {
+  transition: all 0.8s cubic-bezier(0.2, 0.2, 0.2, 1.2);
+}
+
+#toggle #moon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(320deg) scale(0.55);
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  pointer-events: none;
+  background-color: var(--text);
+  border-radius: 50%;
+}
+
+#toggle #moon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-100%, -100%) scale(0);
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  background-color: var(--background);
+  border-radius: 50%;
+  transition: transform 0.8s ease, opacity 0.1s ease 0.2s, background-color 0.5s;
+}
+
+#toggle #sun {
+  transform: rotate(0deg);
+}
+
+.dark #toggle #moon {
+  transform: rotate(40deg) scale(0.8);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.dark #toggle #moon::before {
+  transform: translate(-10%, -30%) scale(1);
+  opacity: 1;
+}
+
+.dark #toggle #sun {
+  transform: rotate(-360deg);
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* LOADER */
@@ -269,21 +328,13 @@ nav {
   right: 0;
   height: 80px;
   z-index: 10;
-  transition: top 0.5s, box-shadow 0.5s;
   overflow: hidden;
+  transition: all 0.5s;
 }
 
 nav.scroll {
-  background: #fff;
+  background: var(--background);
   box-shadow: 0 0 10px #0005;
-}
-
-nav .bg-dark {
-  background: #0000;
-}
-
-nav.scroll .bg-dark {
-  background: #171717;
 }
 
 nav .container {
@@ -311,7 +362,6 @@ nav .container {
   margin-right: 30px;
   font-size: 16px;
   font-weight: 500;
-  transition: all 0.2s;
 }
 
 .menu a:hover {
@@ -391,118 +441,6 @@ nav .container {
   opacity: 0.3;
   pointer-events: auto;
   cursor: pointer;
-}
-
-/* DARK MODE */
-/* From uiverse.io by @alexruix */
-/* The switch - the box around the slider */
-.switch {
-  font-size: 14px;
-  position: relative;
-  display: inline-block;
-  /* width: 3.5em; */
-  /* padding: 5px; */
-  height: 2.5em;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  --background: #333;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background);
-  transition: 0.5s;
-  border-radius: 30px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 1.2em;
-  width: 1.2em;
-  border-radius: 50%;
-  left: 10%;
-  bottom: 15%;
-  box-shadow: inset 6px -4px 0px 0px #fff;
-  background: #333;
-  transition: 0.5s;
-  border: 5px solid #333;
-}
-
-input:checked + .slider {
-  background-color: var(--btn);
-}
-
-input:checked + .slider:before {
-  /* transform: translateX(100%); */
-  box-shadow: inset 15px -4px 0px 15px #333;
-  background: #fff;
-  border: 5px solid #fff;
-}
-
-/*  DARK MODE BACKGROUND */
-body.dark .bg-dark {
-  clip-path: circle(200% at 100% 0);
-}
-
-.bg-dark {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  background: #171717;
-  clip-path: circle(0 at 100% 0);
-  transition: clip-path 1s ease-in-out;
-}
-
-nav .bg-dark {
-  position: absolute;
-}
-
-body.dark main {
-  animation: fadeInDark 0.7s ease-in-out;
-}
-
-body:not(.dark) main {
-  animation: fadeInLight 0.7s ease-in-out;
-}
-
-@keyframes fadeInDark {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInLight {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 /* HOME */
@@ -731,6 +669,7 @@ body:not(.dark) main {
   border: 1px solid var(--second);
   border-radius: 6px;
   overflow: hidden;
+  transition: border-color 0.5s;
 }
 
 .card-img {

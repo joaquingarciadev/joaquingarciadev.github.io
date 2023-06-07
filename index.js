@@ -59,9 +59,9 @@ const handleChangeTheme = (param) => {
   }
 };
 
-document.querySelectorAll(".switch input").forEach((input) => {
-  input.addEventListener("change", (e) => {
-    handleChangeTheme(e.target.checked);
+document.querySelectorAll("#toggle").forEach((toggle) => {
+  toggle.addEventListener("click", function () {
+    document.body.classList.toggle("dark");
   });
 });
 
