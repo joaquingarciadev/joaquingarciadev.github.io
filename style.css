@@ -329,11 +329,11 @@ nav {
   height: 80px;
   z-index: 10;
   overflow: hidden;
-  transition: all 0.5s;
+  transition: background-color 0.5s, box-shadow 0.5s, top 0.5s;
 }
 
 nav.scroll {
-  background: var(--background);
+  background-color: var(--background);
   box-shadow: 0 0 10px #0005;
 }
 
@@ -388,7 +388,7 @@ nav .container {
   top: 0;
   left: -300px;
   z-index: 12;
-  transition: all 0.5s;
+  transition: background-color 0.5s, box-shadow 0.5s, left 0.5s;
 }
 
 .sidebar li {
