@@ -19,7 +19,7 @@ window.onscroll = function () {
   }
   previousScroll = currentScroll;
   // Effect shadow navbar
-  if (previousScroll > 0) {
+  if (previousScroll > 1) {
     document.querySelector("nav").classList.add("scroll");
   } else {
     document.querySelector("nav").classList.remove("scroll");
@@ -40,18 +40,12 @@ const hideSidebar = () => {
 const handleChangeTheme = (param) => {
   if (param) {
     document.querySelector("body").classList.add("dark");
-    document.querySelectorAll(".switch input").forEach((input) => {
-      input.checked = true;
-    });
     document
       .querySelector("meta[name=theme-color]")
       .setAttribute("content", "#171717");
     localStorage.setItem("theme", "dark");
   } else {
     document.querySelector("body").classList.remove("dark");
-    document.querySelectorAll(".switch input").forEach((input) => {
-      input.checked = false;
-    });
     document
       .querySelector("meta[name=theme-color]")
       .setAttribute("content", "#fff");
@@ -60,8 +54,9 @@ const handleChangeTheme = (param) => {
 };
 
 document.querySelectorAll("#toggle").forEach((toggle) => {
-  toggle.addEventListener("click", function () {
-    document.body.classList.toggle("dark");
+  toggle.addEventListener("click", () => {
+    const isDark = localStorage.getItem("theme") === "dark";
+    handleChangeTheme(!isDark);
   });
 });
 
