@@ -83,6 +83,10 @@ p {
   border-left: 1px solid #ddd;
 }
 
+.tawk-branding {
+  display: none !important;
+}
+
 .sidebar .lang {
   padding-left: 0;
   border-left: none;
