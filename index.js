@@ -144,12 +144,19 @@ const skills = [
     descriptionEn: "Version control software.",
     year: "2020",
   },
+  // {
+  //   name: "Docker",
+  //   img: "src/habilidades/docker.png",
+  //   description: "Software de despliegue de aplicaciones.",
+  //   descriptionEn: "Application deployment software.",
+  //   year: "2022",
+  // },
   {
-    name: "Docker",
-    img: "src/habilidades/docker.png",
-    description: "Software de despliegue de aplicaciones.",
-    descriptionEn: "Application deployment software.",
-    year: "2022",
+    name: "Firebase",
+    img: "src/habilidades/firebase.png",
+    description: "Plataforma de desarrollo y hosting.",
+    descriptionEn: "Development and hosting platform.",
+    year: "2020",
   },
   {
     name: "Linux",
@@ -165,18 +172,43 @@ const skills = [
     descriptionEn: "Design program.",
     year: "2021",
   },
+  {
+    name: "Wordpress",
+    img: "src/habilidades/wordpress.png",
+    description: "Plataforma de creación web.",
+    descriptionEn: "Web creation platform.",
+    year: "2020",
+  },
+  {
+    name: "Elementor",
+    img: "src/habilidades/elementor.webp",
+    description: "Constructor de páginas web para Wordpress.",
+    descriptionEn: "Web page builder for Wordpress.",
+    year: "2020",
+  },
 ];
 
 const projects = [
   {
-    name: "Página web - La Fermina",
-    nameEn: "Website - La Fermina",
+    name: "The Rod and Co. - Sitio web de Agencia Digital",
+    nameEn: "The Rod and Co. - Digital Agency Website",
+    description:
+      "Realicé una página web para una Agencia Digital, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios.",
+    descriptionEn:
+      "I made a website for a Digital Agency, offering customers a digital platform to explore and book their services.",
+    skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
+    img: "src/proyectos/therodandco.png",
+    demo: "https://therodandco.com/",
+  },
+  {
+    name: "La Fermina - Sitio web de Fiestas & Eventos",
+    nameEn: "La Fermina - Catering & Events Website",
     description:
       "Realicé una página web para un Salón de Fiestas y Eventos, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios.",
     descriptionEn:
       "I made a website for a Party and Events Hall, offering customers a digital platform to explore and book their services.",
     skills: ["HTML", "CSS", "Javascript"],
-    img: "src/proyectos/pagina-la-fermina.png",
+    img: "src/proyectos/laferminafiestasyeventos.png",
     demo: "https://laferminafiestasyeventos.netlify.app",
   },
   // {
@@ -218,7 +250,7 @@ const projects = [
       "Desarrollé un sistema de ventas que permite a los usuarios gestionar sus ventas de manera efectiva. Empleé el stack MERN y amplié mis habilidades al aprender Firebase para la autenticación de usuarios y Cloudinary para la gestión de imágenes.",
     descriptionEn:
       "I developed a sales system that allows users to manage their sales effectively. I used the MERN stack and expanded my skills by learning Firebase for user authentication and Cloudinary for image management.",
-    skills: ["React", "Next JS", "Node JS", "Express JS", "MongoDB"],
+    skills: ["React", "Next JS", "Firebase"],
     img: "src/proyectos/app-sistema-de-ventas.png",
     // repo: "https://github.com/joaquingarciadev/sistema-de-usuarios.git",
     demo: "https://app-sistema-de-ventas.vercel.app",
