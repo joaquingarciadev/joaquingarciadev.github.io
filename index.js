@@ -440,7 +440,7 @@ function render() {
                 <filter/>
             </div>
             <div class="card-content">
-                <h3>${project.name}</h3>
+                <h4>${project.name}</h4>
                 <p>${project.description}</p>
                 <br />
                 <div class="card-icons">
@@ -478,7 +478,7 @@ function render() {
     courses_label.innerHTML += `
         <div class="card card-hover" onclick="window.open('${course.url}')">
             <div class="card-content">
-                <h3>${course.name}</h3>
+                <h4>${course.name}</h4>
                 <img src="${course.img}" alt="" arial-label="${course.name}"/>
                 <p>${course.description}</p>
             </div>
@@ -524,6 +524,13 @@ const textReveal = (text, delay = 0, duration = 2000) => {
 
 gsap.set(".card", { opacity: 0, y: 100 });
 ScrollTrigger.batch(".card", {
+  onEnter: (t) => gsap.to(t, { stagger: 0.1, opacity: 1, y: 0 }),
+  onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
+});
+
+// animation fade in for h2 and p
+gsap.set(".fade-in", { opacity: 0, y: 100 });
+ScrollTrigger.batch(".fade-in", {
   onEnter: (t) => gsap.to(t, { stagger: 0.1, opacity: 1, y: 0 }),
   onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
 });
