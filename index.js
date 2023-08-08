@@ -244,8 +244,8 @@ const projects = [
   //     demo: "https://sistema-para-restaurantes.vercel.app",
   // },
   {
-    name: "App - Sistema de ventas",
-    nameEn: "App - Sales system",
+    name: "Sistema de ventas",
+    nameEn: "Sales system",
     description:
       "Desarrollé un sistema de ventas que permite a los usuarios gestionar sus ventas de manera efectiva. Empleé el stack MERN y amplié mis habilidades al aprender Firebase para la autenticación de usuarios y Cloudinary para la gestión de imágenes.",
     descriptionEn:
@@ -256,8 +256,8 @@ const projects = [
     demo: "https://app-sistema-de-ventas.vercel.app",
   },
   {
-    name: "App - Sistema de usuarios",
-    nameEn: "App - User system",
+    name: "Sistema de usuarios",
+    nameEn: "User system",
     description:
       "Desarrollé una aplicación completa con autenticación, registro y gestión de usuarios, fortaleciendo mis habilidades en el stack MERN y aprendiendo a implementar la autenticación OAuth.",
     descriptionEn:
@@ -285,8 +285,8 @@ const projects = [
   //     demo: "https://joaquingarciadev.github.io/src/proyectos/app-pedidos.png",
   // },
   {
-    name: "App - Cripto alarma",
-    nameEn: "App - Crypto alarm",
+    name: "Cripto alarma",
+    nameEn: "Crypto alarm",
     description:
       "Esta es una aplicación web desarrollada en Next.js que te permite establecer alarmas para criptomonedas. Aprendí a hacer una API con Next.js y también a realizar scraping dentro de ella.",
     descriptionEn:
