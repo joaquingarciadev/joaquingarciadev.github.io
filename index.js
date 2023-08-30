@@ -188,7 +188,7 @@ const skills = [
   },
   {
     name: "Woocommerce",
-    img: "src/habilidades/woocommerce.webp",
+    img: "src/habilidades/woocommerce.png",
     description: "Plugin de Wordpress para la creación de tiendas online.",
     descriptionEn: "Wordpress plugin for creating online stores.",
     year: "2020",
