@@ -186,9 +186,34 @@ const skills = [
     descriptionEn: "Web page builder for Wordpress.",
     year: "2020",
   },
+  {
+    name: "Woocommerce",
+    img: "src/habilidades/woocommerce.webp",
+    description: "Plugin de Wordpress para la creación de tiendas online.",
+    descriptionEn: "Wordpress plugin for creating online stores.",
+    year: "2020",
+  },
 ];
 
 const projects = [
+  {
+    name: "Afrodita's Pleasure - Tienda de lencería y ropa interior",
+    nameEn: "Afrodita's Pleasure - Lingerie and underwear store",
+    description:
+      "Realicé una tienda online para una marca de lencería y ropa interior, ofreciendo a los clientes una plataforma digital para explorar y comprar sus productos.",
+    descriptionEn:
+      "I made an online store for a lingerie and underwear brand, offering customers a digital platform to explore and buy their products.",
+    skills: [
+      "Wordpress",
+      "Elementor",
+      "Woocommerce",
+      "HTML",
+      "CSS",
+      "Javascript",
+    ],
+    img: "src/proyectos/afroditaspleasure.png",
+    demo: "https://afroditaspleasure.com/",
+  },
   {
     name: "The Rod and Co. - Sitio web de Agencia Digital",
     nameEn: "The Rod and Co. - Digital Agency Website",
