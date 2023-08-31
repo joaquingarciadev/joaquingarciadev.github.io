@@ -911,6 +911,15 @@ i:hover {
   .copyright {
     order: 1;
   }
+
+  /* DESKTOP ANIMATION */
+  .skills {
+    padding-left: 2px;
+  }
+
+  .skill img {
+    width: 36px;
+  }
 }
 
 @media (min-width: 768px) {
