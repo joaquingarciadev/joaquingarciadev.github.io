@@ -15,7 +15,7 @@ window.onscroll = function () {
   if (previousScroll > currentScroll) {
     document.querySelector("nav").style.top = "0";
   } else {
-    if (previousScroll > 400) document.querySelector("nav").style.top = "-500px";
+    if (previousScroll > 400) document.querySelector("nav").style.top = "-200px";
   }
   previousScroll = currentScroll;
   // Effect shadow navbar
