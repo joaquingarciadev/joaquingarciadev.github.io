@@ -26,20 +26,25 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-    <meta name="google-site-verification" content="6XHylW_MZ-kTsw1OquSgtyJAPE__LnV2jR0JoFyPpjM" />
+    <meta
+      name="google-site-verification"
+      content="6XHylW_MZ-kTsw1OquSgtyJAPE__LnV2jR0JoFyPpjM"
+    />
     <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/64ab2a91cc26a871b0275931/1h4u9sj3u';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <!--End of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/64ab2a91cc26a871b0275931/1h4u9sj3u";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
   </head>
   <body>
     <div class="wrapper">
@@ -54,11 +59,15 @@
         </div>
         <ul class="menu">
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">About me</a></li>
+          <li>
+            <a href="#about">About me <i class="uil uil-angle-down"></i></a>
+            <ul class="submenu">
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+            </ul>
+          </li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#courses">Courses</a></li>
+          <!-- <li><a href="#courses">Courses</a></li> -->
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="tools">
@@ -118,10 +127,20 @@
       </div>
       <ul onclick="hideSidebar()">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#courses">Courses</a></li>
+        <li>
+          <div class="submenu-item">
+            <a href="#about">About me</a>
+            <span onclick="toggleSubmenu(this)">
+              <i class="uil uil-angle-down"></i>
+            </span>
+          </div>
+          <ul class="submenu">
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </li>
+        <li><a href="#services">Services</a></li>
+        <!-- <li><a href="#courses">Courses</a></li> -->
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="tools">
@@ -207,6 +226,22 @@
         </div>
         <div class="blob"></div>
       </section>
+      <section id="skills">
+        <h2>My skills</h2>
+        <div class="screen">
+          <div class="desktop">
+            <div class="skills"></div>
+          </div>
+          <div class="bar">
+            <div class="logo">●</div>
+            <div class="time"></div>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h2>My projects</h2>
+        <div class="projects"></div>
+      </section>
       <section id="services">
         <h2>Services</h2>
         <div class="services cards">
@@ -226,27 +261,11 @@
             <p>Maintenance, technical support, and tailored solutions.</p>
           </div>
         </div>
-      </section>      
-      <section id="skills">
-        <h2>My skills</h2>
-        <div class="screen">
-          <div class="desktop">
-            <div class="skills"></div>
-          </div>
-          <div class="bar">
-            <div class="logo">●</div>
-            <div class="time"></div>
-          </div>
-        </div>
       </section>
-      <section id="projects">
-        <h2>My projects</h2>
-        <div class="projects"></div>
-      </section>
-      <section id="courses">
+      <!-- <section id="courses">
         <h2>Let's learn together</h2>
         <div class="courses"></div>
-      </section>
+      </section> -->
       <section id="contact">
         <h2>Contact</h2>
         <div class="contact">

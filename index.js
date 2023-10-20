@@ -8,14 +8,14 @@ const fadeOut = () => {
 window.addEventListener("load", fadeOut);
 
 // navbar
-let previousScroll = window.pageYOffset;
+let previousScroll = window.scrollY;
 window.onscroll = function () {
   // Effect hide and show navbar
-  let currentScroll = window.pageYOffset;
+  let currentScroll = window.scrollY;
   if (previousScroll > currentScroll) {
     document.querySelector("nav").style.top = "0";
   } else {
-    document.querySelector("nav").style.top = "-100px";
+    if (previousScroll > 400) document.querySelector("nav").style.top = "-500px";
   }
   previousScroll = currentScroll;
   // Effect shadow navbar
@@ -35,6 +35,30 @@ const hideSidebar = () => {
   document.querySelector(".sidebar").classList.remove("show");
   document.querySelector(".offcanvas").classList.remove("show");
 };
+
+const toggleSubmenu = (button) => {
+  const parentListItem = button.closest("li"); // Encuentra el elemento <li> padre más cercano
+  const submenu = parentListItem.querySelector(".submenu"); // Busca el elemento .submenu dentro del padre
+
+  if (submenu) {
+    submenu.classList.toggle("show"); // Agrega o quita la clase "show" para mostrar u ocultar el submenu
+  }
+};
+
+const hiddeSubmenu = () => {
+  const allSubmenus = document.querySelectorAll(".submenu");
+  allSubmenus.forEach((submenu) => {
+    submenu.classList.remove("show");
+  });
+};
+
+const allLinksSidebar = document.querySelectorAll(".sidebar a");
+allLinksSidebar.forEach((link) => {
+  link.addEventListener("click", () => {
+    hideSidebar();
+    hiddeSubmenu();
+  });
+});
 
 // Theme
 const handleChangeTheme = (param) => {
@@ -431,7 +455,7 @@ const courses = [
 // Render
 const skills_label = document.querySelector(".skills");
 const projects_label = document.querySelector(".projects");
-const courses_label = document.querySelector(".courses");
+// const courses_label = document.querySelector(".courses");
 const time = document.querySelector(".time");
 
 const isEnglishPage = window.location.pathname.includes("/en");
@@ -442,7 +466,7 @@ function render() {
 
   // Skills
   skills.forEach((skill) => {
-    skills_label.innerHTML += `
+    skills_label.innerHTML += ` 
         <div class="skill" title="Experiencia: desde ${skill.year}\n${
       isEnglishPage ? skill.descriptionEn : skill.description
     }">
@@ -495,21 +519,21 @@ function render() {
   });
 
   // Courses
-  courses.forEach((course) => {
-    if (isEnglishPage) {
-      course.name = course.nameEn;
-      course.description = course.descriptionEn;
-    }
-    courses_label.innerHTML += `
-        <div class="card card-hover" onclick="window.open('${course.url}')">
-            <div class="card-content">
-                <h4>${course.name}</h4>
-                <img src="${course.img}" alt="" arial-label="${course.name}"/>
-                <p>${course.description}</p>
-            </div>
-        </div>
-        `;
-  });
+  // courses.forEach((course) => {
+  //   if (isEnglishPage) {
+  //     course.name = course.nameEn;
+  //     course.description = course.descriptionEn;
+  //   }
+  //   courses_label.innerHTML += `
+  //       <div class="card card-hover" onclick="window.open('${course.url}')">
+  //           <div class="card-content">
+  //               <h4>${course.name}</h4>
+  //               <img src="${course.img}" alt="" arial-label="${course.name}"/>
+  //               <p>${course.description}</p>
+  //           </div>
+  //       </div>
+  //       `;
+  // });
 
   // Time
   setInterval(() => {

@@ -55,11 +55,15 @@
         </div>
         <ul class="menu">
           <li><a href="#home">Inicio</a></li>
-          <li><a href="#about">Sobre mi</a></li>
+          <li>
+            <a href="#about">Sobre mi <i class="uil uil-angle-down"></i></a>
+            <ul class="submenu">
+              <li><a href="#skills">Habilidades</a></li>
+              <li><a href="#projects">Proyectos</a></li>
+            </ul>
+          </li>
           <li><a href="#services">Servicios</a></li>
-          <li><a href="#skills">Habilidades</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#courses">Cursos</a></li>
+          <!-- <li><a href="#courses">Cursos</a></li> -->
           <li><a href="#contact">Contacto</a></li>
         </ul>
         <div class="tools">
@@ -117,12 +121,22 @@
           <i class="uil uil-multiply"></i>
         </div>
       </div>
-      <ul onclick="hideSidebar()">
+      <ul>
         <li><a href="#home">Inicio</a></li>
-        <li><a href="#about">Sobre mi</a></li>
-        <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#courses">Cursos</a></li>
+        <li>
+          <div class="submenu-item">
+            <a href="#about">Sobre mi</a>
+            <span onclick="toggleSubmenu(this)">
+              <i class="uil uil-angle-down"></i>
+            </span>
+          </div>
+          <ul class="submenu">
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+          </ul>
+        </li>
+        <li><a href="#services">Servicios</a></li>
+        <!-- <li><a href="#courses">Cursos</a></li> -->
         <li><a href="#contact">Contacto</a></li>
       </ul>
       <div class="tools">
@@ -208,6 +222,22 @@
           </p>
         </div>
       </section>
+      <section id="skills">
+        <h2>Mis habilidades</h2>
+        <div class="screen">
+          <div class="desktop">
+            <div class="skills"></div>
+          </div>
+          <div class="bar">
+            <div class="logo">●</div>
+            <div class="time"></div>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h2>Mis proyectos</h2>
+        <div class="projects"></div>
+      </section>
       <section id="services">
         <h2>Servicios</h2>
         <div class="services cards">
@@ -228,26 +258,10 @@
           </div>
         </div>
       </section>
-      <section id="skills">
-        <h2>Mis habilidades</h2>
-        <div class="screen">
-          <div class="desktop">
-            <div class="skills"></div>
-          </div>
-          <div class="bar">
-            <div class="logo">●</div>
-            <div class="time"></div>
-          </div>
-        </div>
-      </section>
-      <section id="projects">
-        <h2>Mis proyectos</h2>
-        <div class="projects"></div>
-      </section>
-      <section id="courses">
+      <!-- <section id="courses">
         <h2>Aprendamos juntos</h2>
         <div class="courses"></div>
-      </section>
+      </section> -->
       <section id="contact">
         <h2>Contacto</h2>
         <div class="contact">
