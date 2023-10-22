@@ -491,14 +491,12 @@ nav .container {
 }
 
 .sidebar .submenu {
-  max-height: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
-  opacity: 0;
-  pointer-events: none;
   transform: translateY(16px);
   background-color: var(--second);
   border-radius: 6px;
   overflow: hidden;
+  height: 0px;
+  pointer-events: none;
   transition: all 0.3s;
 }
 
@@ -512,9 +510,7 @@ nav .container {
 }
 
 .sidebar .submenu.show {
-  max-height: 1000px;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  opacity: 1;
+  height: 104px;
   pointer-events: all;
 }
 
@@ -524,6 +520,7 @@ nav .container {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  min-height: 600px;
 }
 
 .home-title {
@@ -945,6 +942,10 @@ i:hover {
   /* HOME */
   #home {
     flex-direction: column-reverse;
+  }
+
+  .home-img {
+    margin-top: 40px;
   }
 
   .home-img img {
