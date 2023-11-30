@@ -78,7 +78,7 @@ p {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 30px 20px;
+  padding: 30px 0px;
 }
 
 .lang {
@@ -103,6 +103,7 @@ p {
   bottom: 0;
   width: 100%;
   justify-content: space-between;
+  padding: 30px;
 }
 
 /* DARK MODE */
@@ -463,7 +464,7 @@ nav .container {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .offcanvas {
