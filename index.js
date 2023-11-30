@@ -554,32 +554,8 @@ function render() {
 
 render();
 
-// Another animation
-const textReveal = (text, delay = 0, duration = 2000) => {
-  let textWrapper = document.querySelector(text);
-  textWrapper.innerHTML = textWrapper.textContent.replace(
-    /\S/g,
-    "<span class='letter' style='display: inline-block;'>$&</span>"
-  );
-  anime.timeline().add({
-    targets: text + " .letter",
-    translateY: [200, 0],
-    opacity: [0, 1],
-    easing: "easeOutExpo",
-    delay: (el, i) => 1100 + 1000 * (delay - 1) + 50 * i,
-    duration,
-  });
-};
-
 gsap.set(".card", { opacity: 0, y: 100 });
 ScrollTrigger.batch(".card", {
-  onEnter: (t) => gsap.to(t, { stagger: 0.1, opacity: 1, y: 0 }),
-  onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
-});
-
-// animation fade in for h2 and p
-gsap.set(".fade-in", { opacity: 0, y: 100 });
-ScrollTrigger.batch(".fade-in", {
   onEnter: (t) => gsap.to(t, { stagger: 0.1, opacity: 1, y: 0 }),
   onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
 });

@@ -573,8 +573,8 @@ nav .container {
   bottom: 0;
   right: 0;
   z-index: 1;
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   border-radius: 100%;
   background-color: #7d78db50;
   transform: translate(-50px, -50px);
@@ -940,8 +940,19 @@ i:hover {
     height: 400px;
   }
 
-  #p-1, #p-2 {
-    display: none;
+  #p-1 {
+    top: 80px;
+    left: -20px;
+    background-image: radial-gradient(#dddddd 2px, transparent 3px);
+    background-size: 16px 16px;
+    width: 100px;
+    height: 100px;
+  }
+
+  #p-2 {
+    right: -30px;
+    width: 90px;
+    height: 90px;
   }
 
   .home-title {
