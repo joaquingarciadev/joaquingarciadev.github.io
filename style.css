@@ -525,7 +525,8 @@ nav .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
+  max-height: 2000px;
   min-height: 600px;
 }
 
