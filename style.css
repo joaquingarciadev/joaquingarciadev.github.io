@@ -207,7 +207,7 @@ li a {
 .wrapper {
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 99999;
   background-color: var(--background);
   display: grid;
   place-items: center;

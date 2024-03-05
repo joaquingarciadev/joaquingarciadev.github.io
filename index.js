@@ -6,6 +6,23 @@ const fadeOut = () => {
 
 window.addEventListener("load", fadeOut);
 
+// Tawk.to Script
+var Tawk_API = Tawk_API || {},
+  Tawk_LoadStart = new Date();
+(function () {
+  var s1 = document.createElement("script"),
+    s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = "https://embed.tawk.to/64ab2a91cc26a871b0275931/1h4u9sj3u";
+  s1.charset = "UTF-8";
+  s1.setAttribute("crossorigin", "*");
+  s0.parentNode.insertBefore(s1, s0);
+
+  Tawk_API.customStyle = {
+    zIndex: 99,
+  };
+})();
+
 // Navbar
 let previousScroll = window.scrollY;
 window.onscroll = function () {
@@ -53,6 +70,11 @@ const toggleSidebar = () => {
   sidebar.classList.toggle("show");
   document.querySelector("body").classList.toggle("no-scroll");
   resetSubmenus();
+  // hidde tawk.to widget when sidebar is open
+  const tawk = document.querySelector(".widget-visible iframe");
+  if (tawk) {
+    tawk.style.opacity = tawk.style.opacity === "0" ? "1" : "0";
+  }
 };
 
 // Close sidebar when click on a link
@@ -629,28 +651,28 @@ document.addEventListener("mouseover", function (event) {
 });
 
 // Smooth scroll
-const lenis = new Lenis()
+const lenis = new Lenis();
 
-lenis.on('scroll', (e) => {
-  console.log(e)
-})
+lenis.on("scroll", (e) => {
+  console.log(e);
+});
 
 function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
+  lenis.raf(time);
+  requestAnimationFrame(raf);
 }
 
-requestAnimationFrame(raf)
+requestAnimationFrame(raf);
 
 // fix for id links
 document.querySelectorAll('a[href^="#"]').forEach((el) => {
-  el.addEventListener('click', (e) => {
-    e.preventDefault()
-    const id = el.getAttribute('href')?.slice(1)
-    if (!id) return
-    const target = document.getElementById(id)
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = el.getAttribute("href")?.slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth', duration: 5000 })
+      target.scrollIntoView({ behavior: "smooth", duration: 5000 });
     }
-  })
-})
+  });
+});
