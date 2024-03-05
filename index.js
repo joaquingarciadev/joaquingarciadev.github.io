@@ -2,12 +2,11 @@
 const fadeOut = () => {
   const loaderWrapper = document.querySelector(".wrapper");
   loaderWrapper.classList.add("fade");
-  textReveal("h3", 0, 500);
 };
 
 window.addEventListener("load", fadeOut);
 
-// navbar
+// Navbar
 let previousScroll = window.scrollY;
 window.onscroll = function () {
   // Effect hide and show navbar
@@ -15,7 +14,8 @@ window.onscroll = function () {
   if (previousScroll > currentScroll) {
     document.querySelector("nav").style.top = "0";
   } else {
-    if (previousScroll > 400) document.querySelector("nav").style.top = "-200px";
+    if (previousScroll > 400)
+      document.querySelector("nav").style.top = "-200px";
   }
   previousScroll = currentScroll;
   // Effect shadow navbar
@@ -26,38 +26,60 @@ window.onscroll = function () {
   }
 };
 
-const showSidebar = () => {
-  document.querySelector(".sidebar").classList.add("show");
-  document.querySelector(".offcanvas").classList.add("show");
-};
+// Submenu
+const allSubmenuToggles = document.querySelectorAll(".submenu-toggle");
+allSubmenuToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const parentListItem = toggle.closest("li"); // Encuentra el elemento <li> padre más cercano
+    const submenu = parentListItem.querySelector(".submenu"); // Busca el elemento .submenu dentro del padre
 
-const hideSidebar = () => {
-  document.querySelector(".sidebar").classList.remove("show");
-  document.querySelector(".offcanvas").classList.remove("show");
-};
+    if (submenu) {
+      submenu.classList.toggle("show"); // Agrega o quita la clase "show" para mostrar u ocultar el submenu
+    }
+  });
+});
 
-const toggleSubmenu = (button) => {
-  const parentListItem = button.closest("li"); // Encuentra el elemento <li> padre más cercano
-  const submenu = parentListItem.querySelector(".submenu"); // Busca el elemento .submenu dentro del padre
-
-  if (submenu) {
-    submenu.classList.toggle("show"); // Agrega o quita la clase "show" para mostrar u ocultar el submenu
-  }
-};
-
-const hiddeSubmenu = () => {
+const resetSubmenus = () => {
   const allSubmenus = document.querySelectorAll(".submenu");
   allSubmenus.forEach((submenu) => {
     submenu.classList.remove("show");
   });
 };
 
+// Sidebar
+const sidebar = document.querySelector(".sidebar");
+
+const toggleSidebar = () => {
+  sidebar.classList.toggle("show");
+  document.querySelector("body").classList.toggle("no-scroll");
+  resetSubmenus();
+};
+
+// Close sidebar when click on a link
 const allLinksSidebar = document.querySelectorAll(".sidebar a");
 allLinksSidebar.forEach((link) => {
   link.addEventListener("click", () => {
-    hideSidebar();
-    hiddeSubmenu();
+    toggleMenu();
+    toggleSidebar();
   });
+});
+
+// Menu toggle
+const menuToggle = document.querySelector(".menu-toggle");
+
+const toggleMenu = () => {
+  if (menuToggle.classList.contains("active")) {
+    menuToggle.classList.remove("active");
+    menuToggle.classList.add("not-active");
+  } else {
+    menuToggle.classList.remove("not-active");
+    menuToggle.classList.add("active");
+  }
+};
+
+menuToggle.addEventListener("click", function () {
+  toggleMenu();
+  toggleSidebar();
 });
 
 // Theme
@@ -471,7 +493,7 @@ function render() {
       isEnglishPage ? skill.descriptionEn : skill.description
     }">
             <img src=${skill.img} width='50' arial-label="${skill.name}">
-            <div class="skill-text">${skill.name}</div>
+            <span class="skill-text">${skill.name}</span>
         </div>
         `;
   });
@@ -568,3 +590,67 @@ Draggable.create(".skill", {
   cursor: "default",
   zIndexBoost: false,
 });
+
+// Cursor
+const cursorDot = document.querySelector(".cursor-dot");
+
+document.addEventListener("mousemove", (e) => {
+  const posX = e.clientX;
+  const posY = e.clientY;
+
+  cursorDot.style.top = `${posY}px`;
+  cursorDot.style.left = `${posX}px`;
+
+  cursorDot.animate(
+    {
+      top: `${posY}px`,
+      left: `${posX}px`,
+    },
+    {
+      duration: 200,
+      fill: "forwards",
+    }
+  );
+});
+
+document.addEventListener("mouseover", function (event) {
+  // Obtener el elemento sobre el cual se activó el evento
+  var elemento = event.target;
+
+  // Verificar si el elemento tiene cursor: pointer
+  var tieneCursorPointer =
+    window.getComputedStyle(elemento).getPropertyValue("cursor") === "pointer";
+
+  if (tieneCursorPointer) {
+    cursorDot.classList.add("cursor-dot-large");
+  } else {
+    cursorDot.classList.remove("cursor-dot-large");
+  }
+});
+
+// Smooth scroll
+const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+
+// fix for id links
+document.querySelectorAll('a[href^="#"]').forEach((el) => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault()
+    const id = el.getAttribute('href')?.slice(1)
+    if (!id) return
+    const target = document.getElementById(id)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', duration: 5000 })
+    }
+  })
+})
