@@ -706,6 +706,7 @@ body.no-scroll {
 .taskbar > * {
   margin: 0 20px;
   color: #fff;
+  font-family: "Open Sans", sans-serif;
 }
 
 .screen::after {
@@ -984,14 +985,6 @@ i:hover {
     justify-content: start;
   }
 
-  .screen {
-    height: 700px;
-  }
-
-  .desktop {
-    height: 650px;
-  }
-
   /* FOOTER */
   footer {
     grid-template-columns: 1fr;
@@ -1008,11 +1001,20 @@ i:hover {
 
   /* DESKTOP ANIMATION */
   .skills {
-    padding-left: 2px;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .skill {
+    padding: 4px;
   }
 
   .skill img {
-    width: 36px;
+    width: 30px;
+  }
+
+  .skill-text {
+    font-size: 12px;
   }
 }
 
