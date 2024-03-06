@@ -26,26 +26,6 @@ html {
   scroll-padding-top: 100px;
 }
 
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
-
 :root {
   --btn: #4f46e5;
   --btn-hover: #433cc3;
@@ -412,7 +392,7 @@ nav .container {
   padding: 4px;
 }
 
-body.no-scroll {
+html.no-scroll {
   overflow: hidden;
 }
 

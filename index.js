@@ -68,7 +68,9 @@ const sidebar = document.querySelector(".sidebar");
 
 const toggleSidebar = () => {
   sidebar.classList.toggle("show");
-  document.querySelector("body").classList.toggle("no-scroll");
+  document.querySelector("html").classList.toggle("no-scroll");
+  // block the scroll when sidebar is open
+  
   resetSubmenus();
   // hidde tawk.to widget when sidebar is open
   const tawk = document.querySelector(".widget-visible iframe");
