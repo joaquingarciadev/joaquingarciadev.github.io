@@ -87,6 +87,10 @@ li a {
   font-weight: 500;
 }
 
+h1, h2, h3, h4, p {
+  pointer-events: none;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -217,6 +221,89 @@ li a {
 .cursor-dot.cursor-dot-large {
   width: 20px;
   height: 20px;
+}
+
+/* WhatsApp Button */
+.whatsapp {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 30px;
+  /* calc((100% - container max width) / 2) */
+  transform: scale(0);
+  transition: .3s;
+  z-index: 2;
+}
+
+.whatsapp.show {
+  transform: scale(1);
+}
+
+.whatsapp__content {
+  overflow: hidden;
+}
+
+.whatsapp__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #25D366;
+  color: #fff;
+  font-size: 30px;
+  font-family: unset;
+  border-radius: 50px;
+  animation: scaleUp .3s ease-out;
+}
+
+.whatsapp__badge {
+  display: flex;
+  gap: 5px;
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  transform: translateY(-25%);
+  opacity: 0;
+  padding: 8px 9px;
+  background: #005c4b;
+  color: #fff;
+  border-radius: 7.5px 0 7.5px 7.5px;
+  font-size: 14px;
+  font-family: sans-serif;
+  pointer-events: none;
+  transition: all .3s ease 2s;
+}
+
+.whatsapp.show .whatsapp__badge {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.whatsapp__badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 8px;
+  height: 40%;
+  background: #005c4b;
+  border-radius: 0 5px 20px 0;
+  clip-path: polygon(0 0, 100% 0, 100% 20%, 0% 100%);
+}
+
+.whatsapp__badge .whatsapp__check svg {
+  transform: translateY(2px);
+}
+
+.whatsapp.show .whatsapp__badge .whatsapp__check svg {
+  fill: #53bdeb;
+  transition: fill .3s ease 3s;
+}
+
+.whatsapp__button i:hover {
+  color: unset;
 }
 
 /* NAVBAR */
@@ -392,7 +479,7 @@ nav .container {
   padding: 4px;
 }
 
-html.no-scroll {
+body.no-scroll {
   overflow: hidden;
 }
 

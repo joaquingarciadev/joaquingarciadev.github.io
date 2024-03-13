@@ -1,27 +1,12 @@
-// Load animation
-const fadeOut = () => {
+// Load
+const loader = () => {
   const loaderWrapper = document.querySelector(".wrapper");
   loaderWrapper.classList.add("fade");
+
+  document.querySelector(".whatsapp").classList.add("show");
 };
 
-window.addEventListener("load", fadeOut);
-
-// Tawk.to Script
-var Tawk_API = Tawk_API || {},
-  Tawk_LoadStart = new Date();
-(function () {
-  var s1 = document.createElement("script"),
-    s0 = document.getElementsByTagName("script")[0];
-  s1.async = true;
-  s1.src = "https://embed.tawk.to/64ab2a91cc26a871b0275931/1h4u9sj3u";
-  s1.charset = "UTF-8";
-  s1.setAttribute("crossorigin", "*");
-  s0.parentNode.insertBefore(s1, s0);
-
-  Tawk_API.customStyle = {
-    zIndex: 99,
-  };
-})();
+window.addEventListener("load", loader);
 
 // Navbar
 let previousScroll = window.scrollY;
@@ -68,15 +53,10 @@ const sidebar = document.querySelector(".sidebar");
 
 const toggleSidebar = () => {
   sidebar.classList.toggle("show");
-  document.querySelector("html").classList.toggle("no-scroll");
   // block the scroll when sidebar is open
-  
+  document.querySelector("body").classList.toggle("no-scroll");
+
   resetSubmenus();
-  // hidde tawk.to widget when sidebar is open
-  const tawk = document.querySelector(".widget-visible iframe");
-  if (tawk) {
-    tawk.style.opacity = tawk.style.opacity === "0" ? "1" : "0";
-  }
 };
 
 // Close sidebar when click on a link
