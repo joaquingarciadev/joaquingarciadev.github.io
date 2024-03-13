@@ -114,28 +114,28 @@ document.querySelectorAll("#toggle").forEach((toggle) => {
 const skills = [
   {
     name: "HTML",
-    img: "src/habilidades/html-5.svg",
+    img: "src/habilidades/html-5.webp",
     description: "Lenguaje de marcado para la creación de páginas web.",
     descriptionEn: "Markup language for creating web pages.",
     year: "2017",
   },
   {
     name: "CSS",
-    img: "src/habilidades/css-3.svg",
+    img: "src/habilidades/css-3.webp",
     description: "Lenguaje de estilos para la creación de páginas web.",
     descriptionEn: "Style language for creating web pages.",
     year: "2017",
   },
   {
     name: "Javascript",
-    img: "src/habilidades/js.svg",
+    img: "src/habilidades/js.webp",
     description: "Lenguaje de programación para la creación de páginas web.",
     descriptionEn: "Programming language for creating web pages.",
     year: "2017",
   },
   {
     name: "React",
-    img: "src/habilidades/react.svg",
+    img: "src/habilidades/react.webp",
     description:
       "Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.",
     descriptionEn: "Open source Javascript library designed to create UIs.",
@@ -143,14 +143,14 @@ const skills = [
   },
   {
     name: "Next JS",
-    img: "src/habilidades/next-js.png",
+    img: "src/habilidades/next-js.webp",
     description: "Framework de creación de páginas web.",
     descriptionEn: "Web page creation framework.",
     year: "2022",
   },
   {
     name: "Node JS",
-    img: "src/habilidades/node-js.svg",
+    img: "src/habilidades/node-js.webp",
     description:
       "Entorno en tiempo de ejecución para la capa del servidor basado en el lenguaje de programación JavaScript.",
     descriptionEn:
@@ -159,7 +159,7 @@ const skills = [
   },
   {
     name: "Express JS",
-    img: "src/habilidades/express-js.png",
+    img: "src/habilidades/express-js.webp",
     description:
       "Infraestructura web rápida, minimalista y flexible para Node.js.",
     descriptionEn:
@@ -168,63 +168,63 @@ const skills = [
   },
   {
     name: "MongoDB",
-    img: "src/habilidades/mongodb.png",
+    img: "src/habilidades/mongodb.webp",
     description: "Base de datos para la creación de páginas web.",
     descriptionEn: "Database for creating web pages.",
     year: "2020",
   },
   {
     name: "MySQL",
-    img: "src/habilidades/sql.png",
+    img: "src/habilidades/sql.webp",
     description: "Base de datos para la creación de páginas web.",
     descriptionEn: "Database for creating web pages.",
     year: "2020",
   },
   {
     name: "Bootstrap",
-    img: "src/habilidades/bootstrap.svg",
+    img: "src/habilidades/bootstrap.webp",
     description: "Framework de creación de páginas web.",
     descriptionEn: "Web page creation framework.",
     year: "2020",
   },
   {
     name: "Git",
-    img: "src/habilidades/git.svg",
+    img: "src/habilidades/git.webp",
     description: "Software de control de versiones.",
     descriptionEn: "Version control software.",
     year: "2020",
   },
   // {
   //   name: "Docker",
-  //   img: "src/habilidades/docker.png",
+  //   img: "src/habilidades/docker.webp",
   //   description: "Software de despliegue de aplicaciones.",
   //   descriptionEn: "Application deployment software.",
   //   year: "2022",
   // },
   {
     name: "Firebase",
-    img: "src/habilidades/firebase.png",
+    img: "src/habilidades/firebase.webp",
     description: "Plataforma de desarrollo y hosting.",
     descriptionEn: "Development and hosting platform.",
     year: "2020",
   },
   {
     name: "Linux",
-    img: "src/habilidades/linux.png",
+    img: "src/habilidades/linux.webp",
     description: "Sistema operativo open source.",
     descriptionEn: "Open source operating system.",
     year: "2020",
   },
   {
     name: "Photoshop",
-    img: "src/habilidades/photoshop.png",
+    img: "src/habilidades/photoshop.webp",
     description: "Programa de diseño.",
     descriptionEn: "Design program.",
     year: "2021",
   },
   {
     name: "Wordpress",
-    img: "src/habilidades/wordpress.png",
+    img: "src/habilidades/wordpress.webp",
     description: "Plataforma de creación web.",
     descriptionEn: "Web creation platform.",
     year: "2020",
@@ -238,7 +238,7 @@ const skills = [
   },
   {
     name: "Woocommerce",
-    img: "src/habilidades/woocommerce.png",
+    img: "src/habilidades/woocommerce.webp",
     description: "Plugin de Wordpress para la creación de tiendas online.",
     descriptionEn: "Wordpress plugin for creating online stores.",
     year: "2020",
