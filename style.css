@@ -87,7 +87,11 @@ li a {
   font-weight: 500;
 }
 
-h1, h2, h3, h4, p {
+h1,
+h2,
+h3,
+h4,
+p {
   pointer-events: none;
 }
 
@@ -231,7 +235,7 @@ h1, h2, h3, h4, p {
   margin: 30px;
   /* calc((100% - container max width) / 2) */
   transform: scale(0);
-  transition: .3s;
+  transition: 0.3s;
   z-index: 2;
 }
 
@@ -249,12 +253,12 @@ h1, h2, h3, h4, p {
   align-items: center;
   width: 50px;
   height: 50px;
-  background: #25D366;
+  background: #25d366;
   color: #fff;
   font-size: 30px;
   font-family: unset;
   border-radius: 50px;
-  animation: scaleUp .3s ease-out;
+  animation: scaleUp 0.3s ease-out;
 }
 
 .whatsapp__badge {
@@ -273,7 +277,7 @@ h1, h2, h3, h4, p {
   font-size: 14px;
   font-family: sans-serif;
   pointer-events: none;
-  transition: all .3s ease 2s;
+  transition: all 0.3s ease 2s;
 }
 
 .whatsapp.show .whatsapp__badge {
@@ -282,7 +286,7 @@ h1, h2, h3, h4, p {
 }
 
 .whatsapp__badge::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: -8px;
@@ -299,7 +303,7 @@ h1, h2, h3, h4, p {
 
 .whatsapp.show .whatsapp__badge .whatsapp__check svg {
   fill: #53bdeb;
-  transition: fill .3s ease 3s;
+  transition: fill 0.3s ease 3s;
 }
 
 .whatsapp__button i:hover {
@@ -839,11 +843,27 @@ body.no-scroll {
   margin: 80px auto;
 }
 
-.projects {
+/* .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: start;
   gap: 5px;
+} */
+
+.grid-sizer,
+.grid-item {
+  width: calc(33.3333% - 10px);
+}
+
+.grid-item {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+  }
 }
 
 .card {

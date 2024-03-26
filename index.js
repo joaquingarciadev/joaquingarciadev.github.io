@@ -509,7 +509,7 @@ function render() {
       project.description = project.descriptionEn;
     }
     projects_label.innerHTML += `
-        <div class="card">
+        <div class="card grid-item">
             <div class="card-img">
                 <img src="${project.img}" alt="${project.name}"/>
                 <filter/>
