@@ -15,5 +15,6 @@ let msnry = new Masonry( elem, {
   // use element for option
   columnWidth: '.grid-sizer',
   percentPosition: true,
-  gutter: 10
+  gutter: 10,
+  horizontalOrder: true
 });
