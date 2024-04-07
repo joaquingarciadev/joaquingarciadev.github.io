@@ -508,8 +508,9 @@ function render() {
       project.name = project.nameEn;
       project.description = project.descriptionEn;
     }
+    // grid-item margin-bottom 10px
     projects_label.innerHTML += `
-        <div class="card grid-item">
+        <div class="card grid-item" style="margin-bottom: 10px;">
             <div class="card-img">
                 <img src="${project.img}" alt="${project.name}"/>
                 <filter/>
