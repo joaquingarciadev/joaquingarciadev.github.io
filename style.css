@@ -819,13 +819,12 @@ body.no-scroll {
   gap: 5px;
 } */
 
-.grid-sizer,
 .grid-item {
-  width: calc(33.3333% - 10px);
+  width: calc((100% - (10px * 2)) / 3);
 }
 
 .grid-item {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 
 @media (max-width: 767px) {

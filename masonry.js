@@ -11,9 +11,10 @@
 let elem = document.querySelector('.grid');
 let msnry = new Masonry( elem, {
   itemSelector: '.grid-item',
-  columnWidth: '.grid-sizer',
-  percentPosition: true,
+  // columnWidth: '.grid-sizer',
+  // percentPosition: true,
   gutter: 10,
   horizontalOrder: true,
-  stagger: 30,
+  // originLeft: false,
+  // originTop: false
 });
