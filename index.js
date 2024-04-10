@@ -646,7 +646,7 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-// fix for id links
+// fix Smooth scroll for "Scroll to" for id links
 document.querySelectorAll('a[href^="#"]').forEach((el) => {
   el.addEventListener("click", (e) => {
     e.preventDefault();

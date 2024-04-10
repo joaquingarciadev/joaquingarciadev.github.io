@@ -821,9 +821,6 @@ body.no-scroll {
 
 .grid-item {
   width: calc((100% - (10px * 2)) / 3);
-}
-
-.grid-item {
   margin-bottom: 10px !important;
 }
 
