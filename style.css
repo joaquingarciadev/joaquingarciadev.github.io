@@ -812,25 +812,6 @@ body.no-scroll {
   margin: 80px auto;
 }
 
-/* .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  align-items: start;
-  gap: 5px;
-} */
-
-.grid-item {
-  width: calc((100% - (10px * 2)) / 3);
-  margin-top: 10px !important;
-}
-
-@media (max-width: 767px) {
-  .grid-sizer,
-  .grid-item {
-    width: 100%;
-  }
-}
-
 .card {
   background-color: var(--background-card);
   border: 1px solid var(--second);

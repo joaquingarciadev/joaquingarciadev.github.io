@@ -654,3 +654,14 @@ document.querySelectorAll('a[href^="#"]').forEach((el) => {
     }
   });
 });
+
+let macyInstance = Macy({
+  container: ".masonry",
+  margin: 10,
+  columns: 3,
+  breakAt: {
+    767: 2,
+    520: 1,
+  },
+  trueOrder: true,
+});
