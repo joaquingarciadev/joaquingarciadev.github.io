@@ -489,9 +489,9 @@ body.no-scroll {
 
 /* menu-toggle */
 :root {
-  --menu-toggle-size: 24px;
-  --menu-toggle-gap: 4px; /* calc((height - (bar-weight * quantity_bar)) / (quantity_bar - 1)) */
-  --menu-toggle-bar-weight: 2px;
+  --menu-toggle-size: 26px;
+  --menu-toggle-gap: 6px; /* calc((height - (bar-weight * quantity_bar)) / (quantity_bar - 1)) */
+  --menu-toggle-bar-weight: 3px;
   --menu-toggle-bar-width: 100%;
 }
 
@@ -499,7 +499,6 @@ body.no-scroll {
   position: relative;
   width: var(--menu-toggle-size);
   height: var(--menu-toggle-size);
-  cursor: pointer;
 }
 
 .bar {
