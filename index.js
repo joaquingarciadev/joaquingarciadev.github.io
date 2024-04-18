@@ -496,7 +496,7 @@ function render() {
         <div class="skill" title="Experiencia: desde ${skill.year}\n${
       isEnglishPage ? skill.descriptionEn : skill.description
     }">
-            <img src=${skill.img} width='50' arial-label="${skill.name}">
+            <img src=${skill.img} width='50' arial-label="${skill.name}"/>
             <span class="skill-text">${skill.name}</span>
         </div>
         `;
@@ -511,7 +511,9 @@ function render() {
     projects_label.innerHTML += `
         <div class="card grid-item">
             <div class="card-img">
-                <img src="${project.img}" alt="${project.name}"/>
+                <img src="${project.img}" alt="${project.name}" title="${
+      project.name
+    }" />
                 <filter/>
             </div>
             <div class="card-content">
@@ -523,7 +525,7 @@ function render() {
                       const skill_ = skills.find(
                         (skill_) => skill_.name === skill
                       );
-                      return `<img src=${skill_.img} width='20' style="border-radius: 50%;" arial-label="${skill_.name}">`;
+                      return `<img src=${skill_.img} width='20' style="border-radius: 50%;" arial-label="${skill_.name}" alt="${skill_.name}" title="${skill_.name}" />`;
                     })}
                 </div>
                 <div class="card-links">
