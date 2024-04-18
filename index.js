@@ -492,11 +492,12 @@ function render() {
 
   // Skills
   skills.forEach((skill) => {
+    const skill_title = isEnglishPage
+      ? `Experience: since ${skill.year} \nDescription: ${skill.descriptionEn}`
+      : `Experiencia: desde ${skill.year} \nDescripción: ${skill.description}`;
     skills_label.innerHTML += ` 
-        <div class="skill" title="Experiencia: desde ${skill.year}\n${
-      isEnglishPage ? skill.descriptionEn : skill.description
-    }">
-            <img src=${skill.img} width='50' arial-label="${skill.name}"/>
+        <div class="skill" title="${skill_title}">
+            <img src=${skill.img} width='50' arial-label="${skill.name}" alt="${skill.name}" title="${skill_title}" />
             <span class="skill-text">${skill.name}</span>
         </div>
         `;

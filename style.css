@@ -464,10 +464,10 @@ nav .container {
 .submenu-toggle {
   text-align: right;
   flex: 1;
-  cursor: pointer;
 }
 
 .submenu-toggle .uil-angle-down {
+  display: block;
   font-size: 30px;
 }
 
@@ -786,7 +786,7 @@ body.no-scroll {
 
 .skill {
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
   justify-content: center;
   align-items: center;
   text-align: center;
