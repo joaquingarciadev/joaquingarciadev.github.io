@@ -499,6 +499,7 @@ body.no-scroll {
   position: relative;
   width: var(--menu-toggle-size);
   height: var(--menu-toggle-size);
+  cursor: default;
 }
 
 .bar {
