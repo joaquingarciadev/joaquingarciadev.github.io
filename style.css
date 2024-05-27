@@ -111,18 +111,17 @@ p {
 .lang {
   display: flex;
   align-items: center;
-  padding-left: 10px;
+  justify-content: center;
+  padding: 5px;
+  padding-bottom: 0;
+  border-radius: 6px;
   gap: 10px;
-  border-left: 1px solid #ddd;
+  background: #aaa3;
+  transition: background-color 0.5s;
 }
 
 .tawk-branding {
   display: none !important;
-}
-
-.sidebar .lang {
-  padding-left: 0;
-  border-left: none;
 }
 
 .sidebar .tools {
@@ -288,8 +287,8 @@ p {
 .whatsapp__badge::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: -8px;
+  top: 0px;
+  right: -7px;
   width: 8px;
   height: 40%;
   background: #005c4b;
@@ -320,10 +319,6 @@ nav {
   z-index: 99;
   background-color: var(--background);
   transition: background-color 0.5s, top 0.8s;
-}
-
-nav.scroll {
-  box-shadow: 0 0 10px #0002;
 }
 
 nav .container {
@@ -490,7 +485,7 @@ body.no-scroll {
 /* menu-toggle */
 :root {
   --menu-toggle-size: 26px;
-  --menu-toggle-gap: 6px; /* calc((height - (bar-weight * quantity_bar)) / (quantity_bar - 1)) */
+  --menu-toggle-gap: 5px; /* calc((height - (bar-weight * quantity_bar)) / (quantity_bar - 1)) */
   --menu-toggle-bar-weight: 3px;
   --menu-toggle-bar-width: 100%;
 }

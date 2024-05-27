@@ -20,12 +20,6 @@ window.onscroll = function () {
       document.querySelector("nav").style.top = "-200px";
   }
   previousScroll = currentScroll;
-  // Effect shadow navbar
-  if (previousScroll > 1) {
-    document.querySelector("nav").classList.add("scroll");
-  } else {
-    document.querySelector("nav").classList.remove("scroll");
-  }
 };
 
 // Submenu
