@@ -561,7 +561,7 @@ function render() {
   // Time
   setInterval(() => {
     currentTime = new Date();
-    hours = currentTime.getHours();
+    hours = currentTime.getHours() < 10 ? "0" + currentTime.getHours() : currentTime.getHours();
     minutes =
       currentTime.getMinutes() < 10
         ? "0" + currentTime.getMinutes()

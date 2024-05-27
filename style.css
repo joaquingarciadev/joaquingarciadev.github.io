@@ -638,19 +638,19 @@ body.no-scroll {
 /* PATTERNS */
 #p-1 {
   position: absolute;
-  top: 150px;
+  top: 160px;
   left: 0;
   z-index: -1;
-  width: 140px;
-  height: 140px;
-  background-image: radial-gradient(#dddddd 3px, transparent 3px);
+  width: 180px;
+  height: 160px;
+  background-image: radial-gradient(#dddddd 2px, transparent 3px);
   background-size: 20px 20px;
   background-color: rgba(0, 0, 0, 0);
   transition: background-image 0.3s;
 }
 
 .dark #p-1 {
-  background-image: radial-gradient(#777777 3px, transparent 3px);
+  background-image: radial-gradient(#777777 2px, transparent 3px);
 }
 
 #p-2 {
