@@ -627,6 +627,13 @@ document.addEventListener("mouseover", function (event) {
   } else {
     cursorDot.classList.remove("cursor-dot-large");
   }
+
+  // si esta encima del elemento que como padre tiene un elemento con clase desktop
+  if (elemento.closest(".screen")) {
+    cursorDot.style.display = "none";
+  } else {
+    cursorDot.style.display = "block";
+  }
 });
 
 // Smooth scroll
