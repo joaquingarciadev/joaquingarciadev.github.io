@@ -218,12 +218,14 @@ p {
   pointer-events: none;
   background-color: var(--text);
   border-radius: 50%;
-  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  transition: .3s;
+  opacity: 1;
 }
 
 .cursor-dot.cursor-dot-large {
-  width: 20px;
-  height: 20px;
+  transform: translate(-50%, -50%) scale(6);
+  background-color: var(--btn);
+  opacity: .3;
 }
 
 /* WhatsApp Button */

@@ -630,9 +630,9 @@ document.addEventListener("mouseover", function (event) {
 
   // si esta encima del elemento que como padre tiene un elemento con clase desktop
   if (elemento.closest(".screen")) {
-    cursorDot.style.opacity = "0";
+    cursorDot.style.visibility = "hidden";
   } else {
-    cursorDot.style.opacity = "1";
+    cursorDot.style.visibility = "visible";
   }
 });
 
