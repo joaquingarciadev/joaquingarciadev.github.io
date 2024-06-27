@@ -241,6 +241,17 @@ const skills = [
 
 const projects = [
   {
+    name: "Hibridos - Sitio web de Agencia de Marketing Digital",
+    nameEn: "Hibridos - Digital Marketing Agency Website",
+    description:
+      "Realicé una página web para una Agencia de Marketing Digital, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios.",
+    descriptionEn:
+      "I made a website for a Digital Marketing Agency, offering customers a digital platform to explore and book their services.",
+    skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
+    img: "src/proyectos/hibridosagencia.webp",
+    demo: "https://hibridosagencia.com/",
+  },
+  {
     name: "Afrodita's Pleasure - Tienda de lencería y ropa interior",
     nameEn: "Afrodita's Pleasure - Lingerie and underwear store",
     description:
