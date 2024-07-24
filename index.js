@@ -241,6 +241,18 @@ const skills = [
 
 const projects = [
   {
+    name: "Previa - Plataforma de organización de reuniones y eventos sociales",
+    nameEn: "Previa - Platform for organizing meetings and social events",
+    description:
+      "Aplicación web desarrollada en colaboración con la agencia Criteria para organizar reuniones y eventos sociales. La plataforma permite a los usuarios coordinar detalles de juntadas de manera intuitiva, facilitando la gestión de fechas, lugares y participantes.",
+    descriptionEn:
+      "Web application developed in collaboration with the Criteria agency to organize meetings and social events. The platform allows users to coordinate meeting details in an intuitive way, facilitating the management of dates, places and participants.",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "HTML", "CSS", "Javascript"],
+    img: "src/proyectos/previa.webp",
+    demo: "https://previa.com.ar/",
+
+  },
+  {
     name: "Hibridos - Sitio web de Agencia de Marketing Digital",
     nameEn: "Hibridos - Digital Marketing Agency Website",
     description:
