@@ -241,7 +241,7 @@ const skills = [
 
 const projects = [
   {
-    name: "Previa - Previa - Plataforma para reuniones y eventos sociales",
+    name: "Previa - Plataforma para reuniones y eventos sociales",
     nameEn: "Previa - Platform for meetings and social events",
     description:
       "Aplicación web desarrollada en colaboración con la agencia Criteria para organizar reuniones y eventos sociales. La plataforma permite a los usuarios coordinar detalles de juntadas de manera intuitiva, facilitando la gestión de fechas, lugares y participantes.",
