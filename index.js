@@ -245,9 +245,9 @@ const projects = [
         name: "Previa - Plataforma para reuniones y eventos sociales",
         nameEn: "Previa - Platform for meetings and social events",
         description:
-            "Aplicación web desarrollada en colaboración con la agencia Criteria para organizar reuniones y eventos sociales. La plataforma permite a los usuarios coordinar detalles de juntadas de manera intuitiva, facilitando la gestión de fechas, lugares y participantes.",
+            "Sitio web desarrollada junto a la agencia Criteria para organizar reuniones y eventos sociales. La plataforma permite a los usuarios coordinar detalles de juntadas de manera intuitiva, facilitando la gestión de fechas, lugares y participantes.",
         descriptionEn:
-            "Web application developed in collaboration with the Criteria agency to organize meetings and social events. The platform allows users to coordinate meeting details in an intuitive way, facilitating the management of dates, places and participants.",
+            "Website developed with Criteria agency to organize meetings and social events. The platform allows users to coordinate meeting details in an intuitive way, facilitating the management of dates, places and participants.",
         skills: [
             "Wordpress",
             "Elementor",
