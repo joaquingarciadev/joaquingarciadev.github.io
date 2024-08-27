@@ -526,17 +526,7 @@ function render() {
     handleChangeTheme(localStorage.getItem("theme") === "dark");
 
     // Skills
-    skills.forEach((skill) => {
-        const skill_title = isEnglishPage
-            ? `Experience: since ${skill.year} \nDescription: ${skill.descriptionEn}`
-            : `Experiencia: desde ${skill.year} \nDescripción: ${skill.description}`;
-        skills_label.innerHTML += ` 
-        <div class="skill" title="${skill_title}">
-            <img src=${skill.img} width='50' arial-label="${skill.name}" alt="${skill.name}" title="${skill_title}" />
-            <span class="skill-text">${skill.name}</span>
-        </div>
-        `;
-    });
+    renderSkills();
 
     renderProjects();
 
@@ -575,6 +565,24 @@ function render() {
     // Year in footer
     const year = document.querySelector(".year");
     year.textContent = new Date().getFullYear();
+}
+
+function renderSkills() {
+    const skillsNotShow = ["Bootstrap", "Firebase"];
+    const skillsFiltered = skills.filter(
+        (skill) => !skillsNotShow.includes(skill.name)
+    );
+    skillsFiltered.forEach((skill) => {
+        const skill_title = isEnglishPage
+            ? `Experience: since ${skill.year} \nDescription: ${skill.descriptionEn}`
+            : `Experiencia: desde ${skill.year} \nDescripción: ${skill.description}`;
+        skills_label.innerHTML += ` 
+        <div class="skill" title="${skill_title}">
+            <img src=${skill.img} width='50' arial-label="${skill.name}" alt="${skill.name}" title="${skill_title}" />
+            <span class="skill-text">${skill.name}</span>
+        </div>
+        `;
+    });
 }
 
 function renderProjects() {
