@@ -862,6 +862,65 @@ filter {
   font-size: 25px;
 }
 
+.tabs {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  flex-grow: 1;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.tabs input[type="radio"]:checked + label {
+  color: var(--background);
+  font-weight: 600;
+}
+
+.glider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background-color: var(--text);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+#web:checked ~ .glider {
+  transform: translateX(100%);
+}
+
+#app:checked ~ .glider {
+  transform: translateX(200%);
+}
+
+#other:checked ~ .glider {
+  transform: translateX(300%);
+}
+
+.project.hidden {
+  display: none;
+}
+
 /* COURSES */
 #courses {
   margin: 80px auto;

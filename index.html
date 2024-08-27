@@ -1,354 +1,436 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#fff" />
-    <title>Desarrollador Web Argentina | Joaquin Garcia</title>
-    <meta
-      name="description"
-      content="Soy Desarrollador Web de Argentina. Me especializo en la creación de páginas y aplicaciones web. Calidad y profesionalismo en cada proyecto."
-    />
-    <meta name="author" content="Joaquin Garcia" />
-    <meta
-      name="keywords"
-      content="Desarrollador web, Córdoba, Argentina, Soluciones digitales, Diseño web, Desarrollo web a medida, Optimización web"
-    />
-    <meta property="og:image" content="src/perfil.png" />
-    <meta
-      name="google-site-verification"
-      content="6XHylW_MZ-kTsw1OquSgtyJAPE__LnV2jR0JoFyPpjM"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="src/perfil.png" />
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Cursor -->
-    <div class="cursor-dot"></div>
-    <!-- Loader -->
-    <div class="wrapper">
-      <div class="loader"></div>
-    </div>
-    <!-- Botón de WhatsApp -->
-    <div class="whatsapp">
-      <div class="whatsapp__content">
-        <a
-          class="whatsapp__button"
-          href="https://wa.me/3515995198?text=Hola,%20%C2%BFc%C3%B3mo%20podemos%20ayudarte?%20Env%C3%ADanos%20un%20mensaje%20ahora%20para%20obtener%20ayuda."
-          target="_blank"
-        >
-          <i class="whatsapp__icon uil uil-whatsapp"></i>
-        </a>
-        <div class="whatsapp__badge">
-          ¡Hablemos!
-          <span class="whatsapp__check">
-            <svg viewBox="0 0 16 11" height="11" width="16" fill="#669d93">
-              <path
-                d="M11.0714 0.652832C10.991 0.585124 10.8894 0.55127 10.7667 0.55127C10.6186 0.55127 10.4916 0.610514 10.3858 0.729004L4.19688 8.36523L1.79112 6.09277C1.7488 6.04622 1.69802 6.01025 1.63877 5.98486C1.57953 5.95947 1.51817 5.94678 1.45469 5.94678C1.32351 5.94678 1.20925 5.99544 1.11192 6.09277L0.800883 6.40381C0.707784 6.49268 0.661235 6.60482 0.661235 6.74023C0.661235 6.87565 0.707784 6.98991 0.800883 7.08301L3.79698 10.0791C3.94509 10.2145 4.11224 10.2822 4.29844 10.2822C4.40424 10.2822 4.5058 10.259 4.60313 10.2124C4.70046 10.1659 4.78086 10.1003 4.84434 10.0156L11.4903 1.59863C11.5623 1.5013 11.5982 1.40186 11.5982 1.30029C11.5982 1.14372 11.5348 1.01888 11.4078 0.925781L11.0714 0.652832ZM8.6212 8.32715C8.43077 8.20866 8.2488 8.09017 8.0753 7.97168C7.99489 7.89128 7.8891 7.85107 7.75791 7.85107C7.6098 7.85107 7.4892 7.90397 7.3961 8.00977L7.10411 8.33984C7.01947 8.43717 6.97715 8.54508 6.97715 8.66357C6.97715 8.79476 7.0237 8.90902 7.1168 9.00635L8.1959 10.0791C8.33132 10.2145 8.49636 10.2822 8.69102 10.2822C8.79681 10.2822 8.89838 10.259 8.99571 10.2124C9.09304 10.1659 9.17556 10.1003 9.24327 10.0156L15.8639 1.62402C15.9358 1.53939 15.9718 1.43994 15.9718 1.32568C15.9718 1.1818 15.9125 1.05697 15.794 0.951172L15.4386 0.678223C15.3582 0.610514 15.2587 0.57666 15.1402 0.57666C14.9964 0.57666 14.8715 0.635905 14.7657 0.754395L8.6212 8.32715Z"
-              />
-            </svg>
-          </span>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#fff" />
+        <title>Desarrollador Web Argentina | Joaquin Garcia</title>
+        <meta
+            name="description"
+            content="Soy Desarrollador Web de Argentina. Me especializo en la creación de páginas y aplicaciones web. Calidad y profesionalismo en cada proyecto."
+        />
+        <meta name="author" content="Joaquin Garcia" />
+        <meta
+            name="keywords"
+            content="Desarrollador web, Córdoba, Argentina, Soluciones digitales, Diseño web, Desarrollo web a medida, Optimización web"
+        />
+        <meta property="og:image" content="src/perfil.png" />
+        <meta
+            name="google-site-verification"
+            content="6XHylW_MZ-kTsw1OquSgtyJAPE__LnV2jR0JoFyPpjM"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="shortcut icon" href="src/perfil.png" />
+        <link
+            rel="stylesheet"
+            href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <!-- Cursor -->
+        <div class="cursor-dot"></div>
+        <!-- Loader -->
+        <div class="wrapper">
+            <div class="loader"></div>
         </div>
-      </div>
-    </div>
-    <!-- Navbar -->
-    <nav>
-      <div class="container">
-        <div class="btn">
-          <div class="menu-toggle" id="menuToggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-        </div>
-        <ul class="menu">
-          <li><a href="#home">Inicio</a></li>
-          <li>
-            <a href="#about">Sobre mi <i class="uil uil-angle-down"></i></a>
-            <ul class="submenu">
-              <li><a href="#skills">Habilidades</a></li>
-              <li><a href="#projects">Proyectos</a></li>
-            </ul>
-          </li>
-          <li><a href="#services">Servicios</a></li>
-          <!-- <li><a href="#courses">Cursos</a></li> -->
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-        <div class="tools">
-          <div id="toggle">
-            <svg
-              id="sun"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle fill="black" cx="12" cy="12" r="5" />
-              <g stroke="currentColor">
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-              </g>
-            </svg>
-
-            <div id="moon"></div>
-          </div>
-          <div class="lang">
-            <a href="https://joaquingarciadev.github.io">
-              <img
-                src="src/es.webp"
-                alt="Español"
-                title="Español"
-                width="20px"
-              />
-            </a>
-            <a href="https://joaquingarciadev.github.io/en">
-              <img src="src/en.webp" alt="Inglés" title="Inglés" width="20px" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="sidebar">
-        <div class="sidebar-header"></div>
-        <ul>
-          <li><a href="#home">Inicio</a></li>
-          <li>
-            <div class="submenu-item">
-              <a href="#about">Sobre mi</a>
-              <span class="submenu-toggle">
-                <i class="uil uil-angle-down"></i>
-              </span>
+        <!-- Botón de WhatsApp -->
+        <div class="whatsapp">
+            <div class="whatsapp__content">
+                <a
+                    class="whatsapp__button"
+                    href="https://wa.me/3515995198?text=Hola,%20%C2%BFc%C3%B3mo%20podemos%20ayudarte?%20Env%C3%ADanos%20un%20mensaje%20ahora%20para%20obtener%20ayuda."
+                    target="_blank"
+                >
+                    <i class="whatsapp__icon uil uil-whatsapp"></i>
+                </a>
+                <div class="whatsapp__badge">
+                    ¡Hablemos!
+                    <span class="whatsapp__check">
+                        <svg
+                            viewBox="0 0 16 11"
+                            height="11"
+                            width="16"
+                            fill="#669d93"
+                        >
+                            <path
+                                d="M11.0714 0.652832C10.991 0.585124 10.8894 0.55127 10.7667 0.55127C10.6186 0.55127 10.4916 0.610514 10.3858 0.729004L4.19688 8.36523L1.79112 6.09277C1.7488 6.04622 1.69802 6.01025 1.63877 5.98486C1.57953 5.95947 1.51817 5.94678 1.45469 5.94678C1.32351 5.94678 1.20925 5.99544 1.11192 6.09277L0.800883 6.40381C0.707784 6.49268 0.661235 6.60482 0.661235 6.74023C0.661235 6.87565 0.707784 6.98991 0.800883 7.08301L3.79698 10.0791C3.94509 10.2145 4.11224 10.2822 4.29844 10.2822C4.40424 10.2822 4.5058 10.259 4.60313 10.2124C4.70046 10.1659 4.78086 10.1003 4.84434 10.0156L11.4903 1.59863C11.5623 1.5013 11.5982 1.40186 11.5982 1.30029C11.5982 1.14372 11.5348 1.01888 11.4078 0.925781L11.0714 0.652832ZM8.6212 8.32715C8.43077 8.20866 8.2488 8.09017 8.0753 7.97168C7.99489 7.89128 7.8891 7.85107 7.75791 7.85107C7.6098 7.85107 7.4892 7.90397 7.3961 8.00977L7.10411 8.33984C7.01947 8.43717 6.97715 8.54508 6.97715 8.66357C6.97715 8.79476 7.0237 8.90902 7.1168 9.00635L8.1959 10.0791C8.33132 10.2145 8.49636 10.2822 8.69102 10.2822C8.79681 10.2822 8.89838 10.259 8.99571 10.2124C9.09304 10.1659 9.17556 10.1003 9.24327 10.0156L15.8639 1.62402C15.9358 1.53939 15.9718 1.43994 15.9718 1.32568C15.9718 1.1818 15.9125 1.05697 15.794 0.951172L15.4386 0.678223C15.3582 0.610514 15.2587 0.57666 15.1402 0.57666C14.9964 0.57666 14.8715 0.635905 14.7657 0.754395L8.6212 8.32715Z"
+                            />
+                        </svg>
+                    </span>
+                </div>
             </div>
-            <ul class="submenu">
-              <li><a href="#skills">Habilidades</a></li>
-              <li><a href="#projects">Proyectos</a></li>
-            </ul>
-          </li>
-          <li><a href="#services">Servicios</a></li>
-          <!-- <li><a href="#courses">Cursos</a></li> -->
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-        <div class="tools">
-          <div id="toggle">
-            <svg
-              id="sun"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle fill="black" cx="12" cy="12" r="5" />
-              <g stroke="currentColor">
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-              </g>
-            </svg>
+        </div>
+        <!-- Navbar -->
+        <nav>
+            <div class="container">
+                <div class="btn">
+                    <div class="menu-toggle" id="menuToggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <ul class="menu">
+                    <li><a href="#home">Inicio</a></li>
+                    <li>
+                        <a href="#about"
+                            >Sobre mi <i class="uil uil-angle-down"></i
+                        ></a>
+                        <ul class="submenu">
+                            <li><a href="#skills">Habilidades</a></li>
+                            <li><a href="#projects">Proyectos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#services">Servicios</a></li>
+                    <!-- <li><a href="#courses">Cursos</a></li> -->
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+                <div class="tools">
+                    <div id="toggle">
+                        <svg
+                            id="sun"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle fill="black" cx="12" cy="12" r="5" />
+                            <g stroke="currentColor">
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line
+                                    x1="18.36"
+                                    y1="18.36"
+                                    x2="19.78"
+                                    y2="19.78"
+                                />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line
+                                    x1="4.22"
+                                    y1="19.78"
+                                    x2="5.64"
+                                    y2="18.36"
+                                />
+                                <line
+                                    x1="18.36"
+                                    y1="5.64"
+                                    x2="19.78"
+                                    y2="4.22"
+                                />
+                            </g>
+                        </svg>
 
-            <div id="moon"></div>
-          </div>
-          <div class="lang">
-            <a href="https://joaquingarciadev.github.io">
-              <img
-                src="src/es.webp"
-                alt="Español"
-                title="Español"
-                width="20px"
-              />
-            </a>
-            <a href="https://joaquingarciadev.github.io/en">
-              <img src="src/en.webp" alt="Inglés" title="Inglés" width="20px" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <!-- Main -->
-    <main class="main container">
-      <section id="home">
-        <div class="home-title">
-          <h1>
-            ¡Hola!
-            <br />
-            Soy Joaquin Garcia
-          </h1>
-          <h3>Desarrollador web</h3>
-        </div>
-        <div class="home-img">
-          <img src="src/perfil.webp" alt="perfil" title="perfil" width="100%" />
-          <div id="p-1"></div>
-          <div id="p-2"></div>
-        </div>
-      </section>
-      <section id="about">
-        <div>
-          <h2>Sobre mi</h2>
-          <p>
-            ¡Hola! Soy Joaquín García, desarrollador web de Córdoba, Argentina.
-            Me especializo en la creación de páginas y aplicaciones web. Me
-            encanta este campo y estoy emocionado por seguir creciendo como
-            desarrollador. Estoy aquí para ayudarte a crear la presencia digital
-            que necesitas. Si necesitas un sitio web, mantenimiento o
-            asesoramiento personalizado, no dudes en ponerte en contacto
-            conmigo.
-          </p>
-        </div>
-      </section>
-      <section id="skills">
-        <h2>Mis habilidades</h2>
-        <div class="screen">
-          <div class="desktop">
-            <div class="skills"></div>
-          </div>
-          <div class="taskbar">
-            <div class="logo">●</div>
-            <div class="time"></div>
-          </div>
-        </div>
-      </section>
-      <section id="projects">
-        <h2>Mis proyectos</h2>
-        <div class="projects masonry"></div>
-      </section>
-      <section id="services">
-        <h2>Servicios</h2>
-        <div class="services cards">
-          <div class="service card">
-            <i class="uil uil-desktop"></i>
-            <h4>Diseño web personalizado y responsivo</h4>
-            <p>
-              Diseño web acorde a tus preferencias y responsivo para adaptarse a
-              cualquier dispositivo.
-            </p>
-          </div>
-          <div class="service card">
-            <i class="uil uil-chart-line"></i>
-            <h4>Rendimiento y SEO optimizados</h4>
-            <p>
-              Optimización de Rendimiento y SEO utilizando las mejores
-              prácticas.
-            </p>
-          </div>
-          <div class="service card">
-            <i class="uil uil-setting"></i>
-            <h4>Soporte especializado</h4>
-            <p>
-              Soporte técnico y mantenimiento continuo para garantizar que tu
-              sitio web funcione sin problemas.
-            </p>
-          </div>
-        </div>
-      </section>
-      <!-- <section id="courses">
+                        <div id="moon"></div>
+                    </div>
+                    <div class="lang">
+                        <a href="https://joaquingarciadev.github.io">
+                            <img
+                                src="src/es.webp"
+                                alt="Español"
+                                title="Español"
+                                width="20px"
+                            />
+                        </a>
+                        <a href="https://joaquingarciadev.github.io/en">
+                            <img
+                                src="src/en.webp"
+                                alt="Inglés"
+                                title="Inglés"
+                                width="20px"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="sidebar-header"></div>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li>
+                        <div class="submenu-item">
+                            <a href="#about">Sobre mi</a>
+                            <span class="submenu-toggle">
+                                <i class="uil uil-angle-down"></i>
+                            </span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#skills">Habilidades</a></li>
+                            <li><a href="#projects">Proyectos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#services">Servicios</a></li>
+                    <!-- <li><a href="#courses">Cursos</a></li> -->
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+                <div class="tools">
+                    <div id="toggle">
+                        <svg
+                            id="sun"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle fill="black" cx="12" cy="12" r="5" />
+                            <g stroke="currentColor">
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line
+                                    x1="18.36"
+                                    y1="18.36"
+                                    x2="19.78"
+                                    y2="19.78"
+                                />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line
+                                    x1="4.22"
+                                    y1="19.78"
+                                    x2="5.64"
+                                    y2="18.36"
+                                />
+                                <line
+                                    x1="18.36"
+                                    y1="5.64"
+                                    x2="19.78"
+                                    y2="4.22"
+                                />
+                            </g>
+                        </svg>
+
+                        <div id="moon"></div>
+                    </div>
+                    <div class="lang">
+                        <a href="https://joaquingarciadev.github.io">
+                            <img
+                                src="src/es.webp"
+                                alt="Español"
+                                title="Español"
+                                width="20px"
+                            />
+                        </a>
+                        <a href="https://joaquingarciadev.github.io/en">
+                            <img
+                                src="src/en.webp"
+                                alt="Inglés"
+                                title="Inglés"
+                                width="20px"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Main -->
+        <main class="main container">
+            <section id="home">
+                <div class="home-title">
+                    <h1>
+                        ¡Hola!
+                        <br />
+                        Soy Joaquin Garcia
+                    </h1>
+                    <h3>Desarrollador web</h3>
+                </div>
+                <div class="home-img">
+                    <img
+                        src="src/perfil.webp"
+                        alt="perfil"
+                        title="perfil"
+                        width="100%"
+                    />
+                    <div id="p-1"></div>
+                    <div id="p-2"></div>
+                </div>
+            </section>
+            <section id="about">
+                <div>
+                    <h2>Sobre mi</h2>
+                    <p>
+                        ¡Hola! Soy Joaquín García, desarrollador web de Córdoba,
+                        Argentina. Me especializo en la creación de páginas y
+                        aplicaciones web. Me encanta este campo y estoy
+                        emocionado por seguir creciendo como desarrollador.
+                        Estoy aquí para ayudarte a crear la presencia digital
+                        que necesitas. Si necesitas un sitio web, mantenimiento
+                        o asesoramiento personalizado, no dudes en ponerte en
+                        contacto conmigo.
+                    </p>
+                </div>
+            </section>
+            <section id="skills">
+                <h2>Mis habilidades</h2>
+                <div class="screen">
+                    <div class="desktop">
+                        <div class="skills"></div>
+                    </div>
+                    <div class="taskbar">
+                        <div class="logo">●</div>
+                        <div class="time"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="projects">
+                <h2>Mis proyectos</h2>
+                <div class="tabs">
+                    <input
+                        type="radio"
+                        name="tabs"
+                        id="all"
+                        value="all"
+                        checked
+                    />
+                    <label for="all">Todos</label>
+                    <input type="radio" name="tabs" id="web" value="web" />
+                    <label for="web">Web</label>
+                    <input type="radio" name="tabs" id="app" value="app" />
+                    <label for="app">App</label>
+                    <input type="radio" name="tabs" id="other" value="other" />
+                    <label for="other">Otros</label>
+                    <span class="glider"></span>
+                </div>
+                <div class="projects masonry"></div>
+            </section>
+            <section id="services">
+                <h2>Servicios</h2>
+                <div class="services cards">
+                    <div class="service card">
+                        <i class="uil uil-desktop"></i>
+                        <h4>Diseño web personalizado y responsivo</h4>
+                        <p>
+                            Diseño web acorde a tus preferencias y responsivo
+                            para adaptarse a cualquier dispositivo.
+                        </p>
+                    </div>
+                    <div class="service card">
+                        <i class="uil uil-chart-line"></i>
+                        <h4>Rendimiento y SEO optimizados</h4>
+                        <p>
+                            Optimización de Rendimiento y SEO utilizando las
+                            mejores prácticas.
+                        </p>
+                    </div>
+                    <div class="service card">
+                        <i class="uil uil-setting"></i>
+                        <h4>Soporte especializado</h4>
+                        <p>
+                            Soporte técnico y mantenimiento continuo para
+                            garantizar que tu sitio web funcione sin problemas.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- <section id="courses">
         <h2>Aprendamos juntos</h2>
         <div class="courses"></div>
       </section> -->
-      <section id="contact">
-        <h2>Contacto</h2>
-        <div class="contact">
-          <form action="https://formsubmit.co/djoako22@gmail.com" method="post">
-            <input
-              type="hidden"
-              name="_next"
-              value="https://joaquingarciadev.github.io/"
-            />
-            <input
-              type="hidden"
-              name="_subject"
-              value="MENSAJE DEL PORTAFOLIO"
-            />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="text" name="name" placeholder="Nombre" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-              title="Ingrese un email válido"
-              required
-            />
-            <textarea
-              name="message"
-              id=""
-              cols="30"
-              rows="8"
-              placeholder="Mensaje"
-              required
-            ></textarea>
-            <button type="submit">Enviar consulta</button>
-          </form>
-        </div>
-      </section>
-      <footer>
-        <div class="copyright">
-          <p>
-            © <span class="year"></span>
-            <a href="https://joaquingarciadev.github.io/">Joaquin Garcia</a>.
-            Todos los derechos reservados.
-          </p>
-        </div>
-        <div class="social">
-          <a
-            href="https://www.linkedin.com/in/joaquingarciadev/"
-            target="_blank"
-          >
-            <i class="uil uil-linkedin"></i>
-          </a>
-          <a href="https://github.com/joaquingarciadev" target="_blank">
-            <i class="uil uil-github"></i>
-          </a>
-          <a href="mailto: djoako22@gmail.com" target="_blank">
-            <i class="uil uil-envelope"></i>
-          </a>
-        </div>
-      </footer>
-    </main>
+            <section id="contact">
+                <h2>Contacto</h2>
+                <div class="contact">
+                    <form
+                        action="https://formsubmit.co/djoako22@gmail.com"
+                        method="post"
+                    >
+                        <input
+                            type="hidden"
+                            name="_next"
+                            value="https://joaquingarciadev.github.io/"
+                        />
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="MENSAJE DEL PORTAFOLIO"
+                        />
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Nombre"
+                            required
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                            title="Ingrese un email válido"
+                            required
+                        />
+                        <textarea
+                            name="message"
+                            id=""
+                            cols="30"
+                            rows="8"
+                            placeholder="Mensaje"
+                            required
+                        ></textarea>
+                        <button type="submit">Enviar consulta</button>
+                    </form>
+                </div>
+            </section>
+            <footer>
+                <div class="copyright">
+                    <p>
+                        © <span class="year"></span>
+                        <a href="https://joaquingarciadev.github.io/"
+                            >Joaquin Garcia</a
+                        >. Todos los derechos reservados.
+                    </p>
+                </div>
+                <div class="social">
+                    <a
+                        href="https://www.linkedin.com/in/joaquingarciadev/"
+                        target="_blank"
+                    >
+                        <i class="uil uil-linkedin"></i>
+                    </a>
+                    <a
+                        href="https://github.com/joaquingarciadev"
+                        target="_blank"
+                    >
+                        <i class="uil uil-github"></i>
+                    </a>
+                    <a href="mailto: djoako22@gmail.com" target="_blank">
+                        <i class="uil uil-envelope"></i>
+                    </a>
+                </div>
+            </footer>
+        </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
-      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
-    <script src="index.js"></script>
-  </body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+            integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>
+        <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+        <script src="index.js"></script>
+    </body>
 </html>
