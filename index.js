@@ -664,8 +664,8 @@ tabs.forEach((tab) => {
 
         // Recalcula el layout de Macy.js y refresca ScrollTrigger
         macyInstance.recalculate(true);
-        gsap.set(".card", { opacity: 0, y: 100 });
-        ScrollTrigger.batch(".card", {
+        gsap.set(".card:not(.hidden)", { opacity: 0, y: 100 });
+        ScrollTrigger.batch(".card:not(.hidden)", {
             onEnter: (t) => gsap.to(t, { stagger: 0.1, opacity: 1, y: 0 }),
             onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
         });
