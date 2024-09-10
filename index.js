@@ -242,12 +242,31 @@ const skills = [
 
 const projects = [
     {
+        name: "BOIERO S.A. - Sitio web de soluciones para energía, agua y telecomunicaciones.",
+        nameEn: "BOIERO S.A. - Website for energy, water and telecommunications solutions.",
+        description:
+            "Catálogo Web desarrollado junto a la Agencia Criteria para explorar y solicitar presupuestos de productos, donde aprendí a usar plugins y código personalizado para activar el modo catálogo en WooCommerce.",
+        descriptionEn:
+            "Web Catalog developed with the Criteria Agency to explore and request quotes for products, where I learned to use plugins and custom code to activate the catalog mode in WooCommerce.",
+        skills: [
+            "Wordpress",
+            "Elementor",
+            "Woocommerce",
+            "HTML",
+            "CSS",
+            "Javascript",
+        ],
+        img: "src/proyectos/boiero.webp",
+        demo: "https://www.boiero.com.ar/",
+        tipo: "web",
+    },
+    {
         name: "Previa - Plataforma para reuniones y eventos sociales",
         nameEn: "Previa - Platform for meetings and social events",
         description:
-            "Sitio web desarrollada junto a la agencia Criteria para organizar reuniones y eventos sociales. La plataforma permite a los usuarios coordinar detalles de juntadas de manera intuitiva, facilitando la gestión de fechas, lugares y participantes.",
+            "Red social desarrollado junto a la Agencia Criteria para coordinar reuniones y eventos sociales, donde personalicé el tema y plugins de Wordpress para adaptarlos a las necesidades del cliente.",
         descriptionEn:
-            "Website developed with Criteria agency to organize meetings and social events. The platform allows users to coordinate meeting details in an intuitive way, facilitating the management of dates, places and participants.",
+            "Social network developed with the Criteria Agency to coordinate meetings and social events, where I customized the Wordpress theme and plugins to adapt them to the client's needs.",
         skills: [
             "Wordpress",
             "Elementor",
@@ -264,21 +283,19 @@ const projects = [
         name: "Hibridos - Sitio web de Agencia de Marketing Digital",
         nameEn: "Hibridos - Digital Marketing Agency Website",
         description:
-            "Realicé una página web para una Agencia de Marketing Digital, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios.",
+            "Desarrollé una página web para una agencia de marketing digital, permitiendo a los clientes explorar y reservar servicios, y aprendí a usar plugins para hacer el sitio multilenguaje.",
         descriptionEn:
-            "I made a website for a Digital Marketing Agency, offering customers a digital platform to explore and book their services.",
+            "I made a website for a digital marketing agency, allowing customers to explore and book services, and learned to use plugins to make the site multilingual.",
         skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
         img: "src/proyectos/hibridosagencia.webp",
         demo: "https://hibridosagencia.com/",
         tipo: "web",
     },
     {
-        name: "Afrodita's Pleasure - Tienda de lencería y ropa interior",
+        name: "Afrodita's Pleasure - Tienda de lencería",
         nameEn: "Afrodita's Pleasure - Lingerie and underwear store",
-        description:
-            "Realicé una tienda online para una marca de lencería y ropa interior, ofreciendo a los clientes una plataforma digital para explorar y comprar sus productos.",
-        descriptionEn:
-            "I made an online store for a lingerie and underwear brand, offering customers a digital platform to explore and buy their products.",
+        description: "Desarrollé una tienda de lencería, aprendiendo a crear plantillas de productos en Elementor y a configurar métodos de pago y envío en WooCommerce.",
+        descriptionEn: "I developed a lingerie store, learning to create product templates in Elementor and configure payment and shipping methods in WooCommerce.",
         skills: [
             "Wordpress",
             "Elementor",
@@ -295,9 +312,9 @@ const projects = [
         name: "The Rod and Co. - Sitio web de Agencia Digital",
         nameEn: "The Rod and Co. - Digital Agency Website",
         description:
-            "Realicé una página web para una Agencia Digital, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios.",
+            "Realicé una página web para una Agencia Digital, ofreciendo a los clientes una plataforma digital para explorar y reservar sus servicios. En esta aprendí a usar Elementor y a personalizar plantillas de Wordpress.",
         descriptionEn:
-            "I made a website for a Digital Agency, offering customers a digital platform to explore and book their services.",
+            "I made a website for a Digital Agency, offering customers a digital platform to explore and book their services. In this I learned to use Elementor and customize Wordpress templates.",
         skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
         img: "src/proyectos/therodandco.png",
         demo: "https://therodandco.com/",
