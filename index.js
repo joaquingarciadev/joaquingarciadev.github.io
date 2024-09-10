@@ -648,27 +648,6 @@ function renderProjects() {
     });
 }
 
-render();
-
-// Inicializa Macy.js
-let macyInstance = Macy({
-    container: ".masonry",
-    margin: 10,
-    columns: 3,
-    breakAt: {
-        767: 2,
-        520: 1,
-    },
-    trueOrder: true,
-});
-
-// Inicializa GSAP y ScrollTrigger
-gsap.set(".card", { opacity: 0, y: 100 });
-ScrollTrigger.batch(".card", {
-    onEnter: (t) => gsap.to(t, { stagger: 0.1, opacity: 1, y: 0 }),
-    onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
-});
-
 // Manejo del filtrado
 const tabs = document.querySelectorAll('.tabs input[type="radio"]');
 const projectsEl = document.querySelectorAll(".project");
@@ -695,6 +674,27 @@ tabs.forEach((tab) => {
             onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
         });
     });
+});
+
+render();
+
+// Inicializa Macy.js
+let macyInstance = Macy({
+    container: ".masonry",
+    margin: 10,
+    columns: 3,
+    breakAt: {
+        767: 2,
+        520: 1,
+    },
+    trueOrder: true,
+});
+
+// Inicializa GSAP y ScrollTrigger
+gsap.set(".card", { opacity: 0, y: 100 });
+ScrollTrigger.batch(".card", {
+    onEnter: (t) => gsap.to(t, { stagger: 0.1, opacity: 1, y: 0 }),
+    onLeaveBack: (t) => gsap.to(t, { opacity: 0, y: 100 }),
 });
 
 Draggable.create(".skill", {
