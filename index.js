@@ -245,7 +245,7 @@ const projects = [
         name: "BOIERO S.A. - Sitio web de soluciones para energía, agua y telecomunicaciones.",
         nameEn: "BOIERO S.A. - Website for energy, water and telecommunications solutions.",
         description:
-            "Catálogo Web desarrollado junto a la Agencia Criteria para explorar y solicitar presupuestos de productos, donde aprendí a usar plugins y código personalizado para activar el modo catálogo en WooCommerce.",
+            "Catálogo Web desarrollado junto al Equipo de Criteria para explorar y solicitar presupuestos de productos, donde aprendí a usar plugins y código personalizado para activar el modo catálogo en WooCommerce.",
         descriptionEn:
             "Web Catalog developed with the Criteria Agency to explore and request quotes for products, where I learned to use plugins and custom code to activate the catalog mode in WooCommerce.",
         skills: [
@@ -264,7 +264,7 @@ const projects = [
         name: "Previa - Plataforma para reuniones y eventos sociales",
         nameEn: "Previa - Platform for meetings and social events",
         description:
-            "Red social desarrollado junto a la Agencia Criteria para coordinar reuniones y eventos sociales, donde personalicé el tema y plugins de Wordpress para adaptarlos a las necesidades del cliente.",
+            "Red social desarrollado junto al Equipo de Criteria para coordinar reuniones y eventos sociales, donde personalicé el tema y plugins de Wordpress para adaptarlos a las necesidades del cliente.",
         descriptionEn:
             "Social network developed with the Criteria Agency to coordinate meetings and social events, where I customized the Wordpress theme and plugins to adapt them to the client's needs.",
         skills: [
