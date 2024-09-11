@@ -648,6 +648,8 @@ function renderProjects() {
     });
 }
 
+render();
+
 // Manejo del filtrado
 const tabs = document.querySelectorAll('.tabs input[type="radio"]');
 const projectsEl = document.querySelectorAll(".project");
@@ -675,8 +677,6 @@ tabs.forEach((tab) => {
         });
     });
 });
-
-render();
 
 // Inicializa Macy.js
 let macyInstance = Macy({
