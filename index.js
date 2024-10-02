@@ -242,6 +242,18 @@ const skills = [
 
 const projects = [
     {
+        name: "American Pass – Sistema web para brokers y productores de seguros",
+        nameEn: "American Pass - Web system for insurance brokers and producers",
+        description:
+            "Landing page desarrollada junto al Equipo de Criteria, utilizando Elementor y plugins de Wordpress para personalizar el sitio y adaptarlo a las necesidades del cliente.",
+        descriptionEn:
+            "Landing page developed with the Criteria Agency, using Elementor and Wordpress plugins to customize the site and adapt it to the client's needs.",
+        skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
+        img: "src/proyectos/americanpass.webp",
+        demo: "https://americanpass.com.ar/",
+        tipo: "web",
+    },
+    {
         name: "BOIERO S.A. - Sitio web de soluciones para energía, agua y telecomunicaciones.",
         nameEn: "BOIERO S.A. - Website for energy, water and telecommunications solutions.",
         description:
