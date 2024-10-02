@@ -245,9 +245,9 @@ const projects = [
         name: "American Pass – Sistema web para brokers y productores de seguros",
         nameEn: "American Pass - Web system for insurance brokers and producers",
         description:
-            "Landing page desarrollada junto al Equipo de Criteria, utilizando Elementor y plugins de Wordpress para personalizar el sitio y adaptarlo a las necesidades del cliente.",
+            "Landing page desarrollada junto al Equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, utilizando Elementor y plugins de Wordpress para personalizar el sitio y adaptarlo a las necesidades del cliente.",
         descriptionEn:
-            "Landing page developed with the Criteria Agency, using Elementor and Wordpress plugins to customize the site and adapt it to the client's needs.",
+            "Landing page developed with the <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, using Elementor and Wordpress plugins to customize the site and adapt it to the client's needs.",
         skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
         img: "src/proyectos/americanpass.webp",
         demo: "https://americanpass.com.ar/",
@@ -257,9 +257,9 @@ const projects = [
         name: "BOIERO S.A. - Sitio web de soluciones para energía, agua y telecomunicaciones.",
         nameEn: "BOIERO S.A. - Website for energy, water and telecommunications solutions.",
         description:
-            "Catálogo Web desarrollado junto al Equipo de Criteria para explorar y solicitar presupuestos de productos, donde aprendí a usar plugins y código personalizado para activar el modo catálogo en WooCommerce.",
+            "Catálogo Web desarrollado junto al Equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a> para explorar y solicitar presupuestos de productos, donde aprendí a usar plugins y código personalizado para activar el modo catálogo en WooCommerce.",
         descriptionEn:
-            "Web Catalog developed with the Criteria Agency to explore and request quotes for products, where I learned to use plugins and custom code to activate the catalog mode in WooCommerce.",
+            "Web Catalog developed with the <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a> to explore and request quotes for products, where I learned to use plugins and custom code to activate the catalog mode in WooCommerce.",
         skills: [
             "Wordpress",
             "Elementor",
