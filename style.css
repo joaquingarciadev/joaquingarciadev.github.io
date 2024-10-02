@@ -87,13 +87,13 @@ li a {
   font-weight: 500;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 p {
   pointer-events: none;
-}
+} */
 
 .container {
   max-width: 1000px;
