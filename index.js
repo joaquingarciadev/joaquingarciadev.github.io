@@ -276,9 +276,9 @@ const projects = [
         name: "Previa - Plataforma para reuniones y eventos sociales",
         nameEn: "Previa - Platform for meetings and social events",
         description:
-            "Red social desarrollado junto al Equipo de Criteria para coordinar reuniones y eventos sociales, donde personalicé el tema y plugins de Wordpress para adaptarlos a las necesidades del cliente.",
+            "Red social desarrollado junto al Equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a> para coordinar reuniones y eventos sociales, donde personalicé el tema y plugins de Wordpress para adaptarlos a las necesidades del cliente.",
         descriptionEn:
-            "Social network developed with the Criteria Agency to coordinate meetings and social events, where I customized the Wordpress theme and plugins to adapt them to the client's needs.",
+            "Social network developed with the <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a> to coordinate meetings and social events, where I customized the Wordpress theme and plugins to adapt them to the client's needs.",
         skills: [
             "Wordpress",
             "Elementor",
