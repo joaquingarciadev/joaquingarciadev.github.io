@@ -244,8 +244,8 @@ const projects = [
     {
         name: "Cucina | Software de ventas – Mucho más que, un software de ventas",
         nameEn: "Cucina | Sales software - Much more than, a sales software",
-        description: "Página institucional desarrollada junto al Equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, para una empresa de software aplicada a la gastronomía",
-        descriptionEn: "Institutional page developed with the <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, for a software company applied to gastronomy",
+        description: "Página institucional desarrollada junto al Equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, para una empresa de software aplicada a la gastronomía.",
+        descriptionEn: "Institutional page developed with the <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, for a software company applied to gastronomy.",
         skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
         img: "src/proyectos/cucinago.webp",
         demo: "https://cucinago.cloud/",
