@@ -218,12 +218,21 @@ const skills = [
         year: "2021",
     },
     {
-        name: "Wordpress",
-        img: "src/habilidades/wordpress.webp",
-        description: "Plataforma de creación web.",
-        descriptionEn: "Web creation platform.",
+        name: "PHP",
+        img: "src/habilidades/php.webp",
+        description:
+            "Lenguaje de programación, utilizado junto a WordPress para el desarrollo de funcionalidades avanzadas.",
+        descriptionEn:
+            "Programming language, used with WordPress for developing advanced functionalities.",
         year: "2020",
     },
+    {
+        name: "Wordpress",
+        img: "src/habilidades/wordpress.webp",
+        description: "Plataforma utilizada para el desarrollo de sitios web, incluyendo funcionalidades avanzadas como CPT (Custom Post Types) y campos personalizados.",
+        descriptionEn: "Platform used for developing websites, including advanced functionalities such as CPT (Custom Post Types) and custom fields.",
+        year: "2020",
+    },    
     {
         name: "Elementor",
         img: "src/habilidades/elementor.webp",
@@ -241,6 +250,26 @@ const skills = [
 ];
 
 const projects = [
+    {
+        name: "Planetizar - Agencia de viajes",
+        nameEn: "Planetizar - Travel Agency",
+        description:
+            "Desarrollé el sitio web de Planetizar junto al Equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, una plataforma para reservar experiencias de viaje únicas. El diseño equilibra funcionalidad y estética, ofreciendo una experiencia intuitiva para explorar y reservar experiencias personalizadas.",
+        descriptionEn:
+            "I developed the Planetizar website alongside the team at <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, a platform for booking unique travel experiences. The design balances functionality and aesthetics, providing an intuitive experience for exploring and booking personalized adventures.",
+        skills: [
+            "Wordpress",
+            "Elementor",
+            "Woocommerce",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript",
+        ],
+        img: "src/proyectos/planetizar.jpg",
+        demo: "https://planetizar.com/",
+        tipo: "web",
+    },
     {
         name: "Cucina | Software de ventas – Mucho más que, un software de ventas",
         nameEn: "Cucina | Sales software - Much more than, a sales software",
@@ -293,6 +322,7 @@ const projects = [
             "Wordpress",
             "Elementor",
             "Woocommerce",
+            "PHP",
             "HTML",
             "CSS",
             "Javascript",

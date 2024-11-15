@@ -791,6 +791,8 @@ body.no-scroll {
 }
 
 .skill img {
+  min-height: 50px;
+  object-fit: contain;
   border-radius: 50%;
 }
 
