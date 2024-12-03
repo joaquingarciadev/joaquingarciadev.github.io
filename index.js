@@ -251,6 +251,23 @@ const skills = [
 
 const projects = [
     {
+        name: "Deligood - Helados",
+        nameEn: "Deligood - Helados",
+        description: "Desarrollé una landing page para la heladería Deligood en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>.",
+        descriptionEn: "I developed a landing page for the ice cream shop Deligood in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>.",
+        skills: [
+            "Wordpress",
+            "Elementor",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript",
+        ],
+        img: "src/proyectos/deligood.webp",
+        demo: "https://deligood.com.ar/",
+        tipo: "web",
+    },
+    {
         name: "Planetizar - Agencia de viajes",
         nameEn: "Planetizar - Travel Agency",
         description:
