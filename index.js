@@ -253,8 +253,8 @@ const projects = [
     {
         name: "AUAD GRAF - Estudio Jurídico",
         nameEn: "AUAD GRAF - Law Firm",
-        description: "Rediceñé el sitio web de Auad Graf, un estudio jurídico especializado en derecho laboral y previsional en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
-        descriptionEn: "I redesigned the Auad Graf website, a law firm specializing in labor and social security law in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
+        description: "Rediseñé el sitio web de Auad Graf, un estudio jurídico, en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
+        descriptionEn: "I redesigned the website of Auad Graf, a law firm, in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
         skills: [
             "Wordpress",
             "Elementor",
