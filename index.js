@@ -270,8 +270,8 @@ const projects = [
     {
         name: "GC Dental",
         nameEn: "GC Dental",
-        description: "Desarrollé un e-commerce en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
-        descriptionEn: "I developed a e-commerce in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
+        description: "Desarrollé un e-commerce en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a> para GC Dental, una empresa de insumos odontológicos.",
+        descriptionEn: "I developed a e-commerce in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a> for GC Dental, a dental supplies company.",
         skills: [
             "Wordpress",
             "Elementor",
@@ -288,8 +288,8 @@ const projects = [
     {
         name: "LM Amoblamientos",
         nameEn: "LM Amoblamientos",
-        description: "Desarrollé un catálogo web en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
-        descriptionEn: "I developed a web catalog in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
+        description: "Desarrollé un catálogo web en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>, incorporando una forma dinámica en PHP para acceder a los productos por atributos.",
+        descriptionEn: "I developed a web catalog in collaboration with the <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a> team, integrating a dynamic PHP-based method to access products by attributes.",
         skills: [
             "Wordpress",
             "Elementor",
