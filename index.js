@@ -229,10 +229,12 @@ const skills = [
     {
         name: "Wordpress",
         img: "src/habilidades/wordpress.webp",
-        description: "Plataforma utilizada para el desarrollo de sitios web, incluyendo funcionalidades avanzadas como CPT (Custom Post Types) y campos personalizados.",
-        descriptionEn: "Platform used for developing websites, including advanced functionalities such as CPT (Custom Post Types) and custom fields.",
+        description:
+            "Plataforma utilizada para el desarrollo de sitios web, incluyendo funcionalidades avanzadas como CPT (Custom Post Types) y campos personalizados.",
+        descriptionEn:
+            "Platform used for developing websites, including advanced functionalities such as CPT (Custom Post Types) and custom fields.",
         year: "2020",
-    },    
+    },
     {
         name: "Elementor",
         img: "src/habilidades/elementor.webp",
@@ -251,18 +253,113 @@ const skills = [
 
 const projects = [
     {
-        name: "AUAD GRAF - Estudio Jurídico",
-        nameEn: "AUAD GRAF - Law Firm",
-        description: "Rediseñé el sitio web de Auad Graf, un estudio jurídico, en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
-        descriptionEn: "I redesigned the website of Auad Graf, a law firm, in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
+        "name": "Gloed",
+        "nameEn": "Gloed",
+        "description": "Gloed es una tienda online que ofrece productos de limpieza y cuidado personal, brindando soluciones para el hogar con una variedad de artículos esenciales.",
+        "descriptionEn": "Gloed is an online store offering cleaning and personal care products, providing home solutions with a variety of essential items.",
+        "skills": [
+            "Wordpress",
+            "Elementor",
+            "Woocommerce",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript"
+        ],
+        "img": "src/proyectos/gloed.webp",
+        "demo": "https://gloed.com.ar/",
+        "tipo": "web"
+    },    
+    {
+        "name": "Farmacia Siman",
+        "nameEn": "Farmacia Siman",
+        "description": "Farmacia Siman ofrece productos de salud, belleza y cuidado personal, brindando una amplia gama de artículos esenciales para el bienestar.",
+        "descriptionEn": "Farmacia Siman offers health, beauty and personal care products, providing a wide range of essential items for well-being.",
+        "skills": [
+            "Wordpress",
+            "Elementor",
+            "Woocommerce",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript"
+        ],
+        "img": "src/proyectos/farmaciasiman.webp",
+        "demo": "https://farmaciasiman.com.ar/",
+        "tipo": "web"
+    },    
+    {
+        name: "Menzi Almada",
+        nameEn: "Menzi Almada",
+        description:
+            "Menzi Almada es una concesionaria familiar en Villa Allende, Córdoba, especializada en la venta de autos, motos, SUVs y pickups, con un enfoque en transparencia y atención personalizada.",
+        descriptionEn:
+            "Menzi Almada is a family dealership in Villa Allende, Córdoba, specializing in the sale of cars, motorcycles, SUVs and pickups, with a focus on transparency and personalized service.",
         skills: [
             "Wordpress",
             "Elementor",
+            "Woocommerce",
             "PHP",
             "HTML",
             "CSS",
             "Javascript",
-        ],  
+        ],
+        img: "src/proyectos/menzialmada.webp",
+        demo: "https://menzialmada.com.ar/",
+        tipo: "web",
+    },
+    {
+        name: "La Cautiva",
+        nameEn: "La Cautiva",
+        description:
+        "La Cautiva es una tienda especializada en productos para asadores, ofreciendo una amplia variedad de fogoneros, kamados, cuchillería y accesorios gourmet",
+        descriptionEn:
+            "La Cautiva is a store specialized in products for grillers, offering a wide variety of fire pits, kamados, cutlery and gourmet accessories.",
+        skills: [
+            "Wordpress",
+            "Elementor",
+            "Woocommerce",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript",
+        ],
+        img: "src/proyectos/lacautivacba.webp",
+        demo: "https://lacautivacba.com/",
+        tipo: "web",
+    },
+    {
+        name: "UON",
+        nameEn: "UON",
+        description:
+            "UON es un desarrollo inmobiliario con más de 20 años de experiencia, enfocado en crear espacios urbanos innovadores y de alta calidad",
+        descriptionEn:
+            "UON is a real estate developer with over 20 years of experience, focused on creating innovative and high-quality urban spaces.",
+        skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+        img: "src/proyectos/uon.webp",
+        demo: "https://uon.com.py/",
+        tipo: "web",
+    },
+    {
+        name: "Ezimpl / Reply",
+        nameEn: "Ezimpl / Reply",
+        description:
+            "Reply es una empresa internacional que ayuda a otras empresas a mejorar sus ventas online mediante estrategias y una gestión integral de e-commerce.",
+        descriptionEn:
+            "Reply is an international company that helps businesses improve their online sales through strategies and comprehensive e-commerce management.",
+        skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+        img: "src/proyectos/replylatam.webp",
+        demo: "https://replylatam.com/",
+        tipo: "web",
+    },
+    {
+        name: "AUAD GRAF - Estudio Jurídico",
+        nameEn: "AUAD GRAF - Law Firm",
+        description:
+            "Rediseñé el sitio web de Auad Graf, un estudio jurídico, en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
+        descriptionEn:
+            "I redesigned the website of Auad Graf, a law firm, in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>.",
+        skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
         img: "src/proyectos/auadgraf.webp",
         demo: "https://www.auadgraf.com.ar/inicio/",
         tipo: "web",
@@ -270,8 +367,10 @@ const projects = [
     {
         name: "GC Dental",
         nameEn: "GC Dental",
-        description: "Desarrollé un e-commerce en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a> para GC Dental, una empresa de insumos odontológicos.",
-        descriptionEn: "I developed a e-commerce in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a> for GC Dental, a dental supplies company.",
+        description:
+            "Desarrollé un e-commerce en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a> para GC Dental, una empresa de insumos odontológicos.",
+        descriptionEn:
+            "I developed a e-commerce in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a> for GC Dental, a dental supplies company.",
         skills: [
             "Wordpress",
             "Elementor",
@@ -288,8 +387,10 @@ const projects = [
     {
         name: "LM Amoblamientos",
         nameEn: "LM Amoblamientos",
-        description: "Desarrollé un catálogo web en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>, incorporando una forma dinámica en PHP para acceder a los productos por atributos.",
-        descriptionEn: "I developed a web catalog in collaboration with the <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a> team, integrating a dynamic PHP-based method to access products by attributes.",
+        description:
+            "Desarrollé un catálogo web en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a>, incorporando una forma dinámica en PHP para acceder a los productos por atributos.",
+        descriptionEn:
+            "I developed a web catalog in collaboration with the <a href='https://criteriastudio.com.ar/'><b>Criteria Studio</b></a> team, integrating a dynamic PHP-based method to access products by attributes.",
         skills: [
             "Wordpress",
             "Elementor",
@@ -306,16 +407,11 @@ const projects = [
     {
         name: "Deligood - Helados",
         nameEn: "Deligood - Helados",
-        description: "Desarrollé una landing page para la heladería Deligood en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>.",
-        descriptionEn: "I developed a landing page for the ice cream shop Deligood in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>.",
-        skills: [
-            "Wordpress",
-            "Elementor",
-            "PHP",
-            "HTML",
-            "CSS",
-            "Javascript",
-        ],
+        description:
+            "Desarrollé una landing page para la heladería Deligood en colaboración con el equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>.",
+        descriptionEn:
+            "I developed a landing page for the ice cream shop Deligood in collaboration with the team at <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>.",
+        skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
         img: "src/proyectos/deligood.webp",
         demo: "https://deligood.com.ar/",
         tipo: "web",
@@ -343,8 +439,10 @@ const projects = [
     {
         name: "Cucina | Software de ventas – Mucho más que, un software de ventas",
         nameEn: "Cucina | Sales software - Much more than, a sales software",
-        description: "Página institucional desarrollada junto al Equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, para una empresa de software aplicada a la gastronomía.",
-        descriptionEn: "Institutional page developed with the <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, for a software company applied to gastronomy.",
+        description:
+            "Página institucional desarrollada junto al Equipo de <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, para una empresa de software aplicada a la gastronomía.",
+        descriptionEn:
+            "Institutional page developed with the <a href='https://criteriastudio.com.ar/'><b>CriteriA Studio</b></a>, for a software company applied to gastronomy.",
         skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
         img: "src/proyectos/cucinago.webp",
         demo: "https://cucinago.cloud/",
@@ -416,8 +514,10 @@ const projects = [
     {
         name: "Afrodita's Pleasure - Tienda de lencería",
         nameEn: "Afrodita's Pleasure - Lingerie and underwear store",
-        description: "Desarrollé una tienda de lencería, aprendiendo a crear plantillas de productos en Elementor y a configurar métodos de pago y envío en WooCommerce.",
-        descriptionEn: "I developed a lingerie store, learning to create product templates in Elementor and configure payment and shipping methods in WooCommerce.",
+        description:
+            "Desarrollé una tienda de lencería, aprendiendo a crear plantillas de productos en Elementor y a configurar métodos de pago y envío en WooCommerce.",
+        descriptionEn:
+            "I developed a lingerie store, learning to create product templates in Elementor and configure payment and shipping methods in WooCommerce.",
         skills: [
             "Wordpress",
             "Elementor",
