@@ -834,7 +834,10 @@ body.no-scroll {
     padding: 16px;
     padding-block: 12px 0;
     /* background: -webkit-linear-gradient(45deg, #4f46e5, #433cc3); */
-    background: #dadde4;
+    /* background: #f1f0fb; */
+    /* https://www.fffuel.co/images/ffflux/ffflux-3.svg */
+    background: url('src/grain.svg');
+    background-size: cover;
 }
 
 .card-img img {
@@ -844,7 +847,7 @@ body.no-scroll {
     object-fit: fill;
     object-position: top;
     border-radius: 6px 6px 0 0;
-    margin-bottom: -4px;
+    margin-bottom: -8px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
         rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -856,6 +859,8 @@ filter {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 9;
+    box-shadow: inset 0 -20px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .card-content {
