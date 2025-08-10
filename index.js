@@ -837,7 +837,6 @@ function renderProjects() {
                 <img src="${project.img}" alt="${project.name}" title="${
             project.name
         }" />
-                <filter/>
             </div>
             <div class="card-content">
                 <h4>${project.name}</h4>
@@ -903,7 +902,7 @@ tabs.forEach((tab) => {
 // Inicializa Macy.js
 let macyInstance = Macy({
     container: ".masonry",
-    margin: 10,
+    margin: 20,
     columns: 3,
     breakAt: {
         767: 2,

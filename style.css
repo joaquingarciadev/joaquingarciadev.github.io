@@ -1,25 +1,10 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: "Clash Display", sans-serif;
-}
-
-p,
-a,
-span,
-input,
-textarea,
-button {
-    font-family: "Open Sans", sans-serif;
 }
 
 html {
@@ -29,6 +14,7 @@ html {
 :root {
     --btn: #4f46e5;
     --btn-hover: #433cc3;
+    --border-radius: 15px;
 }
 
 body {
@@ -39,6 +25,7 @@ body {
     background-color: var(--background);
     color: var(--text);
     transition: background-color 0.5s, color 0.5s;
+    font-family: "Montserrat", "Clash Display", sans-serif;
 }
 
 body.dark {
@@ -48,43 +35,62 @@ body.dark {
     --background-card: #212121;
 }
 
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Clash Display", sans-serif;
+    color: #242424;
+}
+
+p,
+a,
+span,
+input,
+textarea,
+button {
+    font-family: "Montserrat", "Clash Display", sans-serif;
+}
+
 a {
     color: inherit;
     text-decoration: none;
 }
 
 h1 {
-    font-size: clamp(2.1rem, 4vw, 4.5rem);
+    font-size: clamp(22px, 4vw, 64px);
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-size: clamp(22px, 4vw, 48px);
     font-weight: 500;
     margin-bottom: 1rem;
 }
 
 h3 {
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-size: clamp(20px, 4vw, 48px);
     font-weight: 400;
     margin-bottom: 5px;
 }
 
 h4 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: 5px;
 }
 
 p {
-    font-size: 14px;
-    color: #777;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #777777;
 }
 
 li a {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* h1,
@@ -98,7 +104,7 @@ p {
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 20px;
 }
 
 .tools {
@@ -611,6 +617,8 @@ body.no-scroll {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
     height: 100vh;
     max-height: 2000px;
     min-height: 600px;
@@ -630,33 +638,16 @@ body.no-scroll {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
 .home-img img {
-    max-width: 600px;
+    max-width: 500px;
     object-fit: contain;
 }
 
 /* PATTERNS */
-#p-1 {
-    position: absolute;
-    top: 160px;
-    left: 0;
-    z-index: -1;
-    width: 180px;
-    height: 160px;
-    background-image: radial-gradient(#dddddd 2px, transparent 3px);
-    background-size: 20px 20px;
-    background-color: rgba(0, 0, 0, 0);
-    transition: background-image 0.3s;
-}
-
-.dark #p-1 {
-    background-image: radial-gradient(#777777 2px, transparent 3px);
-}
-
-#p-2 {
+.home-img::before {
+    content: '';
     position: absolute;
     bottom: 0;
     right: 0;
@@ -665,35 +656,17 @@ body.no-scroll {
     height: 130px;
     border-radius: 100%;
     background-color: #7d78db50;
-    transform: translate(-50px, -50px);
+    transform: translate(-20px, -20px);
+    animation: patternAnimation 5s ease-in-out infinite alternate;
 }
 
-/* ANIMATIONS FOR PATTERNS */
-#p-1 {
-    animation: move1 10s ease-in-out infinite alternate;
-}
-
-#p-2 {
-    animation: move2 10s ease-in-out infinite alternate;
-}
-
-@keyframes move1 {
+@keyframes patternAnimation {
     from {
-        transform: translate(50px, 50px);
+        transform: translate(-20px, -20px);
     }
 
     to {
-        transform: translate(40px, 50px);
-    }
-}
-
-@keyframes move2 {
-    from {
-        transform: translate(-50px, -50px);
-    }
-
-    to {
-        transform: translate(-40px, -40px);
+        transform: translate(0px, 0px);
     }
 }
 
@@ -711,9 +684,17 @@ body.no-scroll {
 }
 
 #about p {
+    font-size: 22px;
+    line-height: 30px;
     margin-top: 10px;
-    font-size: clamp(18px, 2vw, 24px);
-    font-weight: 400;
+}
+
+@media (max-width: 767px) {
+    #about p {
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 10px;
+    }
 }
 
 /* SKILLS */
@@ -791,6 +772,7 @@ body.no-scroll {
 }
 
 .skill {
+    min-width: 100px;
     display: flex;
     flex-direction: column !important;
     justify-content: center;
@@ -800,12 +782,15 @@ body.no-scroll {
 }
 
 .skill img {
-    min-height: 50px;
+    width: 100%;
+    max-width: 50px;
+    aspect-ratio: 1 / 1;
     object-fit: contain;
-    border-radius: 50%;
 }
 
 .skill-text {
+    font-size: 12px;
+    margin-top: 4px;
     color: #fff;
     text-shadow: 1px 1px 1px #000;
 }
@@ -822,21 +807,18 @@ body.no-scroll {
 
 .card {
     background-color: var(--background-card);
-    border: 1px solid var(--second);
-    border-radius: 6px;
+    border: 1px solid var(--background-card);
+    border-radius: var(--border-radius);
     overflow: hidden;
     transition: border-color 0.5s;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card-img {
     position: relative;
     overflow: hidden;
-    padding: 16px;
-    padding-block: 12px 0;
-    /* background: -webkit-linear-gradient(45deg, #4f46e5, #433cc3); */
-    /* background: #f1f0fb; */
-    /* https://www.fffuel.co/images/ffflux/ffflux-3.svg */
-    background: url('src/grain.svg');
+    padding: var(--border-radius);
+    background: #aaa3; 
     background-size: cover;
 }
 
@@ -846,11 +828,7 @@ body.no-scroll {
     aspect-ratio: 16/9;
     object-fit: fill;
     object-position: top;
-    border-radius: 6px 6px 0 0;
-    margin-bottom: -8px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: var(--border-radius);
 }
 
 filter {
@@ -868,8 +846,15 @@ filter {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 16px 30px;
+    padding: 10px;
+    padding-top: 20px;
     text-align: center;
+}
+
+.card-content p {
+    font-size: 14px;
+    line-height: 22px;
+    padding-inline: 10px;
 }
 
 .card-icons {
@@ -896,14 +881,12 @@ filter {
 }
 
 .tabs label {
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
+    font-family: inherit;
     flex-grow: 1;
     text-align: center;
     width: 100%;
     padding: 10px 0;
     cursor: pointer;
-    color: #666;
     font-weight: 500;
     transition: color 0.3s ease;
     z-index: 1;
@@ -921,7 +904,7 @@ filter {
     width: 25%;
     height: 100%;
     background-color: var(--text);
-    border-radius: 6px;
+    border-radius: 50px;
     transition: all 0.3s ease;
 }
 
@@ -977,7 +960,7 @@ filter {
 .services {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 10px;
+    gap: 20px;
 }
 
 .service {
@@ -1015,7 +998,7 @@ textarea,
 button {
     padding: 16px 30px;
     font-size: 14px;
-    border-radius: 6px;
+    border-radius: var(--border-radius);
     margin: 5px 0;
 }
 
@@ -1072,6 +1055,31 @@ i:hover {
     color: var(--btn);
 }
 
+
+/* SCROLLBAR */
+@media (min-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #111;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 8px;
+        border: 4px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #eee;
+        background-clip: content-box;
+    }
+}
+
+/* MOBILE 768px */
 @media (max-width: 768px) {
     main > section {
         text-align: center;
@@ -1102,23 +1110,12 @@ i:hover {
         flex-direction: column-reverse;
     }
 
+    .home-img {
+        margin-top: 120px;
+    }
+
     .home-img img {
-        height: 400px;
-    }
-
-    #p-1 {
-        top: 80px;
-        left: -20px;
-        background-image: radial-gradient(#dddddd 2px, transparent 3px);
-        background-size: 16px 16px;
-        width: 100px;
-        height: 100px;
-    }
-
-    #p-2 {
-        right: -30px;
-        width: 90px;
-        height: 90px;
+        max-width: 260px;
     }
 
     .home-title {
@@ -1159,28 +1156,5 @@ i:hover {
 
     #about > div {
         grid-template-columns: 1fr;
-    }
-}
-
-@media (min-width: 768px) {
-    /* SCROLLBAR */
-    ::-webkit-scrollbar {
-        width: 16px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #111;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 8px;
-        border: 4px solid transparent;
-        background-clip: content-box;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #eee;
-        background-clip: content-box;
     }
 }
