@@ -1,13 +1,3 @@
-// Load
-const loader = () => {
-    const loaderWrapper = document.querySelector(".wrapper");
-    loaderWrapper.classList.add("fade");
-
-    document.querySelector(".whatsapp").classList.add("show");
-};
-
-window.addEventListener("load", loader);
-
 // Navbar
 let previousScroll = window.scrollY;
 window.onscroll = function () {
@@ -1034,13 +1024,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 duration: 0.8,
                 stagger: 0.15,
             };
-            
+
             gsap.from(elements, {
                 ...animProps,
                 delay: delay / 1000,
                 scrollTrigger: {
                     trigger: el,
-                    toggleActions: "play reset play reset",
+                    toggleActions: "play none none none",
                 },
             });
         });
@@ -1048,13 +1038,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     doTextAnimations("h1", "lines");
     doTextAnimations("h2", "lines");
-    doTextAnimations("h3", "lines", 200, {
-        autoAlpha: 0,
-        scale: 0.95, // zoom in mínimo
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power2.out",
-    });
     doTextAnimations("#about p", "lines", 600, {
         autoAlpha: 0,
         scale: 0.95, // zoom in mínimo
@@ -1067,32 +1050,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const element = document.querySelector(selector);
         if (!element) return;
         const animProps = customAnim || {
-            y: 100,
             autoAlpha: 0,
+            scale: 0.95,
             duration: 0.8,
+            ease: "power2.out",
         };
         gsap.from(element, {
             ...animProps,
             delay: delay / 1000,
             scrollTrigger: {
                 trigger: element,
-                toggleActions: "play reset play reset",
+                toggleActions: "play none none none",
             },
         });
     };
 
-    doAnimations(".home-img", 400, {
-        autoAlpha: 0,
-        scale: 0.95,
-        duration: 0.8,
-        ease: "power2.out",
-    });
-    doAnimations(".tabs", 400, {
-        autoAlpha: 0,
-        scale: 0.95,
-        duration: 0.8,
-        ease: "power2.out",
-    });
+    doAnimations("h3", 200);
+    doAnimations(".home-img", 400);
+    doAnimations(".tabs", 400);
     doAnimations(".screen", 200);
     doAnimations(".contact", 200);
 });
