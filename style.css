@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
     margin: 0;
@@ -92,14 +92,6 @@ li a {
     font-size: 16px;
     font-weight: 600;
 }
-
-/* h1,
-h2,
-h3,
-h4,
-p {
-  pointer-events: none;
-} */
 
 .container {
     max-width: 1000px;
@@ -316,6 +308,20 @@ p {
 
 .whatsapp__button i:hover {
     color: unset;
+}
+
+/* ANIMACIÓN DE TEXTOS */
+.lineParent {
+    overflow: hidden;
+    max-width: max-content;
+}
+
+.mask {
+    overflow: hidden;
+}
+
+#mask {
+    overflow: hidden;
 }
 
 /* NAVBAR */
@@ -647,7 +653,7 @@ body.no-scroll {
 
 /* PATTERNS */
 .home-img::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -673,14 +679,24 @@ body.no-scroll {
 /* ABOUT */
 #about {
     position: relative;
-    height: 100vh;
-    display: grid;
-    place-items: center;
+    min-height: 100vh;
 }
 
 #about > div {
-    display: grid;
-    grid-template-columns: 1fr 65%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+}
+
+#about > div > div:first-child {
+    width: 30%;
+}
+
+#about > div > div:nth-child(2) {
+    width: 70%;
 }
 
 #about p {
@@ -689,7 +705,25 @@ body.no-scroll {
     margin-top: 10px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+    #about {
+        min-height: auto;
+        margin: 40px 0;
+    }
+
+    #about > div {
+        width: 100%;
+        position: relative;
+        top: 0;
+        transform: translateY(0);
+        display: flex;
+        flex-direction: column;
+    }
+
+    #about > div > div {
+        width: 100% !important;
+    }
+
     #about p {
         font-size: 16px;
         line-height: 24px;
@@ -818,7 +852,7 @@ body.no-scroll {
     position: relative;
     overflow: hidden;
     padding: var(--border-radius);
-    background: #aaa3; 
+    background: #aaa3;
     background-size: cover;
 }
 
@@ -838,7 +872,7 @@ filter {
     width: 100%;
     height: 100%;
     z-index: 9;
-    box-shadow: inset 0 -20px 20px rgba(0, 0, 0, 0.1); 
+    box-shadow: inset 0 -20px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card-content {
@@ -922,6 +956,12 @@ filter {
 
 .project.hidden {
     display: none;
+}
+
+@media (max-width: 768px) {
+    .tabs {
+        margin-inline: auto;
+    }
 }
 
 /* COURSES */
@@ -1055,7 +1095,6 @@ i:hover {
     color: var(--btn);
 }
 
-
 /* SCROLLBAR */
 @media (min-width: 768px) {
     ::-webkit-scrollbar {
@@ -1152,9 +1191,5 @@ i:hover {
 
     .skill-text {
         font-size: 12px;
-    }
-
-    #about > div {
-        grid-template-columns: 1fr;
     }
 }

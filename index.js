@@ -253,41 +253,45 @@ const skills = [
 
 const projects = [
     {
-        "name": "Gloed",
-        "nameEn": "Gloed",
-        "description": "Gloed es una tienda online que ofrece productos de limpieza y cuidado personal, brindando soluciones para el hogar con una variedad de artículos esenciales.",
-        "descriptionEn": "Gloed is an online store offering cleaning and personal care products, providing home solutions with a variety of essential items.",
-        "skills": [
+        name: "Gloed",
+        nameEn: "Gloed",
+        description:
+            "Gloed es una tienda online que ofrece productos de limpieza y cuidado personal, brindando soluciones para el hogar con una variedad de artículos esenciales.",
+        descriptionEn:
+            "Gloed is an online store offering cleaning and personal care products, providing home solutions with a variety of essential items.",
+        skills: [
             "Wordpress",
             "Elementor",
             "Woocommerce",
             "PHP",
             "HTML",
             "CSS",
-            "Javascript"
+            "Javascript",
         ],
-        "img": "src/proyectos/gloed.webp",
-        "demo": "https://gloed.com.ar/",
-        "tipo": "web"
-    },    
+        img: "src/proyectos/gloed.webp",
+        demo: "https://gloed.com.ar/",
+        tipo: "web",
+    },
     {
-        "name": "Farmacia Siman",
-        "nameEn": "Farmacia Siman",
-        "description": "Farmacia Siman ofrece productos de salud, belleza y cuidado personal, brindando una amplia gama de artículos esenciales para el bienestar.",
-        "descriptionEn": "Farmacia Siman offers health, beauty and personal care products, providing a wide range of essential items for well-being.",
-        "skills": [
+        name: "Farmacia Siman",
+        nameEn: "Farmacia Siman",
+        description:
+            "Farmacia Siman ofrece productos de salud, belleza y cuidado personal, brindando una amplia gama de artículos esenciales para el bienestar.",
+        descriptionEn:
+            "Farmacia Siman offers health, beauty and personal care products, providing a wide range of essential items for well-being.",
+        skills: [
             "Wordpress",
             "Elementor",
             "Woocommerce",
             "PHP",
             "HTML",
             "CSS",
-            "Javascript"
+            "Javascript",
         ],
-        "img": "src/proyectos/farmaciasiman.webp",
-        "demo": "https://farmaciasiman.com.ar/",
-        "tipo": "web"
-    },    
+        img: "src/proyectos/farmaciasiman.webp",
+        demo: "https://farmaciasiman.com.ar/",
+        tipo: "web",
+    },
     {
         name: "Menzi Almada",
         nameEn: "Menzi Almada",
@@ -312,7 +316,7 @@ const projects = [
         name: "La Cautiva",
         nameEn: "La Cautiva",
         description:
-        "La Cautiva es una tienda especializada en productos para asadores, ofreciendo una amplia variedad de fogoneros, kamados, cuchillería y accesorios gourmet",
+            "La Cautiva es una tienda especializada en productos para asadores, ofreciendo una amplia variedad de fogoneros, kamados, cuchillería y accesorios gourmet",
         descriptionEn:
             "La Cautiva is a store specialized in products for grillers, offering a wide variety of fire pits, kamados, cutlery and gourmet accessories.",
         skills: [
@@ -993,4 +997,102 @@ document.querySelectorAll('a[href^="#"]').forEach((el) => {
             target.scrollIntoView({ behavior: "smooth", duration: 5000 });
         }
     });
+});
+
+//
+// Animación de textos
+//
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const doTextAnimations = (
+        selector,
+        type = "lines",
+        delay = 0,
+        customAnim = null
+    ) => {
+        document.querySelectorAll(selector).forEach((el) => {
+            const text = new SplitType(el, { types: type });
+
+            let elements;
+            if (type.includes("chars")) elements = text.chars;
+            else if (type.includes("words")) elements = text.words;
+            else if (type.includes("lines")) {
+                elements = text.lines;
+                text.lines.forEach((line) => {
+                    const mask = document.createElement("div");
+                    mask.classList.add("mask");
+                    line.parentNode.insertBefore(mask, line);
+                    mask.appendChild(line);
+                });
+            }
+
+            // Usar animación personalizada si está definida
+            const animProps = customAnim || {
+                y: 100,
+                autoAlpha: 0,
+                duration: 0.8,
+                stagger: 0.15,
+            };
+            
+            gsap.from(elements, {
+                ...animProps,
+                delay: delay / 1000,
+                scrollTrigger: {
+                    trigger: el,
+                    toggleActions: "play reset play reset",
+                },
+            });
+        });
+    };
+
+    doTextAnimations("h1", "lines");
+    doTextAnimations("h2", "lines");
+    doTextAnimations("h3", "lines", 200, {
+        autoAlpha: 0,
+        scale: 0.95, // zoom in mínimo
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+    });
+    doTextAnimations("#about p", "lines", 600, {
+        autoAlpha: 0,
+        scale: 0.95, // zoom in mínimo
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+    });
+
+    const doAnimations = (selector, delay = 0, customAnim = null) => {
+        const element = document.querySelector(selector);
+        if (!element) return;
+        const animProps = customAnim || {
+            y: 100,
+            autoAlpha: 0,
+            duration: 0.8,
+        };
+        gsap.from(element, {
+            ...animProps,
+            delay: delay / 1000,
+            scrollTrigger: {
+                trigger: element,
+                toggleActions: "play reset play reset",
+            },
+        });
+    };
+
+    doAnimations(".home-img", 400, {
+        autoAlpha: 0,
+        scale: 0.95,
+        duration: 0.8,
+        ease: "power2.out",
+    });
+    doAnimations(".tabs", 400, {
+        autoAlpha: 0,
+        scale: 0.95,
+        duration: 0.8,
+        ease: "power2.out",
+    });
+    doAnimations(".screen", 200);
+    doAnimations(".contact", 200);
 });
