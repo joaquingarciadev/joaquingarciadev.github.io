@@ -1,3 +1,13 @@
+// Loader & Whatsapp
+const loader = () => {
+    // const loaderWrapper = document.querySelector(".wrapper");
+    // loaderWrapper.classList.add("fade");
+
+    document.querySelector(".whatsapp").classList.add("show");
+};
+
+window.addEventListener("load", loader);
+
 // Navbar
 let previousScroll = window.scrollY;
 window.onscroll = function () {
