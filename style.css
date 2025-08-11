@@ -19,7 +19,7 @@ html {
 
 body {
     --background: #fff;
-    --text: #171717;
+    --text: #242424;
     --second: #ddd;
     --background-card: #fff;
     background-color: var(--background);
@@ -40,7 +40,6 @@ h2,
 h3,
 h4 {
     font-family: "Clash Display", sans-serif;
-    color: #242424;
 }
 
 p,
