@@ -1075,7 +1075,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    doAnimations("h3", 200);
+    doAnimations("h3", 400);
     doAnimations(".home-img", 400);
     doAnimations(".tabs", 400);
     doAnimations(".screen", 200);

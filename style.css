@@ -25,7 +25,7 @@ body {
     background-color: var(--background);
     color: var(--text);
     transition: background-color 0.5s, color 0.5s;
-    font-family: "Montserrat", "Clash Display", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 body.dark {
@@ -48,7 +48,7 @@ span,
 input,
 textarea,
 button {
-    font-family: "Montserrat", "Clash Display", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 a {
