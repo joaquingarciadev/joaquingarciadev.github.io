@@ -1078,6 +1078,6 @@ document.addEventListener("DOMContentLoaded", () => {
     doAnimations("h3", 400);
     doAnimations(".home-img", 400);
     doAnimations(".tabs", 400);
-    doAnimations(".screen", 200);
-    doAnimations(".contact", 200);
+    doAnimations(".screen", 400);
+    doAnimations(".contact", 400);
 });
