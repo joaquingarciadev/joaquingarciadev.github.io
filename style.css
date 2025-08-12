@@ -708,6 +708,8 @@ body.no-scroll {
 /* SKILLS */
 #skills {
     margin: 80px auto;
+    margin-bottom: 160px;
+    min-height: 100vh;
 }
 
 .screen {
@@ -717,7 +719,6 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     box-sizing: content-box;
-    margin-bottom: 160px;
     background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/55d344c0-cd51-41d2-a72c-385644b8d8fc/danqv4o-1c947f41-5538-4601-a909-22b1fc35bb14.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU1ZDM0NGMwLWNkNTEtNDFkMi1hNzJjLTM4NTY0NGI4ZDhmY1wvZGFucXY0by0xYzk0N2Y0MS01NTM4LTQ2MDEtYTkwOS0yMmIxZmMzNWJiMTQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.VGnQ9apXTEMCuMgWrpUV2xZLg8waSV9C0da3TJShP3c");
     background-size: cover;
     border: #aaa solid 10px;
