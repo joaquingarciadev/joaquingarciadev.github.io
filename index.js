@@ -1040,7 +1040,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 delay: delay / 1000,
                 scrollTrigger: {
                     trigger: el,
-                    toggleActions: "play none none none",
+                    toggleActions: "play none play none",
                 },
             });
         });
@@ -1070,7 +1070,7 @@ document.addEventListener("DOMContentLoaded", () => {
             delay: delay / 1000,
             scrollTrigger: {
                 trigger: element,
-                toggleActions: "play none none none",
+                toggleActions: "play none play none",
             },
         });
     };
