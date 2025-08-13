@@ -927,9 +927,13 @@ filter {
     padding: 10px 0;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.3s ease;
     z-index: 1;
+}
+
+.tabs label:hover {
+    color: var(--btn);
 }
 
 .tabs input[type="radio"]:checked + label {
