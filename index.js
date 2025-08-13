@@ -1000,7 +1000,7 @@ document.querySelectorAll('a[href^="#"]').forEach((el) => {
 });
 
 //
-// Animación de textos
+// Animaciones
 //
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
