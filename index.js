@@ -1002,7 +1002,7 @@ document.querySelectorAll('a[href^="#"]').forEach((el) => {
 //
 // Animaciones
 //
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.set(".preloader", { autoAlpha: 1 });
