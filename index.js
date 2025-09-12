@@ -1005,6 +1005,16 @@ document.querySelectorAll('a[href^="#"]').forEach((el) => {
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
 
+    gsap.set(".preloader", { autoAlpha: 1 });
+    gsap.to(".preloader", {
+        autoAlpha: 0,
+        delay: 0,
+        duration: 1,
+        onComplete: () => {
+            document.querySelector(".preloader").style.display = "none";
+        },
+    });
+
     const doTextAnimations = (
         selector,
         type = "lines",
