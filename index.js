@@ -253,6 +253,119 @@ const skills = [
 
 const projects = [
     {
+        name: "Tutu Automotores",
+        nameEn: "Tutu Automotores",
+        description:
+            "Concesionaria con catálogo digital y diseño orientado a conversión.",
+        descriptionEn:
+            "Dealership with a digital catalog and conversion-focused design.",
+        skills: [
+            "Wordpress",
+            "Elementor",
+            "Woocommerce",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript",
+        ],
+        img: "src/proyectos/tutuautomotores.webp",
+        demo: "https://tutuautomotores.com/",
+        tipo: "web",
+    },
+    {
+        name: "DUC",
+        nameEn: "DUC",
+        description:
+            "Web institucional con blog para la marca de jabones DUC, con enfoque minimalista.",
+        descriptionEn:
+            "Institutional website with blog for DUC soap brand, featuring a minimalist design.",
+        skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+        img: "src/proyectos/duc.webp",
+        demo: "https://duc.com.ar/",
+        tipo: "web",
+    },
+    {
+        name: "Escuela Stop",
+        nameEn: "Escuela Stop",
+        description:
+            "Academia de manejo con sistema de reservas y enfoque local.",
+        descriptionEn: "Driving school with booking system and local focus.",
+        skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+        img: "src/proyectos/escuelastop.webp",
+        demo: "https://escuelastop.com.ar/",
+        tipo: "web",
+    },
+    {
+        name: "Multipap",
+        nameEn: "Multipap",
+        description:
+            "Catálogo web para distribuidora de alimentos procesados con enfoque mayorista.",
+        descriptionEn:
+            "Web catalog for a processed food distributor with a wholesale focus.",
+        skills: [
+            "Wordpress",
+            "Elementor",
+            "Woocommerce",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript",
+        ],
+        img: "src/proyectos/multipap.webp",
+        demo: "https://multipap.com.ar/",
+        tipo: "web",
+    },
+    {
+        name: "Dona Nua",
+        nameEn: "Dona Nua",
+        description: "Tienda online de moda femenina con catálogo dinámico.",
+        descriptionEn: "Women's fashion store with a dynamic catalog.",
+        skills: [
+            "Wordpress",
+            "Elementor",
+            "Woocommerce",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript",
+        ],
+        img: "src/proyectos/donanua.webp",
+        demo: "https://donanua.com.ar/",
+        tipo: "web",
+    },
+    {
+        name: "Crespo",
+        nameEn: "Crespo",
+        description:
+            "Tienda online de talabartería y productos ecuestres con estética tradicional.",
+        descriptionEn:
+            "Online store for leathercraft and equestrian gear with a traditional aesthetic.",
+        skills: [
+            "Wordpress",
+            "Woocommerce",
+            "Elementor",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript",
+        ],
+        img: "src/proyectos/crespo.webp",
+        demo: "https://crespo.com.ar/",
+        tipo: "web",
+    },
+    {
+        name: "VG Agronegocios",
+        nameEn: "VG Agronegocios",
+        description:
+            "One page institucional para empresa agropecuaria con presencia regional.",
+        descriptionEn:
+            "Institutional one-pager for an agricultural company with regional presence.",
+        skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+        img: "src/proyectos/vgagronegocios.webp",
+        demo: "https://vgagronegocios.com.ar/",
+        tipo: "web",
+    },
+    {
         name: "Gloed",
         nameEn: "Gloed",
         description:

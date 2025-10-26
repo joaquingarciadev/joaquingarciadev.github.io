@@ -836,7 +836,7 @@ body.no-scroll {
 
 .card {
     background-color: var(--background-card);
-    border: 1px solid var(--background-card);
+    border: 4px solid var(--background-card);
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: border-color 0.5s;
