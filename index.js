@@ -253,6 +253,26 @@ const skills = [
 
 const projects = [
     {
+        name: "Nevisca",
+        nameEn: "Nevisca",
+        description:
+            "Catálogo digital para una distribuidora de alimentos con más de 20 años de trayectoria.",
+        descriptionEn:
+            "Digital catalog for a food distributor with over 20 years of experience.",
+        skills: [
+            "Wordpress",
+            "Elementor",
+            "Woocommerce",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript",
+        ],
+        img: "src/proyectos/nevisca.webp",
+        demo: "https://nevisca.com.ar",
+        tipo: "web",
+    },
+    {
         name: "Tutu Automotores",
         nameEn: "Tutu Automotores",
         description:
@@ -926,7 +946,7 @@ function render() {
 function renderSkills() {
     const skillsNotShow = ["Bootstrap", "Firebase"];
     const skillsFiltered = skills.filter(
-        (skill) => !skillsNotShow.includes(skill.name)
+        (skill) => !skillsNotShow.includes(skill.name),
     );
     skillsFiltered.forEach((skill) => {
         const skill_title = isEnglishPage
@@ -952,8 +972,8 @@ function renderProjects() {
         <div class="card grid-item project ${project.tipo}">
             <div class="card-img">
                 <img src="${project.img}" alt="${project.name}" title="${
-            project.name
-        }" />
+                    project.name
+                }" />
             </div>
             <div class="card-content">
                 <h4>${project.name}</h4>
@@ -962,7 +982,7 @@ function renderProjects() {
                 <div class="card-icons">
                     ${project.skills.map((skill) => {
                         const skill_ = skills.find(
-                            (skill_) => skill_.name === skill
+                            (skill_) => skill_.name === skill,
                         );
                         return `<img src=${skill_.img} width='20' style="border-radius: 50%;" arial-label="${skill_.name}" alt="${skill_.name}" title="${skill_.name}" />`;
                     })}
@@ -1062,7 +1082,7 @@ document.addEventListener("mousemove", (e) => {
         {
             duration: 200,
             fill: "forwards",
-        }
+        },
     );
 });
 
@@ -1132,7 +1152,7 @@ window.addEventListener("load", () => {
         selector,
         type = "lines",
         delay = 0,
-        customAnim = null
+        customAnim = null,
     ) => {
         document.querySelectorAll(selector).forEach((el) => {
             const text = new SplitType(el, { types: type });
