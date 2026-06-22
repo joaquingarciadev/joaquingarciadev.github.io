@@ -20,9 +20,9 @@
             name="google-site-verification"
             content="6XHylW_MZ-kTsw1OquSgtyJAPE__LnV2jR0JoFyPpjM"
         />
-        <meta property="og:image" content="src/perfil.webp" />
+        <meta property="og:image" content="src/favicon.webp" />
         <link rel="stylesheet" href="style.css" />
-        <link rel="shortcut icon" href="src/perfil.webp" />
+        <link rel="shortcut icon" href="src/favicon.webp" />
         <link
             rel="stylesheet"
             href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
@@ -147,6 +147,7 @@
                                 alt="Spanish"
                                 title="Spanish"
                                 width="20px"
+                                style="opacity: 0.5"
                             />
                         </a>
                         <a href="https://joaquingarciadev.github.io/en">
@@ -231,6 +232,7 @@
                                 alt="Spanish"
                                 title="Spanish"
                                 width="20px"
+                                style="opacity: 0.5"
                             />
                         </a>
                         <a href="https://joaquingarciadev.github.io/en">
@@ -258,7 +260,7 @@
                 </div>
                 <div class="home-img">
                     <img
-                        src="src/image_hero.webp"
+                        src="src/image_hero (1).webp"
                         alt="profile"
                         title="profile"
                         width="100%"
@@ -315,7 +317,7 @@
                     <label for="other">Others</label>
                     <span class="glider"></span>
                 </div>
-                <div class="projects masonry"></div>
+                <div class="projects cards masonry"></div>
             </section>
             <section id="services">
                 <h2>Services</h2>
@@ -353,45 +355,85 @@
             <section id="contact">
                 <h2>Contact</h2>
                 <div class="contact">
-                    <form
-                        action="https://formsubmit.co/djoako22@gmail.com"
-                        method="post"
-                    >
-                        <input
-                            type="hidden"
-                            name="_next"
-                            value="https://joaquingarciadev.github.io/"
-                        />
-                        <input
-                            type="hidden"
-                            name="_subject"
-                            value="PORTFOLIO MESSAGE"
-                        />
-                        <input type="hidden" name="_captcha" value="false" />
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Name"
-                            required
-                        />
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                            title="Please enter a valid email"
-                            required
-                        />
-                        <textarea
-                            name="message"
-                            id=""
-                            cols="30"
-                            rows="8"
-                            placeholder="Message"
-                            required
-                        ></textarea>
-                        <button type="submit">Send message</button>
-                    </form>
+                    <div class="contact-info">
+                        <p>Feel free to contact me for any inquiry, proposal or project.</p>
+                        <ul>
+                            <li><i class="uil uil-envelope"></i> djoako22@gmail.com</li>
+                            <li><i class="uil uil-whatsapp"></i> +54 9 351 599 5198</li>
+                        </ul>
+                        <div class="contact-social">
+                            <a
+                                href="https://www.linkedin.com/in/joaquingarciadev/"
+                                target="_blank"
+                            >
+                                <i class="uil uil-linkedin"></i>
+                            </a>
+                            <a
+                                href="https://github.com/joaquingarciadev"
+                                target="_blank"
+                            >
+                                <i class="uil uil-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form card">
+                        <form
+                            action="https://formsubmit.co/djoako22@gmail.com"
+                            method="post"
+                        >
+                            <input
+                                type="hidden"
+                                name="_next"
+                                value="https://joaquingarciadev.github.io/"
+                            />
+                            <input
+                                type="hidden"
+                                name="_subject"
+                                value="PORTFOLIO MESSAGE"
+                            />
+                            <input type="hidden" name="_captcha" value="false" />
+                            <label for="name">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="John Doe"
+                                required
+                            />
+                            <label for="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="johndoe@gmail.com"
+                                pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                                title="Please enter a valid email"
+                                required
+                            />
+                            <label for="website-type">Type of website</label>
+                            <div class="select-wrapper">
+                                <select name="website-type" id="website-type" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Landing page/One page">Landing page/One page</option>
+                                    <option value="Institutional">Institutional</option>
+                                    <option value="Catalog">Catalog</option>
+                                    <option value="Store/Ecommerce">Store/Ecommerce</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <i class="uil uil-angle-down"></i>
+                            </div>
+                            <label for="message">Message</label>
+                            <textarea
+                                name="message"
+                                id="message"
+                                cols="30"
+                                rows="8"
+                                placeholder="Hello, I would like to get a quote for an institutional website..."
+                                required
+                            ></textarea>
+                            <button type="submit">Send message</button>
+                        </form>
+                    </div>
                 </div>
             </section>
             <footer>
@@ -402,23 +444,6 @@
                             >Joaquin Garcia</a
                         >. All rights reserved.
                     </p>
-                </div>
-                <div class="social">
-                    <a
-                        href="https://www.linkedin.com/in/joaquingarciadev/"
-                        target="_blank"
-                    >
-                        <i class="uil uil-linkedin"></i>
-                    </a>
-                    <a
-                        href="https://github.com/joaquingarciadev"
-                        target="_blank"
-                    >
-                        <i class="uil uil-github"></i>
-                    </a>
-                    <a href="mailto: djoako22@gmail.com" target="_blank">
-                        <i class="uil uil-envelope"></i>
-                    </a>
                 </div>
             </footer>
         </main>
