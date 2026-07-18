@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans:
+        "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, sans-serif;
+    --font-display: "Space Grotesk", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
+    /* Colors */
+    --color-electric-lime: #beff50;
+    --color-off-black-ink: #14140f;
+    --color-off-white-canvas: #f5f5eb;
+    --color-pure-white: #ffffff;
+    --color-ash: #d2d2c8;
+    --color-graphite: #6e6e64;
+    --color-deep-charcoal: #30302a;
+    --color-stone: #919183;
+    --color-smoke: #b9b9b7;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* For smooth transitions between dark and light themes */
+    body {
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+    }
+
+    /* Reveal Masked Text Animation Classes */
+    .wrapper {
+        overflow: hidden;
+        vertical-align: top;
+        line-height: 1.25;
+    }
+
+    .wrapper-words {
+        display: inline-flex;
+        margin-right: 0.25em; /* Natural space between words */
+    }
+
+    .inner-text {
+        display: inline-block;
+        transform: translateY(110%); /* Hidden by default */
+        transform-origin: top left;
+        will-change: transform;
+    }
+
+    /* Trigger animation on is-visible class */
+    .is-visible .inner-text {
+        animation: revealUp 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    }
+
+    @keyframes revealUp {
+        0% {
+            transform: translateY(110%) rotate(2deg);
+        }
+        100% {
+            transform: translateY(0) rotate(0);
+        }
+    }
+
+    /* Flip Text Animation */
+    .flip-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .flip-text {
+        display: inline-block;
+        transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    .flip-text-clone {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        display: inline-block;
+        transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+        white-space: nowrap;
+    }
+
+    /* Trigger hover transitions when either the flip-wrapper, any parent button, anchor, or hover-trigger is hovered */
+    .flip-wrapper:hover .flip-text,
+    button:hover .flip-text,
+    a:hover .flip-text,
+    .hover-trigger:hover .flip-text {
+        transform: translateY(-100%);
+    }
+
+    .flip-wrapper:hover .flip-text-clone,
+    button:hover .flip-text-clone,
+    a:hover .flip-text-clone,
+    .hover-trigger:hover .flip-text-clone {
+        transform: translateY(-100%);
+    }
+
+    /* Spotlight Cards Effect */
+    .spotlight-card {
+        position: relative;
+        background: #e6e6dc; /* Light mode default border color */
+        border-radius: 28px;
+        padding: 1px;
+        overflow: hidden;
+        transition: background 0.3s ease;
+    }
+
+    .dark .spotlight-card {
+        background: #3a3a34; /* Dark mode default border color */
+    }
+
+    /* Border Glow (Outer spotlight) */
+    .spotlight-card::before {
+        content: "";
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        left: -160px;
+        top: -160px;
+        background: #beff50; /* Electric lime glow */
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translate(var(--mouse-x), var(--mouse-y));
+        z-index: 1;
+        filter: blur(60px);
+    }
+
+    /* Show border glow when hovering over the group */
+    .spotlight-group:hover .spotlight-card::before {
+        opacity: 0.45; /* Soft glow on neighbors */
+    }
+
+    .dark .spotlight-group:hover .spotlight-card::before {
+        opacity: 0.3;
+    }
+
+    /* Inner Card Glow (Center spotlight) */
+    .spotlight-card::after {
+        content: "";
+        position: absolute;
+        width: 380px;
+        height: 380px;
+        left: -190px;
+        top: -190px;
+        background: #beff50; /* Electric lime */
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translate(var(--mouse-x), var(--mouse-y));
+        z-index: 3;
+        filter: blur(85px);
+    }
+
+    /* Highlight current card more strongly */
+    .spotlight-card:hover::before {
+        opacity: 1 !important; /* Fully bright border on the hovered card */
+    }
+
+    .spotlight-card:hover::after {
+        opacity: 0.08; /* Inner card spotlight glow */
+    }
+
+    .dark .spotlight-card:hover::after {
+        opacity: 0.05;
+    }
+
+    .spotlight-card-inner {
+        position: relative;
+        height: 100%;
+        background: #f5f5eb; /* Light mode bg (off-white-canvas) */
+        border-radius: 27px; /* Matches outer card border-radius minus padding */
+        z-index: 2;
+        overflow: hidden;
+        transition: background 0.3s ease;
+    }
+
+    .dark .spotlight-card-inner {
+        background: #30302a; /* Dark mode bg (deep-charcoal) */
+    }
+
+    /* Custom Cursor Hover States */
+    .cursor-dot.cursor-dot-large {
+        width: 24px !important;
+        height: 24px !important;
+        background-color: rgba(
+            190,
+            255,
+            80,
+            0.75
+        ) !important; /* Electric lime glow on hover */
+        mix-blend-mode: difference;
+    }
+}
+
+/* Custom Swiper Pagination Styles */
+.projects-swiper {
+    padding-bottom: 60px !important;
+    /* overflow: hidden !important; */
+}
+
+.projects-swiper .swiper-pagination-progressbar {
+    background: rgba(20, 20, 15, 0.1) !important;
+    height: 4px !important;
+    border-radius: 9999px !important;
+    bottom: 16px !important;
+    top: auto !important;
+    left: 0 !important;
+    width: 100% !important;
+}
+
+.dark .projects-swiper .swiper-pagination-progressbar {
+    background: rgba(245, 245, 235, 0.15) !important;
+}
+
+.projects-swiper .swiper-pagination-progressbar-fill {
+    background: var(--color-off-black-ink) !important;
+    border-radius: 9999px !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.dark .projects-swiper .swiper-pagination-progressbar-fill {
+    background: var(--color-electric-lime) !important;
+}

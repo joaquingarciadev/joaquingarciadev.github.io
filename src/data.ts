@@ -1,0 +1,315 @@
+export interface Skill {
+  name: string;
+  descriptionKey: string;
+  img: string;
+  year: string;
+}
+
+export interface Project {
+  name: string;
+  descriptionKey: string;
+  skills: string[];
+  img: string;
+  url: string;
+  type: "Landing page" | "Institucional" | "Catálogo" | "Ecommerce" | "Otros";
+}
+
+export const skillsData: Skill[] = [
+  {
+    name: "HTML",
+    descriptionKey: "skills.desc.html",
+    img: "/images/habilidades/html-5.webp",
+    year: "2017"
+  },
+  {
+    name: "CSS",
+    descriptionKey: "skills.desc.css",
+    img: "/images/habilidades/css-3.webp",
+    year: "2017"
+  },
+  {
+    name: "Javascript",
+    descriptionKey: "skills.desc.javascript",
+    img: "/images/habilidades/js.webp",
+    year: "2017"
+  },
+  {
+    name: "React",
+    descriptionKey: "skills.desc.react",
+    img: "/images/habilidades/react.webp",
+    year: "2020"
+  },
+  {
+    name: "Next JS",
+    descriptionKey: "skills.desc.nextjs",
+    img: "/images/habilidades/next-js.webp",
+    year: "2022"
+  },
+  {
+    name: "Node JS",
+    descriptionKey: "skills.desc.nodejs",
+    img: "/images/habilidades/node-js.webp",
+    year: "2020"
+  },
+  {
+    name: "Express JS",
+    descriptionKey: "skills.desc.expressjs",
+    img: "/images/habilidades/express-js.webp",
+    year: "2020"
+  },
+  {
+    name: "MongoDB",
+    descriptionKey: "skills.desc.mongodb",
+    img: "/images/habilidades/mongodb.webp",
+    year: "2020"
+  },
+  {
+    name: "MySQL",
+    descriptionKey: "skills.desc.mysql",
+    img: "/images/habilidades/sql.webp",
+    year: "2020"
+  },
+  {
+    name: "PHP",
+    descriptionKey: "skills.desc.php",
+    img: "/images/habilidades/php.webp",
+    year: "2020"
+  },
+  {
+    name: "Wordpress",
+    descriptionKey: "skills.desc.wordpress",
+    img: "/images/habilidades/wordpress.webp",
+    year: "2020"
+  },
+  {
+    name: "Elementor",
+    descriptionKey: "skills.desc.elementor",
+    img: "/images/habilidades/elementor.webp",
+    year: "2020"
+  },
+  {
+    name: "Woocommerce",
+    descriptionKey: "skills.desc.woocommerce",
+    img: "/images/habilidades/woocommerce.webp",
+    year: "2020"
+  }
+];
+
+export const projectsData: Project[] = [
+  {
+    name: "Nevisca",
+    descriptionKey: "projects.desc.nevisca",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/nevisca.webp",
+    url: "https://nevisca.com.ar",
+    type: "Catálogo"
+  },
+  {
+    name: "Tutu Automotores",
+    descriptionKey: "projects.desc.tutu_automotores",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/tutuautomotores.webp",
+    url: "https://tutuautomotores.com/",
+    type: "Catálogo"
+  },
+  {
+    name: "DUC",
+    descriptionKey: "projects.desc.duc",
+    skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/duc.webp",
+    url: "https://duc.com.ar/",
+    type: "Institucional"
+  },
+  {
+    name: "Escuela Stop",
+    descriptionKey: "projects.desc.escuela_stop",
+    skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/escuelastop.webp",
+    url: "https://escuelastop.com.ar/",
+    type: "Institucional"
+  },
+  {
+    name: "Multipap",
+    descriptionKey: "projects.desc.multipap",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/multipap.webp",
+    url: "https://multipap.com.ar/",
+    type: "Catálogo"
+  },
+  {
+    name: "Dona Nua",
+    descriptionKey: "projects.desc.dona_nua",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/donanua.webp",
+    url: "https://donanua.com.ar/",
+    type: "Ecommerce"
+  },
+  {
+    name: "Crespo",
+    descriptionKey: "projects.desc.crespo",
+    skills: ["Wordpress", "Woocommerce", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/crespo.webp",
+    url: "https://crespo.com.ar/",
+    type: "Ecommerce"
+  },
+  {
+    name: "VG Agronegocios",
+    descriptionKey: "projects.desc.vg_agronegocios",
+    skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/vgagronegocios.webp",
+    url: "https://vgagronegocios.com.ar/",
+    type: "Landing page"
+  },
+  {
+    name: "Gloed",
+    descriptionKey: "projects.desc.gloed",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/gloed.webp",
+    url: "https://gloed.com.ar/",
+    type: "Ecommerce"
+  },
+  {
+    name: "Farmacia Siman",
+    descriptionKey: "projects.desc.farmacia_siman",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/farmaciasiman.webp",
+    url: "https://farmaciasiman.com.ar/",
+    type: "Ecommerce"
+  },
+  {
+    name: "Menzi Almada",
+    descriptionKey: "projects.desc.menzi_almada",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/menzialmada.webp",
+    url: "https://menzialmada.com.ar/",
+    type: "Catálogo"
+  },
+  {
+    name: "La Cautiva",
+    descriptionKey: "projects.desc.la_cautiva",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/lacautivacba.webp",
+    url: "https://lacautivacba.com/",
+    type: "Ecommerce"
+  },
+  {
+    name: "UON",
+    descriptionKey: "projects.desc.uon",
+    skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/uon.webp",
+    url: "https://uon.com.py/",
+    type: "Landing page"
+  },
+  {
+    name: "Ezimpl / Reply",
+    descriptionKey: "projects.desc.ezimpl_reply",
+    skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/replylatam.webp",
+    url: "https://replylatam.com/",
+    type: "Institucional"
+  },
+  {
+    name: "AUAD GRAF - Estudio Jurídico",
+    descriptionKey: "projects.desc.auad_graf",
+    skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/auadgraf.webp",
+    url: "https://www.auadgraf.com.ar/inicio/",
+    type: "Institucional"
+  },
+  {
+    name: "GC Dental",
+    descriptionKey: "projects.desc.gc_dental",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/gcdental.webp",
+    url: "https://gcdental.com.ar/",
+    type: "Ecommerce"
+  },
+  {
+    name: "LM Amoblamientos",
+    descriptionKey: "projects.desc.lm_amoblamientos",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/lmamoblamientos.webp",
+    url: "https://lmamoblamientos.com.ar/",
+    type: "Catálogo"
+  },
+  {
+    name: "Deligood - Helados",
+    descriptionKey: "projects.desc.deligood",
+    skills: ["Wordpress", "Elementor", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/deligood.webp",
+    url: "https://deligood.com.ar/",
+    type: "Landing page"
+  },
+  {
+    name: "Planetizar - Agencia de viajes",
+    descriptionKey: "projects.desc.planetizar",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/planetizar.jpg",
+    url: "https://planetizar.com/",
+    type: "Otros"
+  },
+  {
+    name: "Cucina | Software de ventas – Mucho más que, un software de ventas",
+    descriptionKey: "projects.desc.cucina",
+    skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/cucinago.webp",
+    url: "https://cucinago.cloud/",
+    type: "Institucional"
+  },
+  {
+    name: "American Pass – Sistema web para brokers y productores de seguros",
+    descriptionKey: "projects.desc.american_pass",
+    skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/americanpass.webp",
+    url: "https://americanpass.com.ar/",
+    type: "Landing page"
+  },
+  {
+    name: "BOIERO S.A. - Sitio web de soluciones para energía, agua y telecomunicaciones.",
+    descriptionKey: "projects.desc.boiero",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/boiero.webp",
+    url: "https://www.boiero.com.ar/",
+    type: "Catálogo"
+  },
+  {
+    name: "Previa - Plataforma para reuniones y eventos sociales",
+    descriptionKey: "projects.desc.previa",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "PHP", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/previa.webp",
+    url: "https://previa.com.ar/",
+    type: "Otros"
+  },
+  {
+    name: "Hibridos - Sitio web de Agencia de Marketing Digital",
+    descriptionKey: "projects.desc.hibridos",
+    skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/hibridosagencia.webp",
+    url: "https://hibridosagencia.com/",
+    type: "Landing page"
+  },
+  {
+    name: "Afrodita's Pleasure - Tienda de lencería",
+    descriptionKey: "projects.desc.afroditas_pleasure",
+    skills: ["Wordpress", "Elementor", "Woocommerce", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/afroditaspleasure.png",
+    url: "https://afroditaspleasure.com/",
+    type: "Ecommerce"
+  },
+  {
+    name: "The Rod and Co. - Sitio web de Agencia Digital",
+    descriptionKey: "projects.desc.the_rod",
+    skills: ["Wordpress", "Elementor", "HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/therodandco.png",
+    url: "https://therodandco.com/",
+    type: "Institucional"
+  },
+  {
+    name: "La Fermina - Sitio web de Fiestas & Eventos",
+    descriptionKey: "projects.desc.la_fermina",
+    skills: ["HTML", "CSS", "Javascript"],
+    img: "/images/proyectos/laferminafiestasyeventos.png",
+    url: "https://laferminafiestasyeventos.netlify.app",
+    type: "Landing page"
+  }
+];
