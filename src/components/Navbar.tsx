@@ -113,10 +113,6 @@ export default function Navbar({
             transition: background-color 0.3s;
           }
 
-          .menu-toggle.active {
-            background: #14140f;
-          }
-
           .bar {
             position: absolute;
             top: 50%;
@@ -126,10 +122,6 @@ export default function Navbar({
             border-radius: 2px;
             background: #14140f;
             transition: .3s ease;
-          }
-
-          .menu-toggle.active .bar {
-            background: #beff50;
           }
 
           .bar:nth-child(1) {
