@@ -88,8 +88,14 @@ export default function Skills() {
                     <div className="h-1 w-16 bg-electric-lime mt-4 rounded-full" />
                 </div>
 
-                {/* Physical Monitor Container */}
-                <div className="w-full max-w-5xl mx-auto">
+                {/* Physical Monitor Container with Fade Zoom Up Animation */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.92, y: 40 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="w-full max-w-5xl mx-auto"
+                >
                     {/* Monitor Frame */}
                     <div className="relative mx-auto bg-stone-200 dark:bg-stone-900 rounded-3xl p-3 md:p-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] border-4 border-stone-300 dark:border-stone-800 transition-all">
                         {/* Screen Bezel */}
@@ -386,7 +392,7 @@ export default function Skills() {
 
                                     {/* Centered Taskbar */}
                                     <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[calc(100%-16px)] h-11 bg-stone-900/85 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between px-3 z-45 shadow-lg">
-                                        {/* Left corner: Static Start Button with no functionality */}
+                                        {/* Left corner */}
                                         <div className="flex items-center gap-2">
                                             <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white/40">
                                                 <svg
@@ -398,7 +404,7 @@ export default function Skills() {
                                             </div>
                                         </div>
 
-                                        {/* Centered App List of Open Windows */}
+                                        {/* Centered App List */}
                                         <div className="flex items-center gap-1.5">
                                             {Object.keys(openWindows).map(
                                                 (skillName) => {
@@ -441,7 +447,7 @@ export default function Skills() {
                                             )}
                                         </div>
 
-                                        {/* Right System Tray (Clock only) */}
+                                        {/* Right System Tray */}
                                         <div className="text-right select-none font-mono text-[10px] text-stone-300 font-medium px-1">
                                             {currentTime}
                                         </div>
@@ -465,7 +471,7 @@ export default function Skills() {
                         {/* Reflected shadow */}
                         <div className="w-48 md:w-64 h-2 bg-neutral-200 dark:bg-neutral-950/40 rounded-full blur-md -mt-0.5"></div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

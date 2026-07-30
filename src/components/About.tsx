@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { MapPin, Code2, User, ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
 import RevealText from "./RevealText";
 import FlipText from "./FlipText";
 
@@ -40,14 +41,18 @@ export default function About() {
                     <div className="h-1 w-16 bg-electric-lime mt-4 rounded-full" />
                 </div>
 
-                {/* Content Card (White Surface Card) */}
-                <div className="bg-pure-white dark:bg-off-black-ink rounded-[28px] p-8 md:p-12 border border-ash/30 dark:border-graphite/20 relative z-10 transition-all">
+                {/* Content Card (Fade Zoom Up Animated Container) */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.92, y: 40 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-pure-white dark:bg-off-black-ink rounded-[28px] p-8 md:p-12 border border-ash/30 dark:border-graphite/20 relative z-10 transition-colors shadow-sm"
+                >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                         {/* Left Side: Paragraph from User */}
                         <div className="lg:col-span-7 flex flex-col justify-center lg:order-first">
                             <div className="relative">
-                                {/* Visual accent */}
-
                                 <p className="font-sans text-lg text-off-black-ink dark:text-off-white-canvas leading-relaxed relative z-10 font-medium">
                                     {t("about.p1")}
                                 </p>
@@ -87,7 +92,7 @@ export default function About() {
                                 </div>
                             </div>
 
-                            {/* Highlight Item 2 (Specialty - now second) */}
+                            {/* Highlight Item 2 (Specialty) */}
                             <div className="flex gap-4 items-start p-5 rounded-2xl bg-off-white-canvas dark:bg-deep-charcoal/40 border border-ash/15 transition-all">
                                 <div className="p-3 rounded-xl bg-electric-lime text-off-black-ink">
                                     <Code2 className="w-5 h-5" />
@@ -102,7 +107,7 @@ export default function About() {
                                 </div>
                             </div>
 
-                            {/* Highlight Item 1 (Location - now third) */}
+                            {/* Highlight Item 3 (Location) */}
                             <div className="flex gap-4 items-start p-5 rounded-2xl bg-off-white-canvas dark:bg-deep-charcoal/40 border border-ash/15 transition-all">
                                 <div className="p-3 rounded-xl bg-electric-lime text-off-black-ink">
                                     <MapPin className="w-5 h-5" />
@@ -118,7 +123,7 @@ export default function About() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
