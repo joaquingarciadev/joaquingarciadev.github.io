@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useLenis } from "lenis/react";
 import { ChevronDown } from "lucide-react";
 import FlipText from "./FlipText";
 
@@ -15,6 +16,7 @@ export default function Navbar({
     activeSection,
 }: NavbarProps) {
     const { t, i18n } = useTranslation();
+    const lenis = useLenis();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpenSobreMi, setIsOpenSobreMi] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,16 +43,7 @@ export default function Navbar({
     const handleScrollTo = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
-            const offset = 90;
-            const bodyRect = document.body.getBoundingClientRect().top;
-            const elementRect = element.getBoundingClientRect().top;
-            const elementPosition = elementRect - bodyRect;
-            const offsetPosition = elementPosition - offset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth",
-            });
+            lenis?.scrollTo(element, { offset: -90 });
             setIsMenuOpen(false);
             setIsOpenSobreMi(false);
         }

@@ -1,13 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
+import { useLenis } from "lenis/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Services from "./components/Services";
-import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
+
+const About = lazy(() => import("./components/About"));
+const Skills = lazy(() => import("./components/Skills"));
+const Projects = lazy(() => import("./components/Projects"));
+const Services = lazy(() => import("./components/Services"));
+const ContactForm = lazy(() => import("./components/ContactForm"));
+
+function SectionFallback() {
+  return <div className="min-h-[40vh]" aria-hidden="true" />;
+}
 
 export default function App() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
@@ -23,6 +29,8 @@ export default function App() {
 
   const [activeSection, setActiveSection] = useState<string>("inicio");
   const [activeFilter, setActiveFilter] = useState<string>("Todos");
+
+  const lenis = useLenis();
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -63,16 +71,7 @@ export default function App() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 90;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      lenis?.scrollTo(element, { offset: -90 });
     }
   };
 
@@ -98,26 +97,36 @@ export default function App() {
 
       <hr className="border-ash/20 dark:border-graphite/20 max-w-6xl mx-auto" />
 
-      <About />
+      <Suspense fallback={<SectionFallback />}>
+        <About />
+      </Suspense>
 
       <hr className="border-ash/20 dark:border-graphite/20 max-w-6xl mx-auto" />
 
-      <Skills />
+      <Suspense fallback={<SectionFallback />}>
+        <Skills />
+      </Suspense>
 
       <hr className="border-ash/20 dark:border-graphite/20 max-w-6xl mx-auto" />
 
-      <Projects
-        activeFilter={activeFilter}
-        setActiveFilter={setActiveFilter}
-      />
+      <Suspense fallback={<SectionFallback />}>
+        <Projects
+          activeFilter={activeFilter}
+          setActiveFilter={setActiveFilter}
+        />
+      </Suspense>
 
       <hr className="border-ash/20 dark:border-graphite/20 max-w-6xl mx-auto" />
 
-      <Services />
+      <Suspense fallback={<SectionFallback />}>
+        <Services />
+      </Suspense>
 
       <hr className="border-ash/20 dark:border-graphite/20 max-w-6xl mx-auto" />
 
-      <ContactForm onViewExamples={handleViewExamples} />
+      <Suspense fallback={<SectionFallback />}>
+        <ContactForm onViewExamples={handleViewExamples} />
+      </Suspense>
 
       <Footer />
     </div>

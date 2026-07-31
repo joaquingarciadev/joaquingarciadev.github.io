@@ -100,6 +100,10 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                         <img
                             src="/images/misc/hero_image.webp"
                             alt="Joaquín García - Desarrollador Web"
+                            width="700"
+                            height="725"
+                            fetchPriority="high"
+                            decoding="async"
                             className="w-full h-auto object-cover rounded-[28px] drop-shadow-lg dark:drop-shadow-[0_15px_15px_rgba(0,0,0,0.4)]"
                         />
 

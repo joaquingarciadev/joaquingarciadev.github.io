@@ -30,6 +30,7 @@ export default function CustomCursor() {
     let currentX = 0;
     let currentY = 0;
     let isHovered = false;
+    let lastTarget: Element | null = null;
 
     // Initially position offscreen so it doesn't flash at 0,0
     let hasMoved = false;
@@ -46,11 +47,11 @@ export default function CustomCursor() {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
-      if (!target) return;
+      if (!target || target === lastTarget) return;
+      lastTarget = target;
 
       // Check if the element or any of its parents has cursor: pointer style
-      const computedStyle = window.getComputedStyle(target);
-      const isPointer = computedStyle.cursor === "pointer";
+      const isPointer = window.getComputedStyle(target).cursor === "pointer";
 
       if (isPointer) {
         dot.classList.add("cursor-dot-large");

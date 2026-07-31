@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useLenis } from "lenis/react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, ExternalLink } from "lucide-react";
 import { skillsData, Skill, projectsData } from "../data";
@@ -13,27 +14,28 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 export default function Skills() {
     const { t, i18n } = useTranslation();
+    const lenis = useLenis();
     const [openWindows, setOpenWindows] = useState<{
         [skillName: string]: OpenWindow;
     }>({});
     const [focusedWindow, setFocusedWindow] = useState<string | null>(null);
-    const [currentTime, setCurrentTime] = useState("");
+    const timeRef = useRef<HTMLDivElement>(null);
 
     const locale = i18n.language === "es" ? "es-AR" : "en-US";
 
     useEffect(() => {
-        const updateTime = () => {
-            const now = new Date();
-            setCurrentTime(
-                now.toLocaleTimeString(locale, {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false,
-                }),
-            );
-        };
-        updateTime();
-        const interval = setInterval(updateTime, 1000);
+        const el = timeRef.current;
+        if (!el) return;
+        const format = () =>
+            new Date().toLocaleTimeString(locale, {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+            });
+        el.textContent = format();
+        const interval = setInterval(() => {
+            el.textContent = format();
+        }, 1000);
         return () => clearInterval(interval);
     }, [locale]);
 
@@ -61,11 +63,7 @@ export default function Skills() {
     const scrollToSection = (id: string) => {
         const el = document.getElementById(id);
         if (el) {
-            const offset = 90;
-            const bodyRect = document.body.getBoundingClientRect().top;
-            const elRect = el.getBoundingClientRect().top;
-            const pos = elRect - bodyRect - offset;
-            window.scrollTo({ top: pos, behavior: "smooth" });
+            lenis?.scrollTo(el, { offset: -90 });
         }
     };
 
@@ -135,6 +133,8 @@ export default function Skills() {
                                                             <img
                                                                 src={skill.img}
                                                                 alt={skill.name}
+                                                                loading="lazy"
+                                                                decoding="async"
                                                                 className="w-full h-full object-contain filter brightness-110"
                                                                 referrerPolicy="no-referrer"
                                                             />
@@ -448,9 +448,10 @@ export default function Skills() {
                                         </div>
 
                                         {/* Right System Tray */}
-                                        <div className="text-right select-none font-mono text-[10px] text-stone-300 font-medium px-1">
-                                            {currentTime}
-                                        </div>
+                                        <div
+                                            ref={timeRef}
+                                            className="text-right select-none font-mono text-[10px] text-stone-300 font-medium px-1"
+                                        ></div>
                                     </div>
                                 </div>
                             </div>
