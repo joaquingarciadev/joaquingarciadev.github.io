@@ -92,7 +92,7 @@ export default function CustomCursor() {
   return (
     <div
       ref={dotRef}
-      className="cursor-dot fixed top-0 left-0 pointer-events-none z-[9999] bg-off-black-ink dark:bg-electric-lime rounded-full transition-[width,height,background-color] duration-300 w-[10px] h-[10px]"
+      className="cursor-dot fixed top-0 left-0 pointer-events-none z-[9999] bg-off-black-ink dark:bg-brand-glow rounded-full transition-[width,height,background-color] duration-300 w-[10px] h-[10px]"
       style={{ transform: "translate3d(-100px, -100px, 0) translate(-50%, -50%)" }}
     />
   );

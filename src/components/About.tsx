@@ -1,27 +1,20 @@
 import { useTranslation } from "react-i18next";
-import { useLenis } from "lenis/react";
-import { MapPin, Code2, User, ArrowRight } from "lucide-react";
+import { MapPin, Code2, User } from "lucide-react";
 import { motion } from "motion/react";
 import RevealText from "./RevealText";
-import FlipText from "./FlipText";
 
 export default function About() {
     const { t } = useTranslation();
-    const lenis = useLenis();
-
-    const handleScrollToContact = () => {
-        const element = document.getElementById("contacto");
-        if (element) {
-            lenis?.scrollTo(element, { offset: -90 });
-        }
-    };
 
     return (
         <section
             id="sobre-mi"
-            className="py-24 bg-off-white-canvas dark:bg-deep-charcoal transition-colors duration-300 relative overflow-hidden"
+            className="py-24 bg-pure-white dark:bg-off-black-ink transition-colors duration-300 relative overflow-hidden"
         >
-            <div className="w-full max-w-5xl mx-auto px-6">
+            {/* Purple aura */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand/10 dark:bg-brand-glow/10 rounded-full blur-[140px] pointer-events-none" />
+
+            <div className="w-full max-w-5xl mx-auto px-6 relative">
                 {/* Section Heading */}
                 <div className="flex flex-col items-center text-center mb-16">
                     <span className="text-xs font-display font-medium text-graphite dark:text-ash uppercase tracking-[0.15em] mb-3">
@@ -32,88 +25,72 @@ export default function About() {
                         text={t("about.title")}
                         className="font-display text-4xl md:text-5xl font-bold tracking-tight text-off-black-ink dark:text-off-white-canvas"
                     />
-                    <div className="h-1 w-16 bg-electric-lime mt-4 rounded-full" />
+                    <div className="h-1 w-16 bg-gradient-to-r from-brand to-brand-light mt-4 rounded-full" />
                 </div>
 
-                {/* Content Card (Fade Zoom Up Animated Container) */}
+                {/* Centered content (Fade Zoom Up Animated Container) */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.92, y: 40 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="bg-pure-white dark:bg-off-black-ink rounded-[28px] p-8 md:p-12 border border-ash/30 dark:border-graphite/20 relative z-10 transition-colors shadow-sm"
+                    className="max-w-3xl mx-auto text-center"
                 >
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                        {/* Left Side: Paragraph from User */}
-                        <div className="lg:col-span-7 flex flex-col justify-center lg:order-first">
-                            <div className="relative">
-                                <p className="font-sans text-lg text-off-black-ink dark:text-off-white-canvas leading-relaxed relative z-10 font-medium">
-                                    {t("about.p1")}
-                                </p>
+                    {/* Description */}
+                    <div className="relative">
+                        <p className="font-sans text-lg text-off-black-ink dark:text-off-white-canvas leading-relaxed relative z-10 font-medium">
+                            {t("about.p1")}
+                        </p>
 
-                                <p className="font-sans text-base text-graphite dark:text-ash leading-relaxed mt-4 relative z-10">
-                                    {t("about.p2")}
-                                </p>
+                        <p className="font-sans text-base text-graphite dark:text-ash leading-relaxed mt-4 relative z-10">
+                            {t("about.p2")}
+                        </p>
+                    </div>
 
-                                <div className="mt-8 relative z-10">
-                                    <button
-                                        onClick={handleScrollToContact}
-                                        className="group px-6 py-3 bg-electric-lime text-off-black-ink hover:bg-electric-lime/90 rounded-full font-display font-semibold text-xs uppercase tracking-wider cursor-pointer transition-all active:scale-95 flex items-center gap-2 shadow-md hover:shadow-lg hover:shadow-electric-lime/10"
-                                    >
-                                        <FlipText>
-                                            {t("about.contact")}
-                                        </FlipText>
-                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                    </button>
-                                </div>
+                    {/* Horizontal list of highlights */}
+                    <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+                        {/* Highlight Item: Profile */}
+                        <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md border border-ash/15 dark:border-brand-glow/15 transition-all">
+                            <div className="p-3 rounded-xl bg-brand text-pure-white mb-4">
+                                <User className="w-5 h-5" />
+                            </div>
+                            <div>
+                                <h4 className="font-display font-semibold text-sm text-off-black-ink dark:text-off-white-canvas">
+                                    {t("about.developer")}
+                                </h4>
+                                <p className="font-sans text-xs text-graphite dark:text-ash mt-1">
+                                    {t("about.since")}
+                                </p>
                             </div>
                         </div>
 
-                        {/* Right Side: Editorial highlights */}
-                        <div className="lg:col-span-5 flex flex-col gap-6 lg:order-last">
-                            {/* Highlight Item: Profile */}
-                            <div className="flex gap-4 items-start p-5 rounded-2xl bg-off-white-canvas dark:bg-deep-charcoal/40 border border-ash/15 transition-all">
-                                <div className="p-3 rounded-xl bg-electric-lime text-off-black-ink">
-                                    <User className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <h4 className="font-display font-semibold text-sm text-off-black-ink dark:text-off-white-canvas">
-                                        {t("about.developer")}
-                                    </h4>
-                                    <p className="font-sans text-xs text-graphite dark:text-ash mt-1">
-                                        {t("about.since")}
-                                    </p>
-                                </div>
+                        {/* Highlight Item 2 (Specialty) */}
+                        <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md border border-ash/15 dark:border-brand-glow/15 transition-all">
+                            <div className="p-3 rounded-xl bg-brand text-pure-white mb-4">
+                                <Code2 className="w-5 h-5" />
                             </div>
-
-                            {/* Highlight Item 2 (Specialty) */}
-                            <div className="flex gap-4 items-start p-5 rounded-2xl bg-off-white-canvas dark:bg-deep-charcoal/40 border border-ash/15 transition-all">
-                                <div className="p-3 rounded-xl bg-electric-lime text-off-black-ink">
-                                    <Code2 className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <h4 className="font-display font-semibold text-sm text-off-black-ink dark:text-off-white-canvas">
-                                        {t("about.specialty")}
-                                    </h4>
-                                    <p className="font-sans text-xs text-graphite dark:text-ash mt-1">
-                                        WordPress, WooCommerce & Elementor
-                                    </p>
-                                </div>
+                            <div>
+                                <h4 className="font-display font-semibold text-sm text-off-black-ink dark:text-off-white-canvas">
+                                    {t("about.specialty")}
+                                </h4>
+                                <p className="font-sans text-xs text-graphite dark:text-ash mt-1">
+                                    WordPress, WooCommerce & Elementor
+                                </p>
                             </div>
+                        </div>
 
-                            {/* Highlight Item 3 (Location) */}
-                            <div className="flex gap-4 items-start p-5 rounded-2xl bg-off-white-canvas dark:bg-deep-charcoal/40 border border-ash/15 transition-all">
-                                <div className="p-3 rounded-xl bg-electric-lime text-off-black-ink">
-                                    <MapPin className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <h4 className="font-display font-semibold text-sm text-off-black-ink dark:text-off-white-canvas">
-                                        {t("about.location")}
-                                    </h4>
-                                    <p className="font-sans text-xs text-graphite dark:text-ash mt-1">
-                                        Córdoba, Argentina
-                                    </p>
-                                </div>
+                        {/* Highlight Item 3 (Location) */}
+                        <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md border border-ash/15 dark:border-brand-glow/15 transition-all">
+                            <div className="p-3 rounded-xl bg-brand text-pure-white mb-4">
+                                <MapPin className="w-5 h-5" />
+                            </div>
+                            <div>
+                                <h4 className="font-display font-semibold text-sm text-off-black-ink dark:text-off-white-canvas">
+                                    {t("about.location")}
+                                </h4>
+                                <p className="font-sans text-xs text-graphite dark:text-ash mt-1">
+                                    Córdoba, Argentina
+                                </p>
                             </div>
                         </div>
                     </div>

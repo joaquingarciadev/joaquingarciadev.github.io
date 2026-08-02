@@ -125,9 +125,12 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
   return (
     <section
       id="contacto"
-      className="py-24 bg-off-white-canvas dark:bg-deep-charcoal transition-colors duration-300 relative overflow-hidden"
+      className="py-24 bg-pure-white dark:bg-off-black-ink transition-colors duration-300 relative overflow-hidden"
     >
-      <div className="w-full max-w-5xl mx-auto px-6">
+      {/* Purple aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand/10 dark:bg-brand-glow/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="w-full max-w-5xl mx-auto px-6 relative">
         {/* Section Heading */}
         <div className="flex flex-col items-center text-center mb-16">
           <span className="text-xs font-display font-medium text-graphite dark:text-ash uppercase tracking-[0.15em] mb-3">
@@ -138,7 +141,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
             text={t("contact.title")}
             className="font-display text-4xl md:text-5xl font-bold tracking-tight text-off-black-ink dark:text-off-white-canvas"
           />
-          <div className="h-1 w-16 bg-electric-lime mt-4 rounded-full" />
+          <div className="h-1 w-16 bg-gradient-to-r from-brand to-brand-light mt-4 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -157,9 +160,9 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                 {/* Email Item */}
                 <a
                   href="mailto:djoako22@gmail.com"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-pure-white dark:bg-off-black-ink border border-ash/35 dark:border-graphite/20 hover:border-electric-lime transition-all duration-300 group cursor-pointer"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md border border-ash/35 dark:border-brand-glow/20 hover:border-brand dark:hover:border-brand-glow transition-all duration-300 group cursor-pointer"
                 >
-                  <div className="p-3 bg-electric-lime text-off-black-ink rounded-xl group-hover:scale-105 transition-transform">
+                  <div className="p-3 bg-brand text-pure-white rounded-xl group-hover:scale-105 transition-transform">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
@@ -177,9 +180,9 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                   href="https://wa.me/5493515995198"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-pure-white dark:bg-off-black-ink border border-ash/35 dark:border-graphite/20 hover:border-electric-lime transition-all duration-300 group cursor-pointer"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md border border-ash/35 dark:border-brand-glow/20 hover:border-brand dark:hover:border-brand-glow transition-all duration-300 group cursor-pointer"
                 >
-                  <div className="p-3 bg-electric-lime text-off-black-ink rounded-xl group-hover:scale-105 transition-transform">
+                  <div className="p-3 bg-brand text-pure-white rounded-xl group-hover:scale-105 transition-transform">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -196,7 +199,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
 
             {/* Inquiries sent history dashboard */}
             {inquiries.length > 0 && (
-              <div className="mt-12 p-5 bg-pure-white dark:bg-off-black-ink rounded-2xl border border-ash/30 dark:border-graphite/20">
+              <div className="mt-12 p-5 bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md rounded-2xl border border-ash/30 dark:border-brand-glow/20">
                 <div className="flex justify-between items-center mb-4">
                   <h4 className="font-display font-bold text-xs uppercase tracking-wider text-off-black-ink dark:text-off-white-canvas flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse inline-block" />
@@ -213,11 +216,11 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                   {inquiries.map((inq) => (
                     <div
                       key={inq.id}
-                      className="p-3 bg-off-white-canvas dark:bg-deep-charcoal rounded-xl border border-ash/20 text-xs flex flex-col gap-1"
+                      className="p-3 bg-pure-white dark:bg-off-black-ink rounded-xl border border-ash/20 text-xs flex flex-col gap-1"
                     >
                       <div className="flex justify-between font-semibold text-off-black-ink dark:text-off-white-canvas">
                         <span>{inq.name}</span>
-                        <span className="text-[9px] bg-electric-lime text-off-black-ink px-2 py-0.5 rounded-full font-mono">
+                        <span className="text-[9px] bg-brand text-pure-white px-2 py-0.5 rounded-full font-mono">
                           {t(`projects.filters.${inq.webType}`, { defaultValue: inq.webType })}
                         </span>
                       </div>
@@ -232,7 +235,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
 
           {/* Right Column: Interactive Form */}
           <div className="lg:col-span-7">
-            <div className="bg-pure-white dark:bg-off-black-ink rounded-[28px] p-6 md:p-10 border border-ash/30 dark:border-graphite/20 shadow-sm relative">
+            <div className="bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md rounded-[28px] p-6 md:p-10 border border-ash/30 dark:border-brand-glow/20 shadow-sm dark:shadow-brand/10 relative">
               {/* Success Banner */}
               {isSuccess && (
                 <div className="absolute inset-0 bg-pure-white/95 dark:bg-off-black-ink/95 backdrop-blur-md rounded-[28px] flex flex-col items-center justify-center p-8 text-center z-30 animate-in fade-in duration-300">
@@ -245,7 +248,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                   </p>
                   <button
                     onClick={() => setIsSuccess(false)}
-                    className="px-6 py-2.5 bg-electric-lime text-off-black-ink rounded-full font-display font-medium text-xs uppercase tracking-wider cursor-pointer transition-all active:scale-95 hover:opacity-90"
+                    className="px-6 py-2.5 bg-brand text-pure-white hover:bg-brand-light rounded-full font-display font-medium text-xs uppercase tracking-wider cursor-pointer transition-all active:scale-95"
                   >
                     <FlipText>{t("contact.send_another")}</FlipText>
                   </button>
@@ -266,7 +269,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                     onChange={handleChange}
                     placeholder={t("contact.placeholder_name")}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-off-white-canvas dark:bg-deep-charcoal border border-ash/40 dark:border-graphite/20 focus:border-electric-lime dark:focus:border-electric-lime outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 dark:backdrop-blur-md border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all"
                   />
                 </div>
 
@@ -283,7 +286,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                     onChange={handleChange}
                     placeholder={t("contact.placeholder_email")}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-off-white-canvas dark:bg-deep-charcoal border border-ash/40 dark:border-graphite/20 focus:border-electric-lime dark:focus:border-electric-lime outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 dark:backdrop-blur-md border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all"
                   />
                 </div>
 
@@ -296,7 +299,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                     name="webType"
                     value={formData.webType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-off-white-canvas dark:bg-deep-charcoal border border-ash/40 dark:border-graphite/20 focus:border-electric-lime dark:focus:border-electric-lime outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all cursor-pointer appearance-none"
+                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 dark:backdrop-blur-md border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all cursor-pointer appearance-none"
                     style={{
                       backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
                       backgroundRepeat: "no-repeat",
@@ -320,7 +323,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                       <button
                         type="button"
                         onClick={() => onViewExamples(formData.webType)}
-                        className="font-sans text-xs font-semibold text-off-black-ink dark:text-electric-lime hover:underline flex items-center gap-1.5 cursor-pointer py-1"
+                        className="font-sans text-xs font-semibold text-brand dark:text-brand-glow hover:underline flex items-center gap-1.5 cursor-pointer py-1"
                       >
                         <Search className="w-3.5 h-3.5" />
                         <FlipText>
@@ -345,7 +348,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                     rows={4}
                     placeholder={t("contact.placeholder_message")}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-off-white-canvas dark:bg-deep-charcoal border border-ash/40 dark:border-graphite/20 focus:border-electric-lime dark:focus:border-electric-lime outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 dark:backdrop-blur-md border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all resize-none"
                   />
                 </div>
 
@@ -363,7 +366,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                 <button
                   type="submit"
                   disabled={isSending}
-                  className="w-full mt-3 py-4 bg-electric-lime text-off-black-ink rounded-full font-display font-bold text-sm uppercase tracking-wider hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group cursor-pointer shadow-md hover:shadow-lg hover:shadow-electric-lime/10 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full mt-3 py-4 bg-brand text-pure-white hover:bg-brand-light rounded-full font-display font-bold text-sm uppercase tracking-wider active:scale-[0.98] transition-all flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isSending ? (
                     <Loader2 className="w-4 h-4 animate-spin" />

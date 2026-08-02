@@ -83,7 +83,7 @@ export default function Skills() {
                         text={t("skills.title")}
                         className="font-display text-4xl md:text-5xl font-bold tracking-tight text-off-black-ink dark:text-off-white-canvas"
                     />
-                    <div className="h-1 w-16 bg-electric-lime mt-4 rounded-full" />
+                    <div className="h-1 w-16 bg-gradient-to-r from-brand to-brand-light mt-4 rounded-full" />
                 </div>
 
                 {/* Physical Monitor Container with Fade Zoom Up Animation */}
@@ -103,7 +103,7 @@ export default function Skills() {
                                 className="min-h-[580px] max-h-[580px] sm:min-h-[500px] sm:max-h-[500px] aspect-[9/14] sm:aspect-[16/10] w-full relative select-none overflow-hidden bg-cover bg-center transition-all duration-500"
                                 style={{
                                     backgroundImage:
-                                        'radial-gradient(circle at 50% 50%, rgba(190, 255, 80, 0.05) 0%, rgba(20, 20, 15, 0.95) 100%), url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80")',
+                                        'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.06) 0%, rgba(20, 20, 15, 0.95) 100%), url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80")',
                                     backgroundColor: "#050505",
                                 }}
                             >
@@ -125,7 +125,7 @@ export default function Skills() {
                                                         }
                                                         className={`flex flex-col items-center p-2 rounded-xl border border-transparent transition-all outline-none text-center cursor-pointer w-[72px] sm:w-[84px] ${
                                                             isSelected
-                                                                ? "bg-white/15 dark:bg-white/15 border-white/20 scale-[1.03]"
+                                                                ? "bg-brand/25 border-brand/50 scale-[1.03]"
                                                                 : "hover:bg-white/5 dark:hover:bg-white/5 hover:border-white/10"
                                                         }`}
                                                     >
@@ -197,7 +197,7 @@ export default function Skills() {
                                                         }
                                                         className={`absolute flex flex-col rounded-xl overflow-hidden shadow-2xl border transition-all ${
                                                             isFocused
-                                                                ? "border-electric-lime/80 bg-stone-900/98 dark:bg-stone-950/98 shadow-electric-lime/5 z-30"
+                                                                ? "border-brand-glow/70 bg-stone-900/98 dark:bg-stone-950/98 shadow-brand/10 z-30"
                                                                 : "border-white/10 bg-stone-900/85 dark:bg-stone-950/90 z-20"
                                                         }`}
                                                         style={{
@@ -311,7 +311,7 @@ export default function Skills() {
                                                                             "skills.proficiency",
                                                                         )}
                                                                     </span>
-                                                                    <span className="text-electric-lime font-bold">
+                                                                    <span className="text-white font-bold">
                                                                         {Math.min(
                                                                             100,
                                                                             Math.max(
@@ -331,7 +331,7 @@ export default function Skills() {
                                                                 </div>
                                                                 <div className="h-1.5 bg-stone-800 rounded-full overflow-hidden">
                                                                     <div
-                                                                        className="h-full bg-electric-lime rounded-full"
+                                                                        className="h-full bg-gradient-to-r from-brand to-brand-glow rounded-full"
                                                                         style={{
                                                                             width: `${Math.min(100, Math.max(70, 100 - (CURRENT_YEAR - parseInt(win.skill.year)) * 2.5))}%`,
                                                                         }}
@@ -370,7 +370,7 @@ export default function Skills() {
                                                                                     }}
                                                                                     className="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-850 border border-white/5 px-2.5 py-1 rounded-lg text-xs text-stone-300 hover:text-white transition-colors cursor-pointer text-left"
                                                                                 >
-                                                                                    <span className="w-1.5 h-1.5 rounded-full bg-electric-lime" />
+                                                                                    <span className="w-1.5 h-1.5 rounded-full bg-brand-glow" />
                                                                                     <span className="font-medium">
                                                                                         {
                                                                                             proj.name
@@ -439,7 +439,7 @@ export default function Skills() {
                                                                 referrerPolicy="no-referrer"
                                                             />
                                                             <div
-                                                                className={`absolute bottom-0.5 h-0.5 bg-electric-lime rounded-full transition-all ${isFocused ? "w-3" : "w-1"}`}
+                                                                className={`absolute bottom-0.5 h-0.5 bg-brand-glow rounded-full transition-all ${isFocused ? "w-3" : "w-1"}`}
                                                             />
                                                         </button>
                                                     );
@@ -459,7 +459,7 @@ export default function Skills() {
 
                         {/* Bottom Bezel Controls */}
                         <div className="flex items-center justify-center mt-4 px-3 text-[9px] text-stone-500 font-mono select-none">
-                            <span className="w-1.5 h-1.5 rounded-full bg-electric-lime shadow-[0_0_6px_#beff50]"></span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand-glow shadow-[0_0_6px_rgba(167,139,250,0.9)]"></span>
                         </div>
                     </div>
 

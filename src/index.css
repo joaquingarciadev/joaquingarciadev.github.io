@@ -4,21 +4,23 @@
 
 @theme {
     --font-sans:
-        "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+        "Inter Tight", ui-sans-serif, system-ui, -apple-system,
         BlinkMacSystemFont, sans-serif;
-    --font-display: "Space Grotesk", sans-serif;
+    --font-display: "Inter Tight", sans-serif;
     --font-mono: "JetBrains Mono", monospace;
 
-    /* Colors */
-    --color-electric-lime: #beff50;
-    --color-off-black-ink: #14140f;
-    --color-off-white-canvas: #f5f5eb;
+    /* Colors (Quantix Design System) */
+    --color-off-black-ink: #06020e;
+    --color-off-white-canvas: #f8f8f9;
     --color-pure-white: #ffffff;
-    --color-ash: #d2d2c8;
+    --color-ash: #9ca3af;
     --color-graphite: #6e6e64;
-    --color-deep-charcoal: #30302a;
-    --color-stone: #919183;
+    --color-deep-charcoal: #1a1429;
+    --color-stone: #8a8694;
     --color-smoke: #b9b9b7;
+    --color-brand: #7c3aed;
+    --color-brand-light: #8b5cf6;
+    --color-brand-glow: #a78bfa;
 }
 
 @layer base {
@@ -103,7 +105,7 @@
     /* Spotlight Cards Effect */
     .spotlight-card {
         position: relative;
-        background: #e6e6dc; /* Light mode default border color */
+        background: #e9e9ee; /* Light mode default border color */
         border-radius: 28px;
         padding: 1px;
         overflow: hidden;
@@ -111,7 +113,7 @@
     }
 
     .dark .spotlight-card {
-        background: #3a3a34; /* Dark mode default border color */
+        background: #2a2140; /* Dark mode default border color (violet tint) */
     }
 
     /* Border Glow (Outer spotlight) */
@@ -122,7 +124,7 @@
         height: 320px;
         left: -160px;
         top: -160px;
-        background: #beff50; /* Electric lime glow */
+        background: #7c3aed; /* Purple glow */
         border-radius: 50%;
         opacity: 0;
         pointer-events: none;
@@ -130,6 +132,10 @@
         transform: translate(var(--mouse-x), var(--mouse-y));
         z-index: 1;
         filter: blur(60px);
+    }
+
+    .dark .spotlight-card::before {
+        background: #a78bfa; /* Purple glow */
     }
 
     /* Show border glow when hovering over the group */
@@ -149,7 +155,7 @@
         height: 380px;
         left: -190px;
         top: -190px;
-        background: #beff50; /* Electric lime */
+        background: #7c3aed; /* Purple */
         border-radius: 50%;
         opacity: 0;
         pointer-events: none;
@@ -157,6 +163,10 @@
         transform: translate(var(--mouse-x), var(--mouse-y));
         z-index: 3;
         filter: blur(85px);
+    }
+
+    .dark .spotlight-card::after {
+        background: #a78bfa; /* Purple */
     }
 
     /* Highlight current card more strongly */
@@ -175,7 +185,7 @@
     .spotlight-card-inner {
         position: relative;
         height: 100%;
-        background: #f5f5eb; /* Light mode bg (off-white-canvas) */
+        background: #ffffff; /* Light mode bg (pure-white) */
         border-radius: 27px; /* Matches outer card border-radius minus padding */
         z-index: 2;
         overflow: hidden;
@@ -183,7 +193,7 @@
     }
 
     .dark .spotlight-card-inner {
-        background: #30302a; /* Dark mode bg (deep-charcoal) */
+        background: #1a1429; /* Dark mode bg (deep-charcoal) */
     }
 
     /* Custom Cursor Hover States */
@@ -191,12 +201,21 @@
         width: 24px !important;
         height: 24px !important;
         background-color: rgba(
-            190,
-            255,
-            80,
+            124,
+            58,
+            237,
             0.75
-        ) !important; /* Electric lime glow on hover */
+        ) !important; /* Purple glow on hover */
         mix-blend-mode: difference;
+    }
+
+    .dark .cursor-dot.cursor-dot-large {
+        background-color: rgba(
+            167,
+            139,
+            250,
+            0.75
+        ) !important; /* Purple glow on hover */
     }
 }
 
@@ -207,7 +226,7 @@
 }
 
 .projects-swiper .swiper-pagination-progressbar {
-    background: rgba(20, 20, 15, 0.1) !important;
+    background: rgba(6, 2, 14, 0.1) !important;
     height: 4px !important;
     border-radius: 9999px !important;
     bottom: 16px !important;
@@ -217,15 +236,15 @@
 }
 
 .dark .projects-swiper .swiper-pagination-progressbar {
-    background: rgba(245, 245, 235, 0.15) !important;
+    background: rgba(255, 255, 255, 0.12) !important;
 }
 
 .projects-swiper .swiper-pagination-progressbar-fill {
-    background: var(--color-off-black-ink) !important;
+    background: var(--color-brand) !important;
     border-radius: 9999px !important;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .dark .projects-swiper .swiper-pagination-progressbar-fill {
-    background: var(--color-electric-lime) !important;
+    background: var(--color-brand-glow) !important;
 }

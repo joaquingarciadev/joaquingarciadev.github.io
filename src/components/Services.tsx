@@ -23,17 +23,17 @@ export default function Services() {
 
   const servicesList = [
     {
-      icon: <Layout className="w-6 h-6 text-off-black-ink dark:text-electric-lime" />,
+      icon: <Layout className="w-6 h-6 text-brand dark:text-brand-glow" />,
       titleKey: "services.s1_title",
       descKey: "services.s1_desc",
     },
     {
-      icon: <Zap className="w-6 h-6 text-off-black-ink dark:text-electric-lime" />,
+      icon: <Zap className="w-6 h-6 text-brand dark:text-brand-glow" />,
       titleKey: "services.s2_title",
       descKey: "services.s2_desc",
     },
     {
-      icon: <LifeBuoy className="w-6 h-6 text-off-black-ink dark:text-electric-lime" />,
+      icon: <LifeBuoy className="w-6 h-6 text-brand dark:text-brand-glow" />,
       titleKey: "services.s3_title",
       descKey: "services.s3_desc",
     },
@@ -44,7 +44,10 @@ export default function Services() {
       id="servicios"
       className="py-24 bg-pure-white dark:bg-off-black-ink transition-colors duration-300 relative overflow-hidden"
     >
-      <div className="w-full max-w-6xl mx-auto px-6">
+      {/* Purple aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand/10 dark:bg-brand-glow/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="w-full max-w-6xl mx-auto px-6 relative">
         {/* Section Heading */}
         <div className="flex flex-col items-center text-center mb-16">
           <span className="text-xs font-display font-medium text-graphite dark:text-ash uppercase tracking-[0.15em] mb-3">
@@ -55,7 +58,7 @@ export default function Services() {
             text={t("services.title")}
             className="font-display text-4xl md:text-5xl font-bold tracking-tight text-off-black-ink dark:text-off-white-canvas"
           />
-          <div className="h-1 w-16 bg-electric-lime mt-4 rounded-full" />
+          <div className="h-1 w-16 bg-gradient-to-r from-brand to-brand-light mt-4 rounded-full" />
         </div>
 
         {/* Services Grid with Motion Stagger Cards */}

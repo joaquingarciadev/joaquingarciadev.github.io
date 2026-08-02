@@ -58,7 +58,7 @@ export default function RevealText({ text, className = "", as = "h2" }: RevealTe
         const cleanWord = word.replace(/[¡!.,¿?]/g, "");
         const isGradientWord = cleanWord === "Joaquín" || cleanWord === "García";
         const wordClass = isGradientWord
-          ? "text-transparent bg-clip-text bg-gradient-to-r from-off-black-ink via-graphite to-stone dark:from-pure-white dark:via-ash dark:to-stone"
+          ? "text-transparent bg-clip-text bg-gradient-to-r from-brand-light via-brand-glow to-brand dark:from-pure-white dark:via-brand-glow dark:to-brand"
           : "";
 
         return (

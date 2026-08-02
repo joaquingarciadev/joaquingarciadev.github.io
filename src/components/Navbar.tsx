@@ -71,7 +71,10 @@ export default function Navbar({
             width: 50px;
             max-width: 460px;
             height: 50px;
-            background: #beff50;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(124, 58, 237, 0.15);
+            box-shadow: 0 20px 60px -20px rgba(124, 58, 237, 0.25);
             border-radius: 30px;
             overflow: hidden;
             z-index: 999;
@@ -90,6 +93,11 @@ export default function Navbar({
             max-width: 460px;
             height: 500px;
             border-radius: 20px;
+          }
+
+          .dark .menu-panel {
+            background: rgba(26, 20, 41, 0.9);
+            border-color: rgba(167, 139, 250, 0.15);
           }
 
           .menu-toggle {
@@ -113,8 +121,12 @@ export default function Navbar({
             width: 25px;
             height: 2px;
             border-radius: 2px;
-            background: #14140f;
+            background: #000000;
             transition: .3s ease;
+          }
+
+          .dark .bar {
+            background: #ffffff;
           }
 
           .bar:nth-child(1) {
@@ -179,7 +191,7 @@ export default function Navbar({
           .nav-item button {
             display: inline-block;
             text-decoration: none;
-            color: #14140f;
+            color: #000000;
             font-size: 26px;
             font-weight: 500;
             font-family: inherit;
@@ -193,6 +205,10 @@ export default function Navbar({
             transition:
                 opacity .15s ease,
                 transform 0s .2s;
+          }
+
+          .dark .nav-item button {
+            color: #ffffff;
           }
 
           .nav-item button:hover {
@@ -248,7 +264,7 @@ export default function Navbar({
           width: 16px;
           height: 16px;
           opacity: 0;
-          background-color: #30302a;
+          background-color: #1a1429;
           border-radius: 50%;
           transition: transform 0.8s ease, opacity 0.1s ease 0.2s, background-color 0.5s;
         }
@@ -269,7 +285,7 @@ export default function Navbar({
         }
 
         .theme-toggle-container.is-dark.is-mobile .moon-element::before {
-          background-color: #beff50;
+          background-color: #1a1429;
         }
 
         .theme-toggle-container.is-desktop {
@@ -296,10 +312,10 @@ export default function Navbar({
             <header className="hidden md:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 w-max transition-all duration-300">
                 <div
                     id="navbar-pill"
-                    className={`flex items-center justify-center gap-5 px-6 py-2.5 rounded-full border transition-all duration-300 ${
+                    className={`flex items-center justify-center gap-5 px-6 py-2.5 rounded-full border backdrop-blur-md transition-all duration-300 ${
                         isScrolled
-                            ? "bg-deep-charcoal shadow-lg border-graphite/30"
-                            : "bg-deep-charcoal border-graphite/20"
+                            ? "bg-deep-charcoal/95 shadow-lg shadow-brand/20 border-brand-glow/25"
+                            : "bg-deep-charcoal/95 border-brand-glow/20"
                     }`}
                 >
                     {/* Desktop Navigation Menu */}
@@ -321,13 +337,13 @@ export default function Navbar({
                                             onClick={() =>
                                                 handleScrollTo("sobre-mi")
                                             }
-                                            className={`px-4 py-2 rounded-full font-sans text-sm font-medium tracking-wide flex items-center gap-1 transition-all cursor-pointer ${
+                                            className={`px-4 py-2 rounded-full font-sans text-base font-medium tracking-wide flex items-center gap-1 transition-all cursor-pointer ${
                                                 activeSection === "sobre-mi" ||
                                                 activeSection ===
                                                     "habilidades" ||
                                                 activeSection === "proyectos"
-                                                    ? "bg-electric-lime text-off-black-ink"
-                                                    : "text-ash hover:text-pure-white"
+                                                    ? "bg-brand text-pure-white"
+                                                    : "text-ash hover:text-brand-glow"
                                             }`}
                                         >
                                             <FlipText>{item.label}</FlipText>
@@ -349,7 +365,7 @@ export default function Navbar({
                                                             "habilidades",
                                                         )
                                                     }
-                                                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-medium text-ash hover:bg-off-black-ink hover:text-pure-white transition-all cursor-pointer"
+                                                    className="w-full text-left px-3 py-2 rounded-xl text-base font-medium text-ash hover:bg-brand/15 hover:text-brand-glow transition-all cursor-pointer"
                                                 >
                                                     <FlipText>
                                                         {t(
@@ -363,7 +379,7 @@ export default function Navbar({
                                                             "proyectos",
                                                         )
                                                     }
-                                                    className="w-full text-left px-3 py-2 rounded-xl text-xs font-medium text-ash hover:bg-off-black-ink hover:text-pure-white transition-all cursor-pointer"
+                                                    className="w-full text-left px-3 py-2 rounded-xl text-base font-medium text-ash hover:bg-brand/15 hover:text-brand-glow transition-all cursor-pointer"
                                                 >
                                                     <FlipText>
                                                         {t("navbar.proyectos")}
@@ -379,10 +395,10 @@ export default function Navbar({
                                 <button
                                     key={item.id}
                                     onClick={() => handleScrollTo(item.id)}
-                                    className={`px-4 py-2 rounded-full font-sans text-sm font-medium tracking-wide transition-all cursor-pointer ${
+                                    className={`px-4 py-2 rounded-full font-sans text-base font-medium tracking-wide transition-all cursor-pointer ${
                                         activeSection === item.id
-                                            ? "bg-electric-lime text-off-black-ink"
-                                            : "text-ash hover:text-pure-white"
+                                            ? "bg-brand text-pure-white"
+                                            : "text-ash hover:text-brand-glow"
                                     }`}
                                 >
                                     <FlipText>{item.label}</FlipText>
@@ -430,7 +446,7 @@ export default function Navbar({
                         {/* Theme Toggle Button */}
                         <button
                             onClick={() => setDarkMode(!darkMode)}
-                            className="p-1.5 rounded-full border border-graphite/30 text-electric-lime cursor-pointer flex items-center justify-center"
+                            className="p-1.5 rounded-full border border-graphite/30 text-pure-white cursor-pointer flex items-center justify-center"
                             aria-label="Toggle dark mode"
                         >
                             <div
@@ -546,8 +562,8 @@ export default function Navbar({
                         </ul>
 
                         {/* Custom Language Flags & Darkmode Switch inside mobile pill panel */}
-                        <div className="flex items-center justify-between mt-6 pt-6 border-t border-[#14140f]/15">
-                            <div className="flex items-center gap-1.5 bg-[#14140f]/10 p-1 rounded-lg border border-[#14140f]/10">
+                        <div className="flex items-center justify-between mt-6 pt-6 border-t border-off-black-ink/15 dark:border-pure-white/15">
+                            <div className="flex items-center gap-1.5 bg-off-black-ink/10 dark:bg-pure-white/10 p-1 rounded-lg border border-off-black-ink/10 dark:border-pure-white/10">
                                 <button
                                     onClick={() => switchLanguage("es")}
                                     className={`relative rounded-sm overflow-hidden cursor-pointer transition-all duration-300 ${
@@ -582,7 +598,7 @@ export default function Navbar({
 
                             <button
                                 onClick={() => setDarkMode(!darkMode)}
-                                className="p-2.5 rounded-full border border-[#14140f]/20 text-[#14140f] cursor-pointer flex items-center justify-center"
+                                className="p-2.5 rounded-full border border-off-black-ink/20 dark:border-pure-white/20 text-off-black-ink dark:text-pure-white cursor-pointer flex items-center justify-center"
                                 aria-label="Toggle dark mode"
                             >
                                 <div
