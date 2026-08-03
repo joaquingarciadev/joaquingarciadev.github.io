@@ -245,6 +245,7 @@
             border-radius: 30px;
             overflow: hidden;
             z-index: 999;
+            backdrop-filter: blur(16px);
             transition:
                 width 0.5s cubic-bezier(0.76, 0, 0.24, 1),
                 height 0.45s cubic-bezier(0.76, 0, 0.24, 1),
@@ -260,9 +261,6 @@
             max-width: 460px;
             height: 500px;
             border-radius: 20px;
-            backdrop-filter: blur(
-                16px
-            ); /* blur solo cuando el panel está abierto */
         }
 
         .dark .menu-panel {
