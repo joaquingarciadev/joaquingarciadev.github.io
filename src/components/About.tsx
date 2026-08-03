@@ -50,7 +50,7 @@ export default function About() {
                     {/* Horizontal list of highlights */}
                     <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
                         {/* Highlight Item: Profile */}
-                        <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md border border-ash/15 dark:border-brand-glow/15 transition-all">
+                        <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 border border-ash/15 dark:border-brand-glow/15 transition-all">
                             <div className="p-3 rounded-xl bg-brand text-pure-white mb-4">
                                 <User className="w-5 h-5" />
                             </div>
@@ -65,7 +65,7 @@ export default function About() {
                         </div>
 
                         {/* Highlight Item 2 (Specialty) */}
-                        <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md border border-ash/15 dark:border-brand-glow/15 transition-all">
+                        <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 border border-ash/15 dark:border-brand-glow/15 transition-all">
                             <div className="p-3 rounded-xl bg-brand text-pure-white mb-4">
                                 <Code2 className="w-5 h-5" />
                             </div>
@@ -80,7 +80,7 @@ export default function About() {
                         </div>
 
                         {/* Highlight Item 3 (Location) */}
-                        <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md border border-ash/15 dark:border-brand-glow/15 transition-all">
+                        <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 border border-ash/15 dark:border-brand-glow/15 transition-all">
                             <div className="p-3 rounded-xl bg-brand text-pure-white mb-4">
                                 <MapPin className="w-5 h-5" />
                             </div>

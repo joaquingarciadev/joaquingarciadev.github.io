@@ -200,7 +200,7 @@ export default function Projects({
                                     <div
                                         id={`project-card-${project.name.toLowerCase().replace(/\s+/g, "-")}`}
                                         data-project-type={project.type}
-                                        className="group relative bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md rounded-[28px] overflow-hidden border border-ash/30 dark:border-brand-glow/20 hover:border-brand dark:hover:border-brand-glow transition-all duration-300 flex flex-col h-full w-full"
+                                        className="group relative bg-pure-white dark:bg-deep-charcoal/70 rounded-[28px] overflow-hidden border border-ash/30 dark:border-brand-glow/20 hover:border-brand dark:hover:border-brand-glow transition-all duration-300 flex flex-col h-full w-full"
                                     >
                                         {/* Project Image Container */}
                                         <div className="relative aspect-[16/10] overflow-hidden bg-pure-white dark:bg-deep-charcoal border-b border-ash/20 dark:border-graphite/20">
@@ -278,7 +278,7 @@ export default function Projects({
                         })}
                     </Swiper>
                 ) : (
-                    <div className="flex flex-col items-center justify-center py-16 bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md rounded-[28px] border border-ash/30 dark:border-brand-glow/20">
+                    <div className="flex flex-col items-center justify-center py-16 bg-pure-white dark:bg-deep-charcoal/70 rounded-[28px] border border-ash/30 dark:border-brand-glow/20">
                         <AlertCircle className="w-10 h-10 text-brand dark:text-brand-glow mb-3" />
                         <p className="font-sans text-sm text-graphite dark:text-ash">
                             {t("projects.no_projects")}

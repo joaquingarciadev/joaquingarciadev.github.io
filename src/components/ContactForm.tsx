@@ -160,7 +160,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                 {/* Email Item */}
                 <a
                   href="mailto:djoako22@gmail.com"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md border border-ash/35 dark:border-brand-glow/20 hover:border-brand dark:hover:border-brand-glow transition-all duration-300 group cursor-pointer"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 border border-ash/35 dark:border-brand-glow/20 hover:border-brand dark:hover:border-brand-glow transition-all duration-300 group cursor-pointer"
                 >
                   <div className="p-3 bg-brand text-pure-white rounded-xl group-hover:scale-105 transition-transform">
                     <Mail className="w-5 h-5" />
@@ -180,7 +180,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                   href="https://wa.me/5493515995198"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md border border-ash/35 dark:border-brand-glow/20 hover:border-brand dark:hover:border-brand-glow transition-all duration-300 group cursor-pointer"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-pure-white dark:bg-deep-charcoal/70 border border-ash/35 dark:border-brand-glow/20 hover:border-brand dark:hover:border-brand-glow transition-all duration-300 group cursor-pointer"
                 >
                   <div className="p-3 bg-brand text-pure-white rounded-xl group-hover:scale-105 transition-transform">
                     <Phone className="w-5 h-5" />
@@ -199,7 +199,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
 
             {/* Inquiries sent history dashboard */}
             {inquiries.length > 0 && (
-              <div className="mt-12 p-5 bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md rounded-2xl border border-ash/30 dark:border-brand-glow/20">
+              <div className="mt-12 p-5 bg-pure-white dark:bg-deep-charcoal/70 rounded-2xl border border-ash/30 dark:border-brand-glow/20">
                 <div className="flex justify-between items-center mb-4">
                   <h4 className="font-display font-bold text-xs uppercase tracking-wider text-off-black-ink dark:text-off-white-canvas flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse inline-block" />
@@ -235,7 +235,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
 
           {/* Right Column: Interactive Form */}
           <div className="lg:col-span-7">
-            <div className="bg-pure-white dark:bg-deep-charcoal/70 dark:backdrop-blur-md rounded-[28px] p-6 md:p-10 border border-ash/30 dark:border-brand-glow/20 shadow-sm dark:shadow-brand/10 relative">
+            <div className="bg-pure-white dark:bg-deep-charcoal/70 rounded-[28px] p-6 md:p-10 border border-ash/30 dark:border-brand-glow/20 shadow-sm dark:shadow-brand/10 relative">
               {/* Success Banner */}
               {isSuccess && (
                 <div className="absolute inset-0 bg-pure-white/95 dark:bg-off-black-ink/95 backdrop-blur-md rounded-[28px] flex flex-col items-center justify-center p-8 text-center z-30 animate-in fade-in duration-300">
@@ -269,7 +269,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                     onChange={handleChange}
                     placeholder={t("contact.placeholder_name")}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 dark:backdrop-blur-md border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all"
                   />
                 </div>
 
@@ -286,7 +286,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                     onChange={handleChange}
                     placeholder={t("contact.placeholder_email")}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 dark:backdrop-blur-md border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all"
                   />
                 </div>
 
@@ -299,7 +299,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                     name="webType"
                     value={formData.webType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 dark:backdrop-blur-md border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all cursor-pointer appearance-none"
+                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all cursor-pointer appearance-none"
                     style={{
                       backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
                       backgroundRepeat: "no-repeat",
@@ -348,7 +348,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                     rows={4}
                     placeholder={t("contact.placeholder_message")}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 dark:backdrop-blur-md border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all resize-none"
                   />
                 </div>
 
