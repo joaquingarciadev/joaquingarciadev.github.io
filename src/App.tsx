@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useLenis } from "lenis/react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
@@ -24,8 +23,6 @@ export default function App() {
 
     const [activeSection, setActiveSection] = useState<string>("inicio");
     const [activeFilter, setActiveFilter] = useState<string>("Todos");
-
-    const lenis = useLenis();
 
     useEffect(() => {
         const root = window.document.documentElement;
@@ -76,7 +73,7 @@ export default function App() {
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
-            lenis?.scrollTo(element, { offset: -90 });
+            element.scrollIntoView();
         }
     };
 

@@ -24,6 +24,18 @@
 }
 
 @layer base {
+    /* Native smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
     /* For smooth transitions between dark and light themes */
     body {
         transition:
@@ -216,6 +228,287 @@
             250,
             0.75
         ) !important; /* Purple glow on hover */
+    }
+
+    /* Navbar — Mobile Menu Panel & Theme Toggle */
+    @media (max-width: 767px) {
+        .menu-panel {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            width: 50px;
+            max-width: 460px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(124, 58, 237, 0.15);
+            box-shadow: 0 20px 60px -20px rgba(124, 58, 237, 0.25);
+            border-radius: 30px;
+            overflow: hidden;
+            z-index: 999;
+            transition:
+                width 0.5s cubic-bezier(0.76, 0, 0.24, 1),
+                height 0.45s cubic-bezier(0.76, 0, 0.24, 1),
+                top 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                right 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                border-radius 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .menu-panel.open {
+            top: 10px;
+            right: 10px;
+            width: calc(100% - 20px);
+            max-width: 460px;
+            height: 500px;
+            border-radius: 20px;
+            backdrop-filter: blur(
+                16px
+            ); /* blur solo cuando el panel está abierto */
+        }
+
+        .dark .menu-panel {
+            background: rgba(26, 20, 41, 0.9);
+            border-color: rgba(167, 139, 250, 0.15);
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            width: 50px;
+            height: 50px;
+            border: none;
+            background: transparent;
+            border-radius: 30px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .bar {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 25px;
+            height: 2px;
+            border-radius: 2px;
+            background: #000000;
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+        }
+
+        .dark .bar {
+            background: #ffffff;
+        }
+
+        .bar:nth-child(1) {
+            transform: translate(-50%, calc(-50% - 6px));
+        }
+
+        .bar:nth-child(2) {
+            transform: translate(-50%, -50%);
+        }
+
+        .bar:nth-child(3) {
+            transform: translate(-50%, calc(-50% + 6px));
+        }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .menu-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 460px;
+            height: 500px;
+            padding: 70px 25px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+
+        .menu-panel.open .menu-content {
+            opacity: 1;
+            pointer-events: auto;
+            transition-delay: 0.15s;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-item {
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .nav-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .nav-item button {
+            display: inline-block;
+            text-decoration: none;
+            color: #000000;
+            font-size: 26px;
+            font-weight: 500;
+            font-family: inherit;
+            text-align: left;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(100%);
+            will-change: transform, opacity;
+            transition:
+                opacity 0.15s ease,
+                transform 0s 0.2s;
+        }
+
+        .dark .nav-item button {
+            color: #ffffff;
+        }
+
+        .nav-item button:hover {
+            opacity: 0.6;
+        }
+
+        .menu-panel.open .nav-item button {
+            opacity: 1;
+            transform: translateY(0);
+            transition:
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.1s;
+        }
+
+        .menu-panel.open .nav-item:nth-child(1) button {
+            transition-delay: 0.15s;
+        }
+        .menu-panel.open .nav-item:nth-child(2) button {
+            transition-delay: 0.2s;
+        }
+        .menu-panel.open .nav-item:nth-child(3) button {
+            transition-delay: 0.25s;
+        }
+        .menu-panel.open .nav-item:nth-child(4) button {
+            transition-delay: 0.3s;
+        }
+        .menu-panel.open .nav-item:nth-child(5) button {
+            transition-delay: 0.35s;
+        }
+        .menu-panel.open .nav-item:nth-child(6) button {
+            transition-delay: 0.4s;
+        }
+    }
+
+    .theme-toggle-container {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .theme-toggle-container > * {
+        transition:
+            transform 0.8s cubic-bezier(0.2, 0.2, 0.2, 1.2),
+            opacity 0.8s cubic-bezier(0.2, 0.2, 0.2, 1.2),
+            background-color 0.5s;
+    }
+
+    .theme-toggle-container .moon-element {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(320deg) scale(0.55);
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+        pointer-events: none;
+        background-color: currentColor;
+        border-radius: 50%;
+    }
+
+    .theme-toggle-container .moon-element::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, -100%) scale(0);
+        width: 16px;
+        height: 16px;
+        opacity: 0;
+        background-color: #1a1429;
+        border-radius: 50%;
+        transition:
+            transform 0.8s ease,
+            opacity 0.1s ease 0.2s,
+            background-color 0.5s;
+    }
+
+    .theme-toggle-container .sun-element {
+        transform: rotate(0deg);
+    }
+
+    .theme-toggle-container.is-dark .moon-element {
+        transform: rotate(40deg) scale(0.85);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .theme-toggle-container.is-dark .moon-element::before {
+        transform: translate(-10%, -25%) scale(1);
+        opacity: 1;
+    }
+
+    .theme-toggle-container.is-dark.is-mobile .moon-element::before {
+        background-color: #1a1429;
+    }
+
+    .theme-toggle-container.is-desktop {
+        width: 16px;
+        height: 16px;
+    }
+
+    .theme-toggle-container.is-desktop .moon-element {
+        width: 16px;
+        height: 16px;
+    }
+
+    .theme-toggle-container.is-desktop .moon-element::before {
+        width: 13px;
+        height: 13px;
+    }
+
+    .theme-toggle-container.is-dark .sun-element {
+        transform: rotate(-360deg);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* Desactiva las animaciones del menú/theme toggle si el usuario lo prefiere */
+    @media (prefers-reduced-motion: reduce) {
+        .menu-panel,
+        .menu-toggle,
+        .menu-content,
+        .nav-item button,
+        .theme-toggle-container > * {
+            transition: none !important;
+        }
     }
 }
 

@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useLenis } from "lenis/react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, ExternalLink } from "lucide-react";
 import { skillsData, Skill, projectsData } from "../data";
@@ -14,7 +13,6 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 export default function Skills() {
     const { t, i18n } = useTranslation();
-    const lenis = useLenis();
     const [openWindows, setOpenWindows] = useState<{
         [skillName: string]: OpenWindow;
     }>({});
@@ -63,7 +61,7 @@ export default function Skills() {
     const scrollToSection = (id: string) => {
         const el = document.getElementById(id);
         if (el) {
-            lenis?.scrollTo(el, { offset: -90 });
+            el.scrollIntoView();
         }
     };
 

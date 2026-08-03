@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useLenis } from "lenis/react";
 import { ChevronDown } from "lucide-react";
 import FlipText from "./FlipText";
 
@@ -16,7 +15,6 @@ export default function Navbar({
     activeSection,
 }: NavbarProps) {
     const { t, i18n } = useTranslation();
-    const lenis = useLenis();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpenSobreMi, setIsOpenSobreMi] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,25 +23,20 @@ export default function Navbar({
 
     const switchLanguage = (lang: "es" | "en") => {
         i18n.changeLanguage(lang);
-        /*     if (lang === "es") {
-      window.location.href = "/";
-    } else {
-      window.location.href = "/en";
-    } */
     };
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const handleScrollTo = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
-            lenis?.scrollTo(element, { offset: -90 });
+            element.scrollIntoView();
             setIsMenuOpen(false);
             setIsOpenSobreMi(false);
         }
@@ -62,252 +55,6 @@ export default function Navbar({
 
     return (
         <>
-            <style>{`
-        @media (max-width: 767px) {
-          .menu-panel {
-            position: fixed;
-            top: 24px;
-            right: 24px;
-            width: 50px;
-            max-width: 460px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(124, 58, 237, 0.15);
-            box-shadow: 0 20px 60px -20px rgba(124, 58, 237, 0.25);
-            border-radius: 30px;
-            overflow: hidden;
-            z-index: 999;
-            transition:
-                width .5s cubic-bezier(.76,0,.24,1),
-                height .45s cubic-bezier(.76,0,.24,1),
-                top .45s cubic-bezier(.16,1,.3,1),
-                right .45s cubic-bezier(.16,1,.3,1),
-                border-radius .45s cubic-bezier(.16,1,.3,1);
-          }
-
-          .menu-panel.open {
-            top: 10px;
-            right: 10px;
-            width: calc(100% - 20px);
-            max-width: 460px;
-            height: 500px;
-            border-radius: 20px;
-          }
-
-          .dark .menu-panel {
-            background: rgba(26, 20, 41, 0.9);
-            border-color: rgba(167, 139, 250, 0.15);
-          }
-
-          .menu-toggle {
-            position: fixed;
-            top: 24px;
-            right: 24px;
-            width: 50px;
-            height: 50px;
-            border: none;
-            background: transparent;
-            border-radius: 30px;
-            cursor: pointer;
-            z-index: 1000;
-            transition: background-color 0.3s;
-          }
-
-          .bar {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 25px;
-            height: 2px;
-            border-radius: 2px;
-            background: #000000;
-            transition: .3s ease;
-          }
-
-          .dark .bar {
-            background: #ffffff;
-          }
-
-          .bar:nth-child(1) {
-            transform: translate(-50%, calc(-50% - 6px));
-          }
-
-          .bar:nth-child(2) {
-            transform: translate(-50%, -50%);
-          }
-
-          .bar:nth-child(3) {
-            transform: translate(-50%, calc(-50% + 6px));
-          }
-
-          .menu-toggle.active .bar:nth-child(1) {
-            transform: translate(-50%, -50%) rotate(45deg);
-          }
-
-          .menu-toggle.active .bar:nth-child(2) {
-            opacity: 0;
-          }
-
-          .menu-toggle.active .bar:nth-child(3) {
-            transform: translate(-50%, -50%) rotate(-45deg);
-          }
-
-          .menu-content {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            max-width: 460px;
-            height: 500px;
-            padding: 70px 25px 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity .2s;
-          }
-
-          .menu-panel.open .menu-content {
-            opacity: 1;
-            pointer-events: auto;
-            transition-delay: .15s;
-          }
-
-          .nav-links {
-            list-style: none;
-          }
-
-          .nav-item {
-            overflow: hidden;
-            margin-bottom: 12px;
-          }
-
-          .nav-item:last-child {
-            margin-bottom: 0;
-          }
-
-          .nav-item button {
-            display: inline-block;
-            text-decoration: none;
-            color: #000000;
-            font-size: 26px;
-            font-weight: 500;
-            font-family: inherit;
-            text-align: left;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(100%);
-            transition:
-                opacity .15s ease,
-                transform 0s .2s;
-          }
-
-          .dark .nav-item button {
-            color: #ffffff;
-          }
-
-          .nav-item button:hover {
-            opacity: .6;
-          }
-
-          .menu-panel.open .nav-item button {
-            opacity: 1;
-            transform: translateY(0);
-            transition:
-                transform .6s cubic-bezier(.16,1,.3,1),
-                opacity .1s;
-          }
-
-          .menu-panel.open .nav-item:nth-child(1) button {transition-delay: .15s;}
-          .menu-panel.open .nav-item:nth-child(2) button {transition-delay: .20s;}
-          .menu-panel.open .nav-item:nth-child(3) button {transition-delay: .25s;}
-          .menu-panel.open .nav-item:nth-child(4) button {transition-delay: .30s;}
-          .menu-panel.open .nav-item:nth-child(5) button {transition-delay: .35s;}
-          .menu-panel.open .nav-item:nth-child(6) button {transition-delay: .40s;}
-        }
-
-        .theme-toggle-container {
-          position: relative;
-          width: 20px;
-          height: 20px;
-          cursor: pointer;
-        }
-
-        .theme-toggle-container > * {
-          transition: all 0.8s cubic-bezier(0.2, 0.2, 0.2, 1.2);
-        }
-
-        .theme-toggle-container .moon-element {
-          position: absolute;
-          top: 0;
-          left: 0;
-          transform: rotate(320deg) scale(0.55);
-          width: 20px;
-          height: 20px;
-          opacity: 1;
-          pointer-events: none;
-          background-color: currentColor;
-          border-radius: 50%;
-        }
-
-        .theme-toggle-container .moon-element::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          right: 0;
-          transform: translate(-100%, -100%) scale(0);
-          width: 16px;
-          height: 16px;
-          opacity: 0;
-          background-color: #1a1429;
-          border-radius: 50%;
-          transition: transform 0.8s ease, opacity 0.1s ease 0.2s, background-color 0.5s;
-        }
-
-        .theme-toggle-container .sun-element {
-          transform: rotate(0deg);
-        }
-
-        .theme-toggle-container.is-dark .moon-element {
-          transform: rotate(40deg) scale(0.85);
-          opacity: 1;
-          pointer-events: all;
-        }
-
-        .theme-toggle-container.is-dark .moon-element::before {
-          transform: translate(-10%, -25%) scale(1);
-          opacity: 1;
-        }
-
-        .theme-toggle-container.is-dark.is-mobile .moon-element::before {
-          background-color: #1a1429;
-        }
-
-        .theme-toggle-container.is-desktop {
-          width: 16px;
-          height: 16px;
-        }
-        .theme-toggle-container.is-desktop .moon-element {
-          width: 16px;
-          height: 16px;
-        }
-        .theme-toggle-container.is-desktop .moon-element::before {
-          width: 13px;
-          height: 13px;
-        }
-
-        .theme-toggle-container.is-dark .sun-element {
-          transform: rotate(-360deg);
-          opacity: 0;
-          pointer-events: none;
-        }
-      `}</style>
-
             {/* Desktop Header/Navbar */}
             <header className="hidden md:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 w-max transition-all duration-300">
                 <div
