@@ -95,7 +95,7 @@ export default function Skills() {
                     className="w-full max-w-5xl mx-auto"
                 >
                     {/* Monitor Frame */}
-                    <div className="relative mx-auto bg-stone-200 dark:bg-stone-900 rounded-3xl p-3 md:p-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] border-4 border-stone-300 dark:border-stone-800 transition-all">
+                    <div className="relative mx-auto bg-neutral-200 dark:bg-neutral-900 rounded-3xl p-3 md:p-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] border-4 border-neutral-300 dark:border-neutral-800 transition-all z-10">
                         {/* Screen Bezel */}
                         <div className="relative bg-black rounded-xl overflow-hidden border border-neutral-900 shadow-inner">
                             {/* Virtual Screen Content Area */}
@@ -125,11 +125,11 @@ export default function Skills() {
                                                         }
                                                         className={`flex flex-col items-center p-2 rounded-xl border border-transparent transition-all outline-none text-center cursor-pointer w-[72px] sm:w-[84px] ${
                                                             isSelected
-                                                                ? "bg-brand/25 border-brand/50 scale-[1.03]"
+                                                                ? "bg-brand/25 border-brand/50"
                                                                 : "hover:bg-white/5 dark:hover:bg-white/5 hover:border-white/10"
                                                         }`}
                                                     >
-                                                        <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 dark:bg-stone-950/40 backdrop-blur-md rounded-xl p-2 border border-white/10 shadow flex items-center justify-center relative">
+                                                        <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 dark:bg-stone-950/40 rounded-xl p-2 border border-white/10 shadow flex items-center justify-center relative">
                                                             <img
                                                                 src={skill.img}
                                                                 alt={skill.name}
@@ -300,7 +300,10 @@ export default function Skills() {
                                                             </div>
 
                                                             <p className="text-xs md:text-sm text-stone-300 leading-relaxed font-sans">
-                                                                {t(win.skill.descriptionKey)}
+                                                                {t(
+                                                                    win.skill
+                                                                        .descriptionKey,
+                                                                )}
                                                             </p>
 
                                                             {/* Proficiency slider */}
