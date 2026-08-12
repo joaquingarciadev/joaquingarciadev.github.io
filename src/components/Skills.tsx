@@ -207,7 +207,7 @@ export default function Skills() {
                                                         }}
                                                     >
                                                         {/* Window Title Bar */}
-                                                        <div className="bg-stone-850 border-b border-white/10 px-3 py-1.5 flex items-center justify-between">
+                                                        <div className="bg-stone-800 border-b border-white/10 px-3 py-1.5 flex items-center justify-between">
                                                             <div className="flex items-center gap-2 text-[11px] font-mono text-white truncate">
                                                                 <img
                                                                     src={
@@ -369,7 +369,7 @@ export default function Skills() {
                                                                                             "proyectos",
                                                                                         );
                                                                                     }}
-                                                                                    className="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-850 border border-white/5 px-2.5 py-1 rounded-lg text-xs text-stone-300 hover:text-white transition-colors cursor-pointer text-left"
+                                                                                    className="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-800 border border-white/5 px-2.5 py-1 rounded-lg text-xs text-stone-300 hover:text-white transition-colors cursor-pointer text-left"
                                                                                 >
                                                                                     <span className="w-1.5 h-1.5 rounded-full bg-brand-glow" />
                                                                                     <span className="font-medium">

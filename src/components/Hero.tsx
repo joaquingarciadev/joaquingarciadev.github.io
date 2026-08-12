@@ -17,23 +17,8 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
             id="inicio"
             className="min-h-screen pt-32 pb-16 flex items-center justify-center bg-pure-white dark:bg-off-black-ink transition-colors duration-300 relative overflow-hidden"
         >
-            {/* Quantix: purple neon auras */}
-            <div className="absolute top-1/4 -left-40 w-[520px] h-[520px] bg-brand/15 dark:bg-brand-glow/15 rounded-full blur-[160px] pointer-events-none" />
-            <div className="absolute bottom-0 -right-40 w-[460px] h-[460px] bg-brand-light/15 dark:bg-brand-glow/10 rounded-full blur-[160px] pointer-events-none" />
-
-            {/* Quantix: background grid of lines */}
-            <div
-                className="absolute inset-0 pointer-events-none opacity-[0.07] dark:opacity-[0.09]"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(to right, #7c3aed 1px, transparent 1px), linear-gradient(to bottom, #7c3aed 1px, transparent 1px)",
-                    backgroundSize: "72px 72px",
-                    maskImage:
-                        "radial-gradient(ellipse 85% 75% at 50% 30%, black 30%, transparent 100%)",
-                    WebkitMaskImage:
-                        "radial-gradient(ellipse 85% 75% at 50% 30%, black 30%, transparent 100%)",
-                }}
-            />
+            {/* Quantix: background pattern (blur-free) */}
+            <div className="section-bg-grid" />
 
             <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
                 {/* Left Side: Content */}
@@ -96,7 +81,6 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                     </motion.div>
                 </div>
 
-                {/* Right Side: Image */}
                 {/* Right Side: Image with Floating Badges */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -105,8 +89,6 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                     className="lg:col-span-5 flex justify-center"
                 >
                     <div className="relative w-full max-w-[420px]">
-                        {/* Purple aura behind the image */}
-                        <div className="absolute inset-4 rounded-[28px] bg-brand/25 dark:bg-brand-glow/20 blur-[90px]" />
                         <img
                             src="/images/misc/hero_image.webp"
                             alt="Joaquín García - Desarrollador Web"

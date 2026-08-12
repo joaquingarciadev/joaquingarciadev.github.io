@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ChevronDown } from "lucide-react";
 import FlipText from "./FlipText";
@@ -15,7 +15,6 @@ export default function Navbar({
     activeSection,
 }: NavbarProps) {
     const { t, i18n } = useTranslation();
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isOpenSobreMi, setIsOpenSobreMi] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -24,14 +23,6 @@ export default function Navbar({
     const switchLanguage = (lang: "es" | "en") => {
         i18n.changeLanguage(lang);
     };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     const handleScrollTo = (id: string) => {
         const element = document.getElementById(id);
@@ -59,11 +50,7 @@ export default function Navbar({
             <header className="hidden md:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 w-max transition-all duration-300">
                 <div
                     id="navbar-pill"
-                    className={`flex items-center justify-center gap-5 px-6 py-2.5 rounded-full border backdrop-blur-md transition-all duration-300 ${
-                        isScrolled
-                            ? "bg-deep-charcoal/95 shadow-lg shadow-brand/20 border-brand-glow/25"
-                            : "bg-deep-charcoal/95 border-brand-glow/20"
-                    }`}
+                    className="flex items-center justify-center gap-5 px-6 py-2.5 rounded-full border border-brand-glow/20 bg-deep-charcoal/95 backdrop-blur-md transition-all duration-300"
                 >
                     {/* Desktop Navigation Menu */}
                     <nav className="flex items-center gap-1">

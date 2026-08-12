@@ -6,8 +6,8 @@ export default function Footer() {
 
     return (
         <footer className="bg-off-black-ink text-off-white-canvas py-12 transition-colors duration-300 border-t border-graphite/20 relative overflow-hidden">
-            {/* Purple aura */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] bg-brand/20 dark:bg-brand-glow/15 rounded-full blur-[150px] pointer-events-none" />
+            {/* Section background pattern */}
+            <div className="section-bg-grid" />
 
             <div className="w-full max-w-6xl mx-auto px-6 relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
                 {/* Left/Center: Social Icons */}

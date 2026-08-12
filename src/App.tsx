@@ -16,9 +16,9 @@ export default function App() {
             if (stored !== null) {
                 return stored === "true";
             }
-            return window.matchMedia("(prefers-color-scheme: dark)").matches;
+            return true; // Default to dark mode
         }
-        return false;
+        return true;
     });
 
     const [activeSection, setActiveSection] = useState<string>("inicio");
@@ -97,26 +97,26 @@ export default function App() {
                 onProjectsClick={() => scrollToSection("proyectos")}
             />
 
-            <hr className="border-ash/20 dark:border-graphite/20 max-w-6xl mx-auto" />
+            <hr className="section-divider" />
 
             <About />
 
-            <hr className="border-ash/20 dark:border-graphite/20 max-w-6xl mx-auto" />
+            <hr className="section-divider" />
 
             <Skills />
 
-            <hr className="border-ash/20 dark:border-graphite/20 max-w-6xl mx-auto" />
+            <hr className="section-divider" />
 
             <Projects
                 activeFilter={activeFilter}
                 setActiveFilter={setActiveFilter}
             />
 
-            <hr className="border-ash/20 dark:border-graphite/20 max-w-6xl mx-auto" />
+            <hr className="section-divider" />
 
             <Services />
 
-            <hr className="border-ash/20 dark:border-graphite/20 max-w-6xl mx-auto" />
+            <hr className="section-divider" />
 
             <ContactForm onViewExamples={handleViewExamples} />
 

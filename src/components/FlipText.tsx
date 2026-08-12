@@ -1,5 +1,3 @@
-import React from "react";
-
 interface FlipTextProps {
   children: string;
   className?: string;

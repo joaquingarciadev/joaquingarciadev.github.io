@@ -11,8 +11,8 @@ export default function About() {
             id="sobre-mi"
             className="py-24 bg-pure-white dark:bg-off-black-ink transition-colors duration-300 relative overflow-hidden"
         >
-            {/* Purple aura */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand/10 dark:bg-brand-glow/10 rounded-full blur-[140px] pointer-events-none" />
+            {/* Section background pattern */}
+            <div className="section-bg-grid" />
 
             <div className="w-full max-w-5xl mx-auto px-6 relative">
                 {/* Section Heading */}
