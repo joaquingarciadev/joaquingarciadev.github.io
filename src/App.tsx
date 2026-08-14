@@ -103,7 +103,7 @@ export default function App() {
 
             <hr className="section-divider" />
 
-            <Skills />
+            {/* <Skills /> */}
 
             <hr className="section-divider" />
 
