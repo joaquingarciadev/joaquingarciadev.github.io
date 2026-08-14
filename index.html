@@ -4,6 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Aplicar el tema antes del primer paint para evitar el parpadeo claro/oscuro -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("joaquin_portfolio_dark");
+        var dark = stored !== null ? stored === "true" : true;
+        var root = document.documentElement;
+        root.classList.toggle("dark", dark);
+        root.style.colorScheme = dark ? "dark" : "light";
+        root.style.backgroundColor = dark ? "#06020e" : "#f8f8f9";
+        root.style.color = dark ? "#f8f8f9" : "#06020e";
+      } catch (e) {}
+    })();
+  </script>
   <title>Desarrollador Web Argentina | Joaquin Garcia</title>
   <meta name="description"
     content="Soy Desarrollador Web de Argentina. Me especializo en la creación de páginas y aplicaciones web. Calidad y profesionalismo en cada proyecto." />
@@ -24,14 +38,14 @@
   <link rel="preconnect" href="https://c.emailjs.com" crossorigin />
   <!-- Preload del LCP (imagen del hero) -->
   <link rel="preload" as="image" href="/images/misc/hero_image.webp" fetchpriority="high" />
-  <script type="module" crossorigin src="/assets/index-D_PI8Pxf.js"></script>
+  <script type="module" crossorigin src="/assets/index-j4hlH3rP.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/vendor-react-BMaifmmn.js">
   <link rel="modulepreload" crossorigin href="/assets/vendor-motion-Y348C0It.js">
   <link rel="modulepreload" crossorigin href="/assets/vendor-gsap-RSxjZkcQ.js">
   <link rel="modulepreload" crossorigin href="/assets/vendor-swiper-BeQgwEKz.js">
   <link rel="modulepreload" crossorigin href="/assets/vendor-emailjs-DfBlkqaH.js">
   <link rel="stylesheet" crossorigin href="/assets/vendor-swiper-CYU90yuY.css">
-  <link rel="stylesheet" crossorigin href="/assets/index-_XC9H5Mp.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-BdKgDT_x.css">
 </head>
 
 <body>
