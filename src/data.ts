@@ -3,6 +3,7 @@ export interface Skill {
     descriptionKey: string;
     img: string;
     year: string;
+    proficiency: number;
 }
 
 export interface Project {
@@ -20,78 +21,91 @@ export const skillsData: Skill[] = [
         descriptionKey: "skills.desc.html",
         img: "/images/habilidades/html-5.webp",
         year: "2017",
+        proficiency: 95,
     },
     {
         name: "CSS",
         descriptionKey: "skills.desc.css",
         img: "/images/habilidades/css-3.webp",
         year: "2017",
+        proficiency: 93,
     },
     {
         name: "Javascript",
         descriptionKey: "skills.desc.javascript",
         img: "/images/habilidades/js.webp",
         year: "2017",
+        proficiency: 90,
     },
     {
         name: "React",
         descriptionKey: "skills.desc.react",
         img: "/images/habilidades/react.webp",
         year: "2020",
+        proficiency: 85,
     },
     {
         name: "Next JS",
         descriptionKey: "skills.desc.nextjs",
         img: "/images/habilidades/next-js.webp",
         year: "2022",
+        proficiency: 82,
     },
     {
         name: "Node JS",
         descriptionKey: "skills.desc.nodejs",
         img: "/images/habilidades/node-js.webp",
         year: "2020",
+        proficiency: 82,
     },
     {
         name: "Express JS",
         descriptionKey: "skills.desc.expressjs",
         img: "/images/habilidades/express-js.webp",
         year: "2020",
+        proficiency: 82,
     },
     {
         name: "MongoDB",
         descriptionKey: "skills.desc.mongodb",
         img: "/images/habilidades/mongodb.webp",
         year: "2020",
+        proficiency: 80,
     },
     {
         name: "MySQL",
         descriptionKey: "skills.desc.mysql",
         img: "/images/habilidades/sql.webp",
         year: "2020",
+        proficiency: 80,
     },
     {
         name: "PHP",
         descriptionKey: "skills.desc.php",
         img: "/images/habilidades/php.webp",
         year: "2020",
+        proficiency: 92,
     },
     {
         name: "Wordpress",
         descriptionKey: "skills.desc.wordpress",
         img: "/images/habilidades/wordpress.webp",
         year: "2020",
+        proficiency: 95,
     },
     {
         name: "Elementor",
         descriptionKey: "skills.desc.elementor",
         img: "/images/habilidades/elementor.webp",
         year: "2020",
+        proficiency: 92,
     },
     {
         name: "Woocommerce",
         descriptionKey: "skills.desc.woocommerce",
         img: "/images/habilidades/woocommerce.webp",
         year: "2020",
+        proficiency: 92,
     },
 ];
 

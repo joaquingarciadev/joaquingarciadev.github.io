@@ -30,6 +30,18 @@
         scroll-padding-top: 90px;
     }
 
+    /* Valores por defecto en modo oscuro */
+    html {
+        color-scheme: dark;
+        background-color: var(--color-off-black-ink);
+        color: var(--color-off-white-canvas);
+    }
+
+    body {
+        background-color: var(--color-off-black-ink);
+        color: var(--color-off-white-canvas);
+    }
+
     @media (prefers-reduced-motion: reduce) {
         html {
             scroll-behavior: auto;
@@ -257,6 +269,7 @@
             width: var(--menu-toggle-bar-width);
             position: absolute;
             background: #000000;
+            border-radius: 9999px;
             top: 50%;
             left: 50%;
             transition: all 0.3s ease-in-out;

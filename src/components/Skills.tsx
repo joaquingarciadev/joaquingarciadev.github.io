@@ -121,11 +121,10 @@ export default function Skills() {
                         <div className="relative bg-black rounded-xl overflow-hidden border border-neutral-900 shadow-inner">
                             {/* Virtual Screen Content Area */}
                             <div
-                                className="min-h-[580px] max-h-[580px] sm:min-h-[500px] sm:max-h-[500px] aspect-[9/14] sm:aspect-[16/10] w-full relative select-none overflow-hidden bg-cover bg-center transition-all duration-500"
+                                className="min-h-[580px] max-h-[580px] sm:min-h-[500px] sm:max-h-[500px] aspect-[9/14] sm:aspect-[16/10] w-full relative select-none overflow-hidden transition-all duration-500"
                                 style={{
                                     backgroundImage:
-                                        'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.06) 0%, rgba(20, 20, 15, 0.95) 100%), url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80")',
-                                    backgroundColor: "#050505",
+                                        "linear-gradient(135deg, #93c5fd 0%, #818cf8 50%, #6366f1 100%)",
                                 }}
                             >
                                 <div className="absolute inset-0 flex flex-col justify-between p-3 md:p-4">
@@ -188,13 +187,7 @@ export default function Skills() {
                                                         10,
                                                     );
                                                 const proficiency =
-                                                    Math.min(
-                                                        100,
-                                                        Math.max(
-                                                            70,
-                                                            100 - years * 2.5,
-                                                        ),
-                                                    );
+                                                    win.skill.proficiency;
                                                 const relatedProjects =
                                                     projectsData.filter((p) =>
                                                         p.skills.some(

@@ -32,6 +32,7 @@ export default function Navbar({
         if (element) {
             element.scrollIntoView();
             setIsMenuOpen(false);
+            setMenuToggleAnim("not-active");
             setIsOpenSobreMi(false);
         }
     };
