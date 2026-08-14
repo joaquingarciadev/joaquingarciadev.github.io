@@ -124,7 +124,7 @@ export default function Skills() {
                                 className="min-h-[580px] max-h-[580px] sm:min-h-[500px] sm:max-h-[500px] aspect-[9/14] sm:aspect-[16/10] w-full relative select-none overflow-hidden transition-all duration-500"
                                 style={{
                                     backgroundImage:
-                                        "linear-gradient(135deg, #93c5fd 0%, #818cf8 50%, #6366f1 100%)",
+                                        "linear-gradient(135deg, #60a5fa 0%, #4f46e5 50%, #4338ca 100%)",
                                 }}
                             >
                                 <div className="absolute inset-0 flex flex-col justify-between p-3 md:p-4">

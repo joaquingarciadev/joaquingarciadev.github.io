@@ -42,16 +42,15 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                         as="h1"
                         gradient
                         text={t("hero.greeting")}
-                        className="font-display text-5xl md:text-7xl font-bold leading-tight text-off-black-ink dark:text-off-white-canvas mb-3"
+                        className="font-display text-5xl md:text-7xl font-bold leading-tight text-off-black-ink dark:text-off-white-canvas mb-6"
                     />
-                    <div className="h-1.5 w-24 bg-gradient-to-r from-brand to-brand-light mb-6 rounded-full" />
 
                     {/* Professional Role Subtitle */}
                     <div className="mb-10">
                         <RevealText
                             as="h2"
                             text={t("hero.role")}
-                            className="font-display text-2xl md:text-4xl font-medium text-off-black-ink dark:text-brand-glow"
+                            className="font-display text-2xl md:text-4xl font-medium text-graphite dark:text-ash"
                         />
                     </div>
 
