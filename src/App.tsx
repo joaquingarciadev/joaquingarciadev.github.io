@@ -139,7 +139,7 @@ export default function App() {
 
             <hr className="section-divider" />
 
-            {/* <Services /> */}
+            <Services />
 
             <hr className="section-divider" />
 
