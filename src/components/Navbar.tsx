@@ -17,6 +17,9 @@ export default function Navbar({
     const { t, i18n } = useTranslation();
     const [isOpenSobreMi, setIsOpenSobreMi] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [menuToggleAnim, setMenuToggleAnim] = useState<
+        "idle" | "active" | "not-active"
+    >("idle");
 
     const currentLang = i18n.language as "es" | "en";
 
@@ -31,6 +34,13 @@ export default function Navbar({
             setIsMenuOpen(false);
             setIsOpenSobreMi(false);
         }
+    };
+
+    const handleToggleMenu = () => {
+        setIsMenuOpen((prev) => !prev);
+        setMenuToggleAnim((prev) =>
+            prev === "active" ? "not-active" : "active",
+        );
     };
 
     const navItems = [
@@ -415,8 +425,14 @@ export default function Navbar({
                 </div>
 
                 <button
-                    className={`menu-toggle ${isMenuOpen ? "active" : ""}`}
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className={`menu-toggle ${
+                        menuToggleAnim === "active"
+                            ? "active"
+                            : menuToggleAnim === "not-active"
+                              ? "not-active"
+                              : ""
+                    }`}
+                    onClick={handleToggleMenu}
                     aria-label="Toggle menu"
                 >
                     <span className="bar"></span>

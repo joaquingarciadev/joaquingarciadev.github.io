@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <footer className="bg-off-black-ink text-off-white-canvas py-12 transition-colors duration-300 border-t border-graphite/20 relative overflow-hidden">
             {/* Section background pattern */}
-            <div className="section-bg-grid" />
+            <div className="section-bg-grid footer-bg-grid" />
 
             <div className="w-full max-w-6xl mx-auto px-6 relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
                 {/* Left/Center: Social Icons */}

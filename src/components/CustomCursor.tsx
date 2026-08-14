@@ -43,6 +43,9 @@ export default function CustomCursor() {
         currentY = mouseY;
         hasMoved = true;
       }
+      if (!animationFrameId) {
+        animationFrameId = requestAnimationFrame(updatePosition);
+      }
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -65,7 +68,7 @@ export default function CustomCursor() {
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseover", handleMouseOver);
 
-    let animationFrameId: number;
+    let animationFrameId = 0;
 
     const updatePosition = () => {
       // Lerp position for organic, buttery smooth cursor movement
@@ -75,10 +78,16 @@ export default function CustomCursor() {
 
       dot.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
 
+      // Stop the loop when the cursor is at rest to save CPU
+      if (Math.abs(mouseX - currentX) < 0.1 && Math.abs(mouseY - currentY) < 0.1) {
+        currentX = mouseX;
+        currentY = mouseY;
+        animationFrameId = 0;
+        return;
+      }
+
       animationFrameId = requestAnimationFrame(updatePosition);
     };
-
-    animationFrameId = requestAnimationFrame(updatePosition);
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);

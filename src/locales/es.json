@@ -9,7 +9,7 @@
   },
   "hero": {
     "available": "Disponible para Proyectos",
-    "greeting": "¡Hola! Soy Joaquin Garcia",
+    "greeting": "¡Hola! Soy\nJoaquin Garcia",
     "role": "Desarrollador web",
     "cta_contact": "Contactar ahora",
     "cta_work": "Ver mis trabajos"
@@ -19,7 +19,6 @@
     "title": "Sobre mí",
     "p1": "¡Hola! Soy Joaquin Garcia, desarrollador web de Córdoba, Argentina. Me especializo en la creación de páginas y aplicaciones web. Me encanta este campo y estoy emocionado por seguir creciendo como desarrollador.",
     "p2": "Estoy aquí para ayudarte a crear la presencia digital que necesitas. Si necesitas un sitio web, mantenimiento o asesoramiento personalizado, no dudes en ponerte en contacto conmigo.",
-    "contact": "Contactar",
     "developer": "Desarrollador Web",
     "since": "Desde 2017",
     "specialty": "Especialidad",
@@ -45,8 +44,6 @@
     "proficiency": "Nivel de Dominio",
     "projectsWithSkill": "Proyectos relacionados:",
     "noProjects": "Sin proyectos cargados para esta habilidad.",
-    "clickIcon": "Haz clic en los íconos de las habilidades dentro de la pantalla para abrir su información.",
-    "viewProject": "Ver proyecto",
     "desc": {
       "html": "Lenguaje de marcado para la creación de páginas web.",
       "css": "Lenguaje de estilos para la creación de páginas web.",

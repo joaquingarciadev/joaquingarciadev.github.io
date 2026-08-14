@@ -43,31 +43,56 @@ export default function App() {
             "servicios",
             "contacto",
         ];
+        const elements = sections
+            .map((id) => document.getElementById(id))
+            .filter((el): el is HTMLElement => el !== null);
+
+        let offsets = elements.map((el) => ({
+            el,
+            top: el.offsetTop,
+            height: el.offsetHeight,
+        }));
+
+        let frame = 0;
 
         const handleScrollSpy = () => {
-            const scrollPosition = window.scrollY + 160;
+            if (frame) return;
+            frame = requestAnimationFrame(() => {
+                frame = 0;
+                const scrollPosition = window.scrollY + 160;
 
-            for (const sectionId of sections) {
-                const element = document.getElementById(sectionId);
-                if (element) {
-                    const offsetTop = element.offsetTop;
-                    const offsetHeight = element.offsetHeight;
-
+                for (const { el, top, height } of offsets) {
                     if (
-                        scrollPosition >= offsetTop &&
-                        scrollPosition < offsetTop + offsetHeight
+                        scrollPosition >= top &&
+                        scrollPosition < top + height
                     ) {
-                        setActiveSection(sectionId);
+                        setActiveSection(el.id);
                         break;
                     }
                 }
-            }
+            });
         };
 
-        window.addEventListener("scroll", handleScrollSpy);
+        const recomputeOffsets = () => {
+            offsets = elements.map((el) => ({
+                el,
+                top: el.offsetTop,
+                height: el.offsetHeight,
+            }));
+            handleScrollSpy();
+        };
+
+        window.addEventListener("scroll", handleScrollSpy, { passive: true });
+        window.addEventListener("resize", recomputeOffsets);
+        window.addEventListener("load", recomputeOffsets);
         handleScrollSpy();
 
-        return () => window.removeEventListener("scroll", handleScrollSpy);
+        return () => {
+            window.removeEventListener("scroll", handleScrollSpy);
+            window.removeEventListener("resize", recomputeOffsets);
+            window.removeEventListener("load", recomputeOffsets);
+            if (frame) cancelAnimationFrame(frame);
+        };
     }, []);
 
     const scrollToSection = (id: string) => {

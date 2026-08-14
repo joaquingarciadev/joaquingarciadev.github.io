@@ -40,6 +40,7 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                     {/* Main Display Heading */}
                     <RevealText
                         as="h1"
+                        gradient
                         text={t("hero.greeting")}
                         className="font-display text-5xl md:text-7xl font-bold leading-tight text-off-black-ink dark:text-off-white-canvas mb-3"
                     />

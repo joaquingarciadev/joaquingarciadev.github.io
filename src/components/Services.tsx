@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import type { MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { Layout, Zap, LifeBuoy } from "lucide-react";
@@ -8,19 +8,28 @@ import RevealText from "./RevealText";
 export default function Services() {
   const { t } = useTranslation();
   const gridRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number>(0);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!gridRef.current) return;
-    const cards = gridRef.current.children;
-    for (let i = 0; i < cards.length; i++) {
-      const card = cards[i] as HTMLElement;
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty("--mouse-x", `${x}px`);
-      card.style.setProperty("--mouse-y", `${y}px`);
-    }
+    const { clientX, clientY } = e;
+    if (rafRef.current) return;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = 0;
+      const grid = gridRef.current;
+      if (!grid) return;
+      const cards = grid.children;
+      for (let i = 0; i < cards.length; i++) {
+        const card = cards[i] as HTMLElement;
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--mouse-x", `${clientX - rect.left}px`);
+        card.style.setProperty("--mouse-y", `${clientY - rect.top}px`);
+      }
+    });
   };
+
+  useEffect(() => {
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
 
   const servicesList = [
     {
@@ -45,9 +54,6 @@ export default function Services() {
       id="servicios"
       className="py-24 bg-pure-white dark:bg-off-black-ink transition-colors duration-300 relative overflow-hidden"
     >
-      {/* Section background pattern */}
-      <div className="section-bg-grid" />
-
       <div className="w-full max-w-6xl mx-auto px-6 relative">
         {/* Section Heading */}
         <div className="flex flex-col items-center text-center mb-16">
@@ -71,7 +77,6 @@ export default function Services() {
           {servicesList.map((service, index) => (
             <motion.div
               key={index}
-              id={`service-card-${index}`}
               initial={{ opacity: 0, y: 35, scale: 0.94 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}

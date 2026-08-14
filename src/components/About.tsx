@@ -11,9 +11,6 @@ export default function About() {
             id="sobre-mi"
             className="py-24 bg-pure-white dark:bg-off-black-ink transition-colors duration-300 relative overflow-hidden"
         >
-            {/* Section background pattern */}
-            <div className="section-bg-grid" />
-
             <div className="w-full max-w-5xl mx-auto px-6 relative">
                 {/* Section Heading */}
                 <div className="flex flex-col items-center text-center mb-16">

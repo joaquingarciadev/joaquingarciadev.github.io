@@ -13,12 +13,12 @@ import FlipText from "./FlipText";
 
 // Import Swiper React components and modules
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Scrollbar } from "swiper/modules";
 import type { Swiper as SwiperClass } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 interface ProjectsProps {
     activeFilter: string;
@@ -66,9 +66,6 @@ export default function Projects({
             id="proyectos"
             className="py-24 bg-pure-white dark:bg-off-black-ink transition-colors duration-300 relative overflow-hidden"
         >
-            {/* Section background pattern */}
-            <div className="section-bg-grid" />
-
             <div className="w-full max-w-6xl mx-auto px-6 relative">
                 {/* Section Heading */}
                 <div className="flex flex-col items-center text-center mb-12">
@@ -133,10 +130,10 @@ export default function Projects({
                             <button
                                 onClick={() => swiperInstance?.slidePrev()}
                                 disabled={isBeginning}
-                                className={`w-10 h-10 rounded-full flex items-center justify-center border border-ash/30 dark:border-graphite/40 transition-all duration-200 cursor-pointer ${
+                                className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-200 cursor-pointer ${
                                     isBeginning
-                                        ? "opacity-30 cursor-not-allowed text-stone"
-                                        : "text-off-black-ink dark:text-off-white-canvas bg-pure-white dark:bg-off-black-ink hover:border-brand dark:hover:border-brand-glow hover:scale-105 active:scale-95"
+                                        ? "opacity-30 cursor-not-allowed text-stone border-ash/30 dark:border-graphite/40"
+                                        : "text-off-black-ink dark:text-off-white-canvas bg-pure-white dark:bg-off-black-ink border-[color:color-mix(in_oklab,var(--color-brand-glow)_20%,transparent)] hover:border-brand dark:hover:border-brand-glow hover:scale-105 active:scale-95"
                                 }`}
                                 aria-label="Previous project"
                             >
@@ -145,10 +142,10 @@ export default function Projects({
                             <button
                                 onClick={() => swiperInstance?.slideNext()}
                                 disabled={isEnd}
-                                className={`w-10 h-10 rounded-full flex items-center justify-center border border-ash/30 dark:border-graphite/40 transition-all duration-200 cursor-pointer ${
+                                className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-200 cursor-pointer ${
                                     isEnd
-                                        ? "opacity-30 cursor-not-allowed text-stone"
-                                        : "text-off-black-ink dark:text-off-white-canvas bg-pure-white dark:bg-off-black-ink hover:border-brand dark:hover:border-brand-glow hover:scale-105 active:scale-95"
+                                        ? "opacity-30 cursor-not-allowed text-stone border-ash/30 dark:border-graphite/40"
+                                        : "text-off-black-ink dark:text-off-white-canvas bg-pure-white dark:bg-off-black-ink border-[color:color-mix(in_oklab,var(--color-brand-glow)_20%,transparent)] hover:border-brand dark:hover:border-brand-glow hover:scale-105 active:scale-95"
                                 }`}
                                 aria-label="Next project"
                             >
@@ -162,8 +159,8 @@ export default function Projects({
                 {filteredProjects.length > 0 ? (
                     <Swiper
                         key={activeFilter}
-                        modules={[Pagination]}
-                        pagination={{ type: "progressbar" }}
+                        modules={[Scrollbar]}
+                        scrollbar={{ draggable: true }}
                         onSwiper={setSwiperInstance}
                         onSlideChange={(swiper) => {
                             setIsBeginning(swiper.isBeginning);

@@ -34,8 +34,17 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
   const [sendError, setSendError] = useState("");
   const [validationError, setValidationError] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
+  const successTimeoutRef = useRef<number>(null);
 
   const locale = i18n.language === "es" ? "es-AR" : "en-US";
+
+  useEffect(() => {
+    return () => {
+      if (successTimeoutRef.current !== null) {
+        window.clearTimeout(successTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     emailjs.init({
@@ -107,7 +116,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
         message: "",
       });
 
-      setTimeout(() => {
+      successTimeoutRef.current = window.setTimeout(() => {
         setIsSuccess(false);
       }, 5000);
     } catch (error) {
@@ -128,9 +137,6 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
       id="contacto"
       className="py-24 bg-pure-white dark:bg-off-black-ink transition-colors duration-300 relative overflow-hidden"
     >
-      {/* Section background pattern */}
-      <div className="section-bg-grid" />
-
       <div className="w-full max-w-5xl mx-auto px-6 relative">
         {/* Section Heading */}
         <div className="flex flex-col items-center text-center mb-16">
@@ -239,7 +245,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
             <div className="bg-pure-white dark:bg-deep-charcoal/70 rounded-[28px] p-6 md:p-10 border border-ash/30 dark:border-brand-glow/20 shadow-sm dark:shadow-brand/10 relative">
               {/* Success Banner */}
               {isSuccess && (
-                <div className="absolute inset-0 bg-pure-white/95 dark:bg-off-black-ink/95 backdrop-blur-md rounded-[28px] flex flex-col items-center justify-center p-8 text-center z-30 animate-in fade-in duration-300">
+                <div className="absolute inset-0 bg-pure-white/95 dark:bg-off-black-ink/95 backdrop-blur-md rounded-[28px] flex flex-col items-center justify-center p-8 text-center z-30 fade-in">
                   <CheckCircle2 className="w-16 h-16 text-emerald-500 mb-4 animate-bounce" />
                   <h3 className="font-display font-bold text-2xl text-off-black-ink dark:text-off-white-canvas mb-2">
                     {t("contact.success_title")}
@@ -320,7 +326,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
 
                   {/* "Ver ejemplos" link */}
                   {formData.webType && (
-                    <div className="mt-2.5 flex items-center gap-1 animate-in fade-in slide-in-from-top-1.5 duration-200">
+                    <div className="mt-2.5 flex items-center gap-1 fade-in">
                       <button
                         type="button"
                         onClick={() => onViewExamples(formData.webType)}

@@ -17,7 +17,6 @@
     --color-graphite: #6e6e64;
     --color-deep-charcoal: #1a1429;
     --color-stone: #8a8694;
-    --color-smoke: #b9b9b7;
     --color-brand: #7c3aed;
     --color-brand-light: #8b5cf6;
     --color-brand-medium: #6d28d9;
@@ -44,39 +43,6 @@
             color 0.3s ease;
     }
 
-    /* Reveal Masked Text Animation Classes */
-    .wrapper {
-        overflow: hidden;
-        vertical-align: top;
-        line-height: 1.25;
-    }
-
-    .wrapper-words {
-        display: inline-flex;
-        margin-right: 0.25em; /* Natural space between words */
-    }
-
-    .inner-text {
-        display: inline-block;
-        transform: translateY(110%); /* Hidden by default */
-        transform-origin: top left;
-        will-change: transform;
-    }
-
-    /* Trigger animation on is-visible class */
-    .is-visible .inner-text {
-        animation: revealUp 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-    }
-
-    @keyframes revealUp {
-        0% {
-            transform: translateY(110%) rotate(2deg);
-        }
-        100% {
-            transform: translateY(0) rotate(0);
-        }
-    }
-
     /* Flip Text Animation */
     .flip-wrapper {
         position: relative;
@@ -100,18 +66,16 @@
         white-space: nowrap;
     }
 
-    /* Trigger hover transitions when either the flip-wrapper, any parent button, anchor, or hover-trigger is hovered */
+    /* Trigger hover transitions when either the flip-wrapper, any parent button, or anchor is hovered */
     .flip-wrapper:hover .flip-text,
     button:hover .flip-text,
-    a:hover .flip-text,
-    .hover-trigger:hover .flip-text {
+    a:hover .flip-text {
         transform: translateY(-100%);
     }
 
     .flip-wrapper:hover .flip-text-clone,
     button:hover .flip-text-clone,
-    a:hover .flip-text-clone,
-    .hover-trigger:hover .flip-text-clone {
+    a:hover .flip-text-clone {
         transform: translateY(-100%);
     }
 
@@ -270,38 +234,40 @@
         }
 
         .menu-toggle {
+            --menu-toggle-size: 50px;
+            --menu-toggle-gap: 8px;
+            --menu-toggle-bar-weight: 2px;
+            --menu-toggle-bar-width: 24px;
             position: fixed;
             top: 24px;
             right: 24px;
-            width: 50px;
-            height: 50px;
+            width: var(--menu-toggle-size);
+            height: var(--menu-toggle-size);
             border: none;
             background: transparent;
             border-radius: 30px;
             cursor: pointer;
+            overflow: hidden;
             z-index: 1000;
             transition: background-color 0.3s;
         }
 
         .bar {
+            height: var(--menu-toggle-bar-weight);
+            width: var(--menu-toggle-bar-width);
             position: absolute;
+            background: #000000;
             top: 50%;
             left: 50%;
-            width: 25px;
-            height: 2px;
-            border-radius: 2px;
-            background: #000000;
-            transition:
-                transform 0.3s ease,
-                opacity 0.3s ease;
+            transition: all 0.3s ease-in-out;
         }
 
         .dark .bar {
             background: #ffffff;
         }
 
-        .bar:nth-child(1) {
-            transform: translate(-50%, calc(-50% - 6px));
+        .bar:first-child {
+            transform: translate(-50%, calc(-50% - var(--menu-toggle-gap)));
         }
 
         .bar:nth-child(2) {
@@ -309,19 +275,119 @@
         }
 
         .bar:nth-child(3) {
-            transform: translate(-50%, calc(-50% + 6px));
+            transform: translate(-50%, calc(-50% + var(--menu-toggle-gap)));
         }
 
-        .menu-toggle.active .bar:nth-child(1) {
-            transform: translate(-50%, -50%) rotate(45deg);
+        .menu-toggle.active .bar {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .menu-toggle.active .bar:first-child {
+            animation: first-bar-active ease 0.7s forwards;
         }
 
         .menu-toggle.active .bar:nth-child(2) {
-            opacity: 0;
+            animation: second-bar-active ease 0.7s forwards;
         }
 
         .menu-toggle.active .bar:nth-child(3) {
-            transform: translate(-50%, -50%) rotate(-45deg);
+            animation: last-bar-active ease 0.7s forwards;
+        }
+
+        .menu-toggle.not-active .bar:first-child {
+            animation: first-bar-not-active ease 0.7s forwards;
+        }
+
+        .menu-toggle.not-active .bar:nth-child(2) {
+            animation: second-bar-not-active ease 0.7s forwards;
+        }
+
+        .menu-toggle.not-active .bar:nth-child(3) {
+            animation: last-bar-not-active ease 0.7s forwards;
+        }
+
+        @keyframes first-bar-active {
+            0% {
+                transform: translate(-50%, calc(-50% - var(--menu-toggle-gap)));
+            }
+
+            50% {
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+
+        @keyframes second-bar-active {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+
+            50% {
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+
+        @keyframes last-bar-active {
+            0% {
+                transform: translate(-50%, calc(-50% + var(--menu-toggle-gap)));
+            }
+
+            50% {
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+
+        @keyframes first-bar-not-active {
+            0% {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            50% {
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translate(-50%, calc(-50% - var(--menu-toggle-gap)));
+            }
+        }
+
+        @keyframes second-bar-not-active {
+            0% {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            50% {
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        @keyframes last-bar-not-active {
+            0% {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+
+            50% {
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translate(-50%, calc(-50% + var(--menu-toggle-gap)));
+            }
         }
 
         .menu-content {
@@ -508,6 +574,10 @@
         .theme-toggle-container > * {
             transition: none !important;
         }
+
+        .menu-toggle .bar {
+            animation: none !important;
+        }
     }
 
     /* Select options - dark mode readability */
@@ -555,32 +625,66 @@
     mask-image: radial-gradient(80% 70% at 50% 20%, #000 15%, #0000 75%);
 }
 
-/* Custom Swiper Pagination Styles */
-.projects-swiper {
-    padding-bottom: 60px !important;
-    /* overflow: hidden !important; */
+/* Footer variant - glow rises from the bottom up */
+.dark .footer-bg-grid {
+    background:
+        radial-gradient(120% 80% at 50% 100%, #713dff33, #0000 60%) 0 0 / 100% 100%,
+        linear-gradient(#281c4080 1px, #0000 1px) 0 0 / 64px 64px,
+        linear-gradient(90deg, #281c4080 1px, #0000 1px) 0 0 / 64px 64px;
+    -webkit-mask-image: radial-gradient(80% 70% at 50% 80%, #000 15%, #0000 75%);
+    mask-image: radial-gradient(80% 70% at 50% 80%, #000 15%, #0000 75%);
 }
 
-.projects-swiper .swiper-pagination-progressbar {
+/* Custom Swiper Scrollbar Styles */
+.projects-swiper {
+    padding-bottom: 60px !important;
+}
+
+.projects-swiper .swiper-scrollbar {
     background: rgba(6, 2, 14, 0.1) !important;
     height: 4px !important;
     border-radius: 9999px !important;
     bottom: 16px !important;
     top: auto !important;
     left: 0 !important;
+    right: 0 !important;
     width: 100% !important;
 }
 
-.dark .projects-swiper .swiper-pagination-progressbar {
+.dark .projects-swiper .swiper-scrollbar {
     background: rgba(255, 255, 255, 0.12) !important;
 }
 
-.projects-swiper .swiper-pagination-progressbar-fill {
+.projects-swiper .swiper-scrollbar-drag {
     background: var(--color-brand) !important;
     border-radius: 9999px !important;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-.dark .projects-swiper .swiper-pagination-progressbar-fill {
+.dark .projects-swiper .swiper-scrollbar-drag {
     background: var(--color-brand-glow) !important;
+}
+
+/* Hide horizontal scrollbar on filter tabs */
+.no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Simple fade-in for mounted elements */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade-in 0.3s ease both;
 }

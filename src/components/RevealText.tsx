@@ -1,79 +1,129 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 interface RevealTextProps {
-  text: string;
-  className?: string;
-  as?: "h1" | "h2" | "h3" | "span" | "div";
+    text: string;
+    className?: string;
+    as?: "h1" | "h2" | "h3" | "span" | "div";
+    gradient?: boolean;
 }
 
-export default function RevealText({ text, className = "", as = "h2" }: RevealTextProps) {
-  const containerRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+const GRADIENT_WORDS = new Set(["Joaquín", "Joaquin", "García", "Garcia"]);
 
-  useEffect(() => {
-    setIsVisible(false); // Reset visibility when text changes (e.g. language toggle)
+const GRADIENT_CLASSES = [
+    "text-transparent",
+    "bg-clip-text",
+    "bg-gradient-to-r",
+    "from-brand-light",
+    "via-brand-glow",
+    "to-brand",
+    "dark:from-pure-white",
+    "dark:via-brand-glow",
+    "dark:to-brand",
+];
 
-    let active = true;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (active && entry.isIntersecting) {
-          setIsVisible(true);
-          if (containerRef.current) {
-            observer.unobserve(containerRef.current);
-          }
-        }
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.2, // Activates when 20% is visible
-      }
+const LINE_GRADIENT_CLASSES = [
+    "dark:text-transparent",
+    "dark:bg-clip-text",
+    "dark:bg-gradient-to-b",
+    "dark:from-off-white-canvas",
+    "dark:to-brand-glow",
+];
+
+export default function RevealText({
+    text,
+    className = "",
+    as = "h2",
+    gradient = false,
+}: RevealTextProps) {
+    const ref = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+
+        if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+
+        el.innerHTML = text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\n/g, "<br>");
+
+        let split: SplitText | null = null;
+        let tween: gsap.core.Tween | null = null;
+        let disposed = false;
+
+        const fontsReady = document.fonts?.ready ?? Promise.resolve();
+
+        fontsReady.then(() => {
+            if (disposed) return;
+
+            split = SplitText.create(el, {
+                type: "lines,words",
+                mask: "lines",
+                autoSplit: true,
+                onSplit: (self) => {
+                    if (tween) {
+                        tween.scrollTrigger?.kill();
+                        tween.kill();
+                        tween = null;
+                    }
+
+                    if (gradient) {
+                        self.lines.forEach((line) =>
+                            (line as HTMLElement).classList.add(
+                                ...LINE_GRADIENT_CLASSES,
+                            ),
+                        );
+                    } else {
+                        self.words.forEach((word) => {
+                            const clean = word.textContent
+                                ?.replace(/[¡!.,¿?]/g, "")
+                                .trim();
+                            if (clean && GRADIENT_WORDS.has(clean)) {
+                                (word as HTMLElement).classList.add(
+                                    ...GRADIENT_CLASSES,
+                                );
+                            }
+                        });
+                    }
+
+                    tween = gsap.from(self.lines, {
+                        yPercent: 110,
+                        autoAlpha: 0,
+                        stagger: 0.08,
+                        duration: 0.7,
+                        ease: "power4.out",
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 88%",
+                            once: true,
+                        },
+                    });
+                },
+            });
+        });
+
+        return () => {
+            disposed = true;
+            if (tween) {
+                tween.scrollTrigger?.kill();
+                tween.kill();
+            }
+            if (split) split.revert();
+        };
+    }, [text, gradient]);
+
+    const Tag = as;
+
+    return (
+        <Tag ref={ref as any} className={className}>
+            {text}
+        </Tag>
     );
-
-    const currentRef = containerRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      active = false;
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [text]); // Re-run if text changes (e.g. language toggle)
-
-  // Split text by space. Keep spaces clean.
-  const words = text.trim().split(/\s+/);
-  const Tag = as;
-
-  return (
-    <Tag
-      ref={containerRef as any}
-      className={`${className} ${isVisible ? "is-visible" : ""}`}
-    >
-      {words.map((word, index) => {
-        // Calculate stagger delay
-        const delay = index * 0.05;
-        const cleanWord = word.replace(/[¡!.,¿?]/g, "");
-        const isGradientWord = cleanWord === "Joaquín" || cleanWord === "García";
-        const wordClass = isGradientWord
-          ? "text-transparent bg-clip-text bg-gradient-to-r from-brand-light via-brand-glow to-brand dark:from-pure-white dark:via-brand-glow dark:to-brand"
-          : "";
-
-        return (
-          <span key={index} className="wrapper wrapper-words">
-            <span
-              className={`inner-text ${wordClass}`}
-              style={{
-                animationDelay: `${delay}s`,
-              }}
-            >
-              {word}
-            </span>
-          </span>
-        );
-      })}
-    </Tag>
-  );
 }

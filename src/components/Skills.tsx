@@ -24,17 +24,40 @@ export default function Skills() {
     useEffect(() => {
         const el = timeRef.current;
         if (!el) return;
+
         const format = () =>
             new Date().toLocaleTimeString(locale, {
                 hour: "2-digit",
                 minute: "2-digit",
                 hour12: false,
             });
-        el.textContent = format();
-        const interval = setInterval(() => {
+
+        let interval: number | null = null;
+
+        const start = () => {
+            if (interval !== null) return;
             el.textContent = format();
-        }, 1000);
-        return () => clearInterval(interval);
+            interval = window.setInterval(() => {
+                el.textContent = format();
+            }, 1000);
+        };
+
+        const stop = () => {
+            if (interval === null) return;
+            window.clearInterval(interval);
+            interval = null;
+        };
+
+        const observer = new IntersectionObserver(
+            ([entry]) => (entry.isIntersecting ? start() : stop()),
+            { rootMargin: "100px" },
+        );
+        observer.observe(el);
+
+        return () => {
+            observer.disconnect();
+            stop();
+        };
     }, [locale]);
 
     const openSkillWindow = (skill: Skill) => {
@@ -158,6 +181,20 @@ export default function Skills() {
                                                     openWindows[skillName];
                                                 const isFocused =
                                                     focusedWindow === skillName;
+                                                const years =
+                                                    CURRENT_YEAR -
+                                                    parseInt(
+                                                        win.skill.year,
+                                                        10,
+                                                    );
+                                                const proficiency =
+                                                    Math.min(
+                                                        100,
+                                                        Math.max(
+                                                            70,
+                                                            100 - years * 2.5,
+                                                        ),
+                                                    );
                                                 const relatedProjects =
                                                     projectsData.filter((p) =>
                                                         p.skills.some(
@@ -253,27 +290,15 @@ export default function Skills() {
                                                                     <p className="text-[10px] font-mono text-stone-400 mt-1">
                                                                         {t(
                                                                             "skills.since",
-                                                                        )}{" "}
+                                                                        )}                                                                        {" "}
                                                                         {
                                                                             win
                                                                                 .skill
                                                                                 .year
                                                                         }{" "}
                                                                         •{" "}
-                                                                        {CURRENT_YEAR -
-                                                                            parseInt(
-                                                                                win
-                                                                                    .skill
-                                                                                    .year,
-                                                                                10,
-                                                                            )}{" "}
-                                                                        {CURRENT_YEAR -
-                                                                            parseInt(
-                                                                                win
-                                                                                    .skill
-                                                                                    .year,
-                                                                                10,
-                                                                            ) ===
+                                                                        {years}{" "}
+                                                                        {years ===
                                                                         1
                                                                             ? t(
                                                                                   "skills.yearSingle",
@@ -313,28 +338,14 @@ export default function Skills() {
                                                                         )}
                                                                     </span>
                                                                     <span className="text-white font-bold">
-                                                                        {Math.min(
-                                                                            100,
-                                                                            Math.max(
-                                                                                70,
-                                                                                100 -
-                                                                                    (CURRENT_YEAR -
-                                                                                        parseInt(
-                                                                                            win
-                                                                                                .skill
-                                                                                                .year,
-                                                                                        )) *
-                                                                                        2.5,
-                                                                            ),
-                                                                        )}
-                                                                        %
+                                                                        {proficiency}%
                                                                     </span>
                                                                 </div>
                                                                 <div className="h-1.5 bg-stone-800 rounded-full overflow-hidden">
                                                                     <div
                                                                         className="h-full bg-gradient-to-r from-brand to-brand-glow rounded-full"
                                                                         style={{
-                                                                            width: `${Math.min(100, Math.max(70, 100 - (CURRENT_YEAR - parseInt(win.skill.year)) * 2.5))}%`,
+                                                                            width: `${proficiency}%`,
                                                                         }}
                                                                     />
                                                                 </div>

@@ -32,6 +32,7 @@ export default defineConfig(() => {
                         }
                         if (id.includes("swiper")) return "vendor-swiper";
                         if (id.includes("motion")) return "vendor-motion";
+                        if (id.includes("gsap")) return "vendor-gsap";
                         if (id.includes("@emailjs")) return "vendor-emailjs";
                     },
                 },

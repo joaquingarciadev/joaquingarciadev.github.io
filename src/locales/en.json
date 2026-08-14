@@ -9,7 +9,7 @@
   },
   "hero": {
     "available": "Available for Projects",
-    "greeting": "Hi! I'm Joaquin Garcia",
+    "greeting": "Hi! I'm\nJoaquin Garcia",
     "role": "Web Developer",
     "cta_contact": "Get in touch",
     "cta_work": "View my work"
@@ -19,7 +19,6 @@
     "title": "About me",
     "p1": "Hello! I'm Joaquin Garcia, a web developer from Córdoba, Argentina. I specialize in building websites and web applications. I love this field and I am excited to continue growing as a developer.",
     "p2": "I am here to help you build the digital presence you need. If you need a website, maintenance, or personalized consulting, feel free to contact me.",
-    "contact": "Contact Me",
     "developer": "Web Developer",
     "since": "Since 2017",
     "specialty": "Specialty",
@@ -45,8 +44,6 @@
     "proficiency": "Proficiency Level",
     "projectsWithSkill": "Related projects:",
     "noProjects": "No projects registered with this skill.",
-    "clickIcon": "Click the skill shortcuts on the screen to view detailed information.",
-    "viewProject": "View project",
     "desc": {
       "html": "Markup language for creating web pages.",
       "css": "Style sheet language for styling web pages.",
