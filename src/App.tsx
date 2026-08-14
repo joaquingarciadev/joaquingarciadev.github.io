@@ -86,11 +86,7 @@ export default function App() {
         <div className="bg-pure-white dark:bg-off-black-ink min-h-screen text-off-black-ink dark:text-off-white-canvas transition-colors duration-300 selection:bg-brand selection:text-pure-white dark:selection:bg-brand-glow dark:selection:text-off-black-ink">
             <CustomCursor />
 
-            <Navbar
-                darkMode={darkMode}
-                setDarkMode={setDarkMode}
-                activeSection={activeSection}
-            />
+            {/* <Navbar darkMode={darkMode} setDarkMode={setDarkMode} activeSection={activeSection} /> */}
 
             <Hero
                 onContactClick={() => scrollToSection("contacto")}
