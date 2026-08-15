@@ -1,15 +1,181 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "motion/react";
 import { X, ExternalLink } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { skillsData, Skill, projectsData } from "../data";
 import RevealText from "./RevealText";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface OpenWindow {
     skill: Skill;
 }
 
 const CURRENT_YEAR = new Date().getFullYear();
+
+interface SkillWindowProps {
+    key?: string;
+    win: OpenWindow;
+    isFocused: boolean;
+    onPointerDown: () => void;
+    onClose: () => void;
+}
+
+function SkillWindow({
+    win,
+    isFocused,
+    onPointerDown,
+    onClose,
+}: SkillWindowProps) {
+    const { t } = useTranslation();
+    const ref = useRef<HTMLDivElement>(null);
+    const skillName = win.skill.name;
+    const years = CURRENT_YEAR - parseInt(win.skill.year, 10);
+    const proficiency = win.skill.proficiency;
+    const relatedProjects = projectsData.filter((p) =>
+        p.skills.some((s) => s.toLowerCase() === skillName.toLowerCase()),
+    );
+
+    useLayoutEffect(() => {
+        if (!ref.current) return;
+        const tween = gsap.fromTo(
+            ref.current,
+            { opacity: 0, scale: 0.95, y: 10 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.15, ease: "power1.out" },
+        );
+        return () => {
+            tween.kill();
+        };
+    }, []);
+
+    const handleClose = () => {
+        if (!ref.current) return;
+        gsap.to(ref.current, {
+            opacity: 0,
+            scale: 0.95,
+            y: 10,
+            duration: 0.15,
+            ease: "power1.in",
+            onComplete: onClose,
+        });
+    };
+
+    const scrollToSection = (id: string) => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView();
+    };
+
+    return (
+        <div
+            ref={ref}
+            onPointerDown={onPointerDown}
+            className={`absolute flex flex-col rounded-xl overflow-hidden shadow-2xl border transition-[border-color] ${
+                isFocused
+                    ? "border-brand-glow/70 bg-stone-900/98 dark:bg-stone-950/98 shadow-brand/10 z-30"
+                    : "border-white/10 bg-stone-900/85 dark:bg-stone-950/90 z-20"
+            }`}
+            style={{
+                top: "10%",
+                left: "10%",
+                width: "80%",
+                height: "calc(100% - 130px)",
+                minHeight: "220px",
+            }}
+        >
+            {/* Window Title Bar */}
+            <div className="bg-stone-800 border-b border-white/10 px-3 py-1.5 flex items-center justify-between">
+                <div className="flex items-center gap-2 text-[11px] font-mono text-white truncate">
+                    <img
+                        src={win.skill.img}
+                        className="w-3.5 h-3.5 object-contain"
+                        referrerPolicy="no-referrer"
+                    />
+                    <span>{win.skill.name}.info</span>
+                </div>
+                <button
+                    onClick={handleClose}
+                    className="w-5 h-5 rounded hover:bg-red-500 text-white/70 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                >
+                    <X className="w-3.5 h-3.5" />
+                </button>
+            </div>
+
+            {/* Window Content */}
+            <div className="flex-1 p-3 md:p-5 overflow-y-auto bg-stone-950/95 text-stone-200 space-y-4">
+                <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-3">
+                    <div className="min-w-0">
+                        <h4 className="text-lg md:text-xl font-bold font-display text-white">
+                            {win.skill.name}
+                        </h4>
+                        <p className="text-[10px] font-mono text-stone-400 mt-1">
+                            {t("skills.since")} {win.skill.year} • {years}{" "}
+                            {years === 1
+                                ? t("skills.yearSingle")
+                                : t("skills.years")}{" "}
+                            {t("skills.exp")}
+                        </p>
+                    </div>
+                    <img
+                        src={win.skill.img}
+                        className="w-10 h-10 object-contain bg-white/5 rounded-xl p-2 border border-white/10 shrink-0"
+                        referrerPolicy="no-referrer"
+                    />
+                </div>
+
+                <p className="text-xs md:text-sm text-stone-300 leading-relaxed font-sans">
+                    {t(win.skill.descriptionKey)}
+                </p>
+
+                {/* Proficiency slider */}
+                <div className="space-y-1.5">
+                    <div className="flex justify-between text-[10px] font-mono text-stone-400">
+                        <span>{t("skills.proficiency")}</span>
+                        <span className="text-white font-bold">
+                            {proficiency}%
+                        </span>
+                    </div>
+                    <div className="h-1.5 bg-stone-800 rounded-full overflow-hidden">
+                        <div
+                            className="h-full bg-gradient-to-r from-brand to-brand-glow rounded-full"
+                            style={{ width: `${proficiency}%` }}
+                        />
+                    </div>
+                </div>
+
+                {/* Related Projects */}
+                <div className="pt-2">
+                    <span className="text-[10px] font-mono text-stone-400 uppercase tracking-wider block mb-2">
+                        {t("skills.projectsWithSkill")}
+                    </span>
+                    {relatedProjects.length === 0 ? (
+                        <p className="text-[11px] text-stone-500 font-mono italic">
+                            {t("skills.noProjects")}
+                        </p>
+                    ) : (
+                        <div className="flex flex-wrap gap-2">
+                            {relatedProjects.map((proj) => (
+                                <button
+                                    key={proj.name}
+                                    onClick={() =>
+                                        scrollToSection("proyectos")
+                                    }
+                                    className="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-800 border border-white/5 px-2.5 py-1 rounded-lg text-xs text-stone-300 hover:text-white transition-colors cursor-pointer text-left"
+                                >
+                                    <span className="w-1.5 h-1.5 rounded-full bg-brand-glow" />
+                                    <span className="font-medium">
+                                        {proj.name}
+                                    </span>
+                                    <ExternalLink className="w-2.5 h-2.5 text-stone-500" />
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+}
 
 export default function Skills() {
     const { t, i18n } = useTranslation();
@@ -18,8 +184,33 @@ export default function Skills() {
     }>({});
     const [focusedWindow, setFocusedWindow] = useState<string | null>(null);
     const timeRef = useRef<HTMLDivElement>(null);
+    const monitorRef = useRef<HTMLDivElement>(null);
 
     const locale = i18n.language === "es" ? "es-AR" : "en-US";
+
+    useEffect(() => {
+        const el = monitorRef.current;
+        if (!el) return;
+        const ctx = gsap.context(() => {
+            gsap.fromTo(
+                el,
+                { opacity: 0, scale: 0.92, y: 40 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    duration: 0.7,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 80%",
+                        once: true,
+                    },
+                },
+            );
+        });
+        return () => ctx.revert();
+    }, []);
 
     useEffect(() => {
         const el = timeRef.current;
@@ -81,13 +272,6 @@ export default function Skills() {
         }
     };
 
-    const scrollToSection = (id: string) => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.scrollIntoView();
-        }
-    };
-
     return (
         <section
             id="habilidades"
@@ -108,11 +292,8 @@ export default function Skills() {
                 </div>
 
                 {/* Physical Monitor Container with Fade Zoom Up Animation */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.92, y: 40 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                <div
+                    ref={monitorRef}
                     className="w-full max-w-5xl mx-auto"
                 >
                     {/* Monitor Frame */}
@@ -173,227 +354,30 @@ export default function Skills() {
                                     </div>
 
                                     {/* Window Layer */}
-                                    <AnimatePresence>
-                                        {Object.keys(openWindows).map(
-                                            (skillName) => {
-                                                const win =
-                                                    openWindows[skillName];
-                                                const isFocused =
-                                                    focusedWindow === skillName;
-                                                const years =
-                                                    CURRENT_YEAR -
-                                                    parseInt(
-                                                        win.skill.year,
-                                                        10,
-                                                    );
-                                                const proficiency =
-                                                    win.skill.proficiency;
-                                                const relatedProjects =
-                                                    projectsData.filter((p) =>
-                                                        p.skills.some(
-                                                            (s) =>
-                                                                s.toLowerCase() ===
-                                                                skillName.toLowerCase(),
-                                                        ),
-                                                    );
-
-                                                return (
-                                                    <motion.div
-                                                        key={skillName}
-                                                        initial={{
-                                                            opacity: 0,
-                                                            scale: 0.95,
-                                                            y: 10,
-                                                        }}
-                                                        animate={{
-                                                            opacity: 1,
-                                                            scale: 1,
-                                                            y: 0,
-                                                        }}
-                                                        exit={{
-                                                            opacity: 0,
-                                                            scale: 0.95,
-                                                            y: 10,
-                                                        }}
-                                                        transition={{
-                                                            duration: 0.15,
-                                                        }}
-                                                        onPointerDown={() =>
-                                                            setFocusedWindow(
-                                                                skillName,
-                                                            )
-                                                        }
-                                                        className={`absolute flex flex-col rounded-xl overflow-hidden shadow-2xl border transition-all ${
-                                                            isFocused
-                                                                ? "border-brand-glow/70 bg-stone-900/98 dark:bg-stone-950/98 shadow-brand/10 z-30"
-                                                                : "border-white/10 bg-stone-900/85 dark:bg-stone-950/90 z-20"
-                                                        }`}
-                                                        style={{
-                                                            top: "10%",
-                                                            left: "10%",
-                                                            width: "80%",
-                                                            height: "calc(100% - 130px)",
-                                                            minHeight: "220px",
-                                                        }}
-                                                    >
-                                                        {/* Window Title Bar */}
-                                                        <div className="bg-stone-800 border-b border-white/10 px-3 py-1.5 flex items-center justify-between">
-                                                            <div className="flex items-center gap-2 text-[11px] font-mono text-white truncate">
-                                                                <img
-                                                                    src={
-                                                                        win
-                                                                            .skill
-                                                                            .img
-                                                                    }
-                                                                    className="w-3.5 h-3.5 object-contain"
-                                                                    referrerPolicy="no-referrer"
-                                                                />
-                                                                <span>
-                                                                    {
-                                                                        win
-                                                                            .skill
-                                                                            .name
-                                                                    }
-                                                                    .info
-                                                                </span>
-                                                            </div>
-                                                            <button
-                                                                onClick={() =>
-                                                                    closeWindow(
-                                                                        skillName,
-                                                                    )
-                                                                }
-                                                                className="w-5 h-5 rounded hover:bg-red-500 text-white/70 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
-                                                            >
-                                                                <X className="w-3.5 h-3.5" />
-                                                            </button>
-                                                        </div>
-
-                                                        {/* Window Content */}
-                                                        <div className="flex-1 p-3 md:p-5 overflow-y-auto bg-stone-950/95 text-stone-200 space-y-4">
-                                                            <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-3">
-                                                                <div className="min-w-0">
-                                                                    <h4 className="text-lg md:text-xl font-bold font-display text-white">
-                                                                        {
-                                                                            win
-                                                                                .skill
-                                                                                .name
-                                                                        }
-                                                                    </h4>
-                                                                    <p className="text-[10px] font-mono text-stone-400 mt-1">
-                                                                        {t(
-                                                                            "skills.since",
-                                                                        )}                                                                        {" "}
-                                                                        {
-                                                                            win
-                                                                                .skill
-                                                                                .year
-                                                                        }{" "}
-                                                                        •{" "}
-                                                                        {years}{" "}
-                                                                        {years ===
-                                                                        1
-                                                                            ? t(
-                                                                                  "skills.yearSingle",
-                                                                              )
-                                                                            : t(
-                                                                                  "skills.years",
-                                                                              )}{" "}
-                                                                        {t(
-                                                                            "skills.exp",
-                                                                        )}
-                                                                    </p>
-                                                                </div>
-                                                                <img
-                                                                    src={
-                                                                        win
-                                                                            .skill
-                                                                            .img
-                                                                    }
-                                                                    className="w-10 h-10 object-contain bg-white/5 rounded-xl p-2 border border-white/10 shrink-0"
-                                                                    referrerPolicy="no-referrer"
-                                                                />
-                                                            </div>
-
-                                                            <p className="text-xs md:text-sm text-stone-300 leading-relaxed font-sans">
-                                                                {t(
-                                                                    win.skill
-                                                                        .descriptionKey,
-                                                                )}
-                                                            </p>
-
-                                                            {/* Proficiency slider */}
-                                                            <div className="space-y-1.5">
-                                                                <div className="flex justify-between text-[10px] font-mono text-stone-400">
-                                                                    <span>
-                                                                        {t(
-                                                                            "skills.proficiency",
-                                                                        )}
-                                                                    </span>
-                                                                    <span className="text-white font-bold">
-                                                                        {proficiency}%
-                                                                    </span>
-                                                                </div>
-                                                                <div className="h-1.5 bg-stone-800 rounded-full overflow-hidden">
-                                                                    <div
-                                                                        className="h-full bg-gradient-to-r from-brand to-brand-glow rounded-full"
-                                                                        style={{
-                                                                            width: `${proficiency}%`,
-                                                                        }}
-                                                                    />
-                                                                </div>
-                                                            </div>
-
-                                                            {/* Related Projects */}
-                                                            <div className="pt-2">
-                                                                <span className="text-[10px] font-mono text-stone-400 uppercase tracking-wider block mb-2">
-                                                                    {t(
-                                                                        "skills.projectsWithSkill",
-                                                                    )}
-                                                                </span>
-                                                                {relatedProjects.length ===
-                                                                0 ? (
-                                                                    <p className="text-[11px] text-stone-500 font-mono italic">
-                                                                        {t(
-                                                                            "skills.noProjects",
-                                                                        )}
-                                                                    </p>
-                                                                ) : (
-                                                                    <div className="flex flex-wrap gap-2">
-                                                                        {relatedProjects.map(
-                                                                            (
-                                                                                proj,
-                                                                            ) => (
-                                                                                <button
-                                                                                    key={
-                                                                                        proj.name
-                                                                                    }
-                                                                                    onClick={() => {
-                                                                                        scrollToSection(
-                                                                                            "proyectos",
-                                                                                        );
-                                                                                    }}
-                                                                                    className="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-800 border border-white/5 px-2.5 py-1 rounded-lg text-xs text-stone-300 hover:text-white transition-colors cursor-pointer text-left"
-                                                                                >
-                                                                                    <span className="w-1.5 h-1.5 rounded-full bg-brand-glow" />
-                                                                                    <span className="font-medium">
-                                                                                        {
-                                                                                            proj.name
-                                                                                        }
-                                                                                    </span>
-                                                                                    <ExternalLink className="w-2.5 h-2.5 text-stone-500" />
-                                                                                </button>
-                                                                            ),
-                                                                        )}
-                                                                    </div>
-                                                                )}
-                                                            </div>
-                                                        </div>
-                                                    </motion.div>
-                                                );
-                                            },
-                                        )}
-                                    </AnimatePresence>
+                                    {Object.keys(openWindows).map(
+                                        (skillName) => {
+                                            const win =
+                                                openWindows[skillName];
+                                            return (
+                                                <SkillWindow
+                                                    key={skillName}
+                                                    win={win}
+                                                    isFocused={
+                                                        focusedWindow ===
+                                                        skillName
+                                                    }
+                                                    onPointerDown={() =>
+                                                        setFocusedWindow(
+                                                            skillName,
+                                                        )
+                                                    }
+                                                    onClose={() =>
+                                                        closeWindow(skillName)
+                                                    }
+                                                />
+                                            );
+                                        },
+                                    )}
 
                                     {/* Centered Taskbar */}
                                     <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[calc(100%-16px)] h-11 bg-stone-900/85 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between px-3 z-45 shadow-lg">
@@ -477,7 +461,7 @@ export default function Skills() {
                         {/* Reflected shadow */}
                         <div className="w-48 md:w-64 h-2 bg-neutral-200 dark:bg-neutral-950/40 rounded-full blur-md -mt-0.5"></div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

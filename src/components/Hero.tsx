@@ -1,6 +1,7 @@
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, Sparkles, FolderGit2, Layout, Building2, ShoppingBag } from "lucide-react";
-import { motion } from "motion/react";
+import gsap from "gsap";
 import RevealText from "./RevealText";
 import FlipText from "./FlipText";
 
@@ -11,6 +12,65 @@ interface HeroProps {
 
 export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
     const { t } = useTranslation();
+    const eyebrowRef = useRef<HTMLDivElement>(null);
+    const ctaRef = useRef<HTMLDivElement>(null);
+    const imageRef = useRef<HTMLDivElement>(null);
+    const badge1Ref = useRef<HTMLDivElement>(null);
+    const badge2Ref = useRef<HTMLDivElement>(null);
+    const badge3Ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.fromTo(
+                eyebrowRef.current,
+                { opacity: 0, y: 15 },
+                { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+            );
+            gsap.fromTo(
+                ctaRef.current,
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.6, delay: 0.5, ease: "power2.out" },
+            );
+            gsap.fromTo(
+                imageRef.current,
+                { opacity: 0, scale: 0.95 },
+                { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" },
+            );
+
+            const fadeIn = (el: HTMLElement | null, delay: number, y: number) => {
+                if (!el) return;
+                gsap.fromTo(
+                    el,
+                    { opacity: 0, y },
+                    { opacity: 1, y: 0, duration: 0.6, delay, ease: "power2.out" },
+                );
+            };
+            const oscillate = (
+                el: HTMLElement | null,
+                y: number,
+                legDuration: number,
+                delay: number,
+            ) => {
+                if (!el) return;
+                gsap.to(el, {
+                    y,
+                    duration: legDuration,
+                    yoyo: true,
+                    repeat: -1,
+                    ease: "sine.inOut",
+                    delay,
+                });
+            };
+
+            fadeIn(badge1Ref.current, 0.6, 20);
+            oscillate(badge1Ref.current, -6, 2, 1.2);
+            fadeIn(badge2Ref.current, 0.8, 20);
+            oscillate(badge2Ref.current, 6, 2.25, 1.4);
+            fadeIn(badge3Ref.current, 1.0, 20);
+            oscillate(badge3Ref.current, -5, 1.9, 1.6);
+        });
+        return () => ctx.revert();
+    }, []);
 
     return (
         <section
@@ -24,10 +84,8 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                 {/* Left Side: Content */}
                 <div className="lg:col-span-7 flex flex-col items-start text-left">
                     {/* Eyebrow Label */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                    <div
+                        ref={eyebrowRef}
                         className="flex items-center gap-2 px-3 py-1 bg-brand/10 dark:bg-brand/20 border border-brand/25 dark:border-brand-glow/30 text-brand dark:text-brand-glow rounded-full text-xs font-display font-medium tracking-widest uppercase mb-6"
                     >
                         <Sparkles
@@ -35,7 +93,7 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                             style={{ animationDuration: "3s" }}
                         />
                         {t("hero.available")}
-                    </motion.div>
+                    </div>
 
                     {/* Main Display Heading */}
                     <RevealText
@@ -55,10 +113,8 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                     </div>
 
                     {/* CTA Button Group */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
+                    <div
+                        ref={ctaRef}
                         className="flex flex-wrap gap-4 w-full sm:w-auto"
                     >
                         {/* Primary Button (Purple Pill) */}
@@ -78,14 +134,12 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                             <FolderGit2 className="w-5 h-5 text-brand dark:text-brand-glow" />
                             <FlipText>{t("hero.cta_work")}</FlipText>
                         </button>
-                    </motion.div>
+                    </div>
                 </div>
 
                 {/* Right Side: Image with Floating Badges */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                <div
+                    ref={imageRef}
                     className="lg:col-span-5 flex justify-center"
                 >
                     <div className="relative w-full max-w-[420px]">
@@ -100,13 +154,8 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                         />
 
                         {/* Floating Badge 1: Landing page */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: [0, -6, 0] }}
-                            transition={{
-                                opacity: { duration: 0.6, delay: 0.6 },
-                                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                            }}
+                        <div
+                            ref={badge1Ref}
                             className="absolute -top-3 -left-3 md:-top-5 md:-left-5 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
                         >
                             <div className="p-1.5 rounded-xl bg-pink-500 text-pure-white">
@@ -115,16 +164,11 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                             <span className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas whitespace-nowrap">
                                 {t("projects.filters.Landing page")}
                             </span>
-                        </motion.div>
+                        </div>
 
                         {/* Floating Badge 2: Institucional */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: [0, 6, 0] }}
-                            transition={{
-                                opacity: { duration: 0.6, delay: 0.8 },
-                                y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
-                            }}
+                        <div
+                            ref={badge2Ref}
                             className="absolute top-1/2 -right-3 md:-right-7 -translate-y-1/2 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
                         >
                             <div className="p-1.5 rounded-xl bg-sky-500 text-pure-white">
@@ -133,16 +177,11 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                             <span className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas whitespace-nowrap">
                                 {t("projects.filters.Institucional")}
                             </span>
-                        </motion.div>
+                        </div>
 
                         {/* Floating Badge 3: Ecommerce */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: [0, -5, 0] }}
-                            transition={{
-                                opacity: { duration: 0.6, delay: 1.0 },
-                                y: { duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1 },
-                            }}
+                        <div
+                            ref={badge3Ref}
                             className="absolute -bottom-3 left-4 md:-bottom-5 md:left-6 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
                         >
                             <div className="p-1.5 rounded-xl bg-amber-500 text-pure-white">
@@ -151,9 +190,9 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                             <span className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas whitespace-nowrap">
                                 {t("projects.filters.Ecommerce")}
                             </span>
-                        </motion.div>
+                        </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

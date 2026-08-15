@@ -2,8 +2,11 @@ import { useRef, useEffect } from "react";
 import type { MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { Layout, Zap, LifeBuoy } from "lucide-react";
-import { motion } from "motion/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import RevealText from "./RevealText";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Services() {
   const { t } = useTranslation();
@@ -29,6 +32,31 @@ export default function Services() {
 
   useEffect(() => {
     return () => cancelAnimationFrame(rafRef.current);
+  }, []);
+
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        grid.querySelectorAll(".spotlight-card"),
+        { opacity: 0, y: 35, scale: 0.94 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: grid,
+            start: "top 80%",
+            once: true,
+          },
+        },
+      );
+    });
+    return () => ctx.revert();
   }, []);
 
   const servicesList = [
@@ -68,23 +96,15 @@ export default function Services() {
           <div className="h-1 w-16 bg-gradient-to-r from-brand to-brand-light mt-4 rounded-full" />
         </div>
 
-        {/* Services Grid with Motion Stagger Cards */}
+        {/* Services Grid with Gsap Stagger Cards */}
         <div
           ref={gridRef}
           onMouseMove={handleMouseMove}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 spotlight-group"
         >
           {servicesList.map((service, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 35, scale: 0.94 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-                ease: [0.16, 1, 0.3, 1],
-              }}
               className="spotlight-card flex flex-col"
             >
               <div className="spotlight-card-inner p-8 flex flex-col justify-between h-full">
@@ -105,7 +125,7 @@ export default function Services() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

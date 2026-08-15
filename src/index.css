@@ -701,22 +701,3 @@
 .fade-in {
     animation: fade-in 0.3s ease both;
 }
-
-/* TEST: blur desactivado para probar rendimiento (revertir luego) */
-.spotlight-card::before,
-.spotlight-card::after {
-    filter: none !important;
-}
-
-.menu-panel {
-    backdrop-filter: none !important;
-}
-
-.backdrop-blur-md {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-}
-
-.blur-md {
-    filter: none !important;
-}

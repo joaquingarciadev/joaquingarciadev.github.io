@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import {
     ArrowUpRight,
@@ -6,7 +6,7 @@ import {
     ChevronLeft,
     ChevronRight,
 } from "lucide-react";
-import { motion } from "motion/react";
+import gsap from "gsap";
 import { projectsData, Project } from "../data";
 import RevealText from "./RevealText";
 import FlipText from "./FlipText";
@@ -53,6 +53,43 @@ export default function Projects({
     const [isBeginning, setIsBeginning] = useState<boolean>(true);
     const [isEnd, setIsEnd] = useState<boolean>(false);
 
+    const tabsRef = useRef<HTMLDivElement>(null);
+    const pillRef = useRef<HTMLDivElement>(null);
+    const pillInitialized = useRef<boolean>(false);
+
+    useLayoutEffect(() => {
+        const pill = pillRef.current;
+        const container = tabsRef.current;
+        if (!pill || !container) return;
+        const btn = container.querySelector<HTMLButtonElement>(
+            `[data-filter="${activeFilter}"]`,
+        );
+        if (!btn) return;
+
+        const position = (animate: boolean) => {
+            const target = btn.getBoundingClientRect();
+            const base = container.getBoundingClientRect();
+            const vars = {
+                x: target.left - base.left,
+                y: target.top - base.top,
+                width: target.width,
+                height: target.height,
+            };
+            if (animate) {
+                gsap.to(pill, { ...vars, duration: 0.45, ease: "power3.out" });
+            } else {
+                gsap.set(pill, vars);
+            }
+        };
+
+        position(pillInitialized.current);
+        pillInitialized.current = true;
+
+        const onResize = () => position(false);
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+    }, [activeFilter]);
+
     useEffect(() => {
         if (swiperInstance) {
             swiperInstance.slideTo(0, 0);
@@ -82,12 +119,20 @@ export default function Projects({
 
                 {/* Filter Tabs */}
                 <div className="flex justify-center mb-6">
-                    <div className="flex items-center gap-1 bg-pure-white/70 dark:bg-deep-charcoal/60 backdrop-blur-md p-1.5 rounded-full border border-ash/30 dark:border-brand-glow/20 max-w-full overflow-x-auto no-scrollbar shadow-sm relative z-0">
+                    <div
+                        ref={tabsRef}
+                        className="flex items-center gap-1 bg-pure-white/70 dark:bg-deep-charcoal/60 backdrop-blur-md p-1.5 rounded-full border border-ash/30 dark:border-brand-glow/20 max-w-full overflow-x-auto no-scrollbar shadow-sm relative z-0"
+                    >
+                        <div
+                            ref={pillRef}
+                            className="absolute left-0 top-0 bg-brand rounded-full -z-10"
+                        />
                         {filters.map((f) => {
                             const isActive = activeFilter === f.id;
                             return (
                                 <button
                                     key={f.id}
+                                    data-filter={f.id}
                                     onClick={() => setActiveFilter(f.id)}
                                     className={`relative px-4 py-2 rounded-full font-sans text-xs md:text-sm font-semibold tracking-wide whitespace-nowrap transition-colors duration-200 cursor-pointer select-none focus:outline-none ${
                                         isActive
@@ -95,17 +140,6 @@ export default function Projects({
                                             : "text-graphite dark:text-ash hover:text-brand dark:hover:text-brand-glow"
                                     }`}
                                 >
-                                    {isActive && (
-                                        <motion.div
-                                            layoutId="activeFilterTab"
-                                            className="absolute inset-0 bg-brand rounded-full -z-10"
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 380,
-                                                damping: 32,
-                                            }}
-                                        />
-                                    )}
                                     <FlipText>{f.label}</FlipText>
                                 </button>
                             );

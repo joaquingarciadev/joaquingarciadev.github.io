@@ -1,10 +1,39 @@
+import { useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { MapPin, Code2, User } from "lucide-react";
-import { motion } from "motion/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import RevealText from "./RevealText";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
     const { t } = useTranslation();
+    const contentRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const el = contentRef.current;
+        if (!el) return;
+        const ctx = gsap.context(() => {
+            gsap.fromTo(
+                el,
+                { opacity: 0, scale: 0.92, y: 40 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    duration: 0.7,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 80%",
+                        once: true,
+                    },
+                },
+            );
+        });
+        return () => ctx.revert();
+    }, []);
 
     return (
         <section
@@ -26,11 +55,8 @@ export default function About() {
                 </div>
 
                 {/* Centered content (Fade Zoom Up Animated Container) */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.92, y: 40 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                <div
+                    ref={contentRef}
                     className="max-w-3xl mx-auto text-center"
                 >
                     {/* Description */}
@@ -91,7 +117,7 @@ export default function About() {
                             </div>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );
