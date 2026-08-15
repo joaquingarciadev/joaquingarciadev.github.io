@@ -1,12 +1,9 @@
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { X, ExternalLink } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AnimatePresence, motion } from "motion/react";
 import { skillsData, Skill, projectsData } from "../data";
 import RevealText from "./RevealText";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface OpenWindow {
     skill: Skill;
@@ -29,7 +26,6 @@ function SkillWindow({
     onClose,
 }: SkillWindowProps) {
     const { t } = useTranslation();
-    const ref = useRef<HTMLDivElement>(null);
     const skillName = win.skill.name;
     const years = CURRENT_YEAR - parseInt(win.skill.year, 10);
     const proficiency = win.skill.proficiency;
@@ -37,37 +33,17 @@ function SkillWindow({
         p.skills.some((s) => s.toLowerCase() === skillName.toLowerCase()),
     );
 
-    useLayoutEffect(() => {
-        if (!ref.current) return;
-        const tween = gsap.fromTo(
-            ref.current,
-            { autoAlpha: 0, y: 10 },
-            { autoAlpha: 1, y: 0, duration: 0.15, ease: "power1.out" },
-        );
-        return () => {
-            tween.kill();
-        };
-    }, []);
-
-    const handleClose = () => {
-        if (!ref.current) return;
-        gsap.to(ref.current, {
-            autoAlpha: 0,
-            y: 10,
-            duration: 0.15,
-            ease: "power1.in",
-            onComplete: onClose,
-        });
-    };
-
     const scrollToSection = (id: string) => {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView();
     };
 
     return (
-        <div
-            ref={ref}
+        <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.15 }}
             onPointerDown={onPointerDown}
             className={`absolute flex flex-col rounded-xl overflow-hidden shadow-2xl border transition-[border-color] ${
                 isFocused
@@ -93,7 +69,7 @@ function SkillWindow({
                     <span>{win.skill.name}.info</span>
                 </div>
                 <button
-                    onClick={handleClose}
+                    onClick={onClose}
                     className="w-5 h-5 rounded hover:bg-red-500 text-white/70 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
                 >
                     <X className="w-3.5 h-3.5" />
@@ -172,7 +148,7 @@ function SkillWindow({
                     )}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
@@ -183,32 +159,8 @@ export default function Skills() {
     }>({});
     const [focusedWindow, setFocusedWindow] = useState<string | null>(null);
     const timeRef = useRef<HTMLDivElement>(null);
-    const monitorRef = useRef<HTMLDivElement>(null);
 
     const locale = i18n.language === "es" ? "es-AR" : "en-US";
-
-    useEffect(() => {
-        const el = monitorRef.current;
-        if (!el) return;
-        const ctx = gsap.context(() => {
-            gsap.fromTo(
-                el,
-                { autoAlpha: 0, y: 40 },
-                {
-                    autoAlpha: 1,
-                    y: 0,
-                    duration: 0.7,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 80%",
-                        once: true,
-                    },
-                },
-            );
-        });
-        return () => ctx.revert();
-    }, []);
 
     useEffect(() => {
         const el = timeRef.current;
@@ -289,9 +241,12 @@ export default function Skills() {
                     <div className="h-1 w-16 bg-gradient-to-r from-brand to-brand-light mt-4 rounded-full" />
                 </div>
 
-                {/* Physical Monitor Container with Fade Zoom Up Animation */}
-                <div
-                    ref={monitorRef}
+                {/* Physical Monitor Container with Fade Up Animation */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="w-full max-w-5xl mx-auto"
                 >
                     {/* Monitor Frame */}
@@ -352,30 +307,34 @@ export default function Skills() {
                                     </div>
 
                                     {/* Window Layer */}
-                                    {Object.keys(openWindows).map(
-                                        (skillName) => {
-                                            const win =
-                                                openWindows[skillName];
-                                            return (
-                                                <SkillWindow
-                                                    key={skillName}
-                                                    win={win}
-                                                    isFocused={
-                                                        focusedWindow ===
-                                                        skillName
-                                                    }
-                                                    onPointerDown={() =>
-                                                        setFocusedWindow(
-                                                            skillName,
-                                                        )
-                                                    }
-                                                    onClose={() =>
-                                                        closeWindow(skillName)
-                                                    }
-                                                />
-                                            );
-                                        },
-                                    )}
+                                    <AnimatePresence>
+                                        {Object.keys(openWindows).map(
+                                            (skillName) => {
+                                                const win =
+                                                    openWindows[skillName];
+                                                return (
+                                                    <SkillWindow
+                                                        key={skillName}
+                                                        win={win}
+                                                        isFocused={
+                                                            focusedWindow ===
+                                                            skillName
+                                                        }
+                                                        onPointerDown={() =>
+                                                            setFocusedWindow(
+                                                                skillName,
+                                                            )
+                                                        }
+                                                        onClose={() =>
+                                                            closeWindow(
+                                                                skillName,
+                                                            )
+                                                        }
+                                                    />
+                                                );
+                                            },
+                                        )}
+                                    </AnimatePresence>
 
                                     {/* Centered Taskbar */}
                                     <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[calc(100%-16px)] h-11 bg-stone-900/85 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between px-3 z-45 shadow-lg">
@@ -459,7 +418,7 @@ export default function Skills() {
                         {/* Reflected shadow */}
                         <div className="w-48 md:w-64 h-2 bg-neutral-200 dark:bg-neutral-950/40 rounded-full blur-md -mt-0.5"></div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

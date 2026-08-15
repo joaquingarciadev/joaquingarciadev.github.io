@@ -60,7 +60,6 @@ export default function Navbar({
             {/* Desktop Header/Navbar */}
             <header className="hidden md:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 w-max transition-all duration-300">
                 <div
-                    id="navbar-pill"
                     className="flex items-center justify-center gap-5 px-6 py-2.5 rounded-full border border-brand-glow/20 bg-deep-charcoal/95 backdrop-blur-md transition-all duration-300"
                 >
                     {/* Desktop Navigation Menu */}

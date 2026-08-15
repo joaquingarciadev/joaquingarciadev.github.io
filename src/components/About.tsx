@@ -1,38 +1,10 @@
-import { useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { MapPin, Code2, User } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "motion/react";
 import RevealText from "./RevealText";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
     const { t } = useTranslation();
-    const contentRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const el = contentRef.current;
-        if (!el) return;
-        const ctx = gsap.context(() => {
-            gsap.fromTo(
-                el,
-                { autoAlpha: 0, y: 40 },
-                {
-                    autoAlpha: 1,
-                    y: 0,
-                    duration: 0.7,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 80%",
-                        once: true,
-                    },
-                },
-            );
-        });
-        return () => ctx.revert();
-    }, []);
 
     return (
         <section
@@ -53,9 +25,12 @@ export default function About() {
                     <div className="h-1 w-16 bg-gradient-to-r from-brand to-brand-light mt-4 rounded-full" />
                 </div>
 
-                {/* Centered content (Fade Zoom Up Animated Container) */}
-                <div
-                    ref={contentRef}
+                {/* Centered content (Fade Up Animated Container) */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="max-w-3xl mx-auto text-center"
                 >
                     {/* Description */}
@@ -116,7 +91,7 @@ export default function About() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
