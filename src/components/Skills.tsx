@@ -41,8 +41,8 @@ function SkillWindow({
         if (!ref.current) return;
         const tween = gsap.fromTo(
             ref.current,
-            { opacity: 0, scale: 0.95, y: 10 },
-            { opacity: 1, scale: 1, y: 0, duration: 0.15, ease: "power1.out" },
+            { autoAlpha: 0, y: 10 },
+            { autoAlpha: 1, y: 0, duration: 0.15, ease: "power1.out" },
         );
         return () => {
             tween.kill();
@@ -52,8 +52,7 @@ function SkillWindow({
     const handleClose = () => {
         if (!ref.current) return;
         gsap.to(ref.current, {
-            opacity: 0,
-            scale: 0.95,
+            autoAlpha: 0,
             y: 10,
             duration: 0.15,
             ease: "power1.in",
@@ -194,10 +193,9 @@ export default function Skills() {
         const ctx = gsap.context(() => {
             gsap.fromTo(
                 el,
-                { opacity: 0, scale: 0.92, y: 40 },
+                { autoAlpha: 0, y: 40 },
                 {
-                    opacity: 1,
-                    scale: 1,
+                    autoAlpha: 1,
                     y: 0,
                     duration: 0.7,
                     ease: "power3.out",

@@ -33,8 +33,8 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
             );
             gsap.fromTo(
                 imageRef.current,
-                { opacity: 0, scale: 0.95 },
-                { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" },
+                { autoAlpha: 0, y: 20 },
+                { autoAlpha: 1, y: 0, duration: 0.8, ease: "power2.out" },
             );
 
             const fadeIn = (el: HTMLElement | null, delay: number, y: number) => {

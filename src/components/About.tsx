@@ -17,10 +17,9 @@ export default function About() {
         const ctx = gsap.context(() => {
             gsap.fromTo(
                 el,
-                { opacity: 0, scale: 0.92, y: 40 },
+                { autoAlpha: 0, y: 40 },
                 {
-                    opacity: 1,
-                    scale: 1,
+                    autoAlpha: 1,
                     y: 0,
                     duration: 0.7,
                     ease: "power3.out",

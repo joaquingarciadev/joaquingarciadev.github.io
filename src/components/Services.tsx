@@ -40,11 +40,10 @@ export default function Services() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         grid.querySelectorAll(".spotlight-card"),
-        { opacity: 0, y: 35, scale: 0.94 },
+        { autoAlpha: 0, y: 35 },
         {
-          opacity: 1,
+          autoAlpha: 1,
           y: 0,
-          scale: 1,
           duration: 0.6,
           stagger: 0.15,
           ease: "power3.out",
