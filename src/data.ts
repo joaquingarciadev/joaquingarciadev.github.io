@@ -284,22 +284,6 @@ export const projectsData: Project[] = [
         type: "Catálogo",
     },
     {
-        name: "Dona Nua",
-        descriptionKey: "projects.desc.dona_nua",
-        skills: [
-            "Wordpress",
-            "Elementor",
-            "Woocommerce",
-            "PHP",
-            "HTML",
-            "CSS",
-            "Javascript",
-        ],
-        img: "/images/proyectos/donanua.webp",
-        url: "https://donanua.com.ar/",
-        type: "E-commerce",
-    },
-    {
         name: "Crespo",
         descriptionKey: "projects.desc.crespo",
         skills: [
@@ -313,6 +297,22 @@ export const projectsData: Project[] = [
         ],
         img: "/images/proyectos/crespo.webp",
         url: "https://crespo.com.ar/",
+        type: "E-commerce",
+    },
+    {
+        name: "Todo Ortodoncia",
+        descriptionKey: "projects.desc.todoortodoncia",
+        skills: [
+            "Wordpress",
+            "Woocommerce",
+            "Elementor",
+            "PHP",
+            "HTML",
+            "CSS",
+            "Javascript",
+        ],
+        img: "/images/proyectos/todoortodoncia.webp",
+        url: "https://todoortodoncia.com/",
         type: "E-commerce",
     },
     {
