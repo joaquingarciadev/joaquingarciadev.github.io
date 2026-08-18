@@ -36,7 +36,7 @@ export default function Projects({
         { id: "Landing page", label: t("projects.filters.Landing page") },
         { id: "Institucional", label: t("projects.filters.Institucional") },
         { id: "Catálogo", label: t("projects.filters.Catálogo") },
-        { id: "Ecommerce", label: t("projects.filters.Ecommerce") },
+        { id: "E-commerce", label: t("projects.filters.E-commerce") },
         { id: "Otros", label: t("projects.filters.Otros") },
     ];
 

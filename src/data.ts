@@ -12,7 +12,12 @@ export interface Project {
     skills: string[];
     img: string;
     url: string;
-    type: "Landing page" | "Institucional" | "Catálogo" | "Ecommerce" | "Otros";
+    type:
+        | "Landing page"
+        | "Institucional"
+        | "Catálogo"
+        | "E-commerce"
+        | "Otros";
 }
 
 export const skillsData: Skill[] = [
@@ -196,7 +201,7 @@ export const projectsData: Project[] = [
         ],
         img: "/images/proyectos/laindustrial.webp",
         url: "https://laindustrial.com.ar",
-        type: "Ecommerce",
+        type: "E-commerce",
     },
     {
         name: "Centro SBZ",
@@ -212,7 +217,7 @@ export const projectsData: Project[] = [
         ],
         img: "/images/proyectos/centrosbz.webp",
         url: "https://centrosbz.com",
-        type: "Ecommerce",
+        type: "E-commerce",
     },
     {
         name: "Nevisca",
@@ -292,7 +297,7 @@ export const projectsData: Project[] = [
         ],
         img: "/images/proyectos/donanua.webp",
         url: "https://donanua.com.ar/",
-        type: "Ecommerce",
+        type: "E-commerce",
     },
     {
         name: "Crespo",
@@ -308,7 +313,7 @@ export const projectsData: Project[] = [
         ],
         img: "/images/proyectos/crespo.webp",
         url: "https://crespo.com.ar/",
-        type: "Ecommerce",
+        type: "E-commerce",
     },
     {
         name: "VG Agronegocios",
@@ -332,7 +337,7 @@ export const projectsData: Project[] = [
         ],
         img: "/images/proyectos/gloed.webp",
         url: "https://gloed.com.ar/",
-        type: "Ecommerce",
+        type: "E-commerce",
     },
     {
         name: "Farmacia Siman",
@@ -348,7 +353,7 @@ export const projectsData: Project[] = [
         ],
         img: "/images/proyectos/farmaciasiman.webp",
         url: "https://farmaciasiman.com.ar/",
-        type: "Ecommerce",
+        type: "E-commerce",
     },
     {
         name: "Menzi Almada",
@@ -380,7 +385,7 @@ export const projectsData: Project[] = [
         ],
         img: "/images/proyectos/lacautivacba.webp",
         url: "https://lacautivacba.com/",
-        type: "Ecommerce",
+        type: "E-commerce",
     },
     {
         name: "UON",
@@ -420,7 +425,7 @@ export const projectsData: Project[] = [
         ],
         img: "/images/proyectos/gcdental.webp",
         url: "https://gcdental.ar/",
-        type: "Ecommerce",
+        type: "E-commerce",
     },
     {
         name: "LM Amoblamientos",
@@ -530,7 +535,7 @@ export const projectsData: Project[] = [
         ],
         img: "/images/proyectos/afroditaspleasure.webp",
         url: "https://afroditaspleasure.com/",
-        type: "Ecommerce",
+        type: "E-commerce",
     },
     {
         name: "The Rod and Co. - Sitio web de Agencia Digital",
