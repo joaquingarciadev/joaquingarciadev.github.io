@@ -337,7 +337,7 @@ export default function Skills() {
                                     </AnimatePresence>
 
                                     {/* Centered Taskbar */}
-                                    <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[calc(100%-16px)] h-11 bg-stone-900/85 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between px-3 z-45 shadow-lg">
+                                    <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[calc(100%-16px)] h-11 bg-stone-900/85 rounded-xl border border-white/10 flex items-center justify-between px-3 z-45 shadow-lg">
                                         {/* Left corner */}
                                         <div className="flex items-center gap-2">
                                             <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white/40">
@@ -416,7 +416,7 @@ export default function Skills() {
                         {/* Flat support stand base */}
                         <div className="w-32 md:w-44 h-2 bg-gradient-to-r from-neutral-400 via-neutral-500 to-neutral-600 dark:from-neutral-800 dark:via-neutral-900 dark:to-black rounded-t-lg shadow"></div>
                         {/* Reflected shadow */}
-                        <div className="w-48 md:w-64 h-2 bg-neutral-200 dark:bg-neutral-950/40 rounded-full blur-md -mt-0.5"></div>
+                        <div className="w-48 md:w-64 h-2 bg-neutral-200 dark:bg-neutral-950/40 rounded-full -mt-0.5"></div>
                     </div>
                 </motion.div>
             </div>
