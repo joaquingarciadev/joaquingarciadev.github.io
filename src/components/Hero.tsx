@@ -1,5 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { ArrowRight, Sparkles, FolderGit2, Layout, Building2, ShoppingBag } from "lucide-react";
+import {
+    ArrowRight,
+    Sparkles,
+    FolderGit2,
+    Layout,
+    Building2,
+    ShoppingBag,
+} from "lucide-react";
 import { motion } from "motion/react";
 import RevealText from "./RevealText";
 import FlipText from "./FlipText";
@@ -105,7 +112,11 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                             animate={{ opacity: 1, y: [0, -6, 0] }}
                             transition={{
                                 opacity: { duration: 0.6, delay: 0.6 },
-                                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                                y: {
+                                    duration: 4,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                },
                             }}
                             className="absolute -top-3 -left-3 md:-top-5 md:-left-5 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
                         >
@@ -113,7 +124,7 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                                 <Layout className="w-4 h-4" />
                             </div>
                             <span className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas whitespace-nowrap">
-                                {t("projects.filters.Landing page")}
+                                Landing page
                             </span>
                         </motion.div>
 
@@ -123,7 +134,11 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                             animate={{ opacity: 1, y: [0, 6, 0] }}
                             transition={{
                                 opacity: { duration: 0.6, delay: 0.8 },
-                                y: { duration: 4.5, repeat: Infinity, ease: "easeInOut" },
+                                y: {
+                                    duration: 4.5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                },
                             }}
                             className="absolute top-1/2 -right-3 md:-right-7 -translate-y-1/2 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
                         >
@@ -135,13 +150,17 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                             </span>
                         </motion.div>
 
-                        {/* Floating Badge 3: Ecommerce */}
+                        {/* Floating Badge 3: E-commerce */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: [0, -5, 0] }}
                             transition={{
                                 opacity: { duration: 0.6, delay: 1.0 },
-                                y: { duration: 3.8, repeat: Infinity, ease: "easeInOut" },
+                                y: {
+                                    duration: 3.8,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                },
                             }}
                             className="absolute -bottom-3 left-4 md:-bottom-5 md:left-6 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
                         >
@@ -149,7 +168,7 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                                 <ShoppingBag className="w-4 h-4" />
                             </div>
                             <span className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas whitespace-nowrap">
-                                {t("projects.filters.Ecommerce")}
+                                E-commerce
                             </span>
                         </motion.div>
                     </div>
