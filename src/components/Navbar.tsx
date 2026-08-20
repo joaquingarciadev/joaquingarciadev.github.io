@@ -306,8 +306,8 @@ export default function Navbar({
                         </ul>
 
                         {/* Custom Language Flags & Darkmode Switch inside mobile pill panel */}
-                        <div className="flex items-center justify-between mt-6 pt-6 border-t border-off-black-ink/15 dark:border-pure-white/15">
-                            <div className="flex items-center gap-1.5 bg-off-black-ink/10 dark:bg-pure-white/10 p-1 rounded-lg border border-off-black-ink/10 dark:border-pure-white/10">
+                        <div className="flex items-center justify-between mt-6 pt-6 border-t border-pure-white/15">
+                            <div className="flex items-center gap-1.5 bg-pure-white/10 p-1 rounded-lg border border-pure-white/10">
                                 <button
                                     onClick={() => switchLanguage("es")}
                                     className={`relative rounded-sm overflow-hidden cursor-pointer transition-all duration-300 ${
@@ -342,7 +342,7 @@ export default function Navbar({
 
                             <button
                                 onClick={() => setDarkMode(!darkMode)}
-                                className="p-2.5 rounded-full border border-off-black-ink/20 dark:border-pure-white/20 text-off-black-ink dark:text-pure-white cursor-pointer flex items-center justify-center"
+                                className="p-2.5 rounded-full border border-pure-white/20 text-pure-white cursor-pointer flex items-center justify-center"
                                 aria-label="Toggle dark mode"
                             >
                                 <div

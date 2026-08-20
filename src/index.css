@@ -267,15 +267,11 @@
             height: var(--menu-toggle-bar-weight);
             width: var(--menu-toggle-bar-width);
             position: absolute;
-            background: #000000;
+            background: #ffffff;
             border-radius: 9999px;
             top: 50%;
             left: 50%;
             transition: all 0.3s ease-in-out;
-        }
-
-        .dark .bar {
-            background: #ffffff;
         }
 
         .bar:first-child {
@@ -440,7 +436,7 @@
         .nav-item button {
             display: inline-block;
             text-decoration: none;
-            color: #000000;
+            color: #ffffff;
             font-size: 26px;
             font-weight: 500;
             font-family: inherit;
@@ -455,10 +451,6 @@
             transition:
                 opacity 0.15s ease,
                 transform 0s 0.2s;
-        }
-
-        .dark .nav-item button {
-            color: #ffffff;
         }
 
         .nav-item button:hover {
