@@ -132,9 +132,7 @@ function SkillWindow({
                             {relatedProjects.map((proj) => (
                                 <button
                                     key={proj.name}
-                                    onClick={() =>
-                                        scrollToSection("proyectos")
-                                    }
+                                    onClick={() => scrollToSection("proyectos")}
                                     className="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-800 border border-white/5 px-2.5 py-1 rounded-lg text-xs text-stone-300 hover:text-white transition-colors cursor-pointer text-left"
                                 >
                                     <span className="w-1.5 h-1.5 rounded-full bg-brand-glow" />
@@ -415,8 +413,6 @@ export default function Skills() {
                         <div className="w-16 md:w-20 h-8 md:h-11 bg-gradient-to-r from-neutral-300 via-neutral-400 to-neutral-500 dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900 shadow-inner"></div>
                         {/* Flat support stand base */}
                         <div className="w-32 md:w-44 h-2 bg-gradient-to-r from-neutral-400 via-neutral-500 to-neutral-600 dark:from-neutral-800 dark:via-neutral-900 dark:to-black rounded-t-lg shadow"></div>
-                        {/* Reflected shadow */}
-                        <div className="w-48 md:w-64 h-2 bg-neutral-200 dark:bg-neutral-950/40 rounded-full -mt-0.5"></div>
                     </div>
                 </motion.div>
             </div>
