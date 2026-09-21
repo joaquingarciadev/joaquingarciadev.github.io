@@ -9,6 +9,7 @@ import {
     Search,
     ArrowDown,
     Loader2,
+    ChevronDown,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import RevealText from "./RevealText";
@@ -157,9 +158,6 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
             <div className="w-full max-w-5xl mx-auto px-6 relative">
                 {/* Section Heading */}
                 <div className="flex flex-col items-center text-center mb-16">
-                    <span className="text-xs font-display font-medium text-graphite dark:text-ash uppercase tracking-[0.15em] mb-3">
-                        {t("contact.eyebrow")}
-                    </span>
                     <RevealText
                         as="h2"
                         text={t("contact.title")}
@@ -345,40 +343,36 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                                     <label className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas uppercase tracking-wider">
                                         {t("contact.label_webType")}
                                     </label>
-                                    <select
-                                        name="webType"
-                                        value={formData.webType}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-xl bg-pure-white/90 dark:bg-white/5 border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all cursor-pointer appearance-none"
-                                        style={{
-                                            backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
-                                            backgroundRepeat: "no-repeat",
-                                            backgroundPosition:
-                                                "right 1rem center",
-                                            backgroundSize: "1em",
-                                        }}
-                                    >
-                                        <option value="">
-                                            {t("contact.placeholder_webType")}
-                                        </option>
-                                        <option value="Landing page">
-                                            {t("projects.filters.Landing page")}
-                                        </option>
-                                        <option value="Institucional">
-                                            {t(
-                                                "projects.filters.Institucional",
-                                            )}
-                                        </option>
-                                        <option value="Catálogo">
-                                            {t("projects.filters.Catálogo")}
-                                        </option>
-                                        <option value="E-commerce">
-                                            {t("projects.filters.E-commerce")}
-                                        </option>
-                                        <option value="Otros">
-                                            {t("projects.filters.Otros")}
-                                        </option>
-                                    </select>
+                                    <div className="relative">
+                                        <select
+                                            name="webType"
+                                            value={formData.webType}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 pr-10 rounded-xl bg-pure-white/90 dark:bg-white/5 border border-ash/40 dark:border-white/10 focus:border-brand dark:focus:border-brand-glow outline-none text-sm text-off-black-ink dark:text-off-white-canvas placeholder-stone transition-all cursor-pointer appearance-none"
+                                        >
+                                            <option value="">
+                                                {t("contact.placeholder_webType")}
+                                            </option>
+                                            <option value="Landing page">
+                                                {t("projects.filters.Landing page")}
+                                            </option>
+                                            <option value="Institucional">
+                                                {t(
+                                                    "projects.filters.Institucional",
+                                                )}
+                                            </option>
+                                            <option value="Catálogo">
+                                                {t("projects.filters.Catálogo")}
+                                            </option>
+                                            <option value="E-commerce">
+                                                {t("projects.filters.E-commerce")}
+                                            </option>
+                                            <option value="Otros">
+                                                {t("projects.filters.Otros")}
+                                            </option>
+                                        </select>
+                                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-graphite dark:text-ash pointer-events-none" />
+                                    </div>
 
                                     {/* "Ver ejemplos" link */}
                                     {formData.webType && (

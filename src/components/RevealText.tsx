@@ -10,6 +10,7 @@ interface RevealTextProps {
     className?: string;
     as?: "h1" | "h2" | "h3" | "span" | "div";
     gradient?: boolean;
+    highlightNames?: boolean;
 }
 
 const GRADIENT_WORDS = new Set(["Joaquín", "Joaquin", "García", "Garcia"]);
@@ -39,6 +40,7 @@ export default function RevealText({
     className = "",
     as = "h2",
     gradient = false,
+    highlightNames = true,
 }: RevealTextProps) {
     const ref = useRef<HTMLElement>(null);
 
@@ -80,7 +82,7 @@ export default function RevealText({
                                 ...LINE_GRADIENT_CLASSES,
                             ),
                         );
-                    } else {
+                    } else if (highlightNames) {
                         self.words.forEach((word) => {
                             const clean = word.textContent
                                 ?.replace(/[¡!.,¿?]/g, "")
@@ -117,7 +119,7 @@ export default function RevealText({
             }
             if (split) split.revert();
         };
-    }, [text, gradient]);
+    }, [text, gradient, highlightNames]);
 
     const Tag = as;
 

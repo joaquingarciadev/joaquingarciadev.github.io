@@ -17,12 +17,13 @@
   "about": {
     "eyebrow": "ABOUT THE DEVELOPER",
     "title": "About me",
-    "p1": "Hello! I'm Joaquin Garcia, a web developer from Córdoba, Argentina. I specialize in building websites and web applications. I love this field and I am excited to continue growing as a developer.",
-    "p2": "I am here to help you build the digital presence you need. If you need a website, maintenance, or personalized consulting, feel free to contact me.",
-    "developer": "Web Developer",
-    "since": "Since 2017",
+    "description": "Hi! I'm Joaquín García, a web developer specializing in WordPress, with 3 years of experience working with agencies and freelance projects, and more than 30 completed projects. I specialize in designing and developing websites, landing pages, online stores, and solutions tailored to the needs of each project. I'm here to help you create the digital presence your business needs. If you're looking to develop a new project or need personalized advice, feel free to get in touch with me.",
+    "experience": "Experience",
+    "experience_value": "3+",
+    "projects": "Completed projects",
+    "projects_value": "+30",
     "specialty": "Specialty",
-    "location": "Location"
+    "specialty_value": "WordPress, WooCommerce & Elementor"
   },
   "services": {
     "eyebrow": "HOW I CAN HELP YOU",

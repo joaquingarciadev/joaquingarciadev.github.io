@@ -17,12 +17,13 @@
   "about": {
     "eyebrow": "SOBRE EL DESARROLLADOR",
     "title": "Sobre mí",
-    "p1": "¡Hola! Soy Joaquin Garcia, desarrollador web de Córdoba, Argentina. Me especializo en la creación de páginas y aplicaciones web. Me encanta este campo y estoy emocionado por seguir creciendo como desarrollador.",
-    "p2": "Estoy aquí para ayudarte a crear la presencia digital que necesitas. Si necesitas un sitio web, mantenimiento o asesoramiento personalizado, no dudes en ponerte en contacto conmigo.",
-    "developer": "Desarrollador Web",
-    "since": "Desde 2017",
+    "description": "¡Hola! Soy Joaquín García, desarrollador web especializado en WordPress, con 3 años de experiencia trabajando en agencias y proyectos freelance, y más de 30 trabajos realizados. Me especializo en el diseño y desarrollo de sitios web, landing pages, tiendas online y soluciones adaptadas a las necesidades de cada proyecto. Estoy aquí para ayudarte a crear la presencia digital que tu negocio necesita. Si estás buscando desarrollar un nuevo proyecto o necesitás asesoramiento personalizado, no dudes en ponerte en contacto conmigo.",
+    "experience": "Experiencia",
+    "experience_value": "3+",
+    "projects": "Proyectos realizados",
+    "projects_value": "+30",
     "specialty": "Especialidad",
-    "location": "Ubicación"
+    "specialty_value": "WordPress, WooCommerce & Elementor"
   },
   "services": {
     "eyebrow": "CÓMO PUEDO AYUDARTE",

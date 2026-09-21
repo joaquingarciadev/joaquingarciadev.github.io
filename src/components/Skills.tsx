@@ -228,9 +228,6 @@ export default function Skills() {
             <div className="w-full max-w-6xl mx-auto px-6">
                 {/* Section Heading */}
                 <div className="flex flex-col items-center text-center mb-12">
-                    <span className="text-xs font-display font-medium text-graphite dark:text-ash uppercase tracking-[0.15em] mb-3">
-                        {t("skills.subtitle")}
-                    </span>
                     <RevealText
                         as="h2"
                         text={t("skills.title")}

@@ -57,9 +57,6 @@ export default function Services() {
       <div className="w-full max-w-6xl mx-auto px-6 relative">
         {/* Section Heading */}
         <div className="flex flex-col items-center text-center mb-16">
-          <span className="text-xs font-display font-medium text-graphite dark:text-ash uppercase tracking-[0.15em] mb-3">
-            {t("services.eyebrow")}
-          </span>
           <RevealText
             as="h2"
             text={t("services.title")}
