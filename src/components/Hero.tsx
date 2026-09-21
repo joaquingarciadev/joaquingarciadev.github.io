@@ -49,7 +49,7 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                         as="h1"
                         gradient
                         text={t("hero.greeting")}
-                        className="font-display text-5xl md:text-7xl font-bold leading-tight text-off-black-ink dark:text-off-white-canvas mb-6"
+                        className="font-display text-5xl md:text-7xl font-semibold leading-tight text-off-black-ink dark:text-off-white-canvas mb-6"
                     />
 
                     {/* Professional Role Subtitle */}
@@ -57,7 +57,7 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
                         <RevealText
                             as="h2"
                             text={t("hero.role")}
-                            className="font-display text-2xl md:text-4xl font-medium text-graphite dark:text-ash"
+                            className="font-display text-2xl md:text-4xl font-medium text-graphite dark:text-off-white-canvas"
                         />
                     </div>
 

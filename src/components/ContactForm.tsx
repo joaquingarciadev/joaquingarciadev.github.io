@@ -161,7 +161,7 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                     <RevealText
                         as="h2"
                         text={t("contact.title")}
-                        className="font-display text-4xl md:text-5xl font-bold tracking-tight text-off-black-ink dark:text-off-white-canvas"
+                        className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-off-black-ink dark:text-off-white-canvas"
                     />
                     <div className="h-1 w-16 bg-gradient-to-r from-brand to-brand-light mt-4 rounded-full" />
                 </div>
