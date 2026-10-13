@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import type { CSSProperties } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -19,9 +20,23 @@ interface HeroProps {
 
 export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
     const { t } = useTranslation();
+    const sectionRef = useRef<HTMLElement>(null);
+
+    // Pausa las animaciones infinitas (badges, ícono) cuando el hero no está en pantalla.
+    // Se aplica directo en el DOM: no re-renderiza y no afecta al HTML prerenderizado.
+    useEffect(() => {
+        const section = sectionRef.current;
+        if (!section) return;
+        const observer = new IntersectionObserver(([entry]) => {
+            section.classList.toggle("hero-offscreen", !entry.isIntersecting);
+        });
+        observer.observe(section);
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <section
+            ref={sectionRef}
             id="inicio"
             className="min-h-screen pt-32 pb-16 flex items-center justify-center bg-pure-white dark:bg-off-black-ink transition-colors duration-300 relative overflow-hidden"
         >

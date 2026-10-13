@@ -79,7 +79,7 @@ export default function Projects({
 
                 {/* Filter Tabs */}
                 <div className="flex justify-center mb-6">
-                    <div className="flex items-center gap-1 bg-pure-white/70 dark:bg-deep-charcoal/60 backdrop-blur-md p-1.5 rounded-full border border-ash/30 dark:border-brand-glow/20 max-w-full overflow-x-auto no-scrollbar shadow-sm relative z-0">
+                    <div className="flex items-center gap-1 bg-pure-white/70 dark:bg-deep-charcoal/60 md:backdrop-blur-md p-1.5 rounded-full border border-ash/30 dark:border-brand-glow/20 max-w-full overflow-x-auto no-scrollbar shadow-sm relative z-0">
                         {filters.map((f) => {
                             const isActive = activeFilter === f.id;
                             return (
@@ -213,7 +213,7 @@ export default function Projects({
                                                 }}
                                             />
                                             {/* Category overlay */}
-                                            <span className="absolute bottom-4 left-4 bg-brand/85 backdrop-blur-md text-[10px] font-mono tracking-widest text-pure-white uppercase px-2.5 py-1 rounded-full border border-brand-glow/40">
+                                            <span className="absolute bottom-4 left-4 bg-brand/85 md:backdrop-blur-md text-[10px] font-mono tracking-widest text-pure-white uppercase px-2.5 py-1 rounded-full border border-brand-glow/40">
                                                 {t(
                                                     `projects.filters.${project.type}`,
                                                 )}

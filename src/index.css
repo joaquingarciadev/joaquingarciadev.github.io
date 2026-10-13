@@ -246,6 +246,8 @@
             box-shadow: 0 20px 60px -20px rgba(124, 58, 237, 0.25);
             border-radius: 30px;
             overflow: hidden;
+            /* Su recálculo por cuadro (al agrandarse) no afecta al resto de la página */
+            contain: layout paint;
             z-index: 999;
             transition:
                 width 0.5s cubic-bezier(0.76, 0, 0.24, 1),
@@ -690,6 +692,12 @@
 
 .hero-float {
     animation: hero-float var(--float-duration) ease-in-out infinite;
+}
+
+/* Hero fuera de pantalla: se pausan (no se reinician) sus animaciones infinitas */
+.hero-offscreen .hero-float,
+.hero-offscreen .animate-spin {
+    animation-play-state: paused;
 }
 
 /* Texto con RevealText: oculto hasta que arranca su animación (ver RevealText.tsx) */
