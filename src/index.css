@@ -676,6 +676,22 @@
     mask-image: radial-gradient(80% 70% at 50% 80%, #000 15%, #0000 75%);
 }
 
+/* Badges flotantes del hero: misma curva y recorrido que la animación anterior con Motion
+   (keyframes [0, y, 0], easeInOut), pero en CSS para que corra en el compositor */
+@keyframes hero-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(var(--float-y));
+    }
+}
+
+.hero-float {
+    animation: hero-float var(--float-duration) ease-in-out infinite;
+}
+
 /* Texto con RevealText: oculto hasta que arranca su animación (ver RevealText.tsx) */
 .reveal-pending {
     visibility: hidden;

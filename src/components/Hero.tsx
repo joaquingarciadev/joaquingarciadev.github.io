@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { useTranslation } from "react-i18next";
 import {
     ArrowRight,
@@ -108,17 +109,19 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
 
                         {/* Floating Badge 1: Landing page */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: [0, -6, 0] }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             transition={{
                                 opacity: { duration: 0.6, delay: 0.6 },
-                                y: {
-                                    duration: 4,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                },
                             }}
-                            className="absolute -top-3 -left-3 md:-top-5 md:-left-5 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
+                            // Flotación con CSS (corre en la GPU, no en el hilo principal)
+                            style={
+                                {
+                                    "--float-y": "-6px",
+                                    "--float-duration": "4s",
+                                } as CSSProperties
+                            }
+                            className="hero-float absolute -top-3 -left-3 md:-top-5 md:-left-5 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
                         >
                             <div className="p-1.5 rounded-xl bg-pink-500 text-pure-white">
                                 <Layout className="w-4 h-4" />
@@ -130,17 +133,19 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
 
                         {/* Floating Badge 2: Institucional */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: [0, 6, 0] }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             transition={{
                                 opacity: { duration: 0.6, delay: 0.8 },
-                                y: {
-                                    duration: 4.5,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                },
                             }}
-                            className="absolute top-1/2 -right-3 md:-right-7 -translate-y-1/2 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
+                            // Flotación con CSS (corre en la GPU, no en el hilo principal)
+                            style={
+                                {
+                                    "--float-y": "6px",
+                                    "--float-duration": "4.5s",
+                                } as CSSProperties
+                            }
+                            className="hero-float absolute top-1/2 -right-3 md:-right-7 -translate-y-1/2 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
                         >
                             <div className="p-1.5 rounded-xl bg-sky-500 text-pure-white">
                                 <Building2 className="w-4 h-4" />
@@ -152,17 +157,19 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
 
                         {/* Floating Badge 3: E-commerce */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: [0, -5, 0] }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             transition={{
                                 opacity: { duration: 0.6, delay: 1.0 },
-                                y: {
-                                    duration: 3.8,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                },
                             }}
-                            className="absolute -bottom-3 left-4 md:-bottom-5 md:left-6 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
+                            // Flotación con CSS (corre en la GPU, no en el hilo principal)
+                            style={
+                                {
+                                    "--float-y": "-5px",
+                                    "--float-duration": "3.8s",
+                                } as CSSProperties
+                            }
+                            className="hero-float absolute -bottom-3 left-4 md:-bottom-5 md:left-6 bg-pure-white/85 dark:bg-deep-charcoal/80 backdrop-blur-md border border-ash/40 dark:border-brand-glow/25 shadow-xl px-3.5 py-2 rounded-2xl flex items-center gap-2.5 z-20 pointer-events-none select-none"
                         >
                             <div className="p-1.5 rounded-xl bg-amber-500 text-pure-white">
                                 <ShoppingBag className="w-4 h-4" />
