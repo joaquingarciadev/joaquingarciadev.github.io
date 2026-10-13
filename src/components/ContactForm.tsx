@@ -11,7 +11,6 @@ import {
     Loader2,
     ChevronDown,
 } from "lucide-react";
-import emailjs from "@emailjs/browser";
 import RevealText from "./RevealText";
 import FlipText from "./FlipText";
 
@@ -56,12 +55,6 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
     }, []);
 
     useEffect(() => {
-        emailjs.init({
-            publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-        });
-    }, []);
-
-    useEffect(() => {
         const stored = localStorage.getItem("joaquin_portfolio_inquiries");
         if (stored) {
             try {
@@ -98,10 +91,13 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
         setSendError("");
 
         try {
+            // EmailJS se descarga recién al enviar (fuera del bundle inicial)
+            const { default: emailjs } = await import("@emailjs/browser");
             await emailjs.sendForm(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 formRef.current!,
+                { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY },
             );
 
             const newInquiry: Inquiry = {
@@ -302,13 +298,15 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
                             >
                                 {/* Name */}
                                 <div className="flex flex-col gap-1.5 text-left">
-                                    <label className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas uppercase tracking-wider">
+                                    <label htmlFor="contact-name" className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas uppercase tracking-wider">
                                         {t("contact.label_name")}{" "}
                                         <span className="text-rose-500">*</span>
                                     </label>
                                     <input
                                         type="text"
+                                        id="contact-name"
                                         name="name"
+                                        autoComplete="name"
                                         value={formData.name}
                                         onChange={handleChange}
                                         placeholder={t(
@@ -321,13 +319,15 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
 
                                 {/* Email */}
                                 <div className="flex flex-col gap-1.5 text-left">
-                                    <label className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas uppercase tracking-wider">
+                                    <label htmlFor="contact-email" className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas uppercase tracking-wider">
                                         {t("contact.label_email")}{" "}
                                         <span className="text-rose-500">*</span>
                                     </label>
                                     <input
                                         type="email"
+                                        id="contact-email"
                                         name="email"
+                                        autoComplete="email"
                                         value={formData.email}
                                         onChange={handleChange}
                                         placeholder={t(
@@ -340,11 +340,12 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
 
                                 {/* Web Type Selector */}
                                 <div className="flex flex-col gap-1.5 text-left relative">
-                                    <label className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas uppercase tracking-wider">
+                                    <label htmlFor="contact-webType" className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas uppercase tracking-wider">
                                         {t("contact.label_webType")}
                                     </label>
                                     <div className="relative">
                                         <select
+                                            id="contact-webType"
                                             name="webType"
                                             value={formData.webType}
                                             onChange={handleChange}
@@ -398,11 +399,12 @@ export default function ContactForm({ onViewExamples }: ContactFormProps) {
 
                                 {/* Message */}
                                 <div className="flex flex-col gap-1.5 text-left">
-                                    <label className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas uppercase tracking-wider">
+                                    <label htmlFor="contact-message" className="font-display text-xs font-bold text-off-black-ink dark:text-off-white-canvas uppercase tracking-wider">
                                         {t("contact.label_message")}{" "}
                                         <span className="text-rose-500">*</span>
                                     </label>
                                     <textarea
+                                        id="contact-message"
                                         name="message"
                                         value={formData.message}
                                         onChange={handleChange}

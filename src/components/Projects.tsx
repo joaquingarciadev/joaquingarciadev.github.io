@@ -228,6 +228,7 @@ export default function Projects({
                                                 rel="noopener noreferrer"
                                                 className="absolute -top-7 right-6 w-14 h-14 bg-brand text-pure-white hover:bg-brand-light rounded-full flex items-center justify-center border-4 border-pure-white dark:border-[#140F21] hover:scale-110 active:scale-95 transition-all z-20"
                                                 title={t("projects.view_live")}
+                                                aria-label={`${t("projects.view_live")}: ${project.name}`}
                                             >
                                                 <ArrowUpRight className="w-6 h-6 stroke-[2.5]" />
                                             </a>

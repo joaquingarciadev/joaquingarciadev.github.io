@@ -2,6 +2,31 @@
 
 @variant dark (&:where(.dark, .dark *));
 
+/* Fuentes self-hosted (variables, subset latin): mismas familias que antes en Google Fonts */
+@font-face {
+    font-family: "Inter Tight";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    src: url("/fonts/inter-tight-latin-wght-normal.woff2") format("woff2");
+    unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+        U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 800;
+    src: url("/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");
+    unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+        U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @theme {
     --font-sans:
         "Inter Tight", ui-sans-serif, system-ui, -apple-system,
@@ -533,18 +558,18 @@
         transform: rotate(0deg);
     }
 
-    .theme-toggle-container.is-dark .moon-element {
+    .dark .theme-toggle-container .moon-element {
         transform: rotate(40deg) scale(0.85);
         opacity: 1;
         pointer-events: all;
     }
 
-    .theme-toggle-container.is-dark .moon-element::before {
+    .dark .theme-toggle-container .moon-element::before {
         transform: translate(-10%, -25%) scale(1);
         opacity: 1;
     }
 
-    .theme-toggle-container.is-dark.is-mobile .moon-element::before {
+    .dark .theme-toggle-container.is-mobile .moon-element::before {
         background-color: #140f21;
     }
 
@@ -563,7 +588,7 @@
         height: 13px;
     }
 
-    .theme-toggle-container.is-dark .sun-element {
+    .dark .theme-toggle-container .sun-element {
         transform: rotate(-360deg);
         opacity: 0;
         pointer-events: none;
@@ -649,6 +674,38 @@
         #0000 75%
     );
     mask-image: radial-gradient(80% 70% at 50% 80%, #000 15%, #0000 75%);
+}
+
+/* Texto con RevealText: oculto hasta que arranca su animación (ver RevealText.tsx) */
+.reveal-pending {
+    visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-pending {
+        visibility: visible;
+    }
+}
+
+/* Carrusel antes de que Swiper se inicialice (HTML prerenderizado):
+   mismo ancho y separación que los breakpoints de Projects.tsx */
+.projects-swiper:not(.swiper-initialized) .swiper-slide {
+    width: 100%;
+    margin-right: 16px;
+}
+
+@media (min-width: 768px) {
+    .projects-swiper:not(.swiper-initialized) .swiper-slide {
+        width: calc((100% - 24px) / 2);
+        margin-right: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects-swiper:not(.swiper-initialized) .swiper-slide {
+        width: calc((100% - 64px) / 3);
+        margin-right: 32px;
+    }
 }
 
 /* Custom Swiper Scrollbar Styles */

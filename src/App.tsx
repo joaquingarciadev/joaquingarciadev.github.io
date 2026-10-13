@@ -117,6 +117,7 @@ export default function App() {
                 activeSection={activeSection}
             />
 
+            <main>
             <Hero
                 onContactClick={() => scrollToSection("contacto")}
                 onProjectsClick={() => scrollToSection("proyectos")}
@@ -144,6 +145,7 @@ export default function App() {
             <hr className="section-divider" />
 
             <ContactForm onViewExamples={handleViewExamples} />
+            </main>
 
             <Footer />
         </div>

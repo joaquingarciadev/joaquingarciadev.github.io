@@ -163,10 +163,15 @@ export default function Navbar({
                                         : "opacity-40 hover:opacity-100"
                                 }`}
                                 title="Español"
+                                aria-pressed={currentLang === "es"}
                             >
                                 <img
                                     src="/images/misc/es.webp"
                                     alt="Español"
+                                    width="20"
+                                    height="20"
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-5 h-5 object-cover rounded-sm"
                                 />
                             </button>
@@ -178,10 +183,15 @@ export default function Navbar({
                                         : "opacity-40 hover:opacity-100"
                                 }`}
                                 title="English"
+                                aria-pressed={currentLang === "en"}
                             >
                                 <img
                                     src="/images/misc/en.webp"
                                     alt="English"
+                                    width="20"
+                                    height="20"
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-5 h-5 object-cover rounded-sm"
                                 />
                             </button>
@@ -194,7 +204,7 @@ export default function Navbar({
                             aria-label="Toggle dark mode"
                         >
                             <div
-                                className={`theme-toggle-container is-desktop ${darkMode ? "is-dark" : ""}`}
+                                className="theme-toggle-container is-desktop"
                             >
                                 <svg
                                     className="sun-element"
@@ -316,10 +326,15 @@ export default function Navbar({
                                             : "opacity-40 hover:opacity-100"
                                     }`}
                                     title="Español"
+                                    aria-pressed={currentLang === "es"}
                                 >
                                     <img
                                         src="/images/misc/es.webp"
                                         alt="Español"
+                                        width="20"
+                                        height="20"
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-5 h-5 object-cover rounded-sm"
                                     />
                                 </button>
@@ -331,10 +346,15 @@ export default function Navbar({
                                             : "opacity-40 hover:opacity-100"
                                     }`}
                                     title="English"
+                                    aria-pressed={currentLang === "en"}
                                 >
                                     <img
                                         src="/images/misc/en.webp"
                                         alt="English"
+                                        width="20"
+                                        height="20"
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-5 h-5 object-cover rounded-sm"
                                     />
                                 </button>
@@ -346,7 +366,7 @@ export default function Navbar({
                                 aria-label="Toggle dark mode"
                             >
                                 <div
-                                    className={`theme-toggle-container is-mobile ${darkMode ? "is-dark" : ""}`}
+                                    className="theme-toggle-container is-mobile"
                                 >
                                     <svg
                                         className="sun-element"

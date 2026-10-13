@@ -145,5 +145,9 @@
   },
   "footer": {
     "rights": "Todos los derechos reservados."
+  },
+  "meta": {
+    "title": "Desarrollador Web Argentina | Joaquin Garcia",
+    "description": "Soy Desarrollador Web de Argentina. Me especializo en la creación de páginas y aplicaciones web. Calidad y profesionalismo en cada proyecto."
   }
 }

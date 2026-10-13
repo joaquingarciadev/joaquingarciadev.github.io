@@ -63,6 +63,7 @@ function SkillWindow({
                 <div className="flex items-center gap-2 text-[11px] font-mono text-white truncate">
                     <img
                         src={win.skill.img}
+                        alt=""
                         className="w-3.5 h-3.5 object-contain"
                         referrerPolicy="no-referrer"
                     />
@@ -70,6 +71,7 @@ function SkillWindow({
                 </div>
                 <button
                     onClick={onClose}
+                    aria-label="Cerrar"
                     className="w-5 h-5 rounded hover:bg-red-500 text-white/70 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
                 >
                     <X className="w-3.5 h-3.5" />
@@ -93,6 +95,7 @@ function SkillWindow({
                     </div>
                     <img
                         src={win.skill.img}
+                        alt=""
                         className="w-10 h-10 object-contain bg-white/5 rounded-xl p-2 border border-white/10 shrink-0"
                         referrerPolicy="no-referrer"
                     />
@@ -171,20 +174,22 @@ export default function Skills() {
                 hour12: false,
             });
 
-        let interval: number | null = null;
+        // Solo muestra hh:mm: se actualiza al cambiar el minuto, no cada segundo
+        let timer: number | null = null;
+
+        const tick = () => {
+            el.textContent = format();
+            timer = window.setTimeout(tick, 60_000 - (Date.now() % 60_000) + 50);
+        };
 
         const start = () => {
-            if (interval !== null) return;
-            el.textContent = format();
-            interval = window.setInterval(() => {
-                el.textContent = format();
-            }, 1000);
+            if (timer === null) tick();
         };
 
         const stop = () => {
-            if (interval === null) return;
-            window.clearInterval(interval);
-            interval = null;
+            if (timer === null) return;
+            window.clearTimeout(timer);
+            timer = null;
         };
 
         const observer = new IntersectionObserver(
@@ -281,7 +286,7 @@ export default function Skills() {
                                                         <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 dark:bg-stone-950/40 rounded-xl p-2 border border-white/10 shadow flex items-center justify-center relative">
                                                             <img
                                                                 src={skill.img}
-                                                                alt={skill.name}
+                                                                alt=""
                                                                 loading="lazy"
                                                                 decoding="async"
                                                                 className="w-full h-full object-contain filter brightness-110"
@@ -376,6 +381,7 @@ export default function Skills() {
                                                                     win.skill
                                                                         .img
                                                                 }
+                                                                alt=""
                                                                 className="w-5.5 h-5.5 object-contain"
                                                                 referrerPolicy="no-referrer"
                                                             />

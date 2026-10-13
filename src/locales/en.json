@@ -145,5 +145,9 @@
   },
   "footer": {
     "rights": "All rights reserved."
+  },
+  "meta": {
+    "title": "Web Developer Argentina | Joaquin Garcia",
+    "description": "I'm a Web Developer from Argentina. I specialize in building websites and web applications. Quality and professionalism in every project."
   }
 }
